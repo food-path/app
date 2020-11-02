@@ -28,9 +28,7 @@ const User = db.define("user", {
 // instance methods
 //if you type the pw on the website it'll tell you if it's correct or not
 User.prototype.correctPassword = function (candidatePassword) {
-	return (
-		this.Model.encryptPassword(candidatePassword, this.salt) === this.password
-	);
+	return User.encryptPassword(candidatePassword, this.salt) === this.password;
 };
 
 //on our api when we list our password/salt in json, it won't display it

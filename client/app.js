@@ -1,8 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
+import Login from "./components/Login";
 
 const App = (props) => {
-	return <div>{props.user.name}</div>;
+	return (
+		<div>
+			<p>{props.user.name}</p>
+			<Login />
+		</div>
+	);
 };
 
 const mapStateToProps = (state) => ({
