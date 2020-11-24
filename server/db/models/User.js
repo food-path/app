@@ -5,7 +5,7 @@ const db = require("../database");
 
 const User = db.define("user", {
 	// define your model here!
-	name: {
+	firstName: {
 		type: Sequelize.STRING,
 		allowNull: false,
 		unique: true,
@@ -13,16 +13,43 @@ const User = db.define("user", {
 			notEmpty: true,
 		},
 	},
+	lastName: {
+		type: Sequelize.STRING,
+		allowNull: false,
+		unique: true,
+		validate: {
+			notEmpty: true,
+		},
+	},
+	email: {
+		type: Sequelize.STRING,
+		unique: true,
+		allowNull: false,
+		validate: {
+			isEmail: true
+		}
+	},
+	imageUrl: {
+		type: Sequelize.STRING,
+		defaultValue:
+		  'https://img.favpng.com/21/4/9/portable-network-graphics-avatar-computer-icons-image-social-media-png-favpng-r3ez8qWcYdM8jGVn2b5TGhvS8.jpg'
+	},
+	isLoggedIn: {
+		type: Sequelize.BOOLEAN,
+		defaultValue: false
+	},
 	password: {
 		type: Sequelize.STRING,
+		validate: {
+			len: [6, 20]
+		  },
 	},
 	salt: {
 		type: Sequelize.STRING,
 	},
 	googleId: {
 		type: Sequelize.STRING,
-	},
-	test: {},
+	}
 });
 
 // instance methods
