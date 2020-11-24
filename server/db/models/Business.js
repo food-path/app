@@ -1,7 +1,7 @@
 const Sequelize = require("sequelize");
 const db = require("../database");
 
-module.exports = db.define("shop", {
+module.exports = db.define("business", {
 	// define your model here!
 	name: {
 		type: Sequelize.STRING,
