@@ -3,7 +3,7 @@
 const db = require("./database");
 //Question: Candy in {} and is it ("../models/Candy")
 const Candy = require("./models/Candy");
-const Shop = require("./models/Shop");
+const Business = require("./models/Business");
 const User = require("./models/User");
 
 // The purpose of this module is to bring your Sequelize instance (`db`) together
@@ -27,7 +27,7 @@ Shop.hasMany(Candy);
 module.exports = {
 	// Include your models in this exports object as well!
 	Candy,
-	Shop,
+	Business,
 	User,
 	db,
 };

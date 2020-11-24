@@ -70,7 +70,7 @@ async function startServer() {
 	const port = process.env.PORT || 3000;
 
 	const server = app.listen(port, () =>
-		console.log(`Party Time at port ${port}!`)
+		console.log(`Finding food at ${port}!`)
 	);
 }
 //sometimes in testspecs you want to require the app but not start the server
