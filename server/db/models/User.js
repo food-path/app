@@ -3,7 +3,6 @@ const _ = require("lodash");
 const Sequelize = require("sequelize");
 const db = require("../database");
 
-//README UNREGISTER 1 - make a model, make sure to stick notEmpty inside of a validate
 const User = db.define("user", {
 	// define your model here!
 	name: {
