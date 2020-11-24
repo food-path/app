@@ -35,13 +35,6 @@ router.post("/logout", (req, res) => {
 	res.redirect("/");
 });
 
-//from the workshop
-// router.delete('/logout', (req, res, next) => {
-//   req.logout();
-//   req.session.destroy()
-//   res.sendStatus(204);
-// });
-
 router.get("/me", (req, res, next) => {
 	res.json(req.user);
 });
