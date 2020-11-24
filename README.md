@@ -10,7 +10,7 @@ The PWA should support logged in users. Users should be able to fill out a form 
 [] user filters what they want to see: location, restaurant type, rating (add budget, dietary considerations after)
 [] populates map with (4?) choices
 
-Stretch Goals
+-Stretch Goals
 Ensure our app is widely accessible to a broad demographic of users:
 
 support languages other than English & allow users to choose their preferred language when creating an account
