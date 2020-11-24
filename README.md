@@ -23,7 +23,7 @@ Incorporate extra features into the initial itinerary creation & view such as:
   - enable a "near me" feature that allows for more specific location restrictions (ie. zipcode)
 
 ## Technical Challenges
-Mobile development
-Filtering the suggested list of restaurants based on ratings
-Building a database of restaurants with all desired information (especially dietary considerations)
-Connecting with external APIs (Yelp, Google, Instagram)
+- Mobile development
+- Filtering the suggested list of restaurants based on ratings
+- Building a database of restaurants with all desired information (especially dietary considerations)
+- Connecting with external APIs (Yelp, Google, Instagram)
