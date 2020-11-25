@@ -1,8 +1,7 @@
 "use strict";
 
 const db = require("./database");
-//Question: Candy in {} and is it ("../models/Candy")
-const Candy = require("./models/Candy");
+const Foodiemap = require("./models/Foodiemap");
 const Business = require("./models/Business");
 const User = require("./models/User");
 
@@ -21,13 +20,15 @@ const User = require("./models/User");
 
 // const CandyInstance = Candy.create();
 
-Candy.belongsTo(Shop);
-Shop.hasMany(Candy);
+Foodiemap.belongsTo(User);
+User.hasMany(Foodiemap);
+Business.belongsToMany(Foodiemap);
+Foodiemap.hasMany(Business);
 
 module.exports = {
 	// Include your models in this exports object as well!
-	Candy,
+	db,
+	Foodiemap,
 	Business,
 	User,
-	db,
 };

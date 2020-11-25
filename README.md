@@ -4,8 +4,9 @@ Implement an application for planning a food-centric trip as a PWA (progressive 
 
 MVP
 The PWA should support logged in users. Users should be able to fill out a form with their itinerary preferences and be able to interact with a provided map and list of the selected restaurants. Users should also be able to click on a specific restaurant and be taken to a detail page for that restaurant. Users will be able to save their itinerary and view any saved itineraries offline.
-[] db for user models
-[] db for restaurants
+[X] db for user models
+[X] db for restaurants
+[X] db for foodiemap
 [] seed file
 [] user filters what they want to see: location, restaurant type, rating (add budget, dietary considerations after)
 [] populates map with (4?) choices
