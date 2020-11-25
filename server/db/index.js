@@ -2,7 +2,6 @@
 
 const db = require("./database");
 //Question: Candy in {} and is it ("../models/Candy")
-const Candy = require("./models/Candy");
 const Business = require("./models/Business");
 const User = require("./models/User");
 
@@ -21,12 +20,12 @@ const User = require("./models/User");
 
 // const CandyInstance = Candy.create();
 
-Candy.belongsTo(Shop);
-Shop.hasMany(Candy);
+// Candy.belongsTo(Shop);
+// Shop.hasMany(Candy);
 
 module.exports = {
 	// Include your models in this exports object as well!
-	Candy,
+	// Candy,
 	Business,
 	User,
 	db,
