@@ -22,8 +22,8 @@ const User = require("./models/User");
 
 Foodiemap.belongsTo(User);
 User.hasMany(Foodiemap);
-Business.belongsToMany(Foodiemap);
-Foodiemap.hasMany(Business);
+Business.belongsToMany(Foodiemap, {through: "FoodiemapDetails"});
+Foodiemap.belongsToMany(Business, {through: "FoodiemapDetails"});
 
 module.exports = {
 	// Include your models in this exports object as well!
