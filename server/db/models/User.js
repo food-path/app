@@ -7,27 +7,27 @@ const User = db.define("user", {
 	// define your model here!
 	firstName: {
 		type: Sequelize.STRING,
-		allowNull: false,
-		unique: true,
-		validate: {
-			notEmpty: true,
-		},
+		// allowNull: false,
+		// unique: true,
+		// validate: {
+		// 	notEmpty: true,
+		// },
 	},
 	lastName: {
 		type: Sequelize.STRING,
-		allowNull: false,
-		unique: true,
-		validate: {
-			notEmpty: true,
-		},
+		// allowNull: false,
+		// unique: true,
+		// validate: {
+		// 	notEmpty: true,
+		// },
 	},
 	email: {
 		type: Sequelize.STRING,
-		unique: true,
-		allowNull: false,
-		validate: {
-			isEmail: true
-		}
+		// unique: true,
+		// allowNull: false,
+		// validate: {
+		// 	isEmail: true
+		// }
 	},
 	imageUrl: {
 		type: Sequelize.STRING,
@@ -40,9 +40,6 @@ const User = db.define("user", {
 	},
 	password: {
 		type: Sequelize.STRING,
-		validate: {
-			len: [6, 20]
-		  },
 	},
 	salt: {
 		type: Sequelize.STRING,

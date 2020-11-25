@@ -12,20 +12,20 @@ module.exports = db.define("foodiemap", {
 	},
 	city: {
 		type: Sequelize.STRING,
-		allowNull: false,
-		validate: {
-			notEmpty: true,
-		},
+		// allowNull: false,
+		// validate: {
+		// 	notEmpty: true,
+		// },
 	},
 	numBusinesses: {
 		type: Sequelize.INTEGER,
-		validate: {
-			min: 0,
-			max: 3,
-		},
+		// validate: {
+		// 	min: 0,
+		// 	max: 3,
+		// },
 	},
-	businesses: {
-		type: Sequelize.ARRAY(Sequelize.INTEGER),
+	listOfBusinesses: {
+		type: Sequelize.ARRAY(Sequelize.STRING),
 	},
 	favorite: {
 		type: Sequelize.BOOLEAN,
