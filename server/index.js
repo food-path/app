@@ -8,9 +8,9 @@ const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const dbStore = new SequelizeStore({ db: db });
 const passport = require("passport");
 
-if (process.env.NODE_ENV === "development") {
-	require("../secrets"); // this will mutate the process.env object with your secrets.
-}
+// if (process.env.NODE_ENV === "development") {
+// 	require("../secrets"); // this will mutate the process.env object with your secrets.
+// }
 
 passport.serializeUser((user, done) => {
 	try {
