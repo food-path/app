@@ -1,9 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
 import GoogleMapReact from "google-map-react";
-// AIzaSyAy7Z9PHW6OU2vwcjwZTHxgRh9uHm1F9CM
 
 class Map extends React.Component {
+	setMap({ map, maps }) {
+		console.log(maps.DirectionsRenderer);
+		const directionDisplay = new maps.DirectionsRenderer();
+		// directionDisplay.setOptions({directions: });
+		directionDisplay.setMap(map);
+	}
 	render() {
 		return (
 			<div style={{ height: "50vh", width: "50%" }}>
@@ -12,6 +17,8 @@ class Map extends React.Component {
 					bootstrapURLKeys={{ key: "AIzaSyAy7Z9PHW6OU2vwcjwZTHxgRh9uHm1F9CM" }}
 					defaultCenter={{ lat: 40.74, lng: -73.98 }}
 					defaultZoom={13}
+					yesIWantToUseGoogleMapApiInternals
+					onGoogleApiLoaded={this.setMap}
 				></GoogleMapReact>
 			</div>
 		);
