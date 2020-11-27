@@ -2,6 +2,13 @@ import React from "react";
 import { connect } from "react-redux";
 import GoogleMapReact from "google-map-react";
 
+const Marker = ({ text }) => (
+	<div>
+		{text}
+		<img src="/img/marker.png" height="30px" />
+	</div>
+);
+
 class Map extends React.Component {
 	setMap({ map, maps }) {
 		console.log(maps.DirectionsRenderer);
@@ -19,7 +26,9 @@ class Map extends React.Component {
 					defaultZoom={13}
 					yesIWantToUseGoogleMapApiInternals
 					onGoogleApiLoaded={this.setMap}
-				></GoogleMapReact>
+				>
+					<Marker lat={40.74} lng={-73.98} />
+				</GoogleMapReact>
 			</div>
 		);
 	}
