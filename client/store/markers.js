@@ -4,9 +4,9 @@ const GOT_MARKERS = "GOT_MARKERS";
 
 const gotMarkers = (markers) => ({ type: GOT_MARKERS, markers });
 
-export const fetchMarkers = () => async (dispatch) => {
+export const fetchMarkers = (location) => async (dispatch) => {
 	try {
-		const { data } = await axios.get("/api/yelp/search");
+		const { data } = await axios.get(`/api/yelp/search/${location}`);
 		dispatch(gotMarkers(data));
 	} catch (error) {
 		console.error(error);

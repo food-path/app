@@ -11,11 +11,11 @@ let yelpREST = axios.create({
 	},
 });
 
-router.get("/search", async (req, res, next) => {
+router.get("/search/:location", async (req, res, next) => {
 	try {
 		const { data } = await yelpREST("/businesses/search", {
 			params: {
-				location: "new york",
+				location: req.params.location,
 				term: "vegan",
 				limit: 10,
 			},

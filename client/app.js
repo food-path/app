@@ -5,9 +5,8 @@ import { Login, Map } from "./components";
 const App = (props) => {
 	return (
 		<div>
-			<Map />
-			<p>{props.user.name}</p>
 			<Login />
+			<Map />
 		</div>
 	);
 };
