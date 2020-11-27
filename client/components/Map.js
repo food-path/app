@@ -59,26 +59,30 @@ class Map extends React.Component {
 		const markers = this.props.markers || [];
 
 		return (
-			<div style={{ height: "50vh", width: "50%" }}>
-				<div id="map"></div>
-				<GoogleMapReact
-					bootstrapURLKeys={{ key: "AIzaSyAy7Z9PHW6OU2vwcjwZTHxgRh9uHm1F9CM" }}
-					defaultCenter={{ lat: 40.74, lng: -73.98 }}
-					defaultZoom={13}
-					yesIWantToUseGoogleMapApiInternals
-					onGoogleApiLoaded={this.setMap}
-					center={this.state.center}
-				>
-					{markers.map((marker) => (
-						<Marker
-							key={marker.id}
-							lat={marker.coordinates.latitude}
-							lng={marker.coordinates.longitude}
-							text={marker.name}
-							imageUrl={marker.image_url}
-						/>
-					))}
-				</GoogleMapReact>
+			<div>
+				<div id="map-container">
+					<GoogleMapReact
+						id="map"
+						bootstrapURLKeys={{
+							key: "AIzaSyAy7Z9PHW6OU2vwcjwZTHxgRh9uHm1F9CM",
+						}}
+						defaultCenter={{ lat: 40.74, lng: -73.98 }}
+						defaultZoom={13}
+						yesIWantToUseGoogleMapApiInternals
+						onGoogleApiLoaded={this.setMap}
+						center={this.state.center}
+					>
+						{markers.map((marker) => (
+							<Marker
+								key={marker.id}
+								lat={marker.coordinates.latitude}
+								lng={marker.coordinates.longitude}
+								text={marker.name}
+								imageUrl={marker.image_url}
+							/>
+						))}
+					</GoogleMapReact>
+				</div>
 				<form onSubmit={this.onSubmit} style={{ padding: "20px" }}>
 					<input
 						type="text"
