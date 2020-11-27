@@ -42,10 +42,16 @@ class Map extends React.Component {
 
 		if (this.props.markers.length > 0) {
 			const firstMarker = this.props.markers[0];
-			this.state.map.setCenter({
-				lat: firstMarker.coordinates.latitude,
-				lng: firstMarker.coordinates.longitude,
+			this.setState({
+				center: {
+					lat: firstMarker.coordinates.latitude,
+					lng: firstMarker.coordinates.longitude,
+				},
 			});
+			// this.state.map.setCenter({
+			// 	lat: firstMarker.coordinates.latitude,
+			// 	lng: firstMarker.coordinates.longitude,
+			// });
 		}
 	}
 
@@ -61,6 +67,7 @@ class Map extends React.Component {
 					defaultZoom={13}
 					yesIWantToUseGoogleMapApiInternals
 					onGoogleApiLoaded={this.setMap}
+					center={this.state.center}
 				>
 					{markers.map((marker) => (
 						<Marker
