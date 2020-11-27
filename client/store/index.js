@@ -5,9 +5,11 @@ import thunkMiddle from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 //redux logger
 import { createLogger } from "redux-logger";
+import markers from "./markers";
 
 export const rootReducer = combineReducers({
 	user: userReducer,
+	markers,
 });
 
 const middleware = composeWithDevTools(
@@ -18,3 +20,4 @@ const store = createStore(rootReducer, middleware);
 
 export default store;
 export * from "./user";
+export * from "./markers";

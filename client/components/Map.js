@@ -1,10 +1,15 @@
 import React from "react";
 import { connect } from "react-redux";
 import GoogleMapReact from "google-map-react";
+import { fetchMarkers } from "../store";
 
-const Marker = ({ text }) => (
-	<div>
-		{text}
+const Marker = ({ text, imageUrl }) => (
+	<div
+		className="marker"
+		style={{ textAlign: "center", display: "block", width: "60px" }}
+	>
+		<p>{text}</p>
+		<img src={imageUrl} width="60px" />
 		<img src="/img/marker.png" height="30px" />
 	</div>
 );
@@ -16,7 +21,14 @@ class Map extends React.Component {
 		// directionDisplay.setOptions({directions: });
 		directionDisplay.setMap(map);
 	}
+
+	componentDidMount() {
+		this.props.fetchMarkers();
+	}
+
 	render() {
+		const markers = this.props.markers || [];
+
 		return (
 			<div style={{ height: "50vh", width: "50%" }}>
 				<div id="map"></div>
@@ -27,11 +39,27 @@ class Map extends React.Component {
 					yesIWantToUseGoogleMapApiInternals
 					onGoogleApiLoaded={this.setMap}
 				>
-					<Marker lat={40.74} lng={-73.98} />
+					{markers.map((marker) => (
+						<Marker
+							key={marker.id}
+							lat={marker.coordinates.latitude}
+							lng={marker.coordinates.longitude}
+							text={marker.name}
+							imageUrl={marker.image_url}
+						/>
+					))}
 				</GoogleMapReact>
 			</div>
 		);
 	}
 }
 
-export default connect(null, null)(Map);
+const mapState = (state) => ({
+	markers: state.markers,
+});
+
+const mapDispatch = (dispatch) => ({
+	fetchMarkers: () => dispatch(fetchMarkers()),
+});
+
+export default connect(mapState, mapDispatch)(Map);
