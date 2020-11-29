@@ -1,9 +1,12 @@
 import axios from "axios";
 
+//ACTION TYPE
 const GOT_USER = "GOT_USER";
 
+//ACTION CREATORS
 const gotUser = (user) => ({ type: GOT_USER, user });
 
+//THUNK CREATORS
 export const auth = (body) => async (dispatch) => {
 	try {
 		const { data } = await axios.post("/auth/login", body);
@@ -15,6 +18,7 @@ export const auth = (body) => async (dispatch) => {
 
 const initialState = {};
 
+//REDUCER
 export default function userReducer(state = initialState, action) {
 	switch (action.type) {
 		case GOT_USER:
