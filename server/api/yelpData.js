@@ -11,13 +11,36 @@ let yelpREST = axios.create({
 	},
 });
 
-router.get("/search/:location", async (req, res, next) => {
+let priceToNum = (price) => {
+	if (+price <= 25) return 1;
+	else if (+price <= 50) return 2;
+	else if (+price <= 75) return 3;
+	else return 4;
+};
+
+router.post("/search", async (req, res, next) => {
 	try {
+		let minPrice = priceToNum(req.body.minPrice);
+		let maxPrice = priceToNum(req.body.maxPrice);
+		let priceRange = [];
+
+		if (minPrice > maxPrice) {
+			return res.sendStatus(500);
+		}
+
+		for (let i = minPrice; i <= maxPrice; i++) {
+			priceRange.push(i);
+		}
+
 		const { data } = await yelpREST("/businesses/search", {
 			params: {
-				location: req.params.location,
-				term: "vegan",
+				location: req.body.location,
+				term: req.body.term,
+				sort_by: "rating",
 				limit: 10,
+				price: priceRange.join(","),
+				categories: req.body.categories.join(","),
+				// open_now: true,
 			},
 		});
 
