@@ -15,31 +15,15 @@ const Marker = ({ text, imageUrl }) => (
 );
 
 class Map extends React.Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 		this.state = {
-			location: "New York",
 			center: { lat: 40.74, lng: -73.98 },
 		};
-		this.onChange = this.onChange.bind(this);
-		this.onSubmit = this.onSubmit.bind(this);
+
 		this.setMap = this.setMap.bind(this);
 	}
-	setMap({ map, maps }) {
-		// console.log(maps.DirectionsRenderer);
-		// const directionDisplay = new maps.DirectionsRenderer();
-		// directionDisplay.setOptions({directions: });
-		// directionDisplay.setMap(map);
-		this.setState({ map, maps });
-	}
-
-	onChange(event) {
-		this.setState({ [event.target.name]: event.target.value });
-	}
-	async onSubmit(event) {
-		event.preventDefault();
-		await this.props.fetchMarkers(this.state.location);
-
+	componentDidMount() {
 		if (this.props.markers.length > 0) {
 			const firstMarker = this.props.markers[0];
 			this.setState({
@@ -53,6 +37,14 @@ class Map extends React.Component {
 			// 	lng: firstMarker.coordinates.longitude,
 			// });
 		}
+	}
+
+	setMap({ map, maps }) {
+		// console.log(maps.DirectionsRenderer);
+		// const directionDisplay = new maps.DirectionsRenderer();
+		// directionDisplay.setOptions({directions: });
+		// directionDisplay.setMap(map);
+		this.setState({ map, maps });
 	}
 
 	render() {
@@ -83,15 +75,6 @@ class Map extends React.Component {
 						))}
 					</GoogleMapReact>
 				</div>
-				<form onSubmit={this.onSubmit} style={{ padding: "20px" }}>
-					<input
-						type="text"
-						name="location"
-						onChange={this.onChange}
-						value={this.state.location}
-					/>
-					<button type="submit">Search</button>
-				</form>
 			</div>
 		);
 	}

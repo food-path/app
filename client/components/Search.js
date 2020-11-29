@@ -11,17 +11,33 @@ class Search extends Component {
 		this.state = {
 			location: "",
 		};
+		this.onChange = this.onChange.bind(this);
+	}
+
+	onChange(event) {
+		this.setState({
+			[event.target.name]: event.target.value,
+		});
 	}
 	render() {
 		return (
 			<div>
-				<Form>
+				<Form
+					onSubmit={(event) => {
+						event.preventDefault();
+						this.props.fetchMarkers(this.state.location);
+					}}
+				>
 					<Form.Group controlId="searchInput">
 						<Form.Label>Enter a city</Form.Label>
-						<Form.Control type="city" placeholder="Enter city or zip code" />
-						<Form.Text className="text-muted">
-							We'll never share your email with anyone else.
-						</Form.Text>
+						<Form.Control
+							type="city"
+							name="location"
+							value={this.state.location}
+							placeholder="Enter city or zip code"
+							onChange={this.onChange}
+						/>
+
 						<Button variant="primary" type="submit">
 							Submit
 						</Button>
@@ -43,16 +59,10 @@ class Search extends Component {
 	}
 }
 
-const mapStateToProps = (state) => {
-	console.log("THIS IS THE STAAAATE:", state);
+const mapStateToProps = (state) => ({});
 
-	return {
-		location: state.location,
-	};
-};
-
-const mapDispatchToProps = (dispatch) => {
-	return {};
-};
+const mapDispatchToProps = (dispatch) => ({
+	fetchMarkers: (location) => dispatch(fetchMarkers(location)),
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search);
