@@ -1,7 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
 import GoogleMapReact from "google-map-react";
-import { fetchMarkers } from "../store";
+import { fetchMarker, createMap } from "../store";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 
 const Marker = ({ text, imageUrl }) => (
 	<div
@@ -19,9 +21,13 @@ class Map extends React.Component {
 		super(props);
 		this.state = {
 			center: { lat: 40.74, lng: -73.98 },
+			name: "",
+			map: null,
+			maps: null,
 		};
-
+		this.onChange = this.onChange.bind(this);
 		this.setMap = this.setMap.bind(this);
+		this.onSubmit = this.onSubmit.bind(this);
 	}
 	componentDidMount() {
 		if (this.props.markers.length > 0) {
@@ -37,6 +43,19 @@ class Map extends React.Component {
 			// 	lng: firstMarker.coordinates.longitude,
 			// });
 		}
+	}
+
+	onChange(event) {
+		this.setState({
+			[event.target.name]: event.target.value,
+		});
+	}
+
+	onSubmit(event) {
+		event.preventDefault();
+		this.props.createMap(this.props.search, this.props.markers, {
+			name: this.state.name,
+		});
 	}
 
 	setMap({ map, maps }) {
@@ -75,6 +94,19 @@ class Map extends React.Component {
 						))}
 					</GoogleMapReact>
 				</div>
+				<Form onSubmit={this.onSubmit}>
+					<Form.Label>Map Name</Form.Label>
+					<Form.Control
+						type="text"
+						name="name"
+						value={this.state.name}
+						placeholder="Map Name"
+						onChange={this.onChange}
+					/>
+					<Button variant="primary" type="submit">
+						Save Map
+					</Button>
+				</Form>
 			</div>
 		);
 	}
@@ -82,10 +114,12 @@ class Map extends React.Component {
 
 const mapState = (state) => ({
 	markers: state.markers,
+	search: state.search,
 });
 
 const mapDispatch = (dispatch) => ({
-	fetchMarkers: (location) => dispatch(fetchMarkers(location)),
+	createMap: (search, markers, body) =>
+		dispatch(createMap(search, markers, body)),
 });
 
 export default connect(mapState, mapDispatch)(Map);

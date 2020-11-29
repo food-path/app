@@ -1,10 +1,38 @@
-// import { Loader, LoaderOptions } from "google-maps";
+const router = require("express").Router();
+const { Foodiemap, Business, User } = require("../db");
 
-// const options: LoaderOptions = {};
-// const loader = new Loader("AIzaSyAy7Z9PHW6OU2vwcjwZTHxgRh9uHm1F9CM", options);
+router.post("/", async (req, res, next) => {
+	try {
+		const map = await Foodiemap.create({
+			name: req.body.body.name,
+			searchBody: JSON.stringify(req.body.search),
+		});
+		for (let i = 0; i < req.body.markers.length; i++) {
+			const marker = req.body.markers[i];
+			const [business] = await Business.findOrCreate({
+				where: {
+					id: marker.id,
+				},
+				defaults: {
+					name: marker.name,
+					country: marker.location.country,
+					city: marker.location.city,
+					streetAddress: marker.location.address1,
+					latitude: marker.coordinates.latitude,
+					longitude: marker.coordinates.longitude,
+					imageUrl: marker.image_url,
+					categories: marker.categories.map((cat) => cat.alias),
+					reviewCount: marker.review_count,
+					rating: marker.rating,
+					price: marker.price,
+				},
+			});
+			await map.addBusiness(business);
+		}
+		res.send(map);
+	} catch (error) {
+		next(error);
+	}
+});
 
-// const google = await loader.load();
-// const map = new google.maps.Map(document.getElementById("map"), {
-// 	center: { lat: -34.397, lng: 150.644 },
-// 	zoom: 8,
-// });
+module.exports = router;

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { fetchMarkers } from "../store";
+import { fetchMarkers, saveSearch } from "../store";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
@@ -49,6 +49,7 @@ class Search extends Component {
 					onSubmit={(event) => {
 						event.preventDefault();
 						this.props.fetchMarkers(this.state);
+						this.props.saveSearch(this.state);
 					}}
 				>
 					<Form.Group controlId="searchInput">
@@ -149,6 +150,7 @@ const mapStateToProps = (state) => ({});
 
 const mapDispatchToProps = (dispatch) => ({
 	fetchMarkers: (body) => dispatch(fetchMarkers(body)),
+	saveSearch: (search) => dispatch(saveSearch(search)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search);
