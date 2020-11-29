@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { fetchMarkers } from "../store";
-import { Form } from "react-bootstrap";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 
 class Search extends Component {
 	constructor(props) {
@@ -11,16 +12,16 @@ class Search extends Component {
 			location: "",
 		};
 	}
-	return() {
+	render() {
 		return (
 			<div>
 				<Form>
 					<Form.Group controlId="searchInput">
 						<Form.Label>Enter a city</Form.Label>
 						<Form.Control type="city" placeholder="Enter city or zip code" />
-						{/* <Form.Text className="text-muted">
+						<Form.Text className="text-muted">
 							We'll never share your email with anyone else.
-						</Form.Text> */}
+						</Form.Text>
 						<Button variant="primary" type="submit">
 							Submit
 						</Button>
@@ -51,9 +52,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-	return {
-		updateProductData: (product) => dispatch(fetchUpdatedProduct(product)),
-	};
+	return {};
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search);

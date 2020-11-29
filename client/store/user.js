@@ -16,6 +16,8 @@ export const auth = (body) => async (dispatch) => {
 	}
 };
 
+export const register = (body) => async (dispatch) => {};
+
 const initialState = {};
 
 //REDUCER

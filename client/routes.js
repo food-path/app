@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { withRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import PropTypes from "prop-types";
 import { Login, Map, Registration, Search } from "./components";
 import { fetchMarkers } from "./store";
@@ -8,38 +8,27 @@ import { fetchMarkers } from "./store";
 class Routes extends Component {
 	constructor() {
 		super();
-		this.state = {
-			location: "",
-		};
-	}
-
-	componentDidMount() {
-		this.props.getMarkers();
 	}
 
 	render() {
 		return (
 			<Switch>
-				<Route path="/login" component={Login} />
-				<Route path="/register" component={Registration} />
-				<Route path="/search" component={Search} />
-				{/* // <Route component={} /> */}
+				<Route exact path="/login" component={Login} />
+				<Route exact path="/register" component={Registration} />
+				<Route exact path="/search" component={Search} />
+				<Route exact path="/map" component={Map} />
 			</Switch>
 		);
 	}
 }
 
-const mapState = (state) => ({
-	location: state.location,
-});
+const mapState = (state) => ({});
 
-const mapDispatch = (dispatch) => ({
-	getMarkers: (location) => dispatch(fetchMarkers(location)),
-});
+const mapDispatch = (dispatch) => ({});
 
 // The `withRouter` wrapper makes sure that updates are not blocked
 // when the url changes
-export default withRouter(connect(mapState, mapDispatch)(Routes));
+export default connect(mapState, mapDispatch)(Routes);
 
 /**
  * PROP TYPES
