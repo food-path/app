@@ -18,9 +18,6 @@ class Routes extends Component {
 	}
 
 	render() {
-		// console.log("STAAAATE", state);
-		console.log("PROPS", this.props);
-
 		return (
 			<Switch>
 				<Route path="/login" component={Login} />
