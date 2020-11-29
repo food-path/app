@@ -1,6 +1,17 @@
 const router = require("express").Router();
 const { Foodiemap, Business, User } = require("../db");
 
+router.get("/", async (req, res, next) => {
+	try {
+		const maps = await Foodiemap.findAll({
+			include: Business,
+		});
+		res.send(maps);
+	} catch (error) {
+		next(error);
+	}
+});
+
 router.post("/", async (req, res, next) => {
 	try {
 		const map = await Foodiemap.create({
