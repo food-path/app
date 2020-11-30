@@ -1,12 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Login, Map } from "./components";
+import { NavigationBar } from "./components";
+import Routes from "./routes";
 
 const App = (props) => {
 	return (
 		<div>
-			<Login />
-			<Map />
+			<NavigationBar />
+			<Routes />
 		</div>
 	);
 };

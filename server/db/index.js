@@ -20,10 +20,15 @@ const User = require("./models/User");
 
 // const CandyInstance = Candy.create();
 
+// Foodiemap.belongsTo(User);
+// User.hasMany(Foodiemap);
+// Business.belongsToMany(Foodiemap, {through: "FoodiemapDetails"});
+// Foodiemap.belongsToMany(Business, {through: "FoodiemapDetails"});
+
 Foodiemap.belongsTo(User);
 User.hasMany(Foodiemap);
-Business.belongsToMany(Foodiemap, {through: "FoodiemapDetails"});
-Foodiemap.belongsToMany(Business, {through: "FoodiemapDetails"});
+Foodiemap.belongsToMany(Business, { through: "foodiemap_business" });
+Business.belongsToMany(Foodiemap, { through: "foodiemap_business" });
 
 module.exports = {
 	// Include your models in this exports object as well!

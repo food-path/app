@@ -6,10 +6,14 @@ import { composeWithDevTools } from "redux-devtools-extension";
 //redux logger
 import { createLogger } from "redux-logger";
 import markers from "./markers";
+import search from "./search";
+import maps from "./maps";
 
 export const rootReducer = combineReducers({
 	user: userReducer,
 	markers,
+	search,
+	maps,
 });
 
 const middleware = composeWithDevTools(
@@ -21,3 +25,5 @@ const store = createStore(rootReducer, middleware);
 export default store;
 export * from "./user";
 export * from "./markers";
+export * from "./search";
+export * from "./maps";

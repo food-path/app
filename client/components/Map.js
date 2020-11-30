@@ -1,7 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
 import GoogleMapReact from "google-map-react";
-import { fetchMarkers } from "../store";
+import { createMap, fetchMaps, addMarkers } from "../store";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 
 const Marker = ({ text, imageUrl }) => (
 	<div
@@ -15,31 +17,20 @@ const Marker = ({ text, imageUrl }) => (
 );
 
 class Map extends React.Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 		this.state = {
-			location: "New York",
 			center: { lat: 40.74, lng: -73.98 },
+			name: "",
+			map: null,
+			maps: null,
+			mapToAddId: "default",
 		};
 		this.onChange = this.onChange.bind(this);
-		this.onSubmit = this.onSubmit.bind(this);
 		this.setMap = this.setMap.bind(this);
+		this.onSubmit = this.onSubmit.bind(this);
 	}
-	setMap({ map, maps }) {
-		// console.log(maps.DirectionsRenderer);
-		// const directionDisplay = new maps.DirectionsRenderer();
-		// directionDisplay.setOptions({directions: });
-		// directionDisplay.setMap(map);
-		this.setState({ map, maps });
-	}
-
-	onChange(event) {
-		this.setState({ [event.target.name]: event.target.value });
-	}
-	async onSubmit(event) {
-		event.preventDefault();
-		await this.props.fetchMarkers(this.state.location);
-
+	componentDidMount() {
 		if (this.props.markers.length > 0) {
 			const firstMarker = this.props.markers[0];
 			this.setState({
@@ -53,11 +44,33 @@ class Map extends React.Component {
 			// 	lng: firstMarker.coordinates.longitude,
 			// });
 		}
+		this.props.fetchMaps();
+	}
+
+	onChange(event) {
+		this.setState({
+			[event.target.name]: event.target.value,
+		});
+	}
+
+	onSubmit(event) {
+		event.preventDefault();
+		this.props.createMap(this.props.search, this.props.markers, {
+			name: this.state.name,
+		});
+	}
+
+	setMap({ map, maps }) {
+		// console.log(maps.DirectionsRenderer);
+		// const directionDisplay = new maps.DirectionsRenderer();
+		// directionDisplay.setOptions({directions: });
+		// directionDisplay.setMap(map);
+		this.setState({ map, maps });
 	}
 
 	render() {
 		const markers = this.props.markers || [];
-
+		const maps = this.props.maps || [];
 		return (
 			<div>
 				<div id="map-container">
@@ -83,15 +96,46 @@ class Map extends React.Component {
 						))}
 					</GoogleMapReact>
 				</div>
-				<form onSubmit={this.onSubmit} style={{ padding: "20px" }}>
-					<input
-						type="text"
-						name="location"
+				<Form
+					onSubmit={(event) => {
+						event.preventDefault();
+						const mapToAdd = this.props.maps.find(
+							(m) => m.id === +this.state.mapToAddId
+						);
+						this.props.addMarkers(mapToAdd.businesses);
+					}}
+				>
+					<Form.Label>Map To Add</Form.Label>
+					<Form.Control
+						as="select"
+						name="mapToAddId"
 						onChange={this.onChange}
-						value={this.state.location}
+						value={this.state.mapToAddId}
+					>
+						<option value="default">Choose a map...</option>
+						{maps.map((m) => (
+							<option value={m.id} key={m.id}>
+								{m.name}
+							</option>
+						))}
+					</Form.Control>
+					<Button variant="primary" type="submit">
+						Add Businesses To Current Map
+					</Button>
+				</Form>
+				<Form onSubmit={this.onSubmit}>
+					<Form.Label>Map Name</Form.Label>
+					<Form.Control
+						type="text"
+						name="name"
+						value={this.state.name}
+						placeholder="Map Name"
+						onChange={this.onChange}
 					/>
-					<button type="submit">Search</button>
-				</form>
+					<Button variant="primary" type="submit">
+						Save Map
+					</Button>
+				</Form>
 			</div>
 		);
 	}
@@ -99,10 +143,15 @@ class Map extends React.Component {
 
 const mapState = (state) => ({
 	markers: state.markers,
+	search: state.search,
+	maps: state.maps,
 });
 
 const mapDispatch = (dispatch) => ({
-	fetchMarkers: (location) => dispatch(fetchMarkers(location)),
+	createMap: (search, markers, body) =>
+		dispatch(createMap(search, markers, body)),
+	fetchMaps: () => dispatch(fetchMaps()),
+	addMarkers: (businesses) => dispatch(addMarkers(businesses)),
 });
 
 export default connect(mapState, mapDispatch)(Map);
