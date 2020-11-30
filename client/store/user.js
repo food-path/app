@@ -1,6 +1,6 @@
 import axios from "axios";
 
-//ACTION TYPE
+//ACTION TYPES
 const GOT_USER = "GOT_USER";
 
 //ACTION CREATORS
@@ -18,9 +18,9 @@ export const auth = (body) => async (dispatch) => {
 
 export const register = (body) => async (dispatch) => {};
 
+//REDUCER
 const initialState = {};
 
-//REDUCER
 export default function userReducer(state = initialState, action) {
 	switch (action.type) {
 		case GOT_USER:
