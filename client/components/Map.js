@@ -4,6 +4,7 @@ import GoogleMapReact from "google-map-react";
 import { createMap, fetchMaps, addMarkers } from "../store";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import { Link } from 'react-router-dom';
 
 const Marker = ({ text, imageUrl }) => (
 	<div
@@ -95,6 +96,21 @@ class Map extends React.Component {
 							/>
 						))}
 					</GoogleMapReact>
+				</div>
+				<div id="businesses-list">
+					<ul>
+						{markers.map((marker) => {
+							return (
+								<ul key={marker.id}>
+									<Link to={marker.url}>
+										<h5>{marker.name}</h5>
+									</Link>
+									<li>{marker.price}</li>
+									<li>{marker.rating}</li>
+								</ul>
+							)
+						})}
+					</ul>
 				</div>
 				<Form
 					onSubmit={(event) => {

@@ -1,24 +1,28 @@
 html {
-	background-color: plum;
+  background-color: plum;
 }
 
 .marker img {
-	text-align: center;
+  text-align: center;
 }
 
 #map {
-	position: absolute;
-	height: 100%;
-	width: 100%;
-	overflow: hidden;
-	top: 0;
-	right: 0;
-	left: 0;
-	bottom: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
 }
 
 #map-container {
-	height: 100vh;
-	width: 100%;
-	position: relative;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+#businesses-list li {
+  list-style: none;
 }
