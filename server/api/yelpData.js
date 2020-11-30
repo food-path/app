@@ -1,28 +1,33 @@
 const axios = require("axios");
+const router = require("express").Router();
 
-let API_KEY =
-  "ls257Ls4aesR09k4XvsoTRKD0Gweg-ogvQi4Lafbkdhi-71_vYHHmRZhUOAU0G1PolGfxHsWjbzbVloxtihgiuscn5FBaeGCTzmr2S2fy87SWHcDoAetV4QlK3y9X3Yx";
+let API_KEY = process.env.YELP_API_KEY;
+
+let yelpREST = axios.create({
+	baseURL: "https://api.yelp.com/v3/",
+	headers: {
+		Authorization: `Bearer ${API_KEY}`,
+		"Content-type": "application/json",
+	},
+});
+
+router.get("/search/:location", async (req, res, next) => {
+	try {
+		const { data } = await yelpREST("/businesses/search", {
+			params: {
+				location: req.params.location,
+				term: "vegan",
+				limit: 10,
+			},
+		});
+
+		let { businesses } = data;
+		res.send(businesses);
+	} catch (error) {
+		next(error);
+	}
+});
 
 // REST
-let yelpREST = axios.create({
-  baseURL: "https://api.yelp.com/v3/",
-  headers: {
-    Authorization: `Bearer ${API_KEY}`,
-    "Content-type": "application/json",
-  },
-});
 
-yelpREST("/businesses/search", {
-  params: {
-    location: "new york",
-    term: "vegan",
-    limit: 10,
-  },
-}).then(({ data }) => {
-  let { businesses } = data;
-  console.log('businesses categories:',businesses)
-  businesses.forEach((b) => {
-    console.log("Name: ", b.name);
-  });
-});
-
+module.exports = router;

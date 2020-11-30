@@ -1,12 +1,12 @@
 import React from "react";
 import { connect } from "react-redux";
-import Login from "./components/Login";
+import { Login, Map } from "./components";
 
 const App = (props) => {
 	return (
 		<div>
-			<p>{props.user.name}</p>
 			<Login />
+			<Map />
 		</div>
 	);
 };
