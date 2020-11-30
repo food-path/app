@@ -12,6 +12,16 @@ router.get("/", async (req, res, next) => {
 	}
 });
 
+
+//get route for a single business by id
+router.get('/:businessId', (req, res, next) => {
+	Business.findByPk(req.params.businessId)
+	  .then(business => res.json(business))
+	  .catch(next)
+  })
+
+
+
 router.post("/", async (req, res, next) => {
 	try {
 		const map = await Foodiemap.create({

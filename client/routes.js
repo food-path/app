@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import PropTypes from "prop-types";
 import { Login, Map, Registration, Search } from "./components";
+import SingleBusiness from "./components/SingleBusiness";
 
 class Routes extends Component {
 	constructor() {
@@ -16,6 +17,7 @@ class Routes extends Component {
 				<Route exact path="/register" component={Registration} />
 				<Route exact path="/search" component={Search} />
 				<Route exact path="/map" component={Map} />
+				<Route exact path="/singleBusiness" component={SingleBusiness} />
 			</Switch>
 		);
 	}

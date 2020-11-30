@@ -4,6 +4,8 @@ import GoogleMapReact from "google-map-react";
 import { createMap, fetchMaps, addMarkers } from "../store";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import {Link} from 'react-router-dom'
+import SingleBusiness from './SingleBusiness'
 
 const Marker = ({ text, imageUrl }) => (
 	<div
@@ -12,7 +14,7 @@ const Marker = ({ text, imageUrl }) => (
 	>
 		<p>{text}</p>
 		<img src={imageUrl} width="60px" />
-		<img src="/img/marker.png" height="30px" />
+		<Link to={`/singleBusiness`}><img src="/img/marker.png" height="30px" /></Link>
 	</div>
 );
 
@@ -71,6 +73,12 @@ class Map extends React.Component {
 	render() {
 		const markers = this.props.markers || [];
 		const maps = this.props.maps || [];
+		if (maps.length > 0){
+			console.log(maps[0].businesses)
+			maps[0].businesses.map(business => console.log(business.name))
+		}
+		
+		
 		return (
 			<div>
 				<div id="map-container">
@@ -85,6 +93,7 @@ class Map extends React.Component {
 						onGoogleApiLoaded={this.setMap}
 						center={this.state.center}
 					>
+						
 						{markers.map((marker) => (
 							<Marker
 								key={marker.id}
