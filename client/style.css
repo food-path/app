@@ -1,5 +1,5 @@
 html {
-	background-color: plum;
+	background-color: rgb(245, 235, 249);
 }
 
 .marker img {
@@ -22,3 +22,13 @@ html {
 	width: 100%;
 	position: relative;
 }
+
+/* LOGIN COMPONENT/HOME PAGE*/
+#userInput {
+text-align: center;
+}
+
+/* .bg-login {
+	background: url('./public/img/marker.png') no-repeat;
+	width: 100%;
+} */
