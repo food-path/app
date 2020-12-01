@@ -4,9 +4,9 @@ const { User } = require("../db");
 router.get("/", async (req, res, next) => {
 	try {
 		const users = await User.findAll({
-			attributes: ["id", "name"],
+			attributes: ["id", "email"],
 		});
-		res.send(users);
+		res.json(users);
 	} catch (error) {
 		next(error);
 	}

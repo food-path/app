@@ -3,27 +3,47 @@ import { connect } from "react-redux";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import PropTypes from "prop-types";
 import { Login, Map, Registration, Search } from "./components";
+import {me} from './store'
 
 class Routes extends Component {
-	constructor() {
-		super();
-	}
+  componentDidMount() {
+    this.props.loadInitialData();
+  }
 
-	render() {
-		return (
-			<Switch>
-				<Route exact path="/" component={Login} />
-				<Route exact path="/register" component={Registration} />
-				<Route exact path="/search" component={Search} />
-				<Route exact path="/map" component={Map} />
-			</Switch>
-		);
-	}
+  render() {
+    const { isLoggedIn } = this.props;
+
+    return (
+      <Switch>
+        <Route exact path="/" component={Login} />
+        <Route exact path="/register" component={Registration} />
+        <Route exact path="/search" component={Search} />
+        <Route exact path="/map" component={Map} />
+        {isLoggedIn && (
+          <Switch>
+            {/* Routes placed here are only available after logging in */}
+            {/* /(home-login page)*/}
+            <Route path="/" component={Login} />
+          </Switch>
+        )}
+        {/* Displays our Login component as a fallback */}
+        <Route component={Login} />
+      </Switch>
+    );
+  }
 }
 
-const mapState = (state) => ({});
+const mapState = (state) => ({
+  // Being 'logged in' for our purposes will be defined as having a state.user that has a truthy id.
+  // Otherwise, state.user will be an empty object, and state.user.id will be falsy
+  isLoggedIn: !!state.user.id,
+});
 
-const mapDispatch = (dispatch) => ({});
+const mapDispatch = (dispatch) => ({
+  loadInitialData() {
+    dispatch(me());
+  },
+});
 
 // The `withRouter` wrapper makes sure that updates are not blocked
 // when the url changes
@@ -32,7 +52,7 @@ export default connect(mapState, mapDispatch)(Routes);
 /**
  * PROP TYPES
  */
-// Routes.propTypes = {
-// 	loadInitialData: PropTypes.func.isRequired,
-// 	// isLoggedIn: PropTypes.bool.isRequired
-// };
+Routes.propTypes = {
+	loadInitialData: PropTypes.func.isRequired,
+	isLoggedIn: PropTypes.bool.isRequired
+};
