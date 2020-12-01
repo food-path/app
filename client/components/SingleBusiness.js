@@ -13,6 +13,7 @@ componentDidMount() {
 
   render(){
       const {singleBusiness} = this.props
+     
       return(
           <div>
       <h1>{singleBusiness.name}</h1>
@@ -20,7 +21,7 @@ componentDidMount() {
       <h4>Street Address: {singleBusiness.streetAddress}</h4>
       <h4>Rating: {singleBusiness.rating}</h4>
       <h4>Price: {singleBusiness.price}</h4>
-      <img src={singleBusiness.imageUrl}/>
+      <img className="resize" src={singleBusiness.imageUrl}/>
       </div>
       )
   }

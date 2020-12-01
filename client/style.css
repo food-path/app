@@ -22,3 +22,8 @@ html {
 	width: 100%;
 	position: relative;
 }
+
+.resize {
+	width: 50%;
+	height: 30%;
+  }
