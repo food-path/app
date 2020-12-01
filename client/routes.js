@@ -17,7 +17,7 @@ class Routes extends Component {
 				<Route exact path="/register" component={Registration} />
 				<Route exact path="/search" component={Search} />
 				<Route exact path="/map" component={Map} />
-				<Route exact path="/singleBusiness" component={SingleBusiness} />
+				<Route exact path="/singleBusiness/:businessId" component={SingleBusiness} />
 			</Switch>
 		);
 	}

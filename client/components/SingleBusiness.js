@@ -8,11 +8,11 @@ constructor(props){
     super()
 }
 componentDidMount() {
-    this.props.getSingleBusiness('C26UmGrapfbbE14ucEoXtg')
+    this.props.getSingleBusiness(this.props.match.params.businessId)
   }
 
   render(){
-      console.log('this.props.singleBusiness: ', this.props.singleBusiness)
+      console.log('this.props.match.params: ', this.props.match.params)
       const {singleBusiness} = this.props
       return(
           <div>

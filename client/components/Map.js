@@ -7,14 +7,16 @@ import Button from "react-bootstrap/Button";
 import {Link} from 'react-router-dom'
 import SingleBusiness from './SingleBusiness'
 
-const Marker = ({ text, imageUrl }) => (
+const Marker = ({ text, imageUrl ,id}) => (
 	<div
 		className="marker"
 		style={{ textAlign: "center", display: "block", width: "60px" }}
 	>
+		
 		<p>{text}</p>
+		<p>{id}</p>
 		<img src={imageUrl} width="60px" />
-		<Link to={`/singleBusiness`}><img src="/img/marker.png" height="30px" /></Link>
+		<Link to={`/singleBusiness/${id}`}><img src="/img/marker.png" height="30px" /></Link>
 	</div>
 );
 
@@ -73,9 +75,11 @@ class Map extends React.Component {
 	render() {
 		const markers = this.props.markers || [];
 		const maps = this.props.maps || [];
+		console.log('markers:', markers)
 		if (maps.length > 0){
-			console.log(maps[0].businesses)
-			maps[0].businesses.map(business => console.log(business.name))
+			// console.log(maps[0].businesses)
+			// maps[0].businesses.map(business => console.log(business.name))
+			
 		}
 		
 		
@@ -101,6 +105,7 @@ class Map extends React.Component {
 								lng={marker.coordinates.longitude}
 								text={marker.name}
 								imageUrl={marker.image_url}
+								id={marker.id}
 							/>
 						))}
 					</GoogleMapReact>
