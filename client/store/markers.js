@@ -19,7 +19,7 @@ export const fetchMarkers = (body) => async (dispatch) => {
 	}
 };
 
-const initialState = [];
+const initialState = []; // [{},{}] array of business Objects
 
 export default (state = initialState, action) => {
 	switch (action.type) {

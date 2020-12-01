@@ -4,20 +4,25 @@ import {fetchSingleBusiness} from '../store/singleBusiness'
 
 
 class SingleBusiness extends Component {
-constructor(props){
-    super()
-}
+// constructor(props){
+//     super()
+// }
 componentDidMount() {
     this.props.getSingleBusiness(this.props.match.params.businessId)
   }
 
   render(){
       const {singleBusiness} = this.props
-     
+ 
+    
       return(
           <div>
       <h1>{singleBusiness.name}</h1>
-      <h4>Category:{singleBusiness.categories}</h4>
+      {singleBusiness.categories?(
+      <h4>Category:{singleBusiness.categories.join('|')}</h4>
+      ):(
+        <h1>Error</h1>
+      )}
       <h4>Street Address: {singleBusiness.streetAddress}</h4>
       <h4>Rating: {singleBusiness.rating}</h4>
       <h4>Price: {singleBusiness.price}</h4>
