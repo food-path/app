@@ -12,7 +12,6 @@ componentDidMount() {
   }
 
   render(){
-      console.log('this.props.match.params: ', this.props.match.params)
       const {singleBusiness} = this.props
       return(
           <div>

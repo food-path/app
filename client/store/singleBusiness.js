@@ -13,7 +13,6 @@ export const getBusiness = (business) => {
 
 //thunk
 export const fetchSingleBusiness = (id) => {
-    console.log('i am in fetchSingleBusiness')
   return async (dispatch) => {
     try {
       const { data } = await axios.get(`/api/maps/${id}`);

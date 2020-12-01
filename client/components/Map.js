@@ -14,7 +14,6 @@ const Marker = ({ text, imageUrl ,id}) => (
 	>
 		
 		<p>{text}</p>
-		<p>{id}</p>
 		<img src={imageUrl} width="60px" />
 		<Link to={`/singleBusiness/${id}`}><img src="/img/marker.png" height="30px" /></Link>
 	</div>
@@ -75,14 +74,7 @@ class Map extends React.Component {
 	render() {
 		const markers = this.props.markers || [];
 		const maps = this.props.maps || [];
-		console.log('markers:', markers)
-		if (maps.length > 0){
-			// console.log(maps[0].businesses)
-			// maps[0].businesses.map(business => console.log(business.name))
-			
-		}
-		
-		
+
 		return (
 			<div>
 				<div id="map-container">
