@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { fetchMarkers, saveSearch } from "../store";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import { withRouter } from "react-router-dom";
 
 class Search extends Component {
 	constructor(props) {
@@ -50,6 +51,7 @@ class Search extends Component {
 						event.preventDefault();
 						this.props.fetchMarkers(this.state);
 						this.props.saveSearch(this.state);
+						this.props.history.push("/map");
 					}}
 				>
 					<Form.Group controlId="searchInput">
@@ -142,4 +144,5 @@ const mapDispatchToProps = (dispatch) => ({
 	saveSearch: (search) => dispatch(saveSearch(search)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Search);
+//withRouter gives us this.props.history
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Search));
