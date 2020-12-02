@@ -6,6 +6,7 @@ import {Link} from 'react-router-dom'
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
+
 class Search extends Component {
 	constructor(props) {
 		super(props);
@@ -51,6 +52,7 @@ class Search extends Component {
 						event.preventDefault();
 						this.props.fetchMarkers(this.state);
 						this.props.saveSearch(this.state);
+						
 					}}
 				>
 					<Form.Group controlId="searchInput">

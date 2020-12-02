@@ -13,7 +13,7 @@ componentDidMount() {
 
   render(){
       const {singleBusiness} = this.props
- 
+      console.log('singleBusiness:', singleBusiness)
     
       return(
           <div>
@@ -34,7 +34,7 @@ componentDidMount() {
 
 const mapState = (state) => {
     return {
-      singleBusiness: state.singleBusiness
+      singleBusiness: state.singleBusiness //state.singleBusiness value comes from store
     }
   }
   const mapDispatch = dispatch => {

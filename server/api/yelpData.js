@@ -18,7 +18,21 @@ let priceToNum = (price) => {
 	else return 4;
 };
 
+//adding another route to get more business details from Yelp
+//   api/yelp/search/businesses/id 
+router.get("/search/businesses/:id", async (req, res, next) => {
+	try {
+		const { data}  = await yelpREST(`businesses/${req.params.id}`);
+		res.send(data);
+	} catch (error) {
+		next(error);
+	}
+});
+
+
+
 router.post("/search", async (req, res, next) => {
+	
 	try {
 		let minPrice = priceToNum(req.body.minPrice);
 		let maxPrice = priceToNum(req.body.maxPrice);
