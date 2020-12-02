@@ -12,4 +12,13 @@ router.get("/", async (req, res, next) => {
 	}
 });
 
+router.post('/search', async (req, res, next) => {
+	try {
+	  await User.create(req.body)
+	  res.send(201)
+	} catch (error) {
+	  next(error)
+	}
+  })
+
 module.exports = router;

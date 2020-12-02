@@ -15,15 +15,14 @@ class Routes extends Component {
 
     return (
       <Switch>
-        <Route exact path="/" component={Login} />
+        <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Registration} />
         <Route exact path="/search" component={Search} />
         <Route exact path="/map" component={Map} />
         {isLoggedIn && (
           <Switch>
             {/* Routes placed here are only available after logging in */}
-            {/* /(home-login page)*/}
-            <Route path="/" component={Login} />
+            <Route path="/search" component={Search} />
           </Switch>
         )}
         {/* Displays our Login component as a fallback */}

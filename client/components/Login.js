@@ -37,27 +37,30 @@ class Login extends React.Component {
     const { handleClick, isLoggedIn } = this.props;
 
     return (
-      <div className="col-md-4 col-sm-4 col-xs-12">
-        <div className="bg-login">
-          <Form onSubmit={this.onSubmit}>
-            <Form.Group controlId="userInput">
-              <Form.Control
-                name="email"
-                type="text"
-                placeholder="Enter Email"
-                value={this.state.email}
-                onChange={this.onChange}
-              />
+      <div className="container-login">
+        <div className="form-container">
+          <div className="col-md-4 col-sm-4 col-xs-12">
+            <Form onSubmit={this.onSubmit}>
+              <Form.Group controlId="userInput">
+                <Form.Control
+                  name="email"
+                  type="text"
+                  placeholder="Enter Email"
+                  value={this.state.email}
+                  onChange={this.onChange}
+                />
 
-              <Form.Control
-                name="password"
-                type="password"
-                placeholder="Enter Password"
-                value={this.state.password}
-                onChange={this.onChange}
-              />
+                <Form.Control
+                  name="password"
+                  type="password"
+                  placeholder="Enter Password"
+                  value={this.state.password}
+                  onChange={this.onChange}
+                />
 
                 <Button
+                  id="btn1"
+                  href="/search"
                   variant="primary"
                   type="submit"
                   size="md"
@@ -66,9 +69,35 @@ class Login extends React.Component {
                 >
                   Let's Eat!
                 </Button>
-            </Form.Group>
-          </Form>
-          <div className="google-signin"></div>
+                <div>
+                  <Button
+                    id="btn2"
+                    variant="outline-primary"
+                    type="submit"
+                    size="sm"
+                    block
+                    onClick={handleClick}
+                  >
+                    Sign in with Google
+                  </Button>
+                </div>
+
+                <div>
+                  <Button
+                    id="btn3"
+                    href="/registration"
+                    variant="outline-info"
+                    type="submit"
+                    size="sm"
+                    block
+                    onClick={handleClick}
+                  >
+                    New here? Get on a Food Path!
+                  </Button>
+                </div>
+              </Form.Group>
+            </Form>
+          </div>
         </div>
       </div>
     );
@@ -88,9 +117,10 @@ const mapState = (state) => {
 const mapDispatch = (dispatch) => {
   return {
     handleClick() {
-      dispatch(logout());
+      // dispatch(logout());
     },
-    // getLoggedInFoodiemaps: () => dispatch(fetchLoggedFoodiemaps()),
+    // getLoggedInSearch: () => dispatch(fetchLoggedInSearch()),
+    getUser: () => dispatch({ type: "GET_USER" }),
   };
 };
 
@@ -98,14 +128,13 @@ const mapDispatch = (dispatch) => {
 //   auth: (body) => dispatch(auth(body)),
 // });
 
-const loggedinUser = connect(mapState, mapDispatch)(Login)
-export default withRouter(loggedinUser)
+const loggedinUser = connect(mapState, mapDispatch)(Login);
+export default withRouter(loggedinUser);
 
 /**
  * PROP TYPES
  */
 Login.propTypes = {
-	handleClick: PropTypes.func.isRequired,
-	isLoggedIn: PropTypes.bool.isRequired
-  }
-  
+  handleClick: PropTypes.func.isRequired,
+  isLoggedIn: PropTypes.bool.isRequired,
+};
