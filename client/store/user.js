@@ -3,18 +3,16 @@ import history from '../history'
 
 //ACTION TYPE
 
+
+//ACTION TYPE
+const REMOVE_USER = 'REMOVE_USER';
 const GOT_USER = "GOT_USER";
-const REMOVE_USER = 'REMOVE_USER'
-
-
 
 //INITIAL STATE
 const defaultUser = {};
 
 //ACTION CREATORS
-
 const getUser = user => ({ type: GOT_USER, user });
-
 const removeUser = () => ({type: REMOVE_USER})
 
 //THUNK CREATORS
@@ -29,11 +27,12 @@ export const me = () => async dispatch => {
 
 export const auth = (body) => async dispatch => {
 	try {
-		const { data } = await axios.post(`/auth/login`), body)
-    dispatch(gotUser(data))
+		const { data } = await axios.post(`/auth/login`, body)
+    dispatch(getUser(data))
   } catch (error) {
    console.error(error)
   }
+}
 
 //   try {
 //     dispatch(getUser(res.data))
