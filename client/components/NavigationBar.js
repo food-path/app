@@ -6,10 +6,14 @@ import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
 import NavItem from "react-bootstrap/NavItem";
 import { UserHome } from "./UserHome";
-
+import { logout } from "../store";
+import { connect } from "react-redux";
 import React from "react";
+
+
 class NavigationBar extends React.Component {
   render() {
+
     return (
       <Navbar bg="dark" variant="dark" expand="lg">
         <Navbar.Brand as={NavLink} to="/">
@@ -27,9 +31,9 @@ class NavigationBar extends React.Component {
             <Nav.Link as={NavLink} to="/map">
               Map
             </Nav.Link>
-            <Nav.Link as={NavLink} to="/logout">
+            <Button onClick={this.props.handleClick}>
               Logout
-            </Nav.Link>
+            </Button>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
@@ -37,4 +41,12 @@ class NavigationBar extends React.Component {
   }
 }
 
-export default NavigationBar;
+const mapDispatch = (dispatch) => {
+  return {
+    handleClick() {
+      dispatch(logout());
+    },
+  };
+};
+
+export default connect(null, mapDispatch) (NavigationBar);

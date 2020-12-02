@@ -14,6 +14,7 @@ const getUser = (user) => ({ type: GOT_USER, user });
 const removeUser = () => ({ type: REMOVE_USER });
 
 //THUNK CREATORS
+// auth/me: a way of checking and making sure specific user is logged in.
 export const me = () => async (dispatch) => {
 	try {
 		const res = await axios.get("/auth/me");
@@ -23,6 +24,7 @@ export const me = () => async (dispatch) => {
 	}
 };
 
+// auth/login looks for user with proper info in DB
 export const auth = (body) => async (dispatch) => {
 	try {
 		const { data } = await axios.post(`/auth/login`, body);
@@ -40,15 +42,15 @@ export const auth = (body) => async (dispatch) => {
 //   }
 // }
 
-// export const logout = () => async dispatch => {
-// 	try {
-// 	  await axios.post('/auth/logout')
-// 	  dispatch(removeUser())
-// 	  history.push('/login')
-// 	} catch (err) {
-// 	  console.error(err)
-// 	}
-//   }
+export const logout = () => async dispatch => {
+	try {
+	  await axios.post('/auth/logout')
+	  dispatch(removeUser())
+	//   history.push('/login')
+	} catch (err) {
+	  console.error(err)
+	}
+  }
 
 export const register = (body) => async (dispatch) => {};
 

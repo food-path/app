@@ -26,7 +26,7 @@ class Login extends React.Component {
 
   onSubmit(event) {
     event.preventDefault();
-    // this.props.auth(this.state);
+    this.props.auth(this.state);
     this.setState({
       email: "",
       password: "",
@@ -40,7 +40,8 @@ class Login extends React.Component {
       <div className="container-login">
         <div className="form-container">
           <div className="col-md-4 col-sm-4 col-xs-12">
-            <Form onSubmit={this.onSubmit}>
+            {/* <Form onSubmit={this.onSubmit}> */}
+            <Form>
               <Form.Group controlId="userInput">
                 <Form.Control
                   name="email"
@@ -65,7 +66,7 @@ class Login extends React.Component {
                   type="submit"
                   size="md"
                   block
-                  onClick={handleClick}
+                  onClick={this.onSubmit}
                 >
                   Let's Eat!
                 </Button>
@@ -117,19 +118,19 @@ const mapState = (state) => {
   };
 };
 
-const mapDispatch = (dispatch) => {
-  return {
-    handleClick() {
-      // dispatch(logout());
-    },
-    // getLoggedInSearch: () => dispatch(fetchLoggedInSearch()),
-    getUser: () => dispatch({ type: "GET_USER" }),
-  };
-};
+// const mapDispatch = (dispatch) => {
+//   return {
+//     handleClick() {
+//       // dispatch(logout());
+//     },
+//     // getLoggedInSearch: () => dispatch(fetchLoggedInSearch()),
+//     getUser: () => dispatch({ type: "GOT_USER" }),
+//   };
+// };
 
-// const mapDispatchToProps = (dispatch) => ({
-//   auth: (body) => dispatch(auth(body)),
-// });
+const mapDispatch = (dispatch) => ({
+  auth: (body) => dispatch(auth(body)),
+});
 
 const loggedinUser = connect(mapState, mapDispatch)(Login);
 export default withRouter(loggedinUser);
@@ -138,6 +139,6 @@ export default withRouter(loggedinUser);
  * PROP TYPES
  */
 Login.propTypes = {
-  handleClick: PropTypes.func.isRequired,
+  // handleClick: PropTypes.func.isRequired,
   isLoggedIn: PropTypes.bool.isRequired,
 };
