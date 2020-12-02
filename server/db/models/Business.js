@@ -1,6 +1,8 @@
 const Sequelize = require("sequelize");
 const db = require("../database");
 
+//TODO: add validations, ratings with min and max value to prevent weird things from happening. unique, not empty, not null, default values for review count
+
 module.exports = db.define("business", {
 	// define your model here!
 	id: {

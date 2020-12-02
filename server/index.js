@@ -21,7 +21,7 @@ passport.serializeUser((user, done) => {
 });
 
 passport.deserializeUser((id, done) => {
-	User.findById(id)
+	User.findByPk(id)
 		.then((user) => done(null, user))
 		.catch(done);
 });
@@ -59,10 +59,9 @@ app.use((err, req, res, next) => {
 	res.status(err.status || 500);
 	res.set("Content-Type", "text/html");
 	console.log(err.message);
-	res.send(
-		'<img src="http://www.yiyinglu.com/wp-content/uploads/2013/11/lifting-a-dreamer-2009.jpg"/>'
-	);
+	res.send('<img src="http://pbs.twimg.com/media/Cdm8JYPUAAAoPmm.jpg"/>');
 });
+
 //process.env.PORT lets you change to any port in the terminal with 'PORT=xxxx nodemon server/index.js' otherwise this will default to 3000
 async function startServer() {
 	await db.sync();
