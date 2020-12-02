@@ -97,6 +97,9 @@ class Login extends React.Component {
                 </div>
               </Form.Group>
             </Form>
+				<form method="get" action="/auth/google">
+					<Button type="submit">Login with Google</Button>
+				</form>
           </div>
         </div>
       </div>

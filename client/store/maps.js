@@ -1,11 +1,14 @@
 import axios from "axios";
 
+//ACTION TYPES
 const CREATED_MAP = "CREATED_MAP";
 const GOT_MAPS = "GOT_MAPS";
 
+//ACTION CREATORS
 const createdMap = (map) => ({ type: CREATED_MAP, map });
 const gotMaps = (maps) => ({ type: GOT_MAPS, maps });
 
+//THUNK CREATORS
 export const createMap = (search, markers, body) => async (dispatch) => {
 	try {
 		const { data } = await axios.post("/api/maps", { search, markers, body });
@@ -24,6 +27,7 @@ export const fetchMaps = () => async (dispatch) => {
 	}
 };
 
+//REDUCER
 const initialState = [];
 
 export default (state = initialState, action) => {
