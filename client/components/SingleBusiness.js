@@ -12,8 +12,14 @@ class SingleBusiness extends Component {
 
   convertTime(time) {
     let numValue = Number(time) / 100;
+    let endDigits = '00'
+    if (!Number.isInteger(numValue)){
+      endDigits = String(numValue).slice(3).concat('0')
+      numValue = Number(String(numValue).slice(0,2))
+    console.log('endDigits:', endDigits)
+    }
     let AmOrPm = numValue >= 12 ? "pm" : "am";
-    let finalTime =AmOrPm === "pm" ? String(numValue - 12) + AmOrPm: String(numValue) + AmOrPm;
+    let finalTime =AmOrPm === "pm" ? `${String(numValue - 12)}:${endDigits} ${AmOrPm}`: `${String(numValue)}:${endDigits} ${AmOrPm}`;
     return finalTime;
   }
 
@@ -31,11 +37,14 @@ class SingleBusiness extends Component {
       };
       console.log('hours: ', hours)
       for (let i = 0; i < hours.days.length; i++) {
+        let j = 0
         if (!hours.dayId.includes(i)) {
           //!hours.start[i]
           hoursToDisplay.push(`${hours.days[i]}: Closed`);
+          j--
         } else {
-          hoursToDisplay.push(`${hours.days[i]}: ${hours.start[i]} - ${hours.end[i]}`);
+          hoursToDisplay.push(`${hours.days[i]}: ${hours.start[j]} - ${hours.end[j]}`);
+          j++
         }
       }
     }
