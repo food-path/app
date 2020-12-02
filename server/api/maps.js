@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { Foodiemap, Business, User } = require("../db");
+const { findOrCreateFromYelpMarker } = require("../db/models/Business");
 
 router.get("/", async (req, res, next) => {
 	try {
@@ -12,7 +13,6 @@ router.get("/", async (req, res, next) => {
 	}
 });
 
-//TODO: is there a way to create a method on the business model to do the findOrCreate logic to take pressure off the post route
 router.post("/", async (req, res, next) => {
 	try {
 		const map = await Foodiemap.create({
@@ -21,24 +21,7 @@ router.post("/", async (req, res, next) => {
 		});
 		for (let i = 0; i < req.body.markers.length; i++) {
 			const marker = req.body.markers[i];
-			const [business] = await Business.findOrCreate({
-				where: {
-					id: marker.id,
-				},
-				defaults: {
-					name: marker.name,
-					country: marker.location.country,
-					city: marker.location.city,
-					streetAddress: marker.location.address1,
-					latitude: marker.coordinates.latitude,
-					longitude: marker.coordinates.longitude,
-					imageUrl: marker.image_url,
-					categories: marker.categories.map((cat) => cat.alias),
-					reviewCount: marker.review_count,
-					rating: marker.rating,
-					price: marker.price,
-				},
-			});
+			const business = await Business.findOrCreateFromYelpMarker(marker);
 			await map.addBusiness(business);
 		}
 		res.send(map);
