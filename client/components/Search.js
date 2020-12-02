@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { fetchMarkers, saveSearch } from "../store";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import { withRouter } from "react-router-dom";
 
 class Search extends Component {
 	constructor(props) {
@@ -32,7 +33,7 @@ class Search extends Component {
 				: this.state.categories.filter((cat) => cat !== event.target.name),
 		});
 	}
-
+	//TODO: import it into a utilities file, it's a more general purpose function. or move it into index file to reuse it
 	priceToText(price) {
 		if (+price <= 25) return "$";
 		else if (+price <= 50) return "$$";
@@ -50,6 +51,9 @@ class Search extends Component {
 						event.preventDefault();
 						this.props.fetchMarkers(this.state);
 						this.props.saveSearch(this.state);
+
+						//TODO: move this to thunk to make sure it's in the right order? to change recentering map after inputting search. could be an async issue
+						this.props.history.push("/map");
 					}}
 				>
 					<Form.Group controlId="searchInput">
@@ -87,6 +91,10 @@ class Search extends Component {
 							onChange={this.onChange}
 						/>
 
+						{/* TODO: hard code an array with strings and .map it and render the form check one by one and replace the name and label with the value in the map to make the code size more succinct
+you can also abstract the form component to make a new component, kinda like a helper function
+like a filter component to just make a checkbox component
+*/}
 						<div key="inline-checkbox" className="mb-3">
 							<Form.Check
 								inline
@@ -129,17 +137,6 @@ class Search extends Component {
 							Submit
 						</Button>
 					</Form.Group>
-
-					{/* <Form.Group controlId="formBasicPassword">
-						<Form.Label>Password</Form.Label>
-						<Form.Control type="password" placeholder="Password" />
-					</Form.Group>
-					<Form.Group controlId="formBasicCheckbox">
-						<Form.Check type="checkbox" label="Check me out" />
-					</Form.Group>
-					<Button variant="primary" type="submit">
-						Submit
-					</Button> */}
 				</Form>
 			</div>
 		);
@@ -149,8 +146,9 @@ class Search extends Component {
 const mapStateToProps = (state) => ({});
 
 const mapDispatchToProps = (dispatch) => ({
-	fetchMarkers: (body) => dispatch(fetchMarkers(body)),
-	saveSearch: (search) => dispatch(saveSearch(search)),
+  fetchMarkers: (body) => dispatch(fetchMarkers(body)),
+  saveSearch: (search) => dispatch(saveSearch(search)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Search);
+//withRouter gives us this.props.history
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Search));

@@ -6,11 +6,8 @@ class BusinessesList extends Component {
   constructor(props) {
     super(props)
   }
-  // console.log('what are my props? ', this.props)
   render() {
-    console.log('what are my props? ', this.props)
     const markers = this.props.props.markers
-    console.log('where are my markers? ', markers)
     return (
       <div id="businesses-list">
 					<ul>

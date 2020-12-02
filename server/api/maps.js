@@ -12,6 +12,7 @@ router.get("/", async (req, res, next) => {
 	}
 });
 
+//TODO: is there a way to create a method on the business model to do the findOrCreate logic to take pressure off the post route
 router.post("/", async (req, res, next) => {
 	try {
 		const map = await Foodiemap.create({

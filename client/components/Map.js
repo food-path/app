@@ -6,7 +6,8 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import BusinessesList from './BusinessesList'
 
-export const Marker = ({ text, imageUrl }) => (
+//TODO: rename Map component because it's a nono --> maybe MapComponent because it's a reserved keyword
+const Marker = ({ text, imageUrl }) => (
 	<div
 		className="marker"
 		style={{ textAlign: "center", display: "block", width: "60px" }}
@@ -23,8 +24,9 @@ class Map extends React.Component {
 		this.state = {
 			center: { lat: 40.74, lng: -73.98 },
 			name: "",
-			map: null,
-			maps: null,
+			//TODO: set default values to something other than null
+			map: null, //[]
+			maps: null, //[]
 			mapToAddId: "default",
 		};
 		this.onChange = this.onChange.bind(this);
