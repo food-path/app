@@ -146,8 +146,8 @@ like a filter component to just make a checkbox component
 const mapStateToProps = (state) => ({});
 
 const mapDispatchToProps = (dispatch) => ({
-	fetchMarkers: (body) => dispatch(fetchMarkers(body)),
-	saveSearch: (search) => dispatch(saveSearch(search)),
+  fetchMarkers: (body) => dispatch(fetchMarkers(body)),
+  saveSearch: (search) => dispatch(saveSearch(search)),
 });
 
 //withRouter gives us this.props.history
