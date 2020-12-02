@@ -102,7 +102,7 @@ class MapComponent extends React.Component {
 						<option value="default">Choose a map...</option>
 						{maps.map((m) => (
 							<option value={m.id} key={m.id}>
-								{m.name}
+								{m.name} by {m.user ? m.user.firstName : "Anonymous"}
 							</option>
 						))}
 					</Form.Control>

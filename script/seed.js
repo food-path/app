@@ -46,17 +46,17 @@ async function seed() {
 		// 	businessType: `${faker.company.bsNoun()}`,
 		// });
 
-		foodiemapsArray.push({
-			name: `${faker.lorem.words()}`,
-			// city: `${faker.address.city()}`,
-			// numBusinesses: `${faker.random.number()}`,
-			// listOfBusinesses: [
-			// 	`${faker.company.bsNoun()}`,
-			// 	`${faker.company.bsNoun()}`,
-			// 	`${faker.company.bsNoun()}`,
-			// ],
-			favorite: `${faker.random.boolean()}`,
-		});
+		// foodiemapsArray.push({
+		// 	name: `${faker.lorem.words()}`,
+		// 	// city: `${faker.address.city()}`,
+		// 	// numBusinesses: `${faker.random.number()}`,
+		// 	// listOfBusinesses: [
+		// 	// 	`${faker.company.bsNoun()}`,
+		// 	// 	`${faker.company.bsNoun()}`,
+		// 	// 	`${faker.company.bsNoun()}`,
+		// 	// ],
+		// 	favorite: `${faker.random.boolean()}`,
+		// });
 	}
 
 	const users = await Promise.all(
