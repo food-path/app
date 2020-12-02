@@ -2,14 +2,14 @@ import axios from "axios";
 import history from '../history'
 
 //ACTION TYPE
-const GET_USER = "GET_USER";
+const GOT_USER = "GOT_USER";
 const REMOVE_USER = 'REMOVE_USER'
 
 //INITIAL STATE
 const defaultUser = {};
 
 //ACTION CREATORS
-const getUser = user => ({ type: GET_USER, user });
+const getUser = user => ({ type: GOT_USER, user });
 const removeUser = () => ({type: REMOVE_USER})
 
 //THUNK CREATORS
@@ -48,14 +48,14 @@ export const logout = () => async dispatch => {
 	}
   }
 
-// export const register = (body) => async (dispatch) => {};
+export const register = (body) => async (dispatch) => {};
 
 // const initialState = {};
 
 //REDUCER
 export default function userReducer(state = defaultUser, action) {
 	switch (action.type) {
-		case GET_USER:
+		case GOT_USER:
 			return action.user;
 		case REMOVE_USER:
       		return defaultUser
