@@ -5,6 +5,8 @@ import { NavLink, Link } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
+import NavItem from "react-bootstrap/NavItem";
+import { UserHome } from "./UserHome";
 
 import React from "react";
 class NavigationBar extends React.Component {
@@ -28,7 +30,7 @@ class NavigationBar extends React.Component {
             </Nav.Link>
             <Nav.Link as={NavLink} to="/logout">
               Logout
-			</Nav.Link>
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
