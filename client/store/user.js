@@ -1,4 +1,8 @@
 import axios from "axios";
+import history from '../history'
+
+//ACTION TYPE
+
 
 //ACTION TYPE
 const REMOVE_USER = 'REMOVE_USER';
@@ -24,11 +28,12 @@ export const me = () => async dispatch => {
 export const auth = (body) => async dispatch => {
 	try {
 		const { data } = await axios.post(`/auth/login`, body)
-    dispatch(gotUser(data))
+    dispatch(getUser(data))
   } catch (error) {
    console.error(error)
   }
 }
+
 //   try {
 //     dispatch(getUser(res.data))
 //     history.push('/')
