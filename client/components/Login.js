@@ -42,8 +42,9 @@ class Login extends React.Component {
           <div className="col-md-4 col-sm-4 col-xs-12">
             {/* <Form onSubmit={this.onSubmit}> */}
             <Form>
-              <Form.Group controlId="userInput">
+              <Form.Group>
                 <Form.Control
+                  id="input-email"
                   name="email"
                   type="text"
                   placeholder="Enter Email"
@@ -52,6 +53,7 @@ class Login extends React.Component {
                 />
 
                 <Form.Control
+                  id="input-password"
                   name="password"
                   type="password"
                   placeholder="Enter Password"
@@ -62,7 +64,7 @@ class Login extends React.Component {
                 <Button
                   id="btn1"
                   href="/search"
-                  variant="primary"
+                  variant="info"
                   type="submit"
                   size="md"
                   block
@@ -70,24 +72,23 @@ class Login extends React.Component {
                 >
                   Let's Eat!
                 </Button>
-                <div>
+
+                <form method="get" action="/auth/google">
                   <Button
-                    id="btn2"
-                    variant="outline-primary"
+                    id="btn3"
                     type="submit"
-                    size="sm"
-                    block
-                    onClick={handleClick}
+                    href="/search"
+                    variant="primary"
                   >
-                    Sign in with Google
+                    Login with Google
                   </Button>
-                </div>
+                </form>
 
                 <div>
                   <Button
-                    id="btn3"
+                    id="btn2"
                     href="/registration"
-                    variant="outline-info"
+                    variant="info"
                     type="submit"
                     size="sm"
                     block
@@ -98,9 +99,6 @@ class Login extends React.Component {
                 </div>
               </Form.Group>
             </Form>
-				<form method="get" action="/auth/google">
-					<Button type="submit">Login with Google</Button>
-				</form>
           </div>
         </div>
       </div>
