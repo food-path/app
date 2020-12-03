@@ -10,16 +10,30 @@ class SingleBusiness extends Component {
     this.props.getSingleBusiness(this.props.match.params.businessId);
   }
 
+  //function used to convert military time to standard time
   convertTime(time) {
     let numValue = Number(time) / 100;
     let endDigits = '00'
+    let AmOrPm; 
     if (!Number.isInteger(numValue)){
-      endDigits = String(numValue).slice(3).concat('0')
-      numValue = Number(String(numValue).slice(0,2))
-    console.log('endDigits:', endDigits)
+        let timeArr = String(numValue).split('.') 
+        numValue = Number(timeArr[0])
+        endDigits = timeArr[1].concat('0')
     }
-    let AmOrPm = numValue >= 12 ? "pm" : "am";
-    let finalTime =AmOrPm === "pm" ? `${String(numValue - 12)}:${endDigits} ${AmOrPm}`: `${String(numValue)}:${endDigits} ${AmOrPm}`;
+    
+    if (numValue === 24){
+      numValue = 12
+      AmOrPm = 'am'
+    }else if (numValue >= 12){
+      AmOrPm = 'pm'
+    }else{
+      AmOrPm = 'am'
+    }
+  
+    if (endDigits.length > 2){
+      endDigits = endDigits.slice(0,2)
+    }
+    let finalTime = AmOrPm === "pm" && numValue !== 12 ? `${String(numValue - 12)}:${endDigits} ${AmOrPm}`: `${String(numValue)}:${endDigits} ${AmOrPm}`;
     return finalTime;
   }
 
@@ -35,11 +49,10 @@ class SingleBusiness extends Component {
         start: singleBusiness.hours[0].open.map((hrsObj) => this.convertTime(hrsObj.start)),
         end: singleBusiness.hours[0].open.map((hrsObj) => this.convertTime(hrsObj.end)),
       };
-      console.log('hours: ', hours)
+      
       for (let i = 0; i < hours.days.length; i++) {
         let j = 0
         if (!hours.dayId.includes(i)) {
-          //!hours.start[i]
           hoursToDisplay.push(`${hours.days[i]}: Closed`);
           j--
         } else {
@@ -81,7 +94,7 @@ class SingleBusiness extends Component {
 
 const mapState = (state) => {
   return {
-    singleBusiness: state.singleBusiness, //state.singleBusiness value comes from store
+    singleBusiness: state.singleBusiness
   };
 };
 const mapDispatch = (dispatch) => {
