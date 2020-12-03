@@ -9,9 +9,12 @@ import {
 	Search,
 	UserHome,
 	Profile,
+	SingleBusiness,
 	MyMaps,
 } from "./components";
 import { me } from "./store";
+
+
 
 class Routes extends Component {
 	componentDidMount() {
@@ -26,7 +29,7 @@ class Routes extends Component {
 				<Route exact path="/login" component={Login} />
 				<Route exact path="/search" component={Search} />
 				<Route exact path="/map" component={MapComponent} />
-
+				<Route exact path="/singleBusiness/:businessId" component={SingleBusiness} />
 				{isLoggedIn && (
 					<>
 						<Route exact path="/profile" component={Profile} />
@@ -43,6 +46,7 @@ class Routes extends Component {
 		);
 	}
 }
+
 
 const mapState = (state) => ({
 	// Being 'logged in' for our purposes will be defined as having a state.user that has a truthy id.

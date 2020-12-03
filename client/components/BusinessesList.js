@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
+// import {SingleBusiness} from './SingleBusiness'
 
 class BusinessesList extends Component {
   constructor(props) {
@@ -14,7 +14,7 @@ class BusinessesList extends Component {
 						{markers.map((marker) => {
 							return (
 								<ul key={marker.id}>
-									<Link to={marker.url}>
+									<Link to={`/singleBusiness/${marker.id}`}>
 										<h5>{marker.name}</h5>
 									</Link>
 									<li>{marker.price}</li>
