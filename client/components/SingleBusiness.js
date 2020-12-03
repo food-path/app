@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import {fetchSingleBusinessDetails} from "../store/singleBusiness";
-import {convertTime} from '../utilityFunctions'
+import {convertTime} from '../utils'
 
 class SingleBusiness extends Component {
   constructor(props) {
