@@ -6,6 +6,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import {Link} from 'react-router-dom'
 import SingleBusiness from './SingleBusiness'
+import BusinessesList from './BusinessesList'
 
 const Marker = ({ text, imageUrl ,id}) => (
 	<div
@@ -90,6 +91,7 @@ class MapComponent extends React.Component {
 						))}
 					</GoogleMapReact>
 				</div>
+				<BusinessesList props={this.props} />
 				<Form
 					onSubmit={(event) => {
 						event.preventDefault();
