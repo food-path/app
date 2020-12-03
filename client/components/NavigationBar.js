@@ -31,7 +31,10 @@ class NavigationBar extends React.Component {
             <Nav.Link as={NavLink} to="/map">
               Map
             </Nav.Link>
-            <Button onClick={this.props.handleClick}>
+            <Button
+            type="button"
+            class="btn btn-link" 
+            onClick={this.props.handleClick}>
               Logout
             </Button>
           </Nav>
