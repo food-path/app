@@ -65,6 +65,4 @@ router.post("/search", async (req, res, next) => {
 	}
 });
 
-// REST
-
 module.exports = router;

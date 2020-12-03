@@ -5,6 +5,8 @@ import { fetchMarkers, saveSearch } from "../store";
 import {Link} from 'react-router-dom'
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import { withRouter } from "react-router-dom";
+import { priceToText } from "../utils";
 
 
 class Search extends Component {
@@ -35,24 +37,17 @@ class Search extends Component {
 		});
 	}
 
-	priceToText(price) {
-		if (+price <= 25) return "$";
-		else if (+price <= 50) return "$$";
-		else if (+price <= 75) return "$$$";
-		else return "$$$$";
-	}
-
 	render() {
-		let minPrice = this.priceToText(this.state.minPrice);
-		let maxPrice = this.priceToText(this.state.maxPrice);
+		let minPrice = priceToText(this.state.minPrice);
+		let maxPrice = priceToText(this.state.maxPrice);
 		return (
 			<div>
 				<Form
-					onSubmit={(event) => {
+					onSubmit={async (event) => {
 						event.preventDefault();
-						this.props.fetchMarkers(this.state);
-						this.props.saveSearch(this.state);
-						
+						await this.props.fetchMarkers(this.state);
+						await this.props.saveSearch(this.state);
+						this.props.history.push("/map");
 					}}
 				>
 					<Form.Group controlId="searchInput">
@@ -89,60 +84,23 @@ class Search extends Component {
 							value={this.state.maxPrice}
 							onChange={this.onChange}
 						/>
-
 						<div key="inline-checkbox" className="mb-3">
-							<Form.Check
-								inline
-								name="vegetarian"
-								label="Vegetarian"
-								type="checkbox"
-								id="inline-checkbox"
-								onChange={this.onChangeCheckbox}
-							/>
-
-							<Form.Check
-								inline
-								name="vegan"
-								label="Vegan"
-								type="checkbox"
-								id="inline-checkbox"
-								onChange={this.onChangeCheckbox}
-							/>
-
-							<Form.Check
-								inline
-								name="halal"
-								label="Halal"
-								type="checkbox"
-								id="inline-checkbox"
-								onChange={this.onChangeCheckbox}
-							/>
-
-							<Form.Check
-								inline
-								name="kosher"
-								label="Kosher"
-								type="checkbox"
-								id="inline-checkbox"
-								onChange={this.onChangeCheckbox}
-							/>
+							{["Vegetarian", "Vegan", "Halal", "Kosher"].map((cat) => (
+								<Form.Check
+									inline
+									name={cat.toLowerCase()}
+									label={cat}
+									type="checkbox"
+									onChange={this.onChangeCheckbox}
+									key={cat}
+								/>
+							))}
 						</div>
 
 						<Button variant="primary" type="submit">
 							Submit
 						</Button>
 					</Form.Group>
-
-					{/* <Form.Group controlId="formBasicPassword">
-						<Form.Label>Password</Form.Label>
-						<Form.Control type="password" placeholder="Password" />
-					</Form.Group>
-					<Form.Group controlId="formBasicCheckbox">
-						<Form.Check type="checkbox" label="Check me out" />
-					</Form.Group>
-					<Button variant="primary" type="submit">
-						Submit
-					</Button> */}
 				</Form>
 			</div>
 		);
@@ -156,4 +114,5 @@ const mapDispatchToProps = (dispatch) => ({
 	saveSearch: (search) => dispatch(saveSearch(search)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Search);
+//withRouter gives us this.props.history
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Search));

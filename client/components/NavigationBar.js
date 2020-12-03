@@ -1,10 +1,11 @@
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-// import NavDropdown from "react-bootstrap/NavDropdown";
 import { NavLink, Link } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
+import NavItem from "react-bootstrap/NavItem";
+import { UserHome } from "./UserHome";
 
 import React from "react";
 class NavigationBar extends React.Component {
@@ -25,6 +26,12 @@ class NavigationBar extends React.Component {
 						</Nav.Link>
 						<Nav.Link as={NavLink} to="/map">
 							Map
+						</Nav.Link>
+						<Nav.Link as={NavLink} to="/profile">
+							Profile
+						</Nav.Link>
+						<Nav.Link as={NavLink} to="/logout">
+							Logout
 						</Nav.Link>
 					</Nav>
 				</Navbar.Collapse>

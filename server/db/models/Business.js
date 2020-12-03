@@ -1,7 +1,9 @@
 const Sequelize = require("sequelize");
 const db = require("../database");
 
-module.exports = db.define("business", {
+//TODO: add validations, ratings with min and max value to prevent weird things from happening. unique, not empty, not null, default values for review count
+
+const Business = db.define("business", {
 	// define your model here!
 	id: {
 		type: Sequelize.STRING,
@@ -41,3 +43,27 @@ module.exports = db.define("business", {
 		type: Sequelize.STRING,
 	},
 });
+
+Business.findOrCreateFromYelpMarker = async function (marker) {
+	const [business] = await Business.findOrCreate({
+		where: {
+			id: marker.id,
+		},
+		defaults: {
+			name: marker.name,
+			country: marker.location.country,
+			city: marker.location.city,
+			streetAddress: marker.location.address1,
+			latitude: marker.coordinates.latitude,
+			longitude: marker.coordinates.longitude,
+			imageUrl: marker.image_url,
+			categories: marker.categories.map((cat) => cat.alias),
+			reviewCount: marker.review_count,
+			rating: marker.rating,
+			price: marker.price,
+		},
+	});
+	return business;
+};
+
+module.exports = Business;

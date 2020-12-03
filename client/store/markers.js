@@ -1,10 +1,13 @@
 import axios from "axios";
 
+//ACTION TYPES
 const GOT_MARKERS = "GOT_MARKERS";
 const ADD_MARKERS = "ADD_MARKERS";
 
+//ACTION CREATORS
 const gotMarkers = (markers) => ({ type: GOT_MARKERS, markers });
 
+//THUNK CREATORS
 export const addMarkers = (businesses) => ({
 	type: ADD_MARKERS,
 	businesses,
@@ -19,7 +22,8 @@ export const fetchMarkers = (body) => async (dispatch) => {
 	}
 };
 
-const initialState = []; // [{},{}] array of business Objects
+//REDUCER
+const initialState = [];
 
 export default (state = initialState, action) => {
 	switch (action.type) {

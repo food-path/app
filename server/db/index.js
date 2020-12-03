@@ -18,13 +18,6 @@ const User = require("./models/User");
 //
 // Puppy.belongsTo(Owner)
 
-// const CandyInstance = Candy.create();
-
-// Foodiemap.belongsTo(User);
-// User.hasMany(Foodiemap);
-// Business.belongsToMany(Foodiemap, {through: "FoodiemapDetails"});
-// Foodiemap.belongsToMany(Business, {through: "FoodiemapDetails"});
-
 Foodiemap.belongsTo(User);
 User.hasMany(Foodiemap);
 Foodiemap.belongsToMany(Business, { through: "foodiemap_business" });
