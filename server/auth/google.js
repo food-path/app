@@ -26,7 +26,13 @@ else {
 
 			User.findOrCreate({
 				where: { googleId },
-				defaults: { email, imageUrl, firstName, lastName },
+				defaults: {
+					email,
+					imageUrl,
+					firstName,
+					lastName,
+					registrationDate: new Date(),
+				},
 			})
 				.then(([user]) => done(null, user))
 				.catch(done);
