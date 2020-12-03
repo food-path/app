@@ -5,6 +5,7 @@ import { fetchMarkers, saveSearch } from "../store";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { withRouter } from "react-router-dom";
+import { priceToText } from "../utils";
 
 class Search extends Component {
 	constructor(props) {
@@ -33,26 +34,17 @@ class Search extends Component {
 				: this.state.categories.filter((cat) => cat !== event.target.name),
 		});
 	}
-	//TODO: import it into a utilities file, it's a more general purpose function. or move it into index file to reuse it
-	priceToText(price) {
-		if (+price <= 25) return "$";
-		else if (+price <= 50) return "$$";
-		else if (+price <= 75) return "$$$";
-		else return "$$$$";
-	}
 
 	render() {
-		let minPrice = this.priceToText(this.state.minPrice);
-		let maxPrice = this.priceToText(this.state.maxPrice);
+		let minPrice = priceToText(this.state.minPrice);
+		let maxPrice = priceToText(this.state.maxPrice);
 		return (
 			<div>
 				<Form
-					onSubmit={(event) => {
+					onSubmit={async (event) => {
 						event.preventDefault();
-						this.props.fetchMarkers(this.state);
-						this.props.saveSearch(this.state);
-
-						//TODO: move this to thunk to make sure it's in the right order? to change recentering map after inputting search. could be an async issue
+						await this.props.fetchMarkers(this.state);
+						await this.props.saveSearch(this.state);
 						this.props.history.push("/map");
 					}}
 				>
@@ -90,47 +82,17 @@ class Search extends Component {
 							value={this.state.maxPrice}
 							onChange={this.onChange}
 						/>
-
-						{/* TODO: hard code an array with strings and .map it and render the form check one by one and replace the name and label with the value in the map to make the code size more succinct
-you can also abstract the form component to make a new component, kinda like a helper function
-like a filter component to just make a checkbox component
-*/}
 						<div key="inline-checkbox" className="mb-3">
-							<Form.Check
-								inline
-								name="vegetarian"
-								label="Vegetarian"
-								type="checkbox"
-								id="inline-checkbox"
-								onChange={this.onChangeCheckbox}
-							/>
-
-							<Form.Check
-								inline
-								name="vegan"
-								label="Vegan"
-								type="checkbox"
-								id="inline-checkbox"
-								onChange={this.onChangeCheckbox}
-							/>
-
-							<Form.Check
-								inline
-								name="halal"
-								label="Halal"
-								type="checkbox"
-								id="inline-checkbox"
-								onChange={this.onChangeCheckbox}
-							/>
-
-							<Form.Check
-								inline
-								name="kosher"
-								label="Kosher"
-								type="checkbox"
-								id="inline-checkbox"
-								onChange={this.onChangeCheckbox}
-							/>
+							{["Vegetarian", "Vegan", "Halal", "Kosher"].map((cat) => (
+								<Form.Check
+									inline
+									name={cat.toLowerCase()}
+									label={cat}
+									type="checkbox"
+									onChange={this.onChangeCheckbox}
+									key={cat}
+								/>
+							))}
 						</div>
 
 						<Button variant="primary" type="submit">
@@ -146,8 +108,8 @@ like a filter component to just make a checkbox component
 const mapStateToProps = (state) => ({});
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchMarkers: (body) => dispatch(fetchMarkers(body)),
-  saveSearch: (search) => dispatch(saveSearch(search)),
+	fetchMarkers: (body) => dispatch(fetchMarkers(body)),
+	saveSearch: (search) => dispatch(saveSearch(search)),
 });
 
 //withRouter gives us this.props.history
