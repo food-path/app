@@ -1,41 +1,43 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import {fetchSingleBusiness,fetchSingleBusinessDetails} from "../store/singleBusiness";
+import {fetchSingleBusinessDetails} from "../store/singleBusiness";
+import {convertTime} from '../utilityFunctions'
 
 class SingleBusiness extends Component {
   constructor(props) {
     super();
+    
   }
   componentDidMount() {
     this.props.getSingleBusiness(this.props.match.params.businessId);
   }
 
-  //function used to convert military time to standard time
-  convertTime(time) {
-    let numValue = Number(time) / 100;
-    let endDigits = '00'
-    let AmOrPm; 
-    if (!Number.isInteger(numValue)){
-        let timeArr = String(numValue).split('.') 
-        numValue = Number(timeArr[0])
-        endDigits = timeArr[1].concat('0')
-    }
+  // //function used to convert military time to standard time
+  // convertTime(time) {
+  //   let numValue = Number(time) / 100;
+  //   let endDigits = '00'
+  //   let AmOrPm; 
+  //   if (!Number.isInteger(numValue)){
+  //       let timeArr = String(numValue).split('.') 
+  //       numValue = Number(timeArr[0])
+  //       endDigits = timeArr[1].concat('0')
+  //   }
     
-    if (numValue === 24){
-      numValue = 12
-      AmOrPm = 'am'
-    }else if (numValue >= 12){
-      AmOrPm = 'pm'
-    }else{
-      AmOrPm = 'am'
-    }
+  //   if (numValue === 24){
+  //     numValue = 12
+  //     AmOrPm = 'am'
+  //   }else if (numValue >= 12){
+  //     AmOrPm = 'pm'
+  //   }else{
+  //     AmOrPm = 'am'
+  //   }
   
-    if (endDigits.length > 2){
-      endDigits = endDigits.slice(0,2)
-    }
-    let finalTime = AmOrPm === "pm" && numValue !== 12 ? `${String(numValue - 12)}:${endDigits} ${AmOrPm}`: `${String(numValue)}:${endDigits} ${AmOrPm}`;
-    return finalTime;
-  }
+  //   if (endDigits.length > 2){
+  //     endDigits = endDigits.slice(0,2)
+  //   }
+  //   let finalTime = AmOrPm === "pm" && numValue !== 12 ? `${String(numValue - 12)}:${endDigits} ${AmOrPm}`: `${String(numValue)}:${endDigits} ${AmOrPm}`;
+  //   return finalTime;
+  // }
 
   render() {
     const { singleBusiness } = this.props;
@@ -46,8 +48,8 @@ class SingleBusiness extends Component {
       let hours = {
         days: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
         dayId:singleBusiness.hours[0].open.map((hrsObj) => hrsObj.day),
-        start: singleBusiness.hours[0].open.map((hrsObj) => this.convertTime(hrsObj.start)),
-        end: singleBusiness.hours[0].open.map((hrsObj) => this.convertTime(hrsObj.end)),
+        start: singleBusiness.hours[0].open.map((hrsObj) => convertTime(hrsObj.start)),
+        end: singleBusiness.hours[0].open.map((hrsObj) => convertTime(hrsObj.end)),
       };
       
       for (let i = 0; i < hours.days.length; i++) {
