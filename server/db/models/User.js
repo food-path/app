@@ -23,20 +23,20 @@ const User = db.define("user", {
 	},
 	email: {
 		type: Sequelize.STRING,
-		// unique: true,
-		// allowNull: false,
-		// validate: {
-		// 	isEmail: true
-		// }
+		unique: true,
+		allowNull: false,
+		validate: {
+			isEmail: true,
+		},
 	},
 	imageUrl: {
 		type: Sequelize.STRING,
 		defaultValue:
-		  'https://img.favpng.com/21/4/9/portable-network-graphics-avatar-computer-icons-image-social-media-png-favpng-r3ez8qWcYdM8jGVn2b5TGhvS8.jpg'
+			"https://img.favpng.com/21/4/9/portable-network-graphics-avatar-computer-icons-image-social-media-png-favpng-r3ez8qWcYdM8jGVn2b5TGhvS8.jpg",
 	},
 	isLoggedIn: {
 		type: Sequelize.BOOLEAN,
-		defaultValue: false
+		defaultValue: false,
 	},
 	password: {
 		type: Sequelize.STRING,
@@ -46,7 +46,7 @@ const User = db.define("user", {
 	},
 	googleId: {
 		type: Sequelize.STRING,
-	}
+	},
 });
 
 // instance methods

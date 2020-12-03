@@ -30,6 +30,13 @@ body {
   list-style: none;
 }
 
+/* Single Business Component */
+
+.resize {
+	width: 50%;
+	height: 30%;
+  }
+  
 /* LOGIN COMPONENT/HOME PAGE*/
 #input-email {
   text-align: center;

@@ -2,10 +2,12 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { fetchMarkers, saveSearch } from "../store";
+import {Link} from 'react-router-dom'
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { withRouter } from "react-router-dom";
 import { priceToText } from "../utils";
+
 
 class Search extends Component {
 	constructor(props) {

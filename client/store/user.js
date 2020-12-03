@@ -1,8 +1,6 @@
 import axios from "axios";
 
 //ACTION TYPE
-
-//ACTION TYPE
 const REMOVE_USER = "REMOVE_USER";
 const GOT_USER = "GOT_USER";
 
@@ -42,19 +40,23 @@ export const auth = (body) => async (dispatch) => {
 //   }
 // }
 
-export const logout = () => async dispatch => {
+export const logout = () => async (dispatch) => {
 	try {
-	  await axios.post('/auth/logout')
-	  dispatch(removeUser())
-	//   history.push('/login')
+		await axios.post("/auth/logout");
+		dispatch(removeUser());
 	} catch (err) {
-	  console.error(err)
+		console.error(err);
 	}
-  }
+};
 
-export const register = (body) => async (dispatch) => {};
-
-// const initialState = {};
+export const register = (body) => async (dispatch) => {
+	try {
+		const { data } = await axios.post("/auth/signup", body);
+		dispatch(getUser(data));
+	} catch (error) {
+		console.error(error);
+	}
+};
 
 //REDUCER
 export default function userReducer(state = defaultUser, action) {

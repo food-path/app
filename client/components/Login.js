@@ -8,33 +8,33 @@ import PropTypes from "prop-types";
 import { Link, withRouter } from "react-router-dom";
 
 class Login extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      email: "",
-      password: "",
-    };
-    this.onChange = this.onChange.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
-  }
+	constructor() {
+		super();
+		this.state = {
+			email: "",
+			password: "",
+		};
+		this.onChange = this.onChange.bind(this);
+		this.onSubmit = this.onSubmit.bind(this);
+	}
 
-  onChange(event) {
-    this.setState({
-      [event.target.name]: event.target.value,
-    });
-  }
+	onChange(event) {
+		this.setState({
+			[event.target.name]: event.target.value,
+		});
+	}
 
-  onSubmit(event) {
-    event.preventDefault();
-    this.props.auth(this.state);
-    this.setState({
-      email: "",
-      password: "",
-    });
-  }
+	onSubmit(event) {
+		event.preventDefault();
+		// this.props.auth(this.state);
+		this.setState({
+			email: "",
+			password: "",
+		});
+	}
 
-  render() {
-    const { handleClick, isLoggedIn } = this.props;
+	render() {
+		const { handleClick, isLoggedIn } = this.props;
 
     return (
       <div className="container-login">
@@ -105,21 +105,21 @@ class Login extends React.Component {
  * CONTAINER
  */
 const mapState = (state) => {
-  return {
-    isLoggedIn: !!state.user.id,
-    user: state.user,
-  };
+	return {
+		isLoggedIn: !!state.user.id,
+		user: state.user,
+	};
 };
 
-// const mapDispatch = (dispatch) => {
-//   return {
-//     handleClick() {
-//       // dispatch(logout());
-//     },
-//     // getLoggedInSearch: () => dispatch(fetchLoggedInSearch()),
-//     getUser: () => dispatch({ type: "GOT_USER" }),
-//   };
-// };
+const mapDispatch = (dispatch) => {
+	return {
+		handleClick() {
+			// dispatch(logout());
+		},
+		// getLoggedInSearch: () => dispatch(fetchLoggedInSearch()),
+		getUser: () => dispatch({ type: "GET_USER" }),
+	};
+};
 
 const mapDispatch = (dispatch) => ({
   auth: (body) => dispatch(auth(body)),
@@ -132,6 +132,6 @@ export default withRouter(loggedinUser);
  * PROP TYPES
  */
 Login.propTypes = {
-  // handleClick: PropTypes.func.isRequired,
-  isLoggedIn: PropTypes.bool.isRequired,
+	handleClick: PropTypes.func.isRequired,
+	isLoggedIn: PropTypes.bool.isRequired,
 };
