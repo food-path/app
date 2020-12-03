@@ -6,7 +6,6 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import BusinessesList from './BusinessesList'
 
-//TODO: rename Map component because it's a nono --> maybe MapComponent because it's a reserved keyword
 const Marker = ({ text, imageUrl }) => (
 	<div
 		className="marker"
@@ -18,19 +17,15 @@ const Marker = ({ text, imageUrl }) => (
 	</div>
 );
 
-class Map extends React.Component {
+class MapComponent extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			center: { lat: 40.74, lng: -73.98 },
 			name: "",
-			//TODO: set default values to something other than null
-			map: null, //[]
-			maps: null, //[]
 			mapToAddId: "default",
 		};
 		this.onChange = this.onChange.bind(this);
-		this.setMap = this.setMap.bind(this);
 		this.onSubmit = this.onSubmit.bind(this);
 	}
 	componentDidMount() {
@@ -63,14 +58,6 @@ class Map extends React.Component {
 		});
 	}
 
-	setMap({ map, maps }) {
-		// console.log(maps.DirectionsRenderer);
-		// const directionDisplay = new maps.DirectionsRenderer();
-		// directionDisplay.setOptions({directions: });
-		// directionDisplay.setMap(map);
-		this.setState({ map, maps });
-	}
-
 	render() {
 		const markers = this.props.markers || [];
 		const maps = this.props.maps || [];
@@ -84,8 +71,6 @@ class Map extends React.Component {
 						}}
 						defaultCenter={{ lat: 40.74, lng: -73.98 }}
 						defaultZoom={13}
-						yesIWantToUseGoogleMapApiInternals
-						onGoogleApiLoaded={this.setMap}
 						center={this.state.center}
 					>
 						{markers.map((marker) => (
@@ -158,4 +143,4 @@ const mapDispatch = (dispatch) => ({
 	addMarkers: (businesses) => dispatch(addMarkers(businesses)),
 });
 
-export default connect(mapState, mapDispatch)(Map);
+export default connect(mapState, mapDispatch)(MapComponent);
