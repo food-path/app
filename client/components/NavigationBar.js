@@ -10,6 +10,8 @@ import { connect } from "react-redux";
 import { logout } from "../store";
 
 import React from "react";
+
+
 class NavigationBar extends React.Component {
 	render() {
 		return (
