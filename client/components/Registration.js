@@ -1,12 +1,15 @@
 import React from "react";
 import { connect } from "react-redux";
 import { register } from "../store";
+import Button from "react-bootstrap/Button";
 
 class Registration extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			name: "",
+			firstName: "",
+			lastName: "",
+			email: "",
 			password: "",
 		};
 		this.onChange = this.onChange.bind(this);
@@ -23,30 +26,52 @@ class Registration extends React.Component {
 		event.preventDefault();
 		this.props.auth(this.state);
 		this.setState({
-			name: "",
+			firstName: "",
+			lastName: "",
+			email: "",
 			password: "",
 		});
 	}
 
 	render() {
 		return (
-			<form onSubmit={this.onSubmit}>
-				<input
-					name="name"
-					type="text"
-					placeholder="User name"
-					value={this.state.name}
-					onChange={this.onChange}
-				/>
-				<input
-					name="password"
-					type="password"
-					placeholder="Password"
-					value={this.state.password}
-					onChange={this.onChange}
-				/>
-				<button type="submit">Sign Up</button>
-			</form>
+			<>
+				<form onSubmit={this.onSubmit}>
+					<input
+						name="firstName"
+						type="text"
+						placeholder="First name"
+						value={this.state.firstName}
+						onChange={this.onChange}
+					/>
+					<input
+						name="lastName"
+						type="text"
+						placeholder="Last name"
+						value={this.state.lastName}
+						onChange={this.onChange}
+					/>
+					<input
+						name="email"
+						type="email"
+						placeholder="Email"
+						value={this.state.email}
+						onChange={this.onChange}
+					/>
+					<input
+						name="password"
+						type="password"
+						placeholder="Password"
+						value={this.state.password}
+						onChange={this.onChange}
+					/>
+					<button type="submit">Sign Up</button>
+				</form>
+
+				<form method="get" action="/auth/google">
+					<Button type="submit">Login with Google</Button>
+				</form>
+			</>
 		);
 	}
 }
