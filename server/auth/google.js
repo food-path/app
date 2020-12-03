@@ -44,7 +44,7 @@ else {
 	router.get(
 		"/callback",
 		passport.authenticate("google", {
-			successRedirect: "/",
+			successRedirect: "/search",
 			failureRedirect: "/login",
 		})
 	);
