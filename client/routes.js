@@ -24,7 +24,6 @@ class Routes extends Component {
 		return (
 			<>
 				<Route exact path="/login" component={Login} />
-				<Route exact path="/register" component={Registration} />
 				<Route exact path="/search" component={Search} />
 				<Route exact path="/map" component={MapComponent} />
 
@@ -32,10 +31,14 @@ class Routes extends Component {
 					<>
 						<Route exact path="/profile" component={Profile} />
 						<Route exact path="/myMaps" component={MyMaps} />
+						<Route exact path="/" component={Search} />
 					</>
 				)}
-
-				<Route exact path="/" component={Login} />
+				{!isLoggedIn && (
+					<>
+						<Route exact path="/" component={Registration} />
+					</>
+				)}
 			</>
 		);
 	}
