@@ -75,7 +75,6 @@ class Login extends React.Component {
                   <Button
                     id="btn3"
                     type="submit"
-                    href="/search"
                     variant="primary"
                   >
                     Login with Google
