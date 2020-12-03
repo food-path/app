@@ -5,7 +5,7 @@ const { findOrCreateFromYelpMarker } = require("../db/models/Business");
 router.get("/", async (req, res, next) => {
 	try {
 		const maps = await Foodiemap.findAll({
-			include: Business,
+			include: [Business, User],
 		});
 		res.send(maps);
 	} catch (error) {
@@ -25,15 +25,28 @@ router.get('/:businessId', (req, res, next) => {
 // mounted on /api/maps
 router.post("/", async (req, res, next) => {
 	try {
-		const map = await Foodiemap.create({
+		let map = await Foodiemap.create({
 			name: req.body.body.name,
 			searchBody: JSON.stringify(req.body.search),
 		});
+
 		for (let i = 0; i < req.body.markers.length; i++) {
 			const marker = req.body.markers[i];
 			const business = await Business.findOrCreateFromYelpMarker(marker);
 			await map.addBusiness(business);
 		}
+
+		if (req.user) {
+			await map.setUser(req.user);
+			map = await Foodiemap.findByPk(map.id, {
+				include: [User, Business],
+			});
+		} else {
+			map = await Foodiemap.findByPk(map.id, {
+				include: Business,
+			});
+		}
+
 		res.send(map);
 	} catch (error) {
 		next(error);
