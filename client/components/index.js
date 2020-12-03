@@ -5,3 +5,5 @@ export { default as Search } from "./Search";
 export { default as NavigationBar } from "./NavigationBar";
 export { default as UserHome } from "./UserHome";
 export { default as Profile } from "./Profile";
+export {default as SingleBusiness} from "./SingleBusiness"
+

@@ -13,6 +13,7 @@ class SingleBusiness extends Component {
   }
 
   render() {
+    console.log('I am in singleBusiness Component')
     const { singleBusiness } = this.props;
         console.log("singleBusiness:", singleBusiness);
 
@@ -60,7 +61,7 @@ class SingleBusiness extends Component {
             <img className="resize" src={singleBusiness.image_url} />
           </div>
         ) : (
-          <h1>Error</h1>
+          <a href=' https://codyogden.blog/content/images/2018/08/magic-burrito.gif'></a>
         )}
       </div>
     );

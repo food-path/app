@@ -9,8 +9,11 @@ import {
 	Search,
 	UserHome,
 	Profile,
+	SingleBusiness
 } from "./components";
 import { me } from "./store";
+
+
 
 class Routes extends Component {
 	componentDidMount() {
