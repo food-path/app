@@ -8,6 +8,9 @@ class Profile extends React.Component {
 			<div>
 				Hello, {this.props.user.firstName}!
 				<p>
+					Been fooding since: {this.props.user.registrationDate.toDateString()}
+				</p>
+				<p>
 					<Link to="/myMaps">Go To My Saved Maps</Link>
 				</p>
 			</div>
