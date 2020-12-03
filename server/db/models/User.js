@@ -47,6 +47,9 @@ const User = db.define("user", {
 	googleId: {
 		type: Sequelize.STRING,
 	},
+	registrationDate: {
+		type: Sequelize.DATE,
+	},
 });
 
 // instance methods
