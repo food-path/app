@@ -1,3 +1,4 @@
+
 body {
   background-color: rgb(248, 229, 229);
   min-height: 100%;
@@ -97,6 +98,12 @@ body {
 }
 
 /* NAVBAR COMPONENT*/
+@media screen and (max-width: 600px) {
+  #navbar-desktop {
+    display: none;
+  }
+}
+
 #btn-logout {
   background-color: none;
   border: none;

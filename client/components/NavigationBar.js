@@ -15,7 +15,7 @@ class NavigationBar extends React.Component {
   render() {
 
     return (
-      <Navbar bg="dark" variant="dark" expand="lg">
+      <Navbar bg="dark" variant="dark" expand="lg" id="navbar-desktop">
         <Navbar.Brand as={NavLink} to="/">
           Food Path
         </Navbar.Brand>
