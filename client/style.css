@@ -31,61 +31,62 @@ body {
 
 /* LOGIN COMPONENT/HOME PAGE*/
 #input-email {
-	text-align: center;
-	width: 45%;
-	font-size: 12px;
-	margin-left: 30%;
-	margin-top: 100%;
-	opacity: 0.85;
-	border-color: lightgray;
+  text-align: center;
+  width: 45%;
+  font-size: 12px;
+  margin-left: 30%;
+  margin-top: 100%;
+  opacity: 0.85;
+  border-color: lightgray;
 }
 
 #input-password {
-	text-align: center;
-	width: 45%;
-	font-size: 12px;
-	margin-left: 30%;
-	opacity: 0.85;
-	border-color: lightgray;
+  text-align: center;
+  width: 45%;
+  font-size: 12px;
+  margin-left: 30%;
+  opacity: 0.85;
+  border-color: lightgray;
 }
 
 #btn1 {
-	text-align: center;
-	width: 45%;
-	font-size: 12px;
-	margin-left: 30%;
-	opacity: 0.85;
-	border-color: teal;
+  text-align: center;
+  width: 45%;
+  font-size: 12px;
+  margin-left: 30%;
+  opacity: 0.85;
+  border-color: teal;
 }
 
 #btn2 {
-	text-align: center;
-	width: 45%;
-	font-size: 9px;
-	margin-left: 30%;
-	margin-top: 5%;
-	opacity: 0.8;
-	font-style: italic;
-	opacity: 0.85;
-	border: none;
-	border-color:blue;
+  text-align: center;
+  width: 45%;
+  font-size: 9px;
+  margin-left: 30%;
+  margin-top: 5%;
+  opacity: 0.8;
+  font-style: italic;
+  opacity: 0.85;
+  border: none;
+  border-color: blue;
 }
 
 #btn3 {
-	text-align: center;
-	font-size: 6px;
-	margin-left: 55%;
-	padding: 3px 10px;
-	opacity: 0.8;
-	border-color: teal;
+  text-align: center;
+  font-size: 6px;
+  margin-left: 55%;
+  padding: 3px 10px;
+  opacity: 0.8;
+  border-color: teal;
 }
 
 .container-login {
-	background: url('https://i.pinimg.com/originals/87/b4/f5/87b4f5e827fcdb94a7ade4329b837793.gif') no-repeat fixed;
-	height: 100vh;
-	background-size: cover;
-	background-position: center center;
-	opacity: 0.8;
+  background: url("https://i.pinimg.com/originals/87/b4/f5/87b4f5e827fcdb94a7ade4329b837793.gif")
+    no-repeat fixed;
+  height: 100vh;
+  background-size: cover;
+  background-position: center center;
+  opacity: 0.8;
 }
 
 .form-container {
@@ -96,3 +97,8 @@ body {
 }
 
 /* NAVBAR COMPONENT*/
+#btn-logout {
+  background-color: none;
+  border: none;
+  color: rgb(173, 171, 171);
+}

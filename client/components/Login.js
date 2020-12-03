@@ -41,8 +41,6 @@ class Login extends React.Component {
         <div className="form-container">
           <div className="col-md-4 col-sm-4 col-xs-12">
             {/* <Form onSubmit={this.onSubmit}> */}
-            <Form>
-              <Form.Group>
                 <Form.Control
                   id="input-email"
                   name="email"
@@ -97,8 +95,6 @@ class Login extends React.Component {
                     New here? Get on a Food Path!
                   </Button>
                 </div>
-              </Form.Group>
-            </Form>
           </div>
         </div>
       </div>
