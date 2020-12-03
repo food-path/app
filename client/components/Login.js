@@ -3,9 +3,8 @@ import { connect } from "react-redux";
 import { auth } from "../store";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import { logout } from "../store";
 import PropTypes from "prop-types";
-import { Link, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 class Login extends React.Component {
 	constructor() {
@@ -113,17 +112,10 @@ const mapState = (state) => {
 
 const mapDispatch = (dispatch) => {
 	return {
-		handleClick() {
-			// dispatch(logout());
-		},
-		// getLoggedInSearch: () => dispatch(fetchLoggedInSearch()),
+		handleClick() {},
 		getUser: () => dispatch({ type: "GET_USER" }),
-	};
+  }
 };
-
-const mapDispatch = (dispatch) => ({
-  auth: (body) => dispatch(auth(body)),
-});
 
 const loggedinUser = connect(mapState, mapDispatch)(Login);
 export default withRouter(loggedinUser);
