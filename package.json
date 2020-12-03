@@ -45,6 +45,7 @@
 		"lodash": "^4.17.20",
 		"mocha": "^8.2.0",
 		"morgan": "^1.10.0",
+		"nodemon": "^2.0.6",
 		"passport": "^0.4.1",
 		"passport-google-oauth": "^2.0.0",
 		"path-browserify": "^1.0.1",

@@ -4,6 +4,7 @@ import GoogleMapReact from "google-map-react";
 import { createMap, fetchMaps, addMarkers } from "../store";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import BusinessesList from './BusinessesList'
 
 const Marker = ({ text, imageUrl }) => (
 	<div
@@ -83,6 +84,7 @@ class MapComponent extends React.Component {
 						))}
 					</GoogleMapReact>
 				</div>
+				<BusinessesList props={this.props} />
 				<Form
 					onSubmit={(event) => {
 						event.preventDefault();
