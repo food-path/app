@@ -40,6 +40,8 @@ export default (state = initialState, action) => {
 					},
 					name: business.name,
 					image_url: business.imageUrl,
+					price: business.price,
+					rating: business.rating
 				})),
 			];
 		default:
