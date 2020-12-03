@@ -39,7 +39,8 @@ class Routes extends Component {
 				)}
 				{!isLoggedIn && (
 					<>
-						<Route exact path="/" component={Registration} />
+						<Route exact path="/registration" component={Registration} />
+						<Route exact path="/" component={Login} />
 					</>
 				)}
 			</>

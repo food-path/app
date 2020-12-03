@@ -1,11 +1,6 @@
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { NavLink, Link, withRouter } from "react-router-dom";
-import Form from "react-bootstrap/Form";
-import FormControl from "react-bootstrap/FormControl";
-import Button from "react-bootstrap/Button";
-import NavItem from "react-bootstrap/NavItem";
-import { UserHome } from "./UserHome";
 import { connect } from "react-redux";
 import { logout } from "../store";
 
@@ -15,7 +10,7 @@ import React from "react";
 class NavigationBar extends React.Component {
 	render() {
 		return (
-			<Navbar bg="dark" variant="dark" expand="lg">
+			<Navbar bg="dark" variant="dark" expand="lg" id="navbar-desktop">
 				<Navbar.Brand as={NavLink} to="/">
 					Food Path
 				</Navbar.Brand>

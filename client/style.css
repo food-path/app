@@ -1,8 +1,7 @@
-
 body {
-  background-color: rgb(248, 229, 229);
   min-height: 100%;
   font-family: sans-serif;
+  overflow: hidden;
 }
 
 .marker img {
@@ -33,11 +32,15 @@ body {
 /* Single Business Component */
 
 .resize {
-	width: 50%;
-	height: 30%;
-  }
-  
+  width: 50%;
+  height: 30%;
+}
+
 /* LOGIN COMPONENT/HOME PAGE*/
+/* #login-elements {
+  border-color: purple;
+} */
+
 #input-email {
   text-align: center;
   width: 45%;
@@ -94,22 +97,27 @@ body {
   height: 100vh;
   background-size: cover;
   background-position: center center;
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
 .form-container {
   margin: 0 auto;
   padding-bottom: 20px;
-  min-height: 100vh;
   padding-top: 40px;
 }
 
 /* NAVBAR COMPONENT*/
 @media screen and (max-width: 600px) {
   #navbar-desktop {
-    display: none;
+    display: block;
   }
 }
+
+/* @media screen and (max-width: 600px) {
+  #basic-navbar-nav {
+    display: none;
+  }
+} */
 
 #btn-logout {
   background-color: none;
