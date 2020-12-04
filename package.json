@@ -8,7 +8,11 @@
 		"start-dev": "NODE_ENV='development' webpack -w & NODE_ENV='development' nodemon server --ignore public --ignore client",
 		"start": "node server",
 		"build": "webpack",
-		"seed": "node script/seed"
+		"seed": "node script/seed",
+		"deploy": "script/deploy",
+		"heroku-token": "script/encrypt-heroku-auth-token.js",
+		"lint": "eslint ./ --ignore-path .gitignore",
+		"prettify": "prettier --write \"**/*.{js,jsx,json,css,scss,md}\""
 	},
 	"keywords": [],
 	"author": "",
