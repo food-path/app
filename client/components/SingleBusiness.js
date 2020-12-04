@@ -57,7 +57,14 @@ class SingleBusiness extends Component {
             </div>
             <h4>Street Address: {singleBusiness.location.address1}</h4>
             <h4>Phone: {singleBusiness.display_phone}</h4>
+
+
+            <div class="Stars" style="--rating: {singleBusiness.rating};" aria-label="Rating of this product is 2.3 out of 5.">
             <h4>Rating: {singleBusiness.rating}</h4>
+
+
+
+
             <h4>Price: {singleBusiness.price}</h4>
             <img className="resize" src={singleBusiness.image_url} />
           </div>

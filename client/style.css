@@ -46,9 +46,8 @@ background-color:rgb(93, 155, 176) ;
 }
 
 #hours{
-  display: flex;
-  background-color: red;
-  text-align: center;
+  width: 40%;
+  float: right;
 }
 
 /* LOGIN COMPONENT/HOME PAGE*/
