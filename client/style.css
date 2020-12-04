@@ -3,6 +3,13 @@ body {
   font-family: sans-serif;
 }
 
+@media screen and (max-width: 600px) {
+  body {
+  min-height: 100%;
+  margin-top: 5%;
+  }
+}
+
 .marker img {
   text-align: center;
 }
@@ -105,6 +112,9 @@ body {
 }
 
 /* NAVBAR COMPONENT*/
+#basic-navbar-nav {
+  min-width: 100%;
+}
 
 @media screen and (max-width: 600px) {
   #navbar {
@@ -112,6 +122,12 @@ body {
     position: fixed;
     bottom: 0;
     width: 100%;
+  }
+}
+@media screen and (max-width: 600px) {
+  #mr-auto {
+    min-width: 100%;
+    margin-left: 15%;
   }
 }
 
@@ -123,6 +139,59 @@ body {
 
 @media screen and (max-width: 600px) {
   .home-icon {
+    border-color: white;
+    filter: invert(1);
+    float: left;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .search-text {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .search-icon {
+    border-color: white;
+    filter: invert(1);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .map-text {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .map-icon {
+    border-color: white;
+    filter: invert(1);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .profile-text {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .profile-icon {
+    border-color: white;
+    filter: invert(1);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .logout-text {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .logout-icon {
     border-color: white;
     filter: invert(1);
   }

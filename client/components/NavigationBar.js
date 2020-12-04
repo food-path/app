@@ -15,7 +15,7 @@ class NavigationBar extends React.Component {
         </Navbar.Brand>
         {/* <Navbar.Toggle aria-controls="basic-navbar-nav" /> */}
         <Navbar id="basic-navbar-nav">
-          <Nav className="mr-auto">
+          <Nav id="mr-auto">
             <Nav.Link as={NavLink} to="/">
               <img src="./icons/house.svg" width="30" className="home-icon" />
               <p className="home-text">Home</p>
@@ -24,21 +24,44 @@ class NavigationBar extends React.Component {
             {this.props.user.id && (
               <>
                 <Nav.Link as={NavLink} to="/search">
-                  Search
+                  <img
+                    src="./icons/search.svg"
+                    width="30"
+                    className="search-icon"
+                  />
+                  <p className="search-text">Search</p>
                 </Nav.Link>
+
                 <Nav.Link as={NavLink} to="/map">
-                  Map
+                  <img
+                    src="./icons/compass.svg"
+                    width="30"
+                    className="map-icon"
+                  />
+                  <p className="map-text">Map </p>
                 </Nav.Link>
+
                 <Nav.Link as={NavLink} to="/profile">
-                  Profile
+                  <img
+                    src="./icons/person-circle.svg"
+                    width="30"
+                    className="profile-icon"
+                  />
+                  <p className="profile-text">Profile </p>
                 </Nav.Link>
+
                 <Nav.Link
                   onClick={() => {
                     this.props.logout();
                     this.props.history.push("/");
                   }}
                 >
-                  Logout
+                  <img
+                    src="./icons/door-closed.svg"
+                    width="30"
+                    className="logout-icon"
+                  />
+                  <p className="logout-text">Logout </p>
                 </Nav.Link>
               </>
             )}
