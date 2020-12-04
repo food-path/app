@@ -39,21 +39,22 @@ class SingleBusiness extends Component {
     }
 
     return (
-      <div>
-        <h1>{singleBusiness.name}</h1>
+      <div id='singleBusiness'>
+        <div id='BusinessName'><h1>{singleBusiness.name}</h1></div>
         {singleBusiness.categories ? (
           <div>
             <h4>
               Category:
               {singleBusiness.categories.map((obj) => obj.title).join("|")}
             </h4>
-
+          <div id='hours'>
             <ul>
               <h4>Hours:</h4>{" "}
               {hoursToDisplay.map((openHrs, id) => (
                 <li key={id}>{openHrs}</li>
               ))}
             </ul>
+            </div>
             <h4>Street Address: {singleBusiness.location.address1}</h4>
             <h4>Phone: {singleBusiness.display_phone}</h4>
             <h4>Rating: {singleBusiness.rating}</h4>

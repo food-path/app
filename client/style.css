@@ -37,6 +37,20 @@ body {
 	height: 30%;
   }
   
+#singleBusiness{
+  background-color: rgb(144, 168, 195);
+}
+
+#BusinessName{
+background-color:rgb(93, 155, 176) ;
+}
+
+#hours{
+  display: flex;
+  background-color: red;
+  text-align: center;
+}
+
 /* LOGIN COMPONENT/HOME PAGE*/
 #input-email {
   text-align: center;
