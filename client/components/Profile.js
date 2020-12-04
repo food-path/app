@@ -8,10 +8,10 @@ class Profile extends React.Component {
 	render() {
 		const user = this.props.user;
 		return (
-			<div>
-				<img src={user.imageUrl} width="100px" />
-				<p>Hello, {user.firstName}!</p>
-				<p>
+			<div id="container-profile">
+				<img className="img-profile" src={user.imageUrl} width="100px" />
+				<p className="welcome"> {user.firstName} {user.lastName} </p>
+				<p className="member">
 					Been fooding since:{" "}
 					{new Date(user.registrationDate).toLocaleDateString()}
 				</p>

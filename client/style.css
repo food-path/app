@@ -124,3 +124,29 @@ body {
   border: none;
   color: rgb(173, 171, 171);
 }
+
+/* PROFILE COMPONENT */
+#container-profile {
+}
+
+.img-profile {
+  border-radius: 50%;
+  border-color: #d7b9d5;
+  border-width: 5px;
+  border-style: solid;
+  margin-top: 5%;
+  margin-left: 5%;
+}
+
+.welcome {
+  text-transform: Capitalize;
+  float: right;
+  margin-top: 10%;
+  margin-right: 45%;
+  font-size: 21px;
+}
+
+.member {
+  font-size: 12px;
+  float: right;
+}
