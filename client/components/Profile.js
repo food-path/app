@@ -38,7 +38,7 @@ class Profile extends React.Component {
           <Link to="/editProfile">Edit My Profile</Link>
         </p>
 
-        <Button
+        {/* <Button
           variant="outline-secondary btn-sm"
           className="btn-logout"
           onClick={() => {
@@ -47,7 +47,7 @@ class Profile extends React.Component {
           }}
         >
           Logout
-        </Button>
+        </Button> */}
       </div>
     );
   }

@@ -120,7 +120,7 @@ body {
 margin-left: 38%;
 margin-top: 30%;
 position: fixed;
-opacity: 0.8;
+opacity: 0.85;
 }
 
 /* NAVBAR COMPONENT*/
@@ -227,6 +227,8 @@ opacity: 0.8;
 }
 
 .img-profile {
+  margin-top: 2%;
+  position: relative;
   border-radius: 50%;
   border-color: #d7b9d5;
   border-width: 5px;
@@ -237,14 +239,13 @@ opacity: 0.8;
 
 .name {
   text-transform: Capitalize;
-  float: right;
-  margin-top: 14%;
-  margin-right: 22%;
   font-size: 30px;
+  text-align: center;
   font-family: "Sofia", sans-serif;
 }
 
 .member {
+  margin-top: 2%;
   font-size: 10px;
   text-align: center;
 }
@@ -269,7 +270,7 @@ opacity: 0.8;
 
 .btn-logout {
   position: fixed;
-  bottom: 12%;
+  bottom: 14%;
   margin-left: 40%;
   border-radius: 28px !important;
   border-color: #ada7c9 !important;
@@ -277,12 +278,3 @@ opacity: 0.8;
   color: #8b7fc0 !important;
 }
 
-.foodie-icon {
-  border-color: white;
-  filter: invert(1);
-}
-
-.account-icon {
-  border-color: white;
-  filter: invert(1);
-}
