@@ -1,12 +1,11 @@
 body {
-  min-height: 100%;
-  /* font-family: sans-serif; */
+  min-height: 100vh;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 600px) {
   #app {
     min-height: 100vh;
-    margin-top: 5%;
     font-family: sans-serif;
   }
 }
@@ -45,67 +44,76 @@ body {
 /* LOGIN COMPONENT/HOME PAGE*/
 #input-email {
   text-align: center;
-  width: 45%;
+  width: 55%;
   font-size: 12px;
-  margin-left: 30%;
+  margin-left: 22%;
   margin-top: 100%;
   opacity: 0.85;
-  border-color: lightgray;
+  border-color: #958DB9;
+  border-width: medium;
 }
 
 #input-password {
   text-align: center;
-  width: 45%;
+  width: 55%;
   font-size: 12px;
-  margin-left: 30%;
+  margin-left: 22%;
   opacity: 0.85;
-  border-color: lightgray;
+  border-color: #958DB9;
+  border-width: medium;
 }
 
 #btn1 {
   text-align: center;
-  width: 45%;
+  width: 55%;
   font-size: 12px;
-  margin-left: 30%;
-  opacity: 0.85;
-  border-color: teal;
+  margin-left: 22%;
+  opacity: 1;
+  border-color: #958DB9 !important;
+  border-width: medium;
+  background-color: #d7b9d5 !important;
+  color: #2e3842;
 }
 
 #btn2 {
   text-align: center;
-  width: 45%;
+  width: 55%;
   font-size: 9px;
-  margin-left: 30%;
+  margin-left: 22%;
   margin-top: 5%;
-  opacity: 0.8;
+  opacity: 0.9;
   font-style: italic;
-  opacity: 0.85;
-  border: none;
-  border-color: blue;
+  border-color: #958DB9 !important;
+  border-width: medium;
+  background-color: #958DB9!important;
+  color: #ffffff;
 }
 
 #btn3 {
   text-align: center;
   font-size: 6px;
-  margin-left: 55%;
+  margin-left: 40%;
   padding: 3px 10px;
-  opacity: 0.8;
-  border-color: teal;
+  opacity: 0.9;
+  border-width: thin;
+  border-color: #958DB9 !important;
+  background-color: white;
+  color: #2e3842;
 }
 
 .container-login {
   background: url("https://i.pinimg.com/originals/87/b4/f5/87b4f5e827fcdb94a7ade4329b837793.gif")
-    no-repeat fixed;
+    no-repeat;
   height: 100vh;
   background-size: cover;
-  background-position: center center;
-  opacity: 0.7;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.9;
 }
 
 .form-container {
-  margin: 0 auto;
-  padding-bottom: 20px;
   padding-top: 40px;
+  max-height: 40%;
 }
 
 /* NAVBAR COMPONENT*/
@@ -212,7 +220,6 @@ body {
 }
 
 .img-profile {
-  
   border-radius: 50%;
   border-color: #d7b9d5;
   border-width: 5px;
