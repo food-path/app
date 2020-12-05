@@ -10,26 +10,33 @@ class Profile extends React.Component {
     return (
       <div id="container-profile">
         <img className="img-profile" src={user.imageUrl} width="100px" />
-        <p className="welcome">
+        <h2 className="name">
           {" "}
           {user.firstName} {user.lastName}{" "}
-        </p>
-        <p className="member">
-          Been fooding since:{" "}
-          {new Date(user.registrationDate).toLocaleDateString()}
-        </p>
-
-        <div className="pink-separation">
-          <p  className="text-pink-separation">My Foodie Maps</p>
+        </h2>
+        <div>
+          <p className="member">
+            Been fooding since:{" "}
+            {new Date(user.registrationDate).toLocaleDateString()}
+          </p>
         </div>
+
+        <p className="text-separation">My Foodie Maps</p>
 
         <p className="saved-maps">
           <Link to="/myMaps">Go To My Saved Maps</Link>
         </p>
+        <div>
+          <p className="text-separation">My Account</p>
+        </div>
+
         <p>
           <Link to="/editProfile">Edit My Profile</Link>
         </p>
+
         <Button
+		  variant="outline-secondary btn-sm"
+		  className="btn-logout"
           onClick={() => {
             this.props.logout();
             this.props.history.push("/");
