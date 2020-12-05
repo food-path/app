@@ -13,7 +13,6 @@ class NavigationBar extends React.Component {
         <Navbar.Brand as={NavLink} to="/" id="logo-nav">
           Food Path
         </Navbar.Brand>
-        {/* <Navbar.Toggle aria-controls="basic-navbar-nav" /> */}
         <Navbar id="basic-navbar-nav">
           <Nav id="mr-auto">
             <Nav.Link as={NavLink} to="/">

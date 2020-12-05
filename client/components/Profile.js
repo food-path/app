@@ -20,14 +20,14 @@ class Profile extends React.Component {
             {new Date(user.registrationDate).toLocaleDateString()}
           </p>
         </div>
-
-        <p className="text-separation">My Foodie Maps</p>
-
+        <div className="div-text">
+          <p className="text-separation">My Foodie Maps <img src="./icons/geo-alt.svg" width="20" className="foodie-icon" /></p>
+        </div>
         <p className="saved-maps">
           <Link to="/myMaps">Go To My Saved Maps</Link>
         </p>
-        <div>
-          <p className="text-separation">My Account</p>
+        <div className="div-text">
+          <p className="text-separation">My Account <img src="./icons/person-bounding-box.svg" width="20" className="account-icon" /></p>
         </div>
 
         <p>
@@ -35,8 +35,8 @@ class Profile extends React.Component {
         </p>
 
         <Button
-		  variant="outline-secondary btn-sm"
-		  className="btn-logout"
+          variant="outline-secondary btn-sm"
+          className="btn-logout"
           onClick={() => {
             this.props.logout();
             this.props.history.push("/");
