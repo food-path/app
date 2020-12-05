@@ -37,9 +37,9 @@ class Login extends React.Component {
 
     return (
       <div className="container-login">
+        <img src="./img/logo2.png" width="90" className="logo-login" />
         <div className="form-container">
           <div className="col-md-4 col-sm-4 col-xs-12">
-            {/* <Form onSubmit={this.onSubmit}> */}
             <Form.Control
               id="input-email"
               name="email"
@@ -67,7 +67,7 @@ class Login extends React.Component {
               block
               onClick={this.onSubmit}
             >
-              Let's Eat!
+              Let's go!
             </Button>
 
             <form method="get" action="/auth/google">
