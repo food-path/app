@@ -21,13 +21,17 @@ class Profile extends React.Component {
           </p>
         </div>
         <div className="div-text">
-          <p className="text-separation">My Foodie Maps <img src="./icons/geo-alt.svg" width="20" className="foodie-icon" /></p>
+          <p className="text-separation">My Foodie Maps 
+          {/* <img src="./icons/geo-alt.svg" width="20" className="foodie-icon" /> */}
+          </p>
         </div>
         <p className="saved-maps">
           <Link to="/myMaps">Go To My Saved Maps</Link>
         </p>
         <div className="div-text">
-          <p className="text-separation">My Account <img src="./icons/person-bounding-box.svg" width="20" className="account-icon" /></p>
+          <p className="text-separation">My Account 
+          {/* <img src="./icons/person-bounding-box.svg" width="20" className="account-icon" /> */}
+          </p>
         </div>
 
         <p>
