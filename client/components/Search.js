@@ -41,18 +41,20 @@ class Search extends Component {
     let maxPrice = priceToText(this.state.maxPrice);
     return (
       <div className="container-search">
-          <Form
-            className="search-form"
-            onSubmit={async (event) => {
-              event.preventDefault();
-              await this.props.fetchMarkers(this.state);
-              await this.props.saveSearch(this.state);
-              this.props.history.push("/map");
-            }}
-          >
-            <Form.Group controlId="searchInput">
-              <Form.Label className="search-label">Choose a city</Form.Label>
+        <Form
+          className="search-form"
+          onSubmit={async (event) => {
+            event.preventDefault();
+            await this.props.fetchMarkers(this.state);
+            await this.props.saveSearch(this.state);
+            this.props.history.push("/map");
+          }}
+        >
+          <Form.Group>
+            <div className="input-fields">
+              <Form.Label></Form.Label>
               <Form.Control
+                id="city-label"
                 type="city"
                 name="location"
                 value={this.state.location}
@@ -60,49 +62,58 @@ class Search extends Component {
                 onChange={this.onChange}
               />
 
-              <Form.Label>Search Term</Form.Label>
+              <Form.Label></Form.Label>
               <Form.Control
+                id="food-label"
                 type="text"
                 name="term"
                 value={this.state.term}
-                placeholder="Enter what you're looking for"
+                placeholder="Enter key words"
                 onChange={this.onChange}
               />
+            </div>
 
-              <Form.Label>Minimum Price: {minPrice}</Form.Label>
-              <Form.Control
-                type="range"
-                name="minPrice"
-                value={this.state.minPrice}
-                onChange={this.onChange}
-              />
+            <div className="price-fields">
+            <Form.Label>Minimum Price: {minPrice}</Form.Label>
+            <Form.Control
+              id="slider-min-price"
+              type="range"
+              name="minPrice"
+              value={this.state.minPrice}
+              onChange={this.onChange}
+            />
 
-              <Form.Label>Maximum Price: {maxPrice}</Form.Label>
-              <Form.Control
-                type="range"
-                name="maxPrice"
-                value={this.state.maxPrice}
-                onChange={this.onChange}
-              />
-              <div key="inline-checkbox" className="mb-3">
-                {["Vegetarian", "Vegan", "Halal", "Kosher"].map((cat) => (
-                  <Form.Check
-                    inline
-                    name={cat.toLowerCase()}
-                    label={cat}
-                    type="checkbox"
-                    onChange={this.onChangeCheckbox}
-                    key={cat}
-                  />
-                ))}
-              </div>
+            <Form.Label>Maximum Price: {maxPrice}</Form.Label>
+            <Form.Control
+              id="slider-max-price"
+              type="range"
+              name="maxPrice"
+              value={this.state.maxPrice}
+              onChange={this.onChange}
+            />
+            </div>
 
-              <Button variant="primary" type="submit">
-                Submit
-              </Button>
-            </Form.Group>
-          </Form>
-        </div>
+            <div className="diet-fields">
+            <div key="inline-checkbox" className="mb-3">
+              {["Vegetarian", "Vegan", "Halal", "Kosher"].map((cat) => (
+                <Form.Check
+                  inline
+                  name={cat.toLowerCase()}
+                  label={cat}
+                  type="checkbox"
+                  onChange={this.onChangeCheckbox}
+                  key={cat}
+                />
+              ))}
+            </div>
+            </div>
+
+            <Button id="btn-search" variant="primary" type="submit">
+              Submit
+            </Button>
+          </Form.Group>
+        </Form>
+      </div>
     );
   }
 }

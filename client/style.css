@@ -321,25 +321,60 @@ body {
 }
 
 @media screen and (max-width: 600px) {
-  #search-label {
-    /* width: 110% !important; */
-    /* margin-left: 8%;
-    margin-right: 6%; */
-    /* color: #182c3a !important; */
-    /* text-align: center; */
-    /* opacity: 0.8; */
+  #city-label {
+    width: 100% !important;
+    background-color: #ADA7C9 !important;
   }
 }
 
 @media screen and (max-width: 600px) {
-  #searchInput::placeholder {
-    color: #182c3a !important;
-    opacity: 0.8;
+  #city-label::placeholder {
+    color: #ffffff !important;
+    text-align: center;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .searchInput {
-    background-color: #ada7c9;
+  #food-label {
+    width: 100% !important;
+    background-color: #ADA7C9 !important;
   }
+}
+
+@media screen and (max-width: 600px) {
+  #food-label::placeholder {
+    color: #ffffff !important;
+    text-align: center;
+  }
+}
+
+.mb-3 {
+  color: #182C3A;
+}
+
+#slider-min-price {
+  color: #182C3A;
+}
+
+#slider-max-price {
+  color: #182C3A;
+}
+
+.input-fields {
+  background-color: white;
+}
+
+.price-fields {
+  margin-top: 10%;
+}
+
+.diet-fields {
+  margin-top: 10%;
+}
+
+#btn-search {
+  margin-top: 10%;
+  margin-left: 35%;
+  background-color: #948fad;
+  border: none;
 }
