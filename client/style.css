@@ -138,7 +138,8 @@ opacity: 0.85;
 
 /* NAVBAR COMPONENT*/
 #basic-navbar-nav {
-  min-width: 100%;
+  width: 100%;
+  margin-left: -4%;
 }
 
 @media screen and (max-width: 600px) {
@@ -151,8 +152,9 @@ opacity: 0.85;
 }
 @media screen and (max-width: 600px) {
   #mr-auto {
-    min-width: 100%;
-    margin-left: 15%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
   }
 }
 
@@ -162,13 +164,13 @@ opacity: 0.85;
   }
 }
 
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) {
   .home-icon {
     border-color: #ffffff;
     filter: invert(1);
     float: left;
   }
-}
+} */
 
 @media screen and (max-width: 600px) {
   .search-text {
@@ -189,12 +191,12 @@ opacity: 0.85;
   }
 }
 
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) {
   .map-icon {
     border-color: white;
     filter: invert(1);
   }
-}
+} */
 
 @media screen and (max-width: 600px) {
   .profile-text {
