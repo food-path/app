@@ -74,8 +74,7 @@ class SingleBusiness extends Component {
 						<h4>Phone: {singleBusiness.display_phone}</h4>
 
 						<div
-							class="Stars"
-							style="--rating: {singleBusiness.rating};"
+							className="Stars"
 							aria-label="Rating of this product is 2.3 out of 5."
 						>
 							<h4>Rating: {singleBusiness.rating}</h4>
