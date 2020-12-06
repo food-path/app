@@ -19,7 +19,6 @@ class NavigationBar extends React.Component {
               <img src="./icons/house.svg" width="30" className="home-icon" />
               <p className="home-text">Home</p>
             </Nav.Link> */}
-
             {this.props.user.id && (
               <>
                 <Nav.Link as={NavLink} to="/search">
