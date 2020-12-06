@@ -1,293 +1,294 @@
 body {
-  min-height: 100vh;
-  overflow: hidden;
+	min-height: 100vh;
+	/* overflow: hidden; */
+/* 	Keep this commented out so that you can save your maps in the desktop version */
 }
 
 @media screen and (max-width: 600px) {
-  #app {
-    min-height: 100vh;
-    font-family: sans-serif;
-  }
+	#app {
+		min-height: 100vh;
+		font-family: sans-serif;
+	}
 }
 
 .marker img {
-  text-align: center;
+	text-align: center;
 }
 
 #map {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
 }
 
 #map-container {
-  height: 100vh;
-  width: 100%;
-  position: relative;
+	height: 100vh;
+	width: 100%;
+	position: relative;
 }
 
 #businesses-list li {
-  list-style: none;
+	list-style: none;
 }
 
 /* Single Business Component */
 .resize {
 	width: 50%;
 	height: 30%;
-  }
-  
-#singleBusiness{
-  background-color: rgb(144, 168, 195);
 }
 
-#BusinessName{
-background-color:rgb(93, 155, 176) ;
+#singleBusiness {
+	background-color: rgb(144, 168, 195);
 }
 
-#hours{
-  width: 40%;
-  float: right;
+#BusinessName {
+	background-color: rgb(93, 155, 176);
+}
+
+#hours {
+	width: 40%;
+	float: right;
 }
 
 /* LOGIN COMPONENT/HOME PAGE*/
 #input-email {
-  text-align: center;
-  width: 55%;
-  font-size: 12px;
-  margin-left: 22%;
-  margin-top: 100%;
-  opacity: 0.85;
-  border-color: #958DB9;
-  border-width: medium;
+	text-align: center;
+	width: 55%;
+	font-size: 12px;
+	margin-left: 22%;
+	margin-top: 100%;
+	opacity: 0.85;
+	border-color: #958db9;
+	border-width: medium;
 }
 
 #input-password {
-  text-align: center;
-  width: 55%;
-  font-size: 12px;
-  margin-left: 22%;
-  opacity: 0.85;
-  border-color: #958DB9;
-  border-width: medium;
+	text-align: center;
+	width: 55%;
+	font-size: 12px;
+	margin-left: 22%;
+	opacity: 0.85;
+	border-color: #958db9;
+	border-width: medium;
 }
 
 #btn1 {
-  text-align: center;
-  width: 55%;
-  font-size: 12px;
-  margin-left: 22%;
-  opacity: 1;
-  border-color: #958DB9 !important;
-  border-width: medium;
-  background-color: #d7b9d5 !important;
-  color: #2e3842;
+	text-align: center;
+	width: 55%;
+	font-size: 12px;
+	margin-left: 22%;
+	opacity: 1;
+	border-color: #958db9 !important;
+	border-width: medium;
+	background-color: #d7b9d5 !important;
+	color: #2e3842;
 }
 
 #btn2 {
-  text-align: center;
-  width: 55%;
-  font-size: 9px;
-  margin-left: 22%;
-  margin-top: 5%;
-  opacity: 0.9;
-  font-style: italic;
-  border-color: #958DB9 !important;
-  border-width: medium;
-  background-color: #958DB9!important;
-  color: #ffffff;
+	text-align: center;
+	width: 55%;
+	font-size: 9px;
+	margin-left: 22%;
+	margin-top: 5%;
+	opacity: 0.9;
+	font-style: italic;
+	border-color: #958db9 !important;
+	border-width: medium;
+	background-color: #958db9 !important;
+	color: #ffffff;
 }
 
 #btn3 {
-  text-align: center;
-  font-size: 6px;
-  margin-left: 40%;
-  padding: 3px 10px;
-  opacity: 0.9;
-  border-width: thin;
-  border-color: #958DB9 !important;
-  background-color: white;
-  color: #2e3842;
+	text-align: center;
+	font-size: 6px;
+	margin-left: 40%;
+	padding: 3px 10px;
+	opacity: 0.9;
+	border-width: thin;
+	border-color: #958db9 !important;
+	background-color: white;
+	color: #2e3842;
 }
 
 .container-login {
-  background: url("https://i.pinimg.com/originals/87/b4/f5/87b4f5e827fcdb94a7ade4329b837793.gif")
-    no-repeat;
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  opacity: 0.9;
+	background: url("https://i.pinimg.com/originals/87/b4/f5/87b4f5e827fcdb94a7ade4329b837793.gif")
+		no-repeat;
+	height: 100vh;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	opacity: 0.9;
 }
 
 .form-container {
-  padding-top: 5px;
-  max-height: 40%;
+	padding-top: 5px;
+	max-height: 40%;
 }
 
 .logo-login {
-margin-left: 38%;
-margin-top: 30%;
-position: fixed;
-opacity: 0.85;
+	margin-left: 38%;
+	margin-top: 30%;
+	position: fixed;
+	opacity: 0.85;
 }
 
 /* NAVBAR COMPONENT*/
 #basic-navbar-nav {
-  min-width: 100%;
+	min-width: 100%;
 }
 
 @media screen and (max-width: 600px) {
-  #navbar {
-    overflow: hidden;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-  }
+	#navbar {
+		/* overflow: hidden; */
+		/* 	Keep this commented out so that you can save your maps in the desktop version */
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+	}
 }
 @media screen and (max-width: 600px) {
-  #mr-auto {
-    min-width: 100%;
-    margin-left: 15%;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .home-text {
-    display: none;
-  }
+	#mr-auto {
+		min-width: 100%;
+		margin-left: 15%;
+	}
 }
 
 @media screen and (max-width: 600px) {
-  .home-icon {
-    border-color: #ffffff;
-    filter: invert(1);
-    float: left;
-  }
+	.home-text {
+		display: none;
+	}
 }
 
 @media screen and (max-width: 600px) {
-  .search-text {
-    display: none;
-  }
+	.home-icon {
+		border-color: #ffffff;
+		filter: invert(1);
+		float: left;
+	}
 }
 
 @media screen and (max-width: 600px) {
-  .search-icon {
-    border-color: white;
-    filter: invert(1);
-  }
+	.search-text {
+		display: none;
+	}
 }
 
 @media screen and (max-width: 600px) {
-  .map-text {
-    display: none;
-  }
+	.search-icon {
+		border-color: white;
+		filter: invert(1);
+	}
 }
 
 @media screen and (max-width: 600px) {
-  .map-icon {
-    border-color: white;
-    filter: invert(1);
-  }
+	.map-text {
+		display: none;
+	}
 }
 
 @media screen and (max-width: 600px) {
-  .profile-text {
-    display: none;
-  }
+	.map-icon {
+		border-color: white;
+		filter: invert(1);
+	}
 }
 
 @media screen and (max-width: 600px) {
-  .profile-icon {
-    border-color: white;
-    filter: invert(1);
-  }
+	.profile-text {
+		display: none;
+	}
 }
 
 @media screen and (max-width: 600px) {
-  .logout-text {
-    display: none;
-  }
+	.profile-icon {
+		border-color: white;
+		filter: invert(1);
+	}
 }
 
 @media screen and (max-width: 600px) {
-  .logout-icon {
-    border-color: white;
-    filter: invert(1);
-  }
+	.logout-text {
+		display: none;
+	}
 }
 
 @media screen and (max-width: 600px) {
-  #logo-nav {
-    display: none;
-  }
+	.logout-icon {
+		border-color: white;
+		filter: invert(1);
+	}
+}
+
+@media screen and (max-width: 600px) {
+	#logo-nav {
+		display: none;
+	}
 }
 
 #btn-logout {
-  background-color: none;
-  border: none;
-  color: rgb(173, 171, 171);
+	background-color: none;
+	border: none;
+	color: rgb(173, 171, 171);
 }
 
 /* PROFILE COMPONENT */
 #container-profile {
-  min-height: 100vh;
+	min-height: 100vh;
 }
 
 .img-profile {
-  margin-top: 2%;
-  position: relative;
-  border-radius: 50%;
-  border-color: #d7b9d5;
-  border-width: 5px;
-  border-style: solid;
-  margin-top: 5%;
-  margin-left: 2%;
+	margin-top: 2%;
+	position: relative;
+	border-radius: 50%;
+	border-color: #d7b9d5;
+	border-width: 5px;
+	border-style: solid;
+	margin-top: 5%;
+	margin-left: 2%;
 }
 
 .name {
-  text-transform: Capitalize;
-  font-size: 30px;
-  text-align: center;
-  font-family: "Sofia", sans-serif;
+	text-transform: Capitalize;
+	font-size: 30px;
+	text-align: center;
+	font-family: "Sofia", sans-serif;
 }
 
 .member {
-  margin-top: 2%;
-  font-size: 10px;
-  text-align: center;
+	margin-top: 2%;
+	font-size: 10px;
+	text-align: center;
 }
 
 .div-text {
-  background-color: #ada7c9;
-  min-width: 100%;
+	background-color: #ada7c9;
+	min-width: 100%;
 }
 
 .text-separation {
-  margin-top: 10%;
-  min-width: 100%;
-  height: 25px;
-  font-size: 15px;
-  color: white;
-  text-align: center;
+	margin-top: 10%;
+	min-width: 100%;
+	height: 25px;
+	font-size: 15px;
+	color: white;
+	text-align: center;
 }
 
 .saved-maps {
-  margin-top: 5%;
+	margin-top: 5%;
 }
 
 .btn-logout {
-  position: fixed;
-  bottom: 14%;
-  margin-left: 40%;
-  border-radius: 28px !important;
-  border-color: #ada7c9 !important;
-  border-width: 2px !important;
-  color: #8b7fc0 !important;
+	position: fixed;
+	bottom: 14%;
+	margin-left: 40%;
+	border-radius: 28px !important;
+	border-color: #ada7c9 !important;
+	border-width: 2px !important;
+	color: #8b7fc0 !important;
 }
-
