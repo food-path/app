@@ -200,7 +200,7 @@ body {
 
 @media screen and (max-width: 600px) {
 	.profile-text {
-		display: none;
+    display: none;
 	}
 }
 
