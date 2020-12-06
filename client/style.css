@@ -1,6 +1,7 @@
 body {
 	min-height: 100vh;
 	/* overflow: hidden; */
+/* 	Keep this commented out so that you can save your maps in the desktop version */
 }
 
 @media screen and (max-width: 600px) {
@@ -144,6 +145,7 @@ body {
 @media screen and (max-width: 600px) {
 	#navbar {
 		/* overflow: hidden; */
+		/* 	Keep this commented out so that you can save your maps in the desktop version */
 		position: fixed;
 		bottom: 0;
 		width: 100%;
