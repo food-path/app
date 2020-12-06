@@ -109,7 +109,7 @@ class Search extends Component {
             </div>
 
             <Button id="btn-search" variant="primary" type="submit">
-              Submit
+              GET MY FOODIEMAP
             </Button>
           </Form.Group>
         </Form>

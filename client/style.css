@@ -157,7 +157,6 @@ body {
     width: 100%;
     display: flex;
     justify-content: space-around;
-
   }
 }
 
@@ -323,7 +322,8 @@ body {
 @media screen and (max-width: 600px) {
   #city-label {
     width: 100% !important;
-    background-color: #ADA7C9 !important;
+    background-color: #948fad !important;
+    color: white;
   }
 }
 
@@ -337,7 +337,8 @@ body {
 @media screen and (max-width: 600px) {
   #food-label {
     width: 100% !important;
-    background-color: #ADA7C9 !important;
+    background-color: #948fad !important;
+    color: white;
   }
 }
 
@@ -349,15 +350,15 @@ body {
 }
 
 .mb-3 {
-  color: #182C3A;
+  color: #182c3a;
 }
 
 #slider-min-price {
-  color: #182C3A;
+  color: #182c3a;
 }
 
 #slider-max-price {
-  color: #182C3A;
+  color: #182c3a;
 }
 
 .input-fields {
@@ -374,7 +375,15 @@ body {
 
 #btn-search {
   margin-top: 10%;
-  margin-left: 35%;
+  margin-left: 20%;
   background-color: #948fad;
   border: none;
 }
+
+#btn-search:hover {
+  background-color: #948fad;
+  -webkit-box-shadow: 10px 10px 99px 6px rgb(183, 125, 214);
+  -moz-box-shadow: 10px 10px 99px 6px rgb(183, 115, 236);
+  box-shadow: 10px 10px 99px 6px rgb(198, 121, 233)
+}
+
