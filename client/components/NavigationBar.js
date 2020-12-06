@@ -39,43 +39,43 @@ class NavigationBar extends React.Component {
                   <p className="map-text">Map </p>
                 </Nav.Link> */}
 
-                <Nav.Link as={NavLink} to="/profile">
-                  <img
-                    src="./icons/person-circle.svg"
-                    width="30"
-                    className="profile-icon"
-                  />
-                  <p className="profile-text">Profile </p>
-                </Nav.Link>
+								<Nav.Link as={NavLink} to="/profile">
+									<img
+										src="/icons/person-circle.svg"
+										width="30"
+										className="profile-icon"
+									/>
+									<p className="profile-text">Profile </p>
+								</Nav.Link>
 
-                <Nav.Link
-                  onClick={() => {
-                    this.props.logout();
-                    this.props.history.push("/");
-                  }}
-                >
-                  <img
-                    src="./icons/door-closed.svg"
-                    width="30"
-                    className="logout-icon"
-                  />
-                  <p className="logout-text">Logout </p>
-                </Nav.Link>
-              </>
-            )}
-          </Nav>
-        </Navbar>
-      </Navbar>
-    );
-  }
+								<Nav.Link
+									onClick={() => {
+										this.props.logout();
+										this.props.history.push("/");
+									}}
+								>
+									<img
+										src="/icons/door-closed.svg"
+										width="30"
+										className="logout-icon"
+									/>
+									<p className="logout-text">Logout </p>
+								</Nav.Link>
+							</>
+						)}
+					</Nav>
+				</Navbar>
+			</Navbar>
+		);
+	}
 }
 
 const mapState = (state) => ({
-  user: state.user,
+	user: state.user,
 });
 
 const mapDispatch = (dispatch) => ({
-  logout: () => dispatch(logout()),
+	logout: () => dispatch(logout()),
 });
 
 export default withRouter(connect(mapState, mapDispatch)(NavigationBar));
