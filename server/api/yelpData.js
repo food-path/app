@@ -19,20 +19,25 @@ let priceToNum = (price) => {
 };
 
 //adding another route to get more business details from Yelp
-//   api/yelp/search/businesses/id 
+//   api/yelp/search/businesses/id
 router.get("/search/businesses/:id", async (req, res, next) => {
 	try {
-		const { data}  = await yelpREST(`businesses/${req.params.id}`);
+		const { data } = await yelpREST(`/businesses/${req.params.id}`);
+		try {
+			const reviewsResponse = await yelpREST(
+				`/businesses/${req.params.id}/reviews`
+			);
+			data.reviews = reviewsResponse.data.reviews;
+		} catch (error) {
+			data.reviews = [];
+		}
 		res.send(data);
 	} catch (error) {
 		next(error);
 	}
 });
 
-
-
 router.post("/search", async (req, res, next) => {
-	
 	try {
 		let minPrice = priceToNum(req.body.minPrice);
 		let maxPrice = priceToNum(req.body.maxPrice);

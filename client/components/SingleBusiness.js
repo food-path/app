@@ -69,6 +69,16 @@ class SingleBusiness extends Component {
 									<li key={id}>{openHrs}</li>
 								))}
 							</ul>
+							<ul>
+								{singleBusiness.reviews.map((review) => (
+									<li key={review.id}>
+										<p>Rating: {review.rating}</p>
+										<a href={review.url}>
+											<p style={{ fontStyle: "italic" }}>{review.text}</p>
+										</a>
+									</li>
+								))}
+							</ul>
 						</div>
 						<h4>Street Address: {singleBusiness.location.address1}</h4>
 						<h4>Phone: {singleBusiness.display_phone}</h4>
@@ -84,7 +94,7 @@ class SingleBusiness extends Component {
 						</div>
 					</div>
 				) : (
-					<a href=" https://codyogden.blog/content/images/2018/08/magic-burrito.gif"></a>
+					<img src="https://codyogden.blog/content/images/2018/08/magic-burrito.gif"></img>
 				)}
 			</div>
 		);
