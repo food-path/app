@@ -4,19 +4,20 @@ import GoogleMapReact from "google-map-react";
 import { createMap, fetchMaps, addMarkers } from "../store";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import {Link} from 'react-router-dom'
-import SingleBusiness from './SingleBusiness'
-import BusinessesList from './BusinessesList'
+import { Link } from "react-router-dom";
+import SingleBusiness from "./SingleBusiness";
+import BusinessesList from "./BusinessesList";
 
-const Marker = ({ text, imageUrl ,id}) => (
+const Marker = ({ text, imageUrl, id }) => (
 	<div
 		className="marker"
 		style={{ textAlign: "center", display: "block", width: "60px" }}
 	>
-		
 		<p>{text}</p>
 		<img src={imageUrl} width="60px" />
-		<Link to={`/singleBusiness/${id}`}><img src="/img/marker.png" height="30px" /></Link>
+		<Link to={`/singleBusiness/${id}`}>
+			<img src="/img/marker.png" height="30px" />
+		</Link>
 	</div>
 );
 
@@ -46,7 +47,6 @@ class MapComponent extends React.Component {
 			// });
 		}
 		this.props.fetchMaps();
-		
 	}
 
 	onChange(event) {
@@ -78,7 +78,6 @@ class MapComponent extends React.Component {
 						defaultZoom={13}
 						center={this.state.center}
 					>
-						
 						{markers.map((marker) => (
 							<Marker
 								key={marker.id}
