@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import GoogleMapReact from "google-map-react";
-import { createMap, fetchMaps, addMarkers } from "../store";
+import { createMap, fetchMaps, addMarkers, removeMarker } from "../store";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
@@ -147,6 +147,7 @@ const mapDispatch = (dispatch) => ({
 		dispatch(createMap(search, markers, body)),
 	fetchMaps: () => dispatch(fetchMaps()),
 	addMarkers: (businesses) => dispatch(addMarkers(businesses)),
+	removeMarker: (id) => dispatch(removeMarker(id)),
 });
 
 export default connect(mapState, mapDispatch)(MapComponent);
