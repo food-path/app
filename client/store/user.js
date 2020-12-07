@@ -1,4 +1,5 @@
 import axios from "axios";
+import ADDED_FRIEND from "./otherUser";
 
 //ACTION TYPE
 const REMOVE_USER = "REMOVE_USER";
@@ -70,6 +71,11 @@ export default function userReducer(state = defaultUser, action) {
 			return defaultUser;
 		case EDITED_USER:
 			return action.user;
+		case ADDED_FRIEND:
+			return {
+				...state,
+				friends: [...state.friends, action.friend],
+			};
 		default:
 			return state;
 	}

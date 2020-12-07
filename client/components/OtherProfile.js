@@ -5,7 +5,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { Link, withRouter } from "react-router-dom";
 import Button from "react-bootstrap/Button";
-import { fetchOtherUser } from "../store";
+import { fetchOtherUser, addFriend } from "../store";
 
 class OtherProfile extends React.Component {
 	componentDidMount() {
@@ -13,38 +13,55 @@ class OtherProfile extends React.Component {
 	}
 	render() {
 		const user = this.props.user;
+		const otherUser = this.props.otherUser;
+		const friends = otherUser.friends || [];
+		const isFriend = friends.find((friend) => friend.id === user.id);
 		return (
 			<div id="container-profile">
-				<img className="img-profile" src={user.imageUrl} width="100px" />
+				<img className="img-profile" src={otherUser.imageUrl} width="100px" />
 				<h2 className="name">
 					{" "}
-					{user.firstName} {user.lastName}{" "}
+					{otherUser.firstName} {otherUser.lastName}{" "}
 				</h2>
 				<div>
 					<p className="member">
 						Been fooding since:{" "}
-						{new Date(user.registrationDate).toLocaleDateString()}
+						{new Date(otherUser.registrationDate).toLocaleDateString()}
 					</p>
+					<Button onClick={() => this.props.addFriend()} disabled={isFriend}>
+						{isFriend ? "We're already friends!" : "Add Friend!"}
+					</Button>
 				</div>
-				{/* <div className="div-text">
-					<p className="text-separation">
-						My Foodie Maps
-					</p>
+				<div className="div-text">
+					<p className="text-separation">My Friends</p>
 				</div>
-				<p className="saved-maps">
-					<Link to="/myMaps">Go To My Saved Maps</Link>
-				</p> */}
+				<span className="friends">
+					<ul>
+						{friends.map((friend) => (
+							<li key={friend.id}>
+								<Link
+									to={`/user/${friend.id}`}
+									onClick={() => this.props.fetchOtherUser(friend.id)}
+								>
+									{friend.firstName} {friend.lastName}
+								</Link>
+							</li>
+						))}
+					</ul>
+				</span>
 			</div>
 		);
 	}
 }
 
 const mapState = (state) => ({
-	user: state.otherUser,
+	otherUser: state.otherUser,
+	user: state.user,
 });
 
 const mapDispatch = (dispatch) => ({
 	fetchOtherUser: (id) => dispatch(fetchOtherUser(id)),
+	addFriend: () => dispatch(addFriend()),
 });
 
 export default withRouter(connect(mapState, mapDispatch)(OtherProfile));

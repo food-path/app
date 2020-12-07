@@ -8,6 +8,7 @@ import { MyMaps } from ".";
 class Profile extends React.Component {
 	render() {
 		const user = this.props.user;
+		const friends = user.friends || [];
 		return (
 			<div id="container-profile">
 				<img className="img-profile" src={user.imageUrl} width="100px" />
@@ -32,6 +33,24 @@ class Profile extends React.Component {
 				</span>
 				<div className="div-text">
 					<p className="text-separation">
+						My Foodie Friends
+						{/* <img src="./icons/geo-alt.svg" width="20" className="foodie-icon" /> */}
+					</p>
+				</div>
+				<span className="friends">
+					<ul>
+						{friends.map((friend) => (
+							<li key={friend.id}>
+								<Link to={`/user/${friend.id}`}>
+									{friend.firstName} {friend.lastName}
+								</Link>
+							</li>
+						))}
+					</ul>
+				</span>
+
+				<div className="div-text">
+					<p className="text-separation">
 						My Account
 						{/* <img src="./icons/person-bounding-box.svg" width="20" className="account-icon" /> */}
 					</p>
@@ -41,16 +60,16 @@ class Profile extends React.Component {
 					<Link to="/editProfile">Edit My Profile</Link>
 				</p>
 
-				{/* <Button
-          variant="outline-secondary btn-sm"
-          className="btn-logout"
-          onClick={() => {
-            this.props.logout();
-            this.props.history.push("/");
-          }}
-        >
-          Logout
-        </Button> */}
+				<Button
+					variant="outline-secondary btn-sm"
+					className="btn-logout"
+					onClick={() => {
+						this.props.logout();
+						this.props.history.push("/");
+					}}
+				>
+					Logout
+				</Button>
 			</div>
 		);
 	}

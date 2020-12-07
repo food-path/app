@@ -52,4 +52,15 @@ router.put("/:id", async (req, res, next) => {
 	}
 });
 
+router.put("/addFriend/:id", async (req, res, next) => {
+	try {
+		const friend = await User.findByPk(req.params.id);
+		await req.user.addFriend(friend);
+		await friend.addFriend(req.user);
+		res.send(friend);
+	} catch (error) {
+		next(error);
+	}
+});
+
 module.exports = router;
