@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchSingleBusinessDetails } from "../store/singleBusiness";
 import { convertTime } from "../utils";
+import { Link } from "react-router-dom"
 
 class SingleBusiness extends Component {
 	constructor(props) {
@@ -85,7 +86,7 @@ class SingleBusiness extends Component {
 
 						<div
 							className="Stars"
-							aria-label="Rating of this product is 2.3 out of 5."
+							aria-label="Rating of this product is 4 out of 5."
 						>
 							<h4>Rating: {singleBusiness.rating}</h4>
 
@@ -96,7 +97,9 @@ class SingleBusiness extends Component {
 				) : (
 					<img src="https://codyogden.blog/content/images/2018/08/magic-burrito.gif"></img>
 				)}
+				{<Link to='/map'>Return to my map</Link>}
 			</div>
+			
 		);
 	}
 }

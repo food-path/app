@@ -131,7 +131,12 @@ class MapComponent extends React.Component {
 						Save Map
 					</Button>
 				</Form>
+
+				<div id="snackbar">
+          					Saved map!
+        		</div>
 			</div>
+			
 		);
 	}
 }
