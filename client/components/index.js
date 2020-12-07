@@ -8,3 +8,4 @@ export { default as Profile } from "./Profile";
 export { default as SingleBusiness } from "./SingleBusiness";
 export { default as MyMaps } from "./MyMaps";
 export { default as EditProfile } from "./EditProfile";
+export { default as OtherProfile } from "./OtherProfile";

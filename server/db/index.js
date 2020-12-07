@@ -22,6 +22,7 @@ Foodiemap.belongsTo(User);
 User.hasMany(Foodiemap);
 Foodiemap.belongsToMany(Business, { through: "foodiemap_business" });
 Business.belongsToMany(Foodiemap, { through: "foodiemap_business" });
+User.belongsToMany(User, { through: "user_to_user", as: "friends" });
 
 module.exports = {
 	// Include your models in this exports object as well!
