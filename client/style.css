@@ -1,6 +1,6 @@
 body {
   min-height: 100vh;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   /* overflow: hidden; */
   /* 	Keep this commented out so that you can save your maps in the desktop version */
 }
@@ -311,7 +311,7 @@ body {
   font-size: 18px;
   text-align: center;
   margin-top: 20%;
-  color: #182C3A;
+  color: #182c3a;
 }
 
 @media screen and (max-width: 600px) {
@@ -391,7 +391,67 @@ body {
 
 #btn-search:hover {
   background-color: #948fad;
-  -webkit-box-shadow: 10px 10px 99px 6px rgb(183, 125, 214);
+  /* -webkit-box-shadow: 10px 10px 99px 6px rgb(183, 125, 214);
   -moz-box-shadow: 10px 10px 99px 6px rgb(183, 115, 236);
-  box-shadow: 10px 10px 99px 6px rgb(198, 121, 233);
+  box-shadow: 10px 10px 99px 6px rgb(198, 121, 233); */
+}
+
+/* SIGN UP/REGISTRATION COMPONENT */
+@media screen and (max-width: 600px) {
+  .content-signup {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20%;
+    border-radius: 2%;
+    text-align: center;
+  }
+
+  .firstname {
+    border-radius: 5%;
+    text-align: left;
+  }
+
+  .lastname {
+    border-radius: 5%;
+    text-align: left;
+    margin-top: 10%;
+  }
+
+  .email {
+    border-radius: 5%;
+    text-align: left;
+    margin-top: 10%;
+  }
+
+  .password {
+    border-radius: 5%;
+    text-align: left;
+    margin-top: 10%;
+  }
+
+  #btn-signup {
+    background-color: #948fad;
+    border: none;
+    text-align: left;
+    margin-top: 10%;
+  }
+
+  #purple-bg {
+    position: fixed;
+    /* display: none; */
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(116, 71, 130, 0.5);
+    z-index: 2;
+  }
 }
