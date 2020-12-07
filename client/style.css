@@ -263,6 +263,11 @@ body {
 
 .member {
   margin-top: 2%;
+  font-size: 12px;
+  text-align: center;
+}
+
+.edit-profile {
   font-size: 10px;
   text-align: center;
 }
@@ -275,7 +280,7 @@ body {
 .text-separation {
   margin-top: 10%;
   min-width: 100%;
-  height: 25px;
+  height: 35px;
   font-size: 15px;
   color: white;
   text-align: center;
@@ -283,6 +288,8 @@ body {
 
 .saved-maps {
   margin-top: 5%;
+  font-size: 10px;
+  text-align: center;
 }
 @media screen and (max-width: 600px) {
   .btn-logout {
@@ -297,6 +304,15 @@ body {
 }
 
 /* SEARCH COMPONENT */
+
+.welcome-name {
+  text-transform: Capitalize;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 20%;
+  color: #182C3A;
+}
+
 @media screen and (max-width: 600px) {
   .container-search {
     background-size: cover !important;
@@ -313,40 +329,32 @@ body {
     width: 90%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 30%;
+    margin-top: 5%;
     border-radius: 2%;
     text-align: left;
   }
 }
 
-@media screen and (max-width: 600px) {
-  #city-label {
-    width: 100% !important;
-    background-color: #948fad !important;
-    color: white;
-  }
+#city-label {
+  width: 100% !important;
+  background-color: #948fad !important;
+  color: white;
 }
 
-@media screen and (max-width: 600px) {
-  #city-label::placeholder {
-    color: #ffffff !important;
-    text-align: center;
-  }
+#city-label::placeholder {
+  color: #ffffff !important;
+  text-align: center;
 }
 
-@media screen and (max-width: 600px) {
-  #food-label {
-    width: 100% !important;
-    background-color: #948fad !important;
-    color: white;
-  }
+#food-label {
+  width: 100% !important;
+  background-color: #948fad !important;
+  color: white;
 }
 
-@media screen and (max-width: 600px) {
-  #food-label::placeholder {
-    color: #ffffff !important;
-    text-align: center;
-  }
+#food-label::placeholder {
+  color: #ffffff !important;
+  text-align: center;
 }
 
 .mb-3 {
@@ -384,6 +392,5 @@ body {
   background-color: #948fad;
   -webkit-box-shadow: 10px 10px 99px 6px rgb(183, 125, 214);
   -moz-box-shadow: 10px 10px 99px 6px rgb(183, 115, 236);
-  box-shadow: 10px 10px 99px 6px rgb(198, 121, 233)
+  box-shadow: 10px 10px 99px 6px rgb(198, 121, 233);
 }
-

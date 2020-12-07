@@ -39,8 +39,16 @@ class Search extends Component {
   render() {
     let minPrice = priceToText(this.state.minPrice);
     let maxPrice = priceToText(this.state.maxPrice);
+    const user = this.props.user;
+
     return (
       <div className="container-search">
+        <h2 className="welcome-name">
+          {" "}
+          Welcome,
+          {user.firstName}!
+        </h2>
+
         <Form
           className="search-form"
           onSubmit={async (event) => {
@@ -74,38 +82,38 @@ class Search extends Component {
             </div>
 
             <div className="price-fields">
-            <Form.Label>Minimum Price: {minPrice}</Form.Label>
-            <Form.Control
-              id="slider-min-price"
-              type="range"
-              name="minPrice"
-              value={this.state.minPrice}
-              onChange={this.onChange}
-            />
+              <Form.Label>Minimum Price: {minPrice}</Form.Label>
+              <Form.Control
+                id="slider-min-price"
+                type="range"
+                name="minPrice"
+                value={this.state.minPrice}
+                onChange={this.onChange}
+              />
 
-            <Form.Label>Maximum Price: {maxPrice}</Form.Label>
-            <Form.Control
-              id="slider-max-price"
-              type="range"
-              name="maxPrice"
-              value={this.state.maxPrice}
-              onChange={this.onChange}
-            />
+              <Form.Label>Maximum Price: {maxPrice}</Form.Label>
+              <Form.Control
+                id="slider-max-price"
+                type="range"
+                name="maxPrice"
+                value={this.state.maxPrice}
+                onChange={this.onChange}
+              />
             </div>
 
             <div className="diet-fields">
-            <div key="inline-checkbox" className="mb-3">
-              {["Vegetarian", "Vegan", "Halal", "Kosher"].map((cat) => (
-                <Form.Check
-                  inline
-                  name={cat.toLowerCase()}
-                  label={cat}
-                  type="checkbox"
-                  onChange={this.onChangeCheckbox}
-                  key={cat}
-                />
-              ))}
-            </div>
+              <div key="inline-checkbox" className="mb-3">
+                {["Vegetarian", "Vegan", "Halal", "Kosher"].map((cat) => (
+                  <Form.Check
+                    inline
+                    name={cat.toLowerCase()}
+                    label={cat}
+                    type="checkbox"
+                    onChange={this.onChangeCheckbox}
+                    key={cat}
+                  />
+                ))}
+              </div>
             </div>
 
             <Button id="btn-search" variant="primary" type="submit">
@@ -118,7 +126,7 @@ class Search extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({});
+const mapStateToProps = (state) => ({ user: state.user });
 
 const mapDispatchToProps = (dispatch) => ({
   fetchMarkers: (body) => dispatch(fetchMarkers(body)),
