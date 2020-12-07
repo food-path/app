@@ -1,6 +1,6 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import userReducer from "./user";
-import businessReducer from "./singleBusiness"
+import businessReducer from "./singleBusiness";
 import thunkMiddle from "redux-thunk";
 //npm install --save redux-devtools-extension for redux dev tools
 import { composeWithDevTools } from "redux-devtools-extension";
@@ -9,6 +9,7 @@ import { createLogger } from "redux-logger";
 import markers from "./markers";
 import search from "./search";
 import maps from "./maps";
+import otherUser from "./otherUser";
 
 export const rootReducer = combineReducers({
 	user: userReducer,
@@ -16,6 +17,7 @@ export const rootReducer = combineReducers({
 	markers,
 	search,
 	maps,
+	otherUser,
 });
 
 const middleware = composeWithDevTools(
@@ -29,3 +31,4 @@ export * from "./user";
 export * from "./markers";
 export * from "./search";
 export * from "./maps";
+export * from "./otherUser";

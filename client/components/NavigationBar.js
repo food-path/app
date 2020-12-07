@@ -15,11 +15,10 @@ class NavigationBar extends React.Component {
 				</Navbar.Brand>
 				<Navbar id="basic-navbar-nav">
 					<Nav id="mr-auto">
-						<Nav.Link as={NavLink} to="/">
-							<img src="/icons/house.svg" width="30" className="home-icon" />
-							<p className="home-text">Home</p>
-						</Nav.Link>
-
+						{/* <Nav.Link as={NavLink} to="/">
+              <img src="./icons/house.svg" width="30" className="home-icon" />
+              <p className="home-text">Home</p>
+            </Nav.Link> */}
 						{this.props.user.id && (
 							<>
 								<Nav.Link as={NavLink} to="/search">
@@ -31,14 +30,14 @@ class NavigationBar extends React.Component {
 									<p className="search-text">Search</p>
 								</Nav.Link>
 
-								<Nav.Link as={NavLink} to="/map">
-									<img
-										src="/icons/compass.svg"
-										width="30"
-										className="map-icon"
-									/>
-									<p className="map-text">Map </p>
-								</Nav.Link>
+								{/* <Nav.Link as={NavLink} to="/map">
+                  <img
+                    src="./icons/compass.svg"
+                    width="30"
+                    className="map-icon"
+                  />
+                  <p className="map-text">Map </p>
+                </Nav.Link> */}
 
 								<Nav.Link as={NavLink} to="/profile">
 									<img
