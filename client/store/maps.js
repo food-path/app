@@ -1,5 +1,4 @@
 import axios from "axios";
-import { Next } from "react-bootstrap/esm/PageItem";
 
 //ACTION TYPES
 const CREATED_MAP = "CREATED_MAP";
