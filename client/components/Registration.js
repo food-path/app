@@ -38,6 +38,13 @@ class Registration extends React.Component {
     return (
       <>
         <div id="purple-bg">
+          
+            <img src="/img/logo2.png" width="90" className="logo-signup" />
+
+          <p className="welcome-msg">
+            Welcome to Food Path! <br></br>Tell us a little bit about yourself.
+          </p>
+
           <Form.Group onSubmit={this.onSubmit} className="content-signup">
             <Form.Control
               className="firstname"
@@ -71,16 +78,19 @@ class Registration extends React.Component {
               value={this.state.password}
               onChange={this.onChange}
             />
-            <Button id="btn-signup" variant="primary" type="submit">
+            <Button id="btn-signup" variant="secondary" type="submit">
               Sign Up
             </Button>
           </Form.Group>
 
-          <Form method="get" action="/auth/google">
+          <Form method="get" action="/auth/google" id="form-google-btn">
             <Button id="btn-google" type="submit">
-              Signup with Google
+              Sign up with Google
             </Button>
 
+            <Button id="btn-already-account" type="submit">
+              Already a member? Sign in here
+            </Button>
           </Form>
         </div>
       </>
