@@ -105,16 +105,22 @@ class Search extends Component {
                   onChange={this.onChange}
                 />
 
-                <Form.Label></Form.Label>
-                <Form.Control
-                  id="food-label"
-                  type="text"
-                  name="term"
-                  value={this.state.term}
-                  placeholder="Enter key words"
-                  onChange={this.onChange}
-                />
-              </div>
+						<div className="diet-fields">
+							<div key="inline-checkbox" className="mb-3">
+								{["Vegetarian", "Vegan", "Halal", "Kosher", "Gluten-Free"].map(
+									(cat) => (
+										<Form.Check
+											inline
+											name={cat.toLowerCase().replace("-", "_")}
+											label={cat}
+											type="checkbox"
+											onChange={this.onChangeCheckbox}
+											key={cat}
+										/>
+									)
+								)}
+							</div>
+						</div>
 
               <div className="price-fields">
                 <Form.Label>Minimum Price: {minPrice}</Form.Label>

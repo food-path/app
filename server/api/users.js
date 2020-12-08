@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User } = require("../db");
+const { User, Foodiemap, Business } = require("../db");
 
 router.get("/", async (req, res, next) => {
 	try {
@@ -16,7 +16,10 @@ router.get("/", async (req, res, next) => {
 router.get("/:id", async (req, res, next) => {
 	try {
 		const otherUser = await User.findByPk(req.params.id, {
-			include: { model: User, as: "friends" },
+			include: [
+				{ model: User, as: "friends" },
+				{ model: Foodiemap, include: Business },
+			],
 		});
 		res.send(otherUser);
 	} catch (error) {
