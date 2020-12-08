@@ -88,7 +88,7 @@ class MapComponent extends React.Component {
 								id={marker.id}
 							/>
 						))}
-						{/* <div className="map-overlay">
+						<div className="map-overlay">
 							<BusinessesList props={this.props} />
 							<Form
 								onSubmit={(event) => {
@@ -130,10 +130,10 @@ class MapComponent extends React.Component {
 									Save Map
 								</Button>
 							</Form>
-						</div> */}
+						</div>
 					</GoogleMapReact>
 				{/* </iframe> */}
-				<div className="map-overlay">
+				{/* <div className="map-overlay">
 					<BusinessesList props={this.props} />
 					<Form
 						onSubmit={(event) => {
@@ -175,7 +175,7 @@ class MapComponent extends React.Component {
 							Save Map
 						</Button>
 					</Form>
-				</div>
+				</div> */}
 			</div>
 		);
 	}
