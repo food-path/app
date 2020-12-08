@@ -7,7 +7,6 @@ import {
 	MapComponent,
 	Registration,
 	Search,
-	UserHome,
 	Profile,
 	SingleBusiness,
 	MyMaps,
