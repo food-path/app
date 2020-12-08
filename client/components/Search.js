@@ -42,116 +42,121 @@ class Search extends Component {
     let minPrice = priceToText(this.state.minPrice);
     let maxPrice = priceToText(this.state.maxPrice);
     const user = this.props.user;
+
     return (
       <div className="container-search">
-        <h2 className="welcome-name">
-          {" "}
-          Welcome,
-          {user.firstName}!
-        </h2>
-        <Modal
-          show={this.state.showNoResultsFound}
-          size="lg"
-          aria-labelledby="contained-modal-title-vcenter"
-          centered
-        >
-          <Modal.Header closeButton>
-            <Modal.Title id="contained-modal-title-vcenter">
-              No results found
-            </Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <h4>Try Again!</h4>
-            <p>
-              We couldn't find {this.state.term} in {this.state.location}
-              <br />
-              Let's try something else!
-            </p>
-          </Modal.Body>
-          <Modal.Footer>
-            <Button
-              onClick={() => this.setState({ showNoResultsFound: false })}
-            >
-              Close
-            </Button>
-          </Modal.Footer>
-        </Modal>
-        <Form
-          className="search-form"
-          onSubmit={async (event) => {
-            event.preventDefault();
-            await this.props.fetchMarkers(this.state);
-            if (this.props.markers.length === 0) {
-              this.setState({ showNoResultsFound: true });
-            } else {
-              await this.props.saveSearch(this.state);
-              this.props.history.push("/map");
-            }
-          }}
-        >
-          <Form.Group>
-            <div className="input-fields">
-              <Form.Label></Form.Label>
-              <Form.Control
-                id="city-label"
-                type="city"
-                name="location"
-                value={this.state.location}
-                placeholder="Enter city or zip code"
-                onChange={this.onChange}
-              />
 
-              <Form.Label></Form.Label>
-              <Form.Control
-                id="food-label"
-                type="text"
-                name="term"
-                value={this.state.term}
-                placeholder="Enter key words"
-                onChange={this.onChange}
-              />
-            </div>
+        <div id="search-bg">
 
-            <div className="price-fields">
-              <Form.Label>Minimum Price: {minPrice}</Form.Label>
-              <Form.Control
-                id="slider-min-price"
-                type="range"
-                name="minPrice"
-                value={this.state.minPrice}
-                onChange={this.onChange}
-              />
+          <h2 className="welcome-name">
+            {" "}
+            Welcome,
+            {user.firstName}!
+          </h2>
+          <Modal
+            show={this.state.showNoResultsFound}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+          >
+            <Modal.Header closeButton>
+              <Modal.Title id="contained-modal-title-vcenter">
+                No results found
+              </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <h4>Try Again!</h4>
+              <p>
+                We couldn't find {this.state.term} in {this.state.location}
+                <br />
+                Let's try something else!
+              </p>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button
+                onClick={() => this.setState({ showNoResultsFound: false })}
+              >
+                Close
+              </Button>
+            </Modal.Footer>
+          </Modal>
+          <Form
+            className="search-form"
+            onSubmit={async (event) => {
+              event.preventDefault();
+              await this.props.fetchMarkers(this.state);
+              if (this.props.markers.length === 0) {
+                this.setState({ showNoResultsFound: true });
+              } else {
+                await this.props.saveSearch(this.state);
+                this.props.history.push("/map");
+              }
+            }}
+          >
+            <Form.Group>
+              <div className="input-fields">
+                <Form.Label></Form.Label>
+                <Form.Control
+                  id="city-label"
+                  type="city"
+                  name="location"
+                  value={this.state.location}
+                  placeholder="Enter city or zip code"
+                  onChange={this.onChange}
+                />
 
-              <Form.Label>Maximum Price: {maxPrice}</Form.Label>
-              <Form.Control
-                id="slider-max-price"
-                type="range"
-                name="maxPrice"
-                value={this.state.maxPrice}
-                onChange={this.onChange}
-              />
-            </div>
-
-            <div className="diet-fields">
-              <div key="inline-checkbox" className="mb-3">
-                {["Vegetarian", "Vegan", "Halal", "Kosher"].map((cat) => (
-                  <Form.Check
-                    inline
-                    name={cat.toLowerCase()}
-                    label={cat}
-                    type="checkbox"
-                    onChange={this.onChangeCheckbox}
-                    key={cat}
-                  />
-                ))}
+                <Form.Label></Form.Label>
+                <Form.Control
+                  id="food-label"
+                  type="text"
+                  name="term"
+                  value={this.state.term}
+                  placeholder="Enter key words"
+                  onChange={this.onChange}
+                />
               </div>
-            </div>
 
-            <Button id="btn-search" variant="primary" type="submit">
-              GET MY FOODIEMAP
-            </Button>
-          </Form.Group>
-        </Form>
+              <div className="price-fields">
+                <Form.Label>Minimum Price: {minPrice}</Form.Label>
+                <Form.Control
+                  id="slider-min-price"
+                  type="range"
+                  name="minPrice"
+                  value={this.state.minPrice}
+                  onChange={this.onChange}
+                />
+
+                <Form.Label>Maximum Price: {maxPrice}</Form.Label>
+                <Form.Control
+                  id="slider-max-price"
+                  type="range"
+                  name="maxPrice"
+                  value={this.state.maxPrice}
+                  onChange={this.onChange}
+                />
+              </div>
+
+              <div className="diet-fields">
+                <div key="inline-checkbox" className="mb-3">
+                  {["Vegetarian", "Vegan", "Halal", "Kosher"].map((cat) => (
+                    <Form.Check
+                      inline
+                      name={cat.toLowerCase()}
+                      label={cat}
+                      type="checkbox"
+                      onChange={this.onChangeCheckbox}
+                      key={cat}
+                    />
+                  ))}
+                </div>
+              </div>
+
+              <Button id="btn-search" variant="primary" type="submit">
+                GET MY FOODIEMAP
+              </Button>
+            </Form.Group>
+          </Form>
+        </div>
       </div>
     );
   }

@@ -287,6 +287,24 @@ body {
 }
 
 /* SEARCH COMPONENT */
+
+#search-bg {
+  position: fixed;
+  z-index: 2;
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* background: url("https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/safari-512.png")
+    no-repeat; */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 1;
+}
+
 .welcome-name {
   text-transform: Capitalize;
   font-size: 18px;
