@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { register } from "../store";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import { Link } from "react-router-dom";
 
 class Registration extends React.Component {
   constructor() {
@@ -24,6 +25,7 @@ class Registration extends React.Component {
   }
 
   onSubmit(event) {
+    console.log("TESTING BUTTONNNNN", event)
     event.preventDefault();
     this.props.auth(this.state);
     this.setState({
@@ -32,6 +34,7 @@ class Registration extends React.Component {
       email: "",
       password: "",
     });
+    this.props.history.push("/profile");
   }
 
   render() {
@@ -79,7 +82,7 @@ class Registration extends React.Component {
                 value={this.state.password}
                 onChange={this.onChange}
               />
-              <Button id="btn-signup" variant="secondary" type="submit">
+              <Button id="btn-signup" type="submit" onClick={this.onSubmit}>
                 Sign Up
               </Button>
             </Form.Group>
@@ -90,7 +93,7 @@ class Registration extends React.Component {
               </Button>
 
               <Button id="btn-already-account" type="submit">
-                Already a member? Sign in here
+                <Link to="/login">Already a member? Sign in here</Link>
               </Button>
             </Form>
           </div>

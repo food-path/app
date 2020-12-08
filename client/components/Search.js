@@ -45,9 +45,7 @@ class Search extends Component {
 
     return (
       <div className="container-search">
-
         <div id="search-bg">
-
           <h2 className="welcome-name">
             {" "}
             Welcome,
@@ -105,61 +103,66 @@ class Search extends Component {
                   onChange={this.onChange}
                 />
 
-						<div className="diet-fields">
-							<div key="inline-checkbox" className="mb-3">
-								{["Vegetarian", "Vegan", "Halal", "Kosher", "Gluten-Free"].map(
-									(cat) => (
-										<Form.Check
-											inline
-											name={cat.toLowerCase().replace("-", "_")}
-											label={cat}
-											type="checkbox"
-											onChange={this.onChangeCheckbox}
-											key={cat}
-										/>
-									)
-								)}
-							</div>
-						</div>
-
-              <div className="price-fields">
-                <Form.Label>Minimum Price: {minPrice}</Form.Label>
-                <Form.Control
-                  id="slider-min-price"
-                  type="range"
-                  name="minPrice"
-                  value={this.state.minPrice}
-                  onChange={this.onChange}
-                />
-
-                <Form.Label>Maximum Price: {maxPrice}</Form.Label>
-                <Form.Control
-                  id="slider-max-price"
-                  type="range"
-                  name="maxPrice"
-                  value={this.state.maxPrice}
-                  onChange={this.onChange}
-                />
-              </div>
-
-              <div className="diet-fields">
-                <div key="inline-checkbox" className="mb-3">
-                  {["Vegetarian", "Vegan", "Halal", "Kosher"].map((cat) => (
-                    <Form.Check
-                      inline
-                      name={cat.toLowerCase()}
-                      label={cat}
-                      type="checkbox"
-                      onChange={this.onChangeCheckbox}
-                      key={cat}
-                    />
-                  ))}
+                <div className="diet-fields">
+                  <div key="inline-checkbox" className="mb-3">
+                    {[
+                      "Vegetarian",
+                      "Vegan",
+                      "Halal",
+                      "Kosher",
+                      "Gluten-Free",
+                    ].map((cat) => (
+                      <Form.Check
+                        inline
+                        name={cat.toLowerCase().replace("-", "_")}
+                        label={cat}
+                        type="checkbox"
+                        onChange={this.onChangeCheckbox}
+                        key={cat}
+                      />
+                    ))}
+                  </div>
                 </div>
-              </div>
 
-              <Button id="btn-search" variant="primary" type="submit">
-                GET MY FOODIEMAP
-              </Button>
+                <div className="price-fields">
+                  <Form.Label>Minimum Price: {minPrice}</Form.Label>
+                  <Form.Control
+                    id="slider-min-price"
+                    type="range"
+                    name="minPrice"
+                    value={this.state.minPrice}
+                    onChange={this.onChange}
+                  />
+
+                  <Form.Label>Maximum Price: {maxPrice}</Form.Label>
+                  <Form.Control
+                    id="slider-max-price"
+                    type="range"
+                    name="maxPrice"
+                    value={this.state.maxPrice}
+                    onChange={this.onChange}
+                  />
+                </div>
+
+                <div className="diet-fields">
+                  <div key="inline-checkbox" className="mb-3">
+                    {["Vegetarian", "Vegan", "Halal", "Kosher"].map((cat) => (
+                      <Form.Check
+                        inline
+                        name={cat.toLowerCase()}
+                        label={cat}
+                        type="checkbox"
+                        onChange={this.onChangeCheckbox}
+                        key={cat}
+                      />
+                    ))}
+                  </div>
+                </div>
+
+                <Button id="btn-search" variant="primary" type="submit">
+                  GET MY FOODIEMAP
+                </Button>
+              </div>
             </Form.Group>
           </Form>
         </div>
