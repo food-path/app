@@ -34,13 +34,14 @@ class Routes extends Component {
 					path="/singleBusiness/:businessId"
 					component={SingleBusiness}
 				/>
-				<Route exact path="/user/:id" component={OtherProfile} />
+
 				{isLoggedIn && (
 					<>
 						<Route exact path="/profile" component={Profile} />
 						<Route exact path="/myMaps" component={MyMaps} />
 						<Route exact path="/" component={Search} />
 						<Route exact path="/editProfile" component={EditProfile} />
+						<Route exact path="/user/:id" component={OtherProfile} />
 					</>
 				)}
 				{!isLoggedIn && (

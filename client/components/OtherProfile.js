@@ -5,7 +5,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { Link, withRouter } from "react-router-dom";
 import Button from "react-bootstrap/Button";
-import { fetchOtherUser, addFriend } from "../store";
+import { fetchOtherUser, addFriend, gotMarkers, addMarkers } from "../store";
 
 class OtherProfile extends React.Component {
 	componentDidMount() {
@@ -16,6 +16,8 @@ class OtherProfile extends React.Component {
 		const otherUser = this.props.otherUser;
 		const friends = otherUser.friends || [];
 		const isFriend = friends.find((friend) => friend.id === user.id);
+		const maps = otherUser.foodiemaps || [];
+
 		return (
 			<div id="container-profile">
 				<img className="img-profile" src={otherUser.imageUrl} width="100px" />
@@ -33,7 +35,7 @@ class OtherProfile extends React.Component {
 					</Button>
 				</div>
 				<div className="div-text">
-					<p className="text-separation">My Friends</p>
+					<p className="text-separation">{otherUser.firstName}'s Friends</p>
 				</div>
 				<span className="friends">
 					<ul>
@@ -49,6 +51,27 @@ class OtherProfile extends React.Component {
 						))}
 					</ul>
 				</span>
+
+				<div className="div-text">
+					<p className="text-separation">{otherUser.firstName}'s Maps</p>
+				</div>
+				<ul>
+					{maps.map((map) => (
+						<li key={map.id}>
+							<Link
+								to="/map"
+								onClick={() => {
+									this.props.gotMarkers([]);
+									this.props.addMarkers(map.businesses);
+								}}
+							>
+								<p>{map.name}</p>
+							</Link>
+
+							<p>{map.businesses.length}</p>
+						</li>
+					))}
+				</ul>
 			</div>
 		);
 	}
@@ -62,6 +85,8 @@ const mapState = (state) => ({
 const mapDispatch = (dispatch) => ({
 	fetchOtherUser: (id) => dispatch(fetchOtherUser(id)),
 	addFriend: () => dispatch(addFriend()),
+	gotMarkers: (markers) => dispatch(gotMarkers(markers)),
+	addMarkers: (businesses) => dispatch(addMarkers(businesses)),
 });
 
 export default withRouter(connect(mapState, mapDispatch)(OtherProfile));

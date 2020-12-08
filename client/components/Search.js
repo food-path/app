@@ -128,16 +128,18 @@ class Search extends Component {
 
 						<div className="diet-fields">
 							<div key="inline-checkbox" className="mb-3">
-								{["Vegetarian", "Vegan", "Halal", "Kosher"].map((cat) => (
-									<Form.Check
-										inline
-										name={cat.toLowerCase()}
-										label={cat}
-										type="checkbox"
-										onChange={this.onChangeCheckbox}
-										key={cat}
-									/>
-								))}
+								{["Vegetarian", "Vegan", "Halal", "Kosher", "Gluten-Free"].map(
+									(cat) => (
+										<Form.Check
+											inline
+											name={cat.toLowerCase().replace("-", "_")}
+											label={cat}
+											type="checkbox"
+											onChange={this.onChangeCheckbox}
+											key={cat}
+										/>
+									)
+								)}
 							</div>
 						</div>
 
