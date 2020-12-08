@@ -51,8 +51,11 @@ body {
   position: absolute;
   /* float: left; */
   /* align-self: center; */
-  margin: auto;
-  width: 80vw;
+  /* margin: auto; */
+  left: 50%;
+  top: 10%;
+  margin-left: -65%;
+  width: 50vw;
   height: 25vh;
   background-color: #8b7fc0;
   padding: 1em;
