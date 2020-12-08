@@ -93,13 +93,15 @@ Business.findOrCreateFromYelpMarker = async function (marker) {
 		},
 		defaults: {
 			name: marker.name,
-			country: marker.location.country,
-			city: marker.location.city,
-			streetAddress: marker.location.address1,
+			country: marker.location ? marker.location.country : "",
+			city: marker.location ? marker.location.city : "",
+			streetAddress: marker.location ? marker.location.address1 : "",
 			latitude: marker.coordinates.latitude,
 			longitude: marker.coordinates.longitude,
 			imageUrl: marker.image_url,
-			categories: marker.categories.map((cat) => cat.alias),
+			categories: marker.categories
+				? marker.categories.map((cat) => cat.alias)
+				: [],
 			reviewCount: marker.review_count,
 			rating: marker.rating,
 			price: marker.price,

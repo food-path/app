@@ -39,8 +39,8 @@ class MapComponent extends React.Component {
 			const firstMarker = this.props.markers[0];
 			this.setState({
 				center: {
-					lat: firstMarker.coordinates.latitude,
-					lng: firstMarker.coordinates.longitude,
+					lat: +firstMarker.coordinates.latitude,
+					lng: +firstMarker.coordinates.longitude,
 				},
 			});
 			// this.state.map.setCenter({
