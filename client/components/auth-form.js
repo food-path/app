@@ -3,6 +3,12 @@ import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
 import {auth} from '../store'
 import {Form, Button} from 'react-bootstrap'
+
+/**
+  It looks like this file was created on an editor where the linter settings did not enforce semi-colons (actually - it seems like the one we use in boilermaker). As the rest of the project seems to have semi-colons, we should update the format of this file to match.
+*/
+
+
 /**
  * COMPONENT
  */

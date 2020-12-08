@@ -13,6 +13,8 @@ router.get("/", async (req, res, next) => {
 	}
 });
 
+// let's convert the below route to async / await to match the rest of the file
+
 //get route for a single business by id
 router.get("/:businessId", (req, res, next) => {
 	Business.findByPk(req.params.businessId)

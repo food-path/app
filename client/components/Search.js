@@ -38,6 +38,8 @@ class Search extends Component {
 		});
 	}
 
+	// I'd recommend splitting up the below render into at least two separate components: one for the modal and one for the form 
+
 	render() {
 		let minPrice = priceToText(this.state.minPrice);
 		let maxPrice = priceToText(this.state.maxPrice);

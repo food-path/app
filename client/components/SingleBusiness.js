@@ -11,6 +11,10 @@ class SingleBusiness extends Component {
 		this.props.getSingleBusiness(this.props.match.params.businessId);
 	}
 
+	/**
+		The below render has a lot of logic. Generally I try to make my renders mostly JSX. Could we take the hours logic and put it into the utils folder?
+	*/
+
 	render() {
 		console.log("I am in singleBusiness Component");
 		const { singleBusiness } = this.props;
