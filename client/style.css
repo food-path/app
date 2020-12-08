@@ -49,11 +49,19 @@ body {
 
 #BusinessName {
   background-color: rgb(93, 155, 176);
+  text-align: center;
 }
 
-#hours {
+#wrapper{
+  text-align: center;
+}
+#wrapper1a{
+  display: inline-block; vertical-align: top;
+}
+#wrapper1b {
   width: 40%;
-  float: right;
+  /* float: right; */
+  display: inline-block; vertical-align: top;
 }
 
 #bannerimage {

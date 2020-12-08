@@ -13,7 +13,6 @@ class SingleBusiness extends Component {
 	}
 
 	render() {
-		console.log("I am in singleBusiness Component");
 		const { singleBusiness } = this.props;
 		console.log("singleBusiness:", singleBusiness);
 
@@ -54,16 +53,29 @@ class SingleBusiness extends Component {
 
 		return (
 			<div id="singleBusiness">
+				<img id="bannerimage" className="resize" src={singleBusiness.image_url} />
 				<div id="BusinessName">
 					<h1>{singleBusiness.name}</h1>
 				</div>
 				{singleBusiness.categories ? (
-					<div>
-						<h4>
-							Category:
-							{singleBusiness.categories.map((obj) => obj.title).join("|")}
-						</h4>
-						<div id="hours">
+					<div id='wrapper'>
+						<div id='wrapper1a'>
+							<h4>
+								Category:
+								{singleBusiness.categories.map((obj) => obj.title).join("|")}
+							</h4>
+						
+							<h4>Street Address: {singleBusiness.location.address1}</h4>
+							<h4>Phone: {singleBusiness.display_phone}</h4>
+
+							<div>
+								<h4>Rating: {singleBusiness.rating}</h4>
+
+								<h4>Price: {singleBusiness.price}</h4>
+			
+							</div>
+						</div>
+						<div id="wrapper1b">
 							<ul>
 								<h4>Hours:</h4>{" "}
 								{hoursToDisplay.map((openHrs, id) => (
@@ -81,16 +93,7 @@ class SingleBusiness extends Component {
 								))}
 							</ul>
 						</div>
-						<h4>Street Address: {singleBusiness.location.address1}</h4>
-						<h4>Phone: {singleBusiness.display_phone}</h4>
-
-						<div>
-							<h4>Rating: {singleBusiness.rating}</h4>
-
-							<h4>Price: {singleBusiness.price}</h4>
-							<img id="bannerimage" className="resize" src={singleBusiness.image_url} />
-						</div>
-					</div>
+					</div> 
 				) : (
 					<img src="https://codyogden.blog/content/images/2018/08/magic-burrito.gif"></img>
 				)}
