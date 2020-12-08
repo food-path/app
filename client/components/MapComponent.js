@@ -88,7 +88,52 @@ class MapComponent extends React.Component {
 								id={marker.id}
 							/>
 						))}
-						<div className="map-overlay">
+						{/* <div className="map-overlay">
+							<BusinessesList props={this.props} />
+							<Form
+								onSubmit={(event) => {
+									event.preventDefault();
+									const mapToAdd = this.props.maps.find(
+										(m) => m.id === +this.state.mapToAddId
+									);
+									this.props.addMarkers(mapToAdd.businesses);
+								}}
+							>
+								<Form.Label>Map To Add</Form.Label>
+								<Form.Control
+									as="select"
+									name="mapToAddId"
+									onChange={this.onChange}
+									value={this.state.mapToAddId}
+								>
+									<option value="default">Choose a map...</option>
+									{maps.map((m) => (
+										<option value={m.id} key={m.id}>
+											{m.name} by {m.user ? m.user.firstName : "Anonymous"}
+										</option>
+									))}
+								</Form.Control>
+								<Button variant="primary" type="submit">
+									Add Businesses To Current Map
+								</Button>
+							</Form>
+							<Form onSubmit={this.onSubmit}>
+								<Form.Label>Map Name</Form.Label>
+								<Form.Control
+									type="text"
+									name="name"
+									value={this.state.name}
+									placeholder="Map Name"
+									onChange={this.onChange}
+								/>
+								<Button variant="primary" type="submit">
+									Save Map
+								</Button>
+							</Form>
+						</div> */}
+					</GoogleMapReact>
+				{/* </iframe> */}
+				<div className="map-overlay">
 					<BusinessesList props={this.props} />
 					<Form
 						onSubmit={(event) => {
@@ -131,51 +176,6 @@ class MapComponent extends React.Component {
 						</Button>
 					</Form>
 				</div>
-					</GoogleMapReact>
-				{/* </iframe> */}
-				{/* <div className="map-overlay">
-					<BusinessesList props={this.props} />
-					<Form
-						onSubmit={(event) => {
-							event.preventDefault();
-							const mapToAdd = this.props.maps.find(
-								(m) => m.id === +this.state.mapToAddId
-							);
-							this.props.addMarkers(mapToAdd.businesses);
-						}}
-					>
-						<Form.Label>Map To Add</Form.Label>
-						<Form.Control
-							as="select"
-							name="mapToAddId"
-							onChange={this.onChange}
-							value={this.state.mapToAddId}
-						>
-							<option value="default">Choose a map...</option>
-							{maps.map((m) => (
-								<option value={m.id} key={m.id}>
-									{m.name} by {m.user ? m.user.firstName : "Anonymous"}
-								</option>
-							))}
-						</Form.Control>
-						<Button variant="primary" type="submit">
-							Add Businesses To Current Map
-						</Button>
-					</Form>
-					<Form onSubmit={this.onSubmit}>
-						<Form.Label>Map Name</Form.Label>
-						<Form.Control
-							type="text"
-							name="name"
-							value={this.state.name}
-							placeholder="Map Name"
-							onChange={this.onChange}
-						/>
-						<Button variant="primary" type="submit">
-							Save Map
-						</Button>
-					</Form>
-				</div> */}
 			</div>
 		);
 	}
