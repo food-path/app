@@ -48,7 +48,7 @@ class Search extends Component {
         <div id="search-bg">
           <h2 className="welcome-name">
             {" "}
-            Welcome,
+            Welcome, 
             {user.firstName}!
           </h2>
           <Modal
@@ -103,26 +103,7 @@ class Search extends Component {
                   onChange={this.onChange}
                 />
 
-                <div className="diet-fields">
-                  <div key="inline-checkbox" className="mb-3">
-                    {[
-                      "Vegetarian",
-                      "Vegan",
-                      "Halal",
-                      "Kosher",
-                      "Gluten-Free",
-                    ].map((cat) => (
-                      <Form.Check
-                        inline
-                        name={cat.toLowerCase().replace("-", "_")}
-                        label={cat}
-                        type="checkbox"
-                        onChange={this.onChangeCheckbox}
-                        key={cat}
-                      />
-                    ))}
-                  </div>
-                </div>
+                
 
                 <div className="price-fields">
                   <Form.Label>Minimum Price: {minPrice}</Form.Label>
@@ -146,10 +127,16 @@ class Search extends Component {
 
                 <div className="diet-fields">
                   <div key="inline-checkbox" className="mb-3">
-                    {["Vegetarian", "Vegan", "Halal", "Kosher"].map((cat) => (
+                    {[
+                      "Vegetarian",
+                      "Vegan",
+                      "Halal",
+                      "Kosher",
+                      "Gluten-Free",
+                    ].map((cat) => (
                       <Form.Check
                         inline
-                        name={cat.toLowerCase()}
+                        name={cat.toLowerCase().replace("-", "_")}
                         label={cat}
                         type="checkbox"
                         onChange={this.onChangeCheckbox}
