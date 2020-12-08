@@ -84,20 +84,18 @@ class SingleBusiness extends Component {
 						<h4>Street Address: {singleBusiness.location.address1}</h4>
 						<h4>Phone: {singleBusiness.display_phone}</h4>
 
-						<div
-							className="Stars"
-							aria-label="Rating of this product is 4 out of 5."
-						>
+						<div>
 							<h4>Rating: {singleBusiness.rating}</h4>
 
 							<h4>Price: {singleBusiness.price}</h4>
-							<img className="resize" src={singleBusiness.image_url} />
+							<img id="bannerimage" className="resize" src={singleBusiness.image_url} />
 						</div>
 					</div>
 				) : (
 					<img src="https://codyogden.blog/content/images/2018/08/magic-burrito.gif"></img>
 				)}
 				{<Link to='/map'>Return to my map</Link>}
+				
 			</div>
 			
 		);

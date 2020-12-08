@@ -11,36 +11,78 @@ const Business = db.define("business", {
 	},
 	name: {
 		type: Sequelize.STRING,
+		allowNull: false, 
+		validate: {
+			notEmpty: true
+		}
 	},
 	country: {
 		type: Sequelize.STRING,
+		allowNull: false, 
+		validate: {
+			notEmpty: true
+		}
 	},
 	city: {
 		type: Sequelize.STRING,
+		allowNull: false, 
+		validate: {
+			notEmpty: true
+		}
 	},
 	streetAddress: {
 		type: Sequelize.STRING,
+		allowNull: false, 
+		validate: {
+			notEmpty: true
+		}
 	},
 	latitude: {
 		type: Sequelize.DECIMAL,
+		allowNull: false, 
+		validate: {
+			notEmpty: true
+		}
 	},
 	longitude: {
 		type: Sequelize.DECIMAL,
+		allowNull: false, 
+		validate: {
+			notEmpty: true
+		}
 	},
 	imageUrl: {
 		type: Sequelize.STRING,
+		defaultValue: 'https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
 	},
 	categories: {
 		type: Sequelize.ARRAY(Sequelize.STRING),
+		allowNull: false, 
+		validate: {
+			notEmpty: true
+		}
 	},
 	reviewCount: {
 		type: Sequelize.INTEGER,
+		allowNull: false,
+		validate: {
+		notEmpty: true,
+		min: 0
+		}
 	},
 	rating: {
 		type: Sequelize.INTEGER,
+		validate: {
+			notEmpty: true,
+			min: 4
+		  }
 	},
 	price: {
 		type: Sequelize.STRING,
+		allowNull: false,
+		validate: {
+		notEmpty: true,
+		}
 	},
 });
 
