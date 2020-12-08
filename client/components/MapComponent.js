@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import SingleBusiness from "./SingleBusiness";
 import BusinessesList from "./BusinessesList";
 
+
 const Marker = ({ text, imageUrl, id }) => (
 	<div
 		className="marker"
@@ -28,6 +29,7 @@ class MapComponent extends React.Component {
 			center: { lat: 40.74, lng: -73.98 },
 			name: "",
 			mapToAddId: "default",
+			mapSaved:false
 		};
 		this.onChange = this.onChange.bind(this);
 		this.onSubmit = this.onSubmit.bind(this);
@@ -60,12 +62,14 @@ class MapComponent extends React.Component {
 		this.props.createMap(this.props.search, this.props.markers, {
 			name: this.state.name,
 		});
+		this.state.mapSaved = true
 	}
+	
 
 	render() {
 		const markers = this.props.markers || [];
 		const maps = this.props.maps || [];
-
+		console.log("this.state:", this.state)
 		return (
 			<div>
 				<div id="map-container">
@@ -130,11 +134,8 @@ class MapComponent extends React.Component {
 					<Button variant="primary" type="submit">
 						Save Map
 					</Button>
+					{this.state.mapSaved ?<Link to="/">Map Saved! Click here to view your saved map</Link>:null}
 				</Form>
-
-				<div id="snackbar">
-          					Saved map!
-        		</div>
 			</div>
 			
 		);
