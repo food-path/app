@@ -55,7 +55,7 @@ class NavigationBar extends React.Component {
 									}}
 								>
 									<img
-										src="/icons/door-closed.svg"
+										src="/icons/lock.svg"
 										width="30"
 										className="logout-icon"
 									/>
