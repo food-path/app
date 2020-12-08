@@ -12,6 +12,18 @@ router.get("/", async (req, res, next) => {
 	}
 });
 
+//GET /:id --> this grabs the id for the other user
+router.get("/:id", async (req, res, next) => {
+	try {
+		const otherUser = await User.findByPk(req.params.id, {
+			include: { model: User, as: "friends" },
+		});
+		res.send(otherUser);
+	} catch (error) {
+		next(error);
+	}
+});
+
 router.post("/search", async (req, res, next) => {
 	try {
 		await User.create(req.body);
@@ -35,6 +47,17 @@ router.put("/:id", async (req, res, next) => {
 			imageUrl: imageUrl || user.imageUrl,
 		});
 		res.send(user);
+	} catch (error) {
+		next(error);
+	}
+});
+
+router.put("/addFriend/:id", async (req, res, next) => {
+	try {
+		const friend = await User.findByPk(req.params.id);
+		await req.user.addFriend(friend);
+		await friend.addFriend(req.user);
+		res.send(friend);
 	} catch (error) {
 		next(error);
 	}

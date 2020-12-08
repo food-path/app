@@ -21,7 +21,12 @@ passport.serializeUser((user, done) => {
 });
 
 passport.deserializeUser((id, done) => {
-	User.findByPk(id)
+	User.findByPk(id, {
+		include: {
+			model: User,
+			as: "friends",
+		},
+	})
 		.then((user) => done(null, user))
 		.catch(done);
 });
