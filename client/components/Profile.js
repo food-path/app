@@ -29,15 +29,6 @@ class Profile extends React.Component {
 
         <div className="div-text">
           <p className="text-separation">
-            My Foodie Maps
-            {/* <img src="./icons/geo-alt.svg" width="20" className="foodie-icon" /> */}
-          </p>
-        </div>
-        <span className="saved-maps">
-          <MyMaps />
-        </span>
-        <div className="div-text">
-          <p className="text-separation">
             My Foodie Friends
             {/* <img src="./icons/geo-alt.svg" width="20" className="foodie-icon" /> */}
           </p>
@@ -52,6 +43,16 @@ class Profile extends React.Component {
               </li>
             ))}
           </ul>
+        </span>
+
+		<div className="div-text">
+          <p className="text-separation">
+            My Foodie Maps
+            {/* <img src="./icons/geo-alt.svg" width="20" className="foodie-icon" /> */}
+          </p>
+        </div>
+        <span className="saved-maps">
+          <MyMaps />
         </span>
       </div>
     );
