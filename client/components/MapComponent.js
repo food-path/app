@@ -69,7 +69,7 @@ class MapComponent extends React.Component {
 	render() {
 		const markers = this.props.markers || [];
 		const maps = this.props.maps || [];
-		console.log("this.state:", this.state)
+		
 		return (
 			<div>
 				<div id="map-container">
@@ -134,7 +134,7 @@ class MapComponent extends React.Component {
 					<Button variant="primary" type="submit">
 						Save Map
 					</Button>
-					{this.state.mapSaved ?<Link to="/">Map Saved! Click here to view your saved map</Link>:null}
+					{this.state.mapSaved ?<Link to="/myMaps">Map Saved! Click here to view your saved map</Link>:null}
 				</Form>
 			</div>
 			
