@@ -9,8 +9,11 @@ class Profile extends React.Component {
   render() {
     const user = this.props.user;
     const friends = user.friends || [];
+
     return (
       <div id="container-profile">
+        <div id="profile-bg">
+
         <img className="img-profile" src={user.imageUrl} width="100px" />
         <h2 className="name">
           {" "}
@@ -45,7 +48,7 @@ class Profile extends React.Component {
           </ul>
         </span>
 
-		<div className="div-text">
+        <div className="div-text">
           <p className="text-separation">
             My Foodie Maps
             {/* <img src="./icons/geo-alt.svg" width="20" className="foodie-icon" /> */}
@@ -54,6 +57,7 @@ class Profile extends React.Component {
         <span className="saved-maps">
           <MyMaps />
         </span>
+		</div>	
       </div>
     );
   }

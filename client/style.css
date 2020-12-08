@@ -225,8 +225,13 @@ body {
 }
 
 /* PROFILE COMPONENT */
+/* #profile-bg {
+  
+} */
+
 #container-profile {
   min-height: 100vh;
+  overflow: hidden;
 }
 
 .img-profile {
@@ -367,9 +372,6 @@ body {
 
 #btn-search:hover {
   background-color: #948fad;
-  /* -webkit-box-shadow: 10px 10px 99px 6px rgb(183, 125, 214);
-  -moz-box-shadow: 10px 10px 99px 6px rgb(183, 115, 236);
-  box-shadow: 10px 10px 99px 6px rgb(198, 121, 233); */
 }
 
 /* SIGN UP/REGISTRATION COMPONENT */
@@ -477,7 +479,6 @@ body {
   }
 
   #picture-bg {
-    background-color: red;
     position: fixed;
     z-index: 2;
     width: 100%; /* Full width (cover the whole page) */
