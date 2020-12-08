@@ -7,6 +7,10 @@ router.post("/login", async (req, res, next) => {
 			where: {
 				email: req.body.email,
 			},
+			include: {
+				model: User,
+				as: "friends",
+			},
 		});
 		if (!user) {
 			console.log("No such user found:", req.body.email);

@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { fetchMaps } from "../store";
+import { fetchMaps, deleteMap } from "../store";
 
 class MyMaps extends React.Component {
 	componentDidMount() {
@@ -17,6 +17,7 @@ class MyMaps extends React.Component {
 						<li key={map.id}>
 							<p>{map.name}</p>
 							<p>{map.businesses.length}</p>
+							<button onClick={() => this.props.deleteMap(map.id)}>X</button>
 						</li>
 					))}
 				</ul>
@@ -32,6 +33,7 @@ const mapState = (state) => ({
 
 const mapDispatch = (dispatch) => ({
 	fetchMaps: () => dispatch(fetchMaps()),
+	deleteMap: (id) => dispatch(deleteMap(id)),
 });
 
 export default connect(mapState, mapDispatch)(MyMaps);
