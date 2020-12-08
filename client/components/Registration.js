@@ -79,7 +79,7 @@ class Registration extends React.Component {
                 value={this.state.password}
                 onChange={this.onChange}
               />
-              <Button id="btn-signup" variant="secondary" type="submit" onClick={this.onSubmit}>
+              <Button id="btn-signup" variant="secondary" type="submit">
                 Sign Up
               </Button>
             </Form.Group>

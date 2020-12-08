@@ -167,14 +167,6 @@ body {
   }
 }
 
-/* @media screen and (max-width: 600px) {
-  .home-icon {
-    border-color: #ffffff;
-    filter: invert(1);
-    float: left;
-  }
-} */
-
 @media screen and (max-width: 600px) {
   .search-text {
     display: none;
@@ -193,13 +185,6 @@ body {
     display: none;
   }
 }
-
-/* @media screen and (max-width: 600px) {
-  .map-icon {
-    border-color: white;
-    filter: invert(1);
-  }
-} */
 
 @media screen and (max-width: 600px) {
   .profile-text {
@@ -257,9 +242,8 @@ body {
 
 .name {
   text-transform: Capitalize;
-  font-size: 30px;
+  font-size: 25px;
   text-align: center;
-  font-family: "Sofia", sans-serif;
 }
 
 .member {
@@ -291,17 +275,6 @@ body {
   margin-top: 5%;
   font-size: 10px;
   text-align: center;
-}
-@media screen and (max-width: 600px) {
-  .btn-logout {
-    position: fixed;
-    bottom: 14%;
-    margin-left: 40%;
-    border-radius: 28px !important;
-    border-color: #ada7c9 !important;
-    border-width: 2px !important;
-    color: #8b7fc0 !important;
-  }
 }
 
 /* SEARCH COMPONENT */
