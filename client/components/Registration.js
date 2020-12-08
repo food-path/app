@@ -37,61 +37,63 @@ class Registration extends React.Component {
   render() {
     return (
       <>
-        <div id="purple-bg">
-          
+        <div id="picture-bg">
+          <div id="purple-bg">
             <img src="/img/logo2.png" width="90" className="logo-signup" />
 
-          <p className="welcome-msg">
-            Welcome to Food Path! <br></br>Tell us a little bit about yourself.
-          </p>
+            <p className="welcome-msg">
+              Welcome to Food Path! <br></br>Tell us a little bit about
+              yourself.
+            </p>
 
-          <Form.Group onSubmit={this.onSubmit} className="content-signup">
-            <Form.Control
-              className="firstname"
-              name="firstName"
-              type="text"
-              placeholder="First name"
-              value={this.state.firstName}
-              onChange={this.onChange}
-            />
-            <Form.Control
-              className="lastname"
-              name="lastName"
-              type="text"
-              placeholder="Last name"
-              value={this.state.lastName}
-              onChange={this.onChange}
-            />
-            <Form.Control
-              className="email"
-              name="email"
-              type="email"
-              placeholder="Email"
-              value={this.state.email}
-              onChange={this.onChange}
-            />
-            <Form.Control
-              className="password"
-              name="password"
-              type="password"
-              placeholder="Password"
-              value={this.state.password}
-              onChange={this.onChange}
-            />
-            <Button id="btn-signup" variant="secondary" type="submit">
-              Sign Up
-            </Button>
-          </Form.Group>
+            <Form.Group onSubmit={this.onSubmit} className="content-signup">
+              <Form.Control
+                className="firstname"
+                name="firstName"
+                type="text"
+                placeholder="First name"
+                value={this.state.firstName}
+                onChange={this.onChange}
+              />
+              <Form.Control
+                className="lastname"
+                name="lastName"
+                type="text"
+                placeholder="Last name"
+                value={this.state.lastName}
+                onChange={this.onChange}
+              />
+              <Form.Control
+                className="email"
+                name="email"
+                type="email"
+                placeholder="Email"
+                value={this.state.email}
+                onChange={this.onChange}
+              />
+              <Form.Control
+                className="password"
+                name="password"
+                type="password"
+                placeholder="Password"
+                value={this.state.password}
+                onChange={this.onChange}
+              />
+              <Button id="btn-signup" variant="secondary" type="submit">
+                Sign Up
+              </Button>
+            </Form.Group>
 
-          <Form method="get" action="/auth/google" id="form-google-btn">
-            <Button id="btn-google" type="submit">
-              Sign up with Google
-            </Button>
+            <Form method="get" action="/auth/google" id="form-google-btn">
+              <Button id="btn-google" type="submit">
+                Sign up with Google
+              </Button>
 
-            <Button id="btn-already-account" type="submit">
-              Already a member? Sign in here
-            </Button>
-          </Form>
+              <Button id="btn-already-account" type="submit">
+                Already a member? Sign in here
+              </Button>
+            </Form>
+          </div>
         </div>
       </>
     );
