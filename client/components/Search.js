@@ -48,7 +48,7 @@ class Search extends Component {
         <div id="search-bg">
           <h2 className="welcome-name">
             {" "}
-            Welcome, 
+            Welcome,
             {user.firstName}!
           </h2>
           <Modal
@@ -103,52 +103,62 @@ class Search extends Component {
                   onChange={this.onChange}
                 />
 
-                
-
-                <div className="price-fields">
-                  <Form.Label>Minimum Price: {minPrice}</Form.Label>
+                <div className="input-fields">
+                  <Form.Label></Form.Label>
                   <Form.Control
-                    id="slider-min-price"
-                    type="range"
-                    name="minPrice"
-                    value={this.state.minPrice}
+                    id="food-label"
+                    type="term"
+                    name="term"
+                    value={this.state.term}
+                    placeholder="Enter Key Words"
                     onChange={this.onChange}
                   />
 
-                  <Form.Label>Maximum Price: {maxPrice}</Form.Label>
-                  <Form.Control
-                    id="slider-max-price"
-                    type="range"
-                    name="maxPrice"
-                    value={this.state.maxPrice}
-                    onChange={this.onChange}
-                  />
-                </div>
+                  <div className="price-fields">
+                    <Form.Label>Minimum Price: {minPrice}</Form.Label>
+                    <Form.Control
+                      id="slider-min-price"
+                      type="range"
+                      name="minPrice"
+                      value={this.state.minPrice}
+                      onChange={this.onChange}
+                    />
 
-                <div className="diet-fields">
-                  <div key="inline-checkbox" className="mb-3">
-                    {[
-                      "Vegetarian",
-                      "Vegan",
-                      "Halal",
-                      "Kosher",
-                      "Gluten-Free",
-                    ].map((cat) => (
-                      <Form.Check
-                        inline
-                        name={cat.toLowerCase().replace("-", "_")}
-                        label={cat}
-                        type="checkbox"
-                        onChange={this.onChangeCheckbox}
-                        key={cat}
-                      />
-                    ))}
+                    <Form.Label>Maximum Price: {maxPrice}</Form.Label>
+                    <Form.Control
+                      id="slider-max-price"
+                      type="range"
+                      name="maxPrice"
+                      value={this.state.maxPrice}
+                      onChange={this.onChange}
+                    />
                   </div>
-                </div>
 
-                <Button id="btn-search" variant="primary" type="submit">
-                  GET MY FOODIEMAP
-                </Button>
+                  <div className="diet-fields">
+                    <div key="inline-checkbox" className="mb-3">
+                      {[
+                        "Vegetarian",
+                        "Vegan",
+                        "Halal",
+                        "Kosher",
+                        "Gluten-Free",
+                      ].map((cat) => (
+                        <Form.Check
+                          inline
+                          name={cat.toLowerCase().replace("-", "_")}
+                          label={cat}
+                          type="checkbox"
+                          onChange={this.onChangeCheckbox}
+                          key={cat}
+                        />
+                      ))}
+                    </div>
+                  </div>
+
+                  <Button id="btn-search" variant="primary" type="submit">
+                    GET MY FOODIEMAP
+                  </Button>
+                </div>
               </div>
             </Form.Group>
           </Form>

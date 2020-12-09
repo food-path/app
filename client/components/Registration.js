@@ -25,7 +25,6 @@ class Registration extends React.Component {
   }
 
   onSubmit(event) {
-    console.log("TESTING BUTTONNNNN", event)
     event.preventDefault();
     this.props.auth(this.state);
     this.setState({
