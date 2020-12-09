@@ -97,6 +97,8 @@ class Login extends React.Component {
               >
                 New here? Get on a Food Path!
               </Button>
+
+              <p className="copyright">Copyright &copy; Food Path 2020. </p>
             </div>
           </div>
         </div>

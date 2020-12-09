@@ -110,7 +110,7 @@ body {
 #btn2 {
   text-align: center;
   width: 66%;
-  font-size: 9px;
+  font-size: 10px;
   margin-left: 17%;
   margin-top: 5%;
   opacity: 0.9;
@@ -133,7 +133,7 @@ body {
 }
 
 .google-icon {
-margin-right: 10px;
+margin-right: 9px;
 background-color: white;
 border-radius: 2px;
 }
@@ -159,6 +159,13 @@ border-radius: 2px;
   position: fixed;
   opacity: 1;
   z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+}
+
+.copyright {
+  color: white;
+  font-size: 10px;
+  margin-left: 31%;
+  margin-top: 23%;
 }
 
 /* NAVBAR COMPONENT*/
