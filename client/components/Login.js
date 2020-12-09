@@ -39,8 +39,11 @@ class Login extends React.Component {
       <div className="container-login">
         <img src="/img/logo2.png" width="90" className="logo-login" />
 
+        <div className="square"></div>
+
         <div className="form-container">
           <div className="col-md-4 col-sm-4 col-xs-12">
+
             <Form.Control
               id="input-email"
               name="email"
@@ -68,12 +71,17 @@ class Login extends React.Component {
               block
               onClick={this.onSubmit}
             >
-              Let's go!
+              Let's Eat!
             </Button>
 
             <form method="get" action="/auth/google">
               <Button id="btn3" type="submit" variant="primary">
-                Login with Google
+                <img
+                  src="./img/google.png"
+                  width="15"
+                  className="google-icon"
+                />{" "}
+                Sign in with Google
               </Button>
             </form>
 
@@ -89,6 +97,8 @@ class Login extends React.Component {
               >
                 New here? Get on a Food Path!
               </Button>
+
+              <p className="copyright">Copyright &copy; Food Path 2020. </p>
             </div>
           </div>
         </div>

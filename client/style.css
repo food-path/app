@@ -102,6 +102,17 @@ ul{
 
 
 /* LOGIN COMPONENT/HOME PAGE*/
+.square {
+  background-color: #a49fbf;
+  position: absolute;
+  margin-top: 85%;
+  margin-left: 20%;
+  width: 60%;
+  height: 25%;
+  border-radius: 3px;
+  opacity: 0.85;
+}
+
 #input-email {
   text-align: center;
   width: 55%;
@@ -109,8 +120,10 @@ ul{
   margin-left: 22%;
   margin-top: 100%;
   opacity: 0.85;
-  border-color: #958db9;
   border-width: medium;
+  border: none;
+  opacity: 1;
+  background-color: #d7b9d5;
 }
 
 #input-password {
@@ -119,46 +132,54 @@ ul{
   font-size: 12px;
   margin-left: 22%;
   opacity: 0.85;
-  border-color: #958db9;
-  border-width: medium;
+  margin-top: 5px;
+  border: none;
+  opacity: 1;
+  background-color: #d7b9d5;
 }
 
 #btn1 {
   text-align: center;
-  width: 55%;
+  width: 35%;
   font-size: 12px;
-  margin-left: 22%;
+  margin-left: 32%;
   opacity: 1;
-  border-color: #958db9 !important;
-  border-width: medium;
   background-color: #d7b9d5 !important;
   color: #2e3842;
+  margin-top: 20px;
+  border: none;
+  opacity: 1;
 }
 
 #btn2 {
   text-align: center;
-  width: 55%;
-  font-size: 9px;
-  margin-left: 22%;
+  width: 66%;
+  font-size: 10px;
+  margin-left: 17%;
   margin-top: 5%;
   opacity: 0.9;
   font-style: italic;
-  border-color: #958db9 !important;
-  border-width: medium;
   background-color: #958db9 !important;
   color: #ffffff;
+  border: none;
+  opacity: 0.85 !important;
 }
 
 #btn3 {
-  text-align: center;
-  font-size: 6px;
-  margin-left: 40%;
-  padding: 3px 10px;
-  opacity: 0.9;
+  font-size: 9px;
+  margin-left: 17%;
+  opacity: 1;
   border-width: thin;
-  border-color: #958db9 !important;
+  color: #fefefe;
+  width: 66%;
+  display: inline-block !important;
+  margin-top: 25px;
+}
+
+.google-icon {
+  margin-right: 9px;
   background-color: white;
-  color: #2e3842;
+  border-radius: 2px;
 }
 
 .container-login {
@@ -178,9 +199,17 @@ ul{
 
 .logo-login {
   margin-left: 38%;
-  margin-top: 30%;
+  margin-top: 67%;
   position: fixed;
-  opacity: 0.85;
+  opacity: 1;
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+}
+
+.copyright {
+  color: white;
+  font-size: 10px;
+  margin-left: 31%;
+  margin-top: 23%;
 }
 
 /* NAVBAR COMPONENT*/
@@ -269,10 +298,6 @@ ul{
 }
 
 /* PROFILE COMPONENT */
-/* #profile-bg {
-  
-} */
-
 #container-profile {
   min-height: 100vh;
   overflow: hidden;
@@ -324,14 +349,32 @@ ul{
   text-align: center;
 }
 
-.saved-maps {
-  margin-top: 5%;
-  font-size: 10px;
-  text-align: center;
+.saved-maps-2 {
+  text-align: left;
+  font-size: 12px;
+  /* list-style-position: inside; */
+  display: flex;
+  /* list-style-type: none; */
+  margin-inline-start: -60px;
+  /* margin-inline-end: 0px; */
+  padding-inline-start: 35px;
+  text-transform: capitalize;
+  flex-direction: row;
+}
+
+.list-friends2 {
+  text-align: left;
+  font-size: 12px;
+  list-style-position: outside;
+  display: block;
+  list-style-type: none;
+  margin-inline-start: -60px;
+  margin-inline-end: 0px;
+  padding-inline-start: 35px;
+  text-transform: capitalize;
 }
 
 /* SEARCH COMPONENT */
-
 .welcome-name {
   text-transform: Capitalize;
   font-size: 18px;
@@ -526,13 +569,13 @@ ul{
   #picture-bg {
     position: fixed;
     z-index: 2;
-    width: 100%; 
+    width: 100%;
     height: 100%;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: url("https://papers.co/wallpaper/papers.co-ay71-food-love-blue-table-illustration-art-41-iphone-wallpaper.jpg")
+    background: url("https://i.pinimg.com/originals/e3/e9/61/e3e961656d33e489f80cdf397f6c52f3.jpg")
       no-repeat;
     height: 100vh;
     background-size: cover;
@@ -540,4 +583,77 @@ ul{
     background-attachment: fixed;
     opacity: 1;
   }
+}
+
+/* OTHER PROFILE COMPONENT (FRIENDS)*/
+
+.btn-friend-already {
+  font-size: 9px !important;
+  margin-left: 35%;
+  text-align: center;
+  background-color: #5d9bb0 !important;
+  border: none !important;
+  color: #ffffff !important;
+  /* font-weight: bold !important; */
+}
+
+#container-friend {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.img-profile-friend {
+  position: relative !important;
+  border-radius: 50%;
+  border-color: #d7b9d5;
+  border-width: 5px;
+  border-style: solid;
+  margin-top: 4%;
+  margin-left: 2%;
+}
+
+.name-friend {
+  text-transform: Capitalize;
+  font-size: 25px;
+  width: 100%;
+  text-align: center;
+  z-index: -1;
+  margin-top: 10%;
+}
+
+.member-friend {
+  margin-top: 2%;
+  font-size: 12px;
+  text-align: center;
+}
+
+.friends-name-link {
+  text-transform: capitalize;
+  font-size: 12px;
+}
+
+.text-separation-friends {
+  margin-top: 10%;
+  min-width: 100%;
+  height: 35px;
+  font-size: 15px;
+  color: white;
+  text-align: center;
+}
+
+.list-saved-maps-friends {
+  list-style-type: circle;
+  font-size: 9px;
+}
+
+.list-map2-friends {
+    text-align: left;
+    font-size: 12px;
+    list-style-position: inside;
+    display: block;
+    list-style-type: disc;
+    margin-inline-start: -60px;
+    margin-inline-end: 0px;
+    padding-inline-start: 35px;
+    text-transform: capitalize;
 }
