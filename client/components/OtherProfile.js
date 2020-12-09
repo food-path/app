@@ -35,12 +35,12 @@ class OtherProfile extends React.Component {
 					</Button>
 				</div>
 				<div className="div-text">
-					<p className="text-separation">{otherUser.firstName}'s Friends</p>
+					<p className="text-separation-friends">{otherUser.firstName}'s Friends</p>
 				</div>
 				<span className="friends">
-					<ul>
+					<ul className="list-saved-maps-friends">
 						{friends.map((friend) => (
-							<li key={friend.id}>
+							<li className="list-map2-friends" key={friend.id}>
 								<Link className="friends-name-link"
 									to={`/user/${friend.id}`}
 									onClick={() => this.props.fetchOtherUser(friend.id)}

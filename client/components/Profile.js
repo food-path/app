@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Link, withRouter } from "react-router-dom";
-import Button from "react-bootstrap/Button";
 import { logout } from "../store";
 import { MyMaps } from ".";
 
@@ -13,51 +12,44 @@ class Profile extends React.Component {
     return (
       <div id="container-profile">
         <div id="profile-bg">
+          <img className="img-profile" src={user.imageUrl} width="100px" />
+          <h2 className="name">
+            {" "}
+            {user.firstName} {user.lastName}{" "}
+          </h2>
+          <div>
+            <p className="member">
+              Been fooding since:{" "}
+              {new Date(user.registrationDate).toLocaleDateString()}
+            </p>
+          </div>
 
-        <img className="img-profile" src={user.imageUrl} width="100px" />
-        <h2 className="name">
-          {" "}
-          {user.firstName} {user.lastName}{" "}
-        </h2>
-        <div>
-          <p className="member">
-            Been fooding since:{" "}
-            {new Date(user.registrationDate).toLocaleDateString()}
+          <p className="edit-profile">
+            <Link to="/editProfile">Edit My Profile</Link>
           </p>
-        </div>
 
-        <p className="edit-profile">
-          <Link to="/editProfile">Edit My Profile</Link>
-        </p>
+          <div className="div-text">
+            <p className="text-separation">My Foodie Friends</p>
+          </div>
+          <span className="friends">
+            <ul>
+              {friends.map((friend) => (
+                <li key={friend.id} className="list-friends2">
+                  <Link to={`/user/${friend.id}`}>
+                    {friend.firstName} {friend.lastName}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </span>
 
-        <div className="div-text">
-          <p className="text-separation">
-            My Foodie Friends
-            {/* <img src="./icons/geo-alt.svg" width="20" className="foodie-icon" /> */}
-          </p>
+          <div className="div-text">
+            <p className="text-separation">My Foodie Maps</p>
+          </div>
+          <div className="saved-maps-2">
+            <MyMaps />
+          </div>
         </div>
-        <span className="friends">
-          <ul>
-            {friends.map((friend) => (
-              <li key={friend.id}>
-                <Link to={`/user/${friend.id}`}>
-                  {friend.firstName} {friend.lastName}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </span>
-
-        <div className="div-text">
-          <p className="text-separation">
-            My Foodie Maps
-            {/* <img src="./icons/geo-alt.svg" width="20" className="foodie-icon" /> */}
-          </p>
-        </div>
-        <span className="saved-maps">
-          <MyMaps />
-        </span>
-		</div>	
       </div>
     );
   }
