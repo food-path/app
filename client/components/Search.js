@@ -64,11 +64,19 @@ class Search extends Component {
             </Modal.Header>
             <Modal.Body>
               <h4>Try Again!</h4>
-              <p>
-                We couldn't find {this.state.term} in {this.state.location}
-                <br />
-                Let's try something else!
-              </p>
+              {!this.state.location ? 
+               (<p>
+               Please enter a city or zip code
+             </p>) : (
+                 <p>
+                 We couldn't find {this.state.term} in {this.state.location}
+                 <br />
+                 Let's try something else!
+               </p>
+             )
+            } 
+             
+
             </Modal.Body>
             <Modal.Footer>
               <Button
