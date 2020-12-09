@@ -525,9 +525,13 @@ border-radius: 2px;
 /* OTHER PROFILE COMPONENT (FRIENDS)*/
 
 .btn-friend-already {
-  font-size: 8px !important;
-  margin-left: 37%;
+  font-size: 9px !important;
+  margin-left: 35%;
   text-align: center;
+  background-color: #5D9BB0 !important;
+  border: none !important;
+  color: #ffffff !important;
+  /* font-weight: bold !important; */
 }
 
 #container-friend {
@@ -558,4 +562,8 @@ border-radius: 2px;
   margin-top: 2%;
   font-size: 12px;
   text-align: center;
+}
+
+.friends-name-link {
+  text-transform: capitalize;
 }

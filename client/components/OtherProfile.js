@@ -41,7 +41,7 @@ class OtherProfile extends React.Component {
 					<ul>
 						{friends.map((friend) => (
 							<li key={friend.id}>
-								<Link
+								<Link className="friends-name-link"
 									to={`/user/${friend.id}`}
 									onClick={() => this.props.fetchOtherUser(friend.id)}
 								>
