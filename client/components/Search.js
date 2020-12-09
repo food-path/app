@@ -8,6 +8,8 @@ import Button from "react-bootstrap/Button";
 import { withRouter } from "react-router-dom";
 import { priceToText } from "../utils";
 import Modal from "react-bootstrap/Modal";
+import DropdownButton from 'react-bootstrap/DropdownButton';
+import Dropdown from 'react-bootstrap/Dropdown'
 
 class Search extends Component {
   constructor(props) {
@@ -141,6 +143,19 @@ class Search extends Component {
                       onChange={this.onChange}
                     />
                   </div>
+
+                  <DropdownButton
+                          alignRight
+                          title="Select Minimum Price"
+                          id="dropdown-menu-align-right"
+                          onSelect={handleSelect}
+                            >
+                                <Dropdown.Item eventKey="option-1">$</Dropdown.Item>
+                                <Dropdown.Item eventKey="option-2">$$</Dropdown.Item>
+                                <Dropdown.Item eventKey="option-3">$$$</Dropdown.Item>
+                                <Dropdown.Item eventKey="option-3">$$$$</Dropdown.Item>
+                  </DropdownButton>
+
 
                   <div className="diet-fields">
                     <div key="inline-checkbox" className="mb-3">
