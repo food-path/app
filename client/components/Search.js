@@ -48,7 +48,7 @@ class Search extends Component {
         <div id="search-bg">
           <h2 className="welcome-name">
             {" "}
-            Welcome,
+            Welcome, {" "}
             {user.firstName}!
           </h2>
           <Modal
