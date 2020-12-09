@@ -107,9 +107,9 @@ class Search extends Component {
                   <Form.Label></Form.Label>
                   <Form.Control
                     id="food-label"
-                    type="food"
-                    name="location"
-                    value={this.state.location}
+                    type="term"
+                    name="term"
+                    value={this.state.term}
                     placeholder="Enter Key Words"
                     onChange={this.onChange}
                   />
