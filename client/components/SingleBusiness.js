@@ -61,31 +61,26 @@ class SingleBusiness extends Component {
 					<div id='wrapper'>
 						<div id='wrapper1a'>
 							<h4>
-								Category:
 								{singleBusiness.categories.map((obj) => obj.title).join("|")}
 							</h4>
-						
-							<h4>Street Address: {singleBusiness.location.address1}</h4>
-							<h4>Phone: {singleBusiness.display_phone}</h4>
-
-							<div>
-								<h4>Rating: {singleBusiness.rating}</h4>
-
-								<h4>Price: {singleBusiness.price}</h4>
-			
-							</div>
+							<h4>{singleBusiness.price} {"|"} {singleBusiness.rating} {"stars"} </h4>
+							<h6> {singleBusiness.display_phone} {"|"} {singleBusiness.location.address1}</h6>
 						</div>
+						<div id='horizontal'></div>
 						<div id="wrapper1b">
 							<ul>
-								<h4>Hours:</h4>{" "}
+								<h4>Hours of Operation</h4>{" "}
 								{hoursToDisplay.map((openHrs, id) => (
 									<li key={id}>{openHrs}</li>
 								))}
 							</ul>
-							<ul>
+							<div id='separator'></div>
+							<h4>Reviews</h4>
+							<ul className='link'>
 								{singleBusiness.reviews.map((review) => (
 									<li key={review.id}>
-										<p>Rating: {review.rating}</p>
+										<hr></hr>
+										<p>{review.rating} stars</p>
 										<a href={review.url}>
 											<p style={{ fontStyle: "italic" }}>{review.text}</p>
 										</a>
@@ -97,7 +92,7 @@ class SingleBusiness extends Component {
 				) : (
 					<img src="https://codyogden.blog/content/images/2018/08/magic-burrito.gif"></img>
 				)}
-				{<Link to='/map'>Return to my map</Link>}
+				<div id='backToMap' className='link'>{<Link to='/map'>Back to My Foodie Map </Link>}</div>
 				
 			</div>
 			
