@@ -11,9 +11,19 @@ The PWA should support logged in users. Users should be able to fill out a form 
 [X] db for user models
 [X] db for restaurants
 [X] db for foodiemap
-[] seed file
-[] user filters what they want to see: location, restaurant type, rating (add budget, dietary considerations after)
-[] populates map with (4?) choices
+[X] seed file
+[X] user filters what they want to see: location, restaurant type, rating, budget, dietary considerations
+[X] populates map with choices
+[X] user can check a specific restaurant 
+[X] new user can sign up
+[X] member can sign in, see profile, add friends, share maps with friends, save and delete maps
+[X] new user can sign up with Google
+[X] member can sign in with Google
+[X] member is greeted with a welcome message on search page, confirming they are logged in
+[X] user can edit their profile
+[X] two views only available to user who is not a member
+[X] if nothing added to the search or typo, show an error pop up with specific message
+[X]when content slow to load, a "loading burrito" can be seen
 
 
 ## Stretch Goals
