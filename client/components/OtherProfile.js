@@ -19,18 +19,18 @@ class OtherProfile extends React.Component {
 		const maps = otherUser.foodiemaps || [];
 
 		return (
-			<div id="container-profile">
-				<img className="img-profile" src={otherUser.imageUrl} width="100px" />
-				<h2 className="name">
+			<div id="container-friend">
+				<img className="img-profile-friend" src={otherUser.imageUrl} width="30px" />
+				<h2 className="name-friend">
 					{" "}
 					{otherUser.firstName} {otherUser.lastName}{" "}
 				</h2>
 				<div>
-					<p className="member">
+					<p className="member-friend">
 						Been fooding since:{" "}
 						{new Date(otherUser.registrationDate).toLocaleDateString()}
 					</p>
-					<Button onClick={() => this.props.addFriend()} disabled={isFriend}>
+					<Button className="btn-friend-already btn-sm" onClick={() => this.props.addFriend()} disabled={isFriend}>
 						{isFriend ? "We're already friends!" : "Add Friend!"}
 					</Button>
 				</div>

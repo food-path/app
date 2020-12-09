@@ -254,10 +254,6 @@ border-radius: 2px;
 }
 
 /* PROFILE COMPONENT */
-/* #profile-bg {
-  
-} */
-
 #container-profile {
   min-height: 100vh;
   overflow: hidden;
@@ -316,7 +312,6 @@ border-radius: 2px;
 }
 
 /* SEARCH COMPONENT */
-
 .welcome-name {
   text-transform: Capitalize;
   font-size: 18px;
@@ -525,4 +520,42 @@ border-radius: 2px;
     background-attachment: fixed;
     opacity: 1;
   }
+}
+
+/* OTHER PROFILE COMPONENT (FRIENDS)*/
+
+.btn-friend-already {
+  font-size: 8px !important;
+  margin-left: 37%;
+  text-align: center;
+}
+
+#container-friend {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.img-profile-friend {
+  position: relative !important;
+  border-radius: 50%;
+  border-color: #d7b9d5;
+  border-width: 5px;
+  border-style: solid;
+  margin-top: 4%;
+  margin-left: 2%;
+}
+
+.name-friend {
+  text-transform: Capitalize;
+  font-size: 25px;
+  width: 100%;
+  text-align: center;
+  z-index: -1;
+  margin-top: 10%;
+}
+
+.member-friend {
+  margin-top: 2%;
+  font-size: 12px;
+  text-align: center;
 }
