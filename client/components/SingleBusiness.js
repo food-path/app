@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchSingleBusinessDetails } from "../store/singleBusiness";
 import { convertTime } from "../utils";
+import { Link } from "react-router-dom"
 
 class SingleBusiness extends Component {
 	constructor(props) {
@@ -12,7 +13,6 @@ class SingleBusiness extends Component {
 	}
 
 	render() {
-		console.log("I am in singleBusiness Component");
 		const { singleBusiness } = this.props;
 		console.log("singleBusiness:", singleBusiness);
 
@@ -53,26 +53,34 @@ class SingleBusiness extends Component {
 
 		return (
 			<div id="singleBusiness">
+				<img id="bannerimage" className="resize" src={singleBusiness.image_url} />
 				<div id="BusinessName">
 					<h1>{singleBusiness.name}</h1>
 				</div>
 				{singleBusiness.categories ? (
-					<div>
-						<h4>
-							Category:
-							{singleBusiness.categories.map((obj) => obj.title).join("|")}
-						</h4>
-						<div id="hours">
+					<div id='wrapper'>
+						<div id='wrapper1a'>
+							<h4>
+								{singleBusiness.categories.map((obj) => obj.title).join("|")}
+							</h4>
+							<h4>{singleBusiness.price} {"|"} {singleBusiness.rating} {"stars"} </h4>
+							<h6> {singleBusiness.display_phone} {"|"} {singleBusiness.location.address1}</h6>
+						</div>
+						<div id='horizontal'></div>
+						<div id="wrapper1b">
 							<ul>
-								<h4>Hours:</h4>{" "}
+								<h4>Hours of Operation</h4>{" "}
 								{hoursToDisplay.map((openHrs, id) => (
 									<li key={id}>{openHrs}</li>
 								))}
 							</ul>
-							<ul>
+							<div id='separator'></div>
+							<h4>Reviews</h4>
+							<ul className='link'>
 								{singleBusiness.reviews.map((review) => (
 									<li key={review.id}>
-										<p>Rating: {review.rating}</p>
+										<hr></hr>
+										<p>{review.rating} stars</p>
 										<a href={review.url}>
 											<p style={{ fontStyle: "italic" }}>{review.text}</p>
 										</a>
@@ -80,23 +88,14 @@ class SingleBusiness extends Component {
 								))}
 							</ul>
 						</div>
-						<h4>Street Address: {singleBusiness.location.address1}</h4>
-						<h4>Phone: {singleBusiness.display_phone}</h4>
-
-						<div
-							className="Stars"
-							aria-label="Rating of this product is 2.3 out of 5."
-						>
-							<h4>Rating: {singleBusiness.rating}</h4>
-
-							<h4>Price: {singleBusiness.price}</h4>
-							<img className="resize" src={singleBusiness.image_url} />
-						</div>
-					</div>
+					</div> 
 				) : (
 					<img src="https://codyogden.blog/content/images/2018/08/magic-burrito.gif"></img>
 				)}
+				<div id='backToMap' className='link'>{<Link to='/map'>Back to My Foodie Map </Link>}</div>
+				
 			</div>
+			
 		);
 	}
 }

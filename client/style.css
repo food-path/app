@@ -6,6 +6,7 @@
 
 body {
   min-height: 100vh;
+  font-family: "Roboto", sans-serif;
   /* overflow: hidden; */
   /* 	Keep this commented out so that you can save your maps in the desktop version */
 }
@@ -106,10 +107,19 @@ body {
   padding-bottom: 1em;
 }
 
-/* Single Business Component */
+/* SINGLE BUSINESS COMPONENT */
 .resize {
   width: 50%;
   height: 30%;
+}
+
+#bannerimage {
+  display: block;
+  text-align: center;
+  width: 100%;
+  height: 500px;
+  margin: 0px auto;
+  padding: none;
 }
 
 #singleBusiness {
@@ -118,14 +128,59 @@ body {
 
 #BusinessName {
   background-color: rgb(93, 155, 176);
+  text-align: center;
+  /* margin-top: -20px; */
 }
 
-#hours {
-  width: 40%;
-  float: right;
+#wrapper {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+#horizontal {
+  width: 80%;
+  height: 3px;
+  background-color: black;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  align-content: center;
+}
+
+#separator {
+  margin-top: 50px;
+}
+
+ul {
+  margin-left: -35px;
+  list-style-type: none;
+}
+
+#backToMap {
+  text-align: center;
+}
+
+.link a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit;
 }
 
 /* LOGIN COMPONENT/HOME PAGE*/
+.square {
+  background-color: #a49fbf;
+  position: absolute;
+  margin-top: 85%;
+  margin-left: 20%;
+  width: 60%;
+  height: 25%;
+  border-radius: 3px;
+  opacity: 0.85;
+}
+
 #input-email {
   text-align: center;
   width: 55%;
@@ -133,8 +188,10 @@ body {
   margin-left: 22%;
   margin-top: 100%;
   opacity: 0.85;
-  border-color: #958db9;
   border-width: medium;
+  border: none;
+  opacity: 1;
+  background-color: #d7b9d5;
 }
 
 #input-password {
@@ -143,46 +200,54 @@ body {
   font-size: 12px;
   margin-left: 22%;
   opacity: 0.85;
-  border-color: #958db9;
-  border-width: medium;
+  margin-top: 5px;
+  border: none;
+  opacity: 1;
+  background-color: #d7b9d5;
 }
 
 #btn1 {
   text-align: center;
-  width: 55%;
+  width: 35%;
   font-size: 12px;
-  margin-left: 22%;
+  margin-left: 32%;
   opacity: 1;
-  border-color: #958db9 !important;
-  border-width: medium;
   background-color: #d7b9d5 !important;
   color: #2e3842;
+  margin-top: 20px;
+  border: none;
+  opacity: 1;
 }
 
 #btn2 {
   text-align: center;
-  width: 55%;
-  font-size: 9px;
-  margin-left: 22%;
+  width: 66%;
+  font-size: 10px;
+  margin-left: 17%;
   margin-top: 5%;
   opacity: 0.9;
   font-style: italic;
-  border-color: #958db9 !important;
-  border-width: medium;
   background-color: #958db9 !important;
   color: #ffffff;
+  border: none;
+  opacity: 0.85 !important;
 }
 
 #btn3 {
-  text-align: center;
-  font-size: 6px;
-  margin-left: 40%;
-  padding: 3px 10px;
-  opacity: 0.9;
+  font-size: 9px;
+  margin-left: 17%;
+  opacity: 1;
   border-width: thin;
-  border-color: #958db9 !important;
+  color: #fefefe;
+  width: 66%;
+  display: inline-block !important;
+  margin-top: 25px;
+}
+
+.google-icon {
+  margin-right: 9px;
   background-color: white;
-  color: #2e3842;
+  border-radius: 2px;
 }
 
 .container-login {
@@ -202,9 +267,17 @@ body {
 
 .logo-login {
   margin-left: 38%;
-  margin-top: 30%;
+  margin-top: 67%;
   position: fixed;
-  opacity: 0.85;
+  opacity: 1;
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+}
+
+.copyright {
+  color: white;
+  font-size: 10px;
+  margin-left: 31%;
+  margin-top: 23%;
 }
 
 /* NAVBAR COMPONENT*/
@@ -235,14 +308,6 @@ body {
   }
 }
 
-/* @media screen and (max-width: 600px) {
-  .home-icon {
-    border-color: #ffffff;
-    filter: invert(1);
-    float: left;
-  }
-} */
-
 @media screen and (max-width: 600px) {
   .search-text {
     display: none;
@@ -261,13 +326,6 @@ body {
     display: none;
   }
 }
-
-/* @media screen and (max-width: 600px) {
-  .map-icon {
-    border-color: white;
-    filter: invert(1);
-  }
-} */
 
 @media screen and (max-width: 600px) {
   .profile-text {
@@ -310,28 +368,37 @@ body {
 /* PROFILE COMPONENT */
 #container-profile {
   min-height: 100vh;
+  overflow: hidden;
 }
 
 .img-profile {
-  margin-top: 2%;
   position: relative;
   border-radius: 50%;
   border-color: #d7b9d5;
   border-width: 5px;
   border-style: solid;
-  margin-top: 5%;
+  margin-top: 4%;
   margin-left: 2%;
 }
 
 .name {
   text-transform: Capitalize;
-  font-size: 30px;
+  font-size: 25px;
+  width: 100%;
   text-align: center;
-  font-family: "Sofia", sans-serif;
+  z-index: -1;
+  margin-top: -16%;
+  margin-left: 5%;
 }
 
 .member {
   margin-top: 2%;
+  font-size: 12px;
+  text-align: center;
+  margin-left: 10%;
+}
+
+.edit-profile {
   font-size: 10px;
   text-align: center;
 }
@@ -344,28 +411,46 @@ body {
 .text-separation {
   margin-top: 10%;
   min-width: 100%;
-  height: 25px;
+  height: 35px;
   font-size: 15px;
   color: white;
   text-align: center;
 }
 
-.saved-maps {
-  margin-top: 5%;
+.saved-maps-2 {
+  text-align: left;
+  font-size: 12px;
+  /* list-style-position: inside; */
+  display: flex;
+  /* list-style-type: none; */
+  margin-inline-start: -60px;
+  /* margin-inline-end: 0px; */
+  padding-inline-start: 35px;
+  text-transform: capitalize;
+  flex-direction: row;
 }
-@media screen and (max-width: 600px) {
-  .btn-logout {
-    position: fixed;
-    bottom: 14%;
-    margin-left: 40%;
-    border-radius: 28px !important;
-    border-color: #ada7c9 !important;
-    border-width: 2px !important;
-    color: #8b7fc0 !important;
-  }
+
+.list-friends2 {
+  text-align: left;
+  font-size: 12px;
+  list-style-position: outside;
+  display: block;
+  list-style-type: none;
+  margin-inline-start: -60px;
+  margin-inline-end: 0px;
+  padding-inline-start: 35px;
+  text-transform: capitalize;
 }
 
 /* SEARCH COMPONENT */
+.welcome-name {
+  text-transform: Capitalize;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 20%;
+  color: #182c3a;
+}
+
 @media screen and (max-width: 600px) {
   .container-search {
     background-size: cover !important;
@@ -382,40 +467,32 @@ body {
     width: 90%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 30%;
+    margin-top: 5%;
     border-radius: 2%;
     text-align: left;
   }
 }
 
-@media screen and (max-width: 600px) {
-  #city-label {
-    width: 100% !important;
-    background-color: #948fad !important;
-    color: white;
-  }
+#city-label {
+  width: 100% !important;
+  background-color: #948fad !important;
+  color: white;
 }
 
-@media screen and (max-width: 600px) {
-  #city-label::placeholder {
-    color: #ffffff !important;
-    text-align: center;
-  }
+#city-label::placeholder {
+  color: #ffffff !important;
+  text-align: center;
 }
 
-@media screen and (max-width: 600px) {
-  #food-label {
-    width: 100% !important;
-    background-color: #948fad !important;
-    color: white;
-  }
+#food-label {
+  width: 100% !important;
+  background-color: #948fad !important;
+  color: white;
 }
 
-@media screen and (max-width: 600px) {
-  #food-label::placeholder {
-    color: #ffffff !important;
-    text-align: center;
-  }
+#food-label::placeholder {
+  color: #ffffff !important;
+  text-align: center;
 }
 
 .mb-3 {
@@ -451,7 +528,200 @@ body {
 
 #btn-search:hover {
   background-color: #948fad;
-  -webkit-box-shadow: 10px 10px 99px 6px rgb(183, 125, 214);
-  -moz-box-shadow: 10px 10px 99px 6px rgb(183, 115, 236);
-  box-shadow: 10px 10px 99px 6px rgb(198, 121, 233);
+}
+
+/* SIGN UP/REGISTRATION COMPONENT */
+@media screen and (max-width: 600px) {
+  .content-signup {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    border-radius: 2%;
+    text-align: center;
+  }
+
+  .logo-signup {
+    margin-left: 33%;
+    margin-top: 2%;
+    position: relative;
+  }
+
+  .welcome-msg {
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .firstname {
+    border-radius: 5%;
+    border-color: #d7b9d5 !important;
+    text-align: left;
+    background-color: #d7b9d5 !important;
+  }
+
+  .lastname {
+    border-radius: 5%;
+    text-align: left;
+    margin-top: 10%;
+    background-color: #d7b9d5 !important;
+    border-color: #d7b9d5 !important;
+  }
+
+  .email {
+    border-radius: 5%;
+    text-align: left;
+    margin-top: 10%;
+    background-color: #d7b9d5 !important;
+    border-color: #d7b9d5 !important;
+  }
+
+  .password {
+    border-radius: 5%;
+    text-align: left;
+    margin-top: 10%;
+    background-color: #d7b9d5 !important;
+    border-color: #d7b9d5 !important;
+  }
+
+  #btn-signup {
+    border: none;
+    text-align: left;
+    margin-top: 10%;
+    color: #182c3a;
+    background-color: #d7b9d5 !important;
+  }
+
+  #btn-google {
+    padding: 1px;
+    font-size: 12px;
+    margin-top: 8%;
+    border-radius: 4%;
+    text-align: center;
+    width: 80%;
+    margin-left: 10%;
+    background-color: #ada7c9;
+    border: none;
+    color: #182c3a;
+  }
+
+  #btn-already-account {
+    padding: 1px;
+    font-size: 12px;
+    margin-top: 5%;
+    border-radius: 4%;
+    text-align: center;
+    width: 80%;
+    margin-left: 10%;
+    background-color: #ada7c9;
+    border: none;
+    color: #182c3a;
+  }
+
+  #purple-bg {
+    position: absolute;
+    margin-top: 10%;
+    margin-left: 38px;
+    height: 70%;
+    width: 80%;
+    background-color: #a49fbf;
+    z-index: 2;
+    border-radius: 3px;
+    opacity: 0.95;
+  }
+
+  #picture-bg {
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("https://i.pinimg.com/originals/e3/e9/61/e3e961656d33e489f80cdf397f6c52f3.jpg")
+      no-repeat;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 1;
+  }
+}
+
+/* OTHER PROFILE COMPONENT (FRIENDS)*/
+
+.btn-friend-already {
+  font-size: 9px !important;
+  margin-left: 35%;
+  text-align: center;
+  background-color: #5d9bb0 !important;
+  border: none !important;
+  color: #ffffff !important;
+  /* font-weight: bold !important; */
+}
+
+#container-friend {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.img-profile-friend {
+  position: relative !important;
+  border-radius: 50%;
+  border-color: #d7b9d5;
+  border-width: 5px;
+  border-style: solid;
+  margin-top: 4%;
+  margin-left: 2%;
+}
+
+.name-friend {
+  text-transform: Capitalize;
+  font-size: 25px;
+  width: 100%;
+  text-align: center;
+  z-index: -1;
+  margin-top: 10%;
+}
+
+.member-friend {
+  margin-top: 2%;
+  font-size: 12px;
+  text-align: center;
+}
+
+.friends-name-link {
+  text-transform: capitalize;
+  font-size: 12px;
+}
+
+.text-separation-friends {
+  margin-top: 10%;
+  min-width: 100%;
+  height: 35px;
+  font-size: 15px;
+  color: white;
+  text-align: center;
+}
+
+.list-saved-maps-friends {
+  list-style-type: circle;
+  font-size: 9px;
+}
+
+.list-map2-friends {
+  text-align: left;
+  font-size: 12px;
+  list-style-position: inside;
+  display: block;
+  list-style-type: disc;
+  margin-inline-start: -60px;
+  margin-inline-end: 0px;
+  padding-inline-start: 35px;
+  text-transform: capitalize;
 }

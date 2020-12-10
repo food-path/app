@@ -6,7 +6,7 @@ const ADD_MARKERS = "ADD_MARKERS";
 const REMOVE_MARKER = "REMOVE_MARKER";
 
 //ACTION CREATORS
-const gotMarkers = (markers) => ({ type: GOT_MARKERS, markers });
+export const gotMarkers = (markers) => ({ type: GOT_MARKERS, markers });
 
 export const addMarkers = (businesses) => ({
 	type: ADD_MARKERS,

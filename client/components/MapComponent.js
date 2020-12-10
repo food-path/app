@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import SingleBusiness from "./SingleBusiness";
 import BusinessesList from "./BusinessesList";
 
+
 const Marker = ({ text, imageUrl, id }) => (
 	<div
 		className="marker"
@@ -28,6 +29,7 @@ class MapComponent extends React.Component {
 			center: { lat: 40.74, lng: -73.98 },
 			name: "",
 			mapToAddId: "default",
+			mapSaved:false
 		};
 		this.onChange = this.onChange.bind(this);
 		this.onSubmit = this.onSubmit.bind(this);
@@ -37,8 +39,8 @@ class MapComponent extends React.Component {
 			const firstMarker = this.props.markers[0];
 			this.setState({
 				center: {
-					lat: firstMarker.coordinates.latitude,
-					lng: firstMarker.coordinates.longitude,
+					lat: +firstMarker.coordinates.latitude,
+					lng: +firstMarker.coordinates.longitude,
 				},
 			});
 			// this.state.map.setCenter({
@@ -60,7 +62,9 @@ class MapComponent extends React.Component {
 		this.props.createMap(this.props.search, this.props.markers, {
 			name: this.state.name,
 		});
+		this.state.mapSaved = true
 	}
+
 
 	render() {
 		const markers = this.props.markers || [];
@@ -132,6 +136,7 @@ class MapComponent extends React.Component {
 						</div>
 					</GoogleMapReact>
 			</div>
+
 		);
 	}
 }
