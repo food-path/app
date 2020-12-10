@@ -8,8 +8,9 @@ import Button from "react-bootstrap/Button";
 import { withRouter } from "react-router-dom";
 import { priceToText } from "../utils";
 import Modal from "react-bootstrap/Modal";
-import DropdownButton from 'react-bootstrap/DropdownButton';
-import Dropdown from 'react-bootstrap/Dropdown'
+import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
+import { ToggleButton } from "react-bootstrap";
+
 
 class Search extends Component {
   constructor(props) {
@@ -24,6 +25,7 @@ class Search extends Component {
     };
     this.onChange = this.onChange.bind(this);
     this.onChangeCheckbox = this.onChangeCheckbox.bind(this);
+    this.handleChange = this.handleChange.bind(this)
   }
 
   onChange(event) {
@@ -40,11 +42,20 @@ class Search extends Component {
     });
   }
 
+  handleChange(price){
+    console.log("inside handleChange")
+    this.setState({
+      minPrice: price
+    })
+    console.log('this.state.minPrice:', this.state.minPrice)
+  }
+
   render() {
     let minPrice = priceToText(this.state.minPrice);
     let maxPrice = priceToText(this.state.maxPrice);
     const user = this.props.user;
-
+ 
+  
     return (
       <div className="container-search">
         <div id="search-bg">
@@ -143,19 +154,23 @@ class Search extends Component {
                       onChange={this.onChange}
                     />
                   </div>
-
-                  <DropdownButton
-                          alignRight
-                          title="Select Minimum Price"
-                          id="dropdown-menu-align-right"
-                          onSelect={handleSelect}
+                  
+                  <ToggleButtonGroup
+                          type="radio"
+                          name="options"
+                          // value={this.state.minPrice}
+                          onChange={this.handleChange}
                             >
-                                <Dropdown.Item eventKey="option-1">$</Dropdown.Item>
-                                <Dropdown.Item eventKey="option-2">$$</Dropdown.Item>
-                                <Dropdown.Item eventKey="option-3">$$$</Dropdown.Item>
-                                <Dropdown.Item eventKey="option-3">$$$$</Dropdown.Item>
-                  </DropdownButton>
+                                <ToggleButton value={1}>$</ToggleButton>
+                                {"     "}
+                                <ToggleButton value={2}>$$</ToggleButton>
+                                {" "}
+                                <ToggleButton value={3}>$$$</ToggleButton>
+                                {" "}
+                                <ToggleButton value={4}>$$$$</ToggleButton>
+                  </ToggleButtonGroup>
 
+                 
 
                   <div className="diet-fields">
                     <div key="inline-checkbox" className="mb-3">

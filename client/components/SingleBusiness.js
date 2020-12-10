@@ -3,14 +3,26 @@ import { connect } from "react-redux";
 import { fetchSingleBusinessDetails } from "../store/singleBusiness";
 import { convertTime } from "../utils";
 import { Link } from "react-router-dom"
+import Popup from "./Popup"
 
 class SingleBusiness extends Component {
 	constructor(props) {
 		super();
+		this.state = {
+			showPopup: false
+		}
+		this.togglePopup = this.togglePopup.bind(this)
 	}
 	componentDidMount() {
 		this.props.getSingleBusiness(this.props.match.params.businessId);
 	}
+
+	togglePopup(url) {  
+		this.setState({  
+			 showPopup: !this.state.showPopup,  
+			 selectedUrl: url
+		});  
+	} 
 
 	render() {
 		const { singleBusiness } = this.props;
@@ -81,12 +93,21 @@ class SingleBusiness extends Component {
 									<li key={review.id}>
 										<hr></hr>
 										<p>{review.rating} stars</p>
-										<a href={review.url}>
+										<button onClick={() => this.togglePopup(review.url)}>
 											<p style={{ fontStyle: "italic" }}>{review.text}</p>
-										</a>
+										</button>
 									</li>
 								))}
 							</ul>
+					{this.state.showPopup ?  
+					<Popup  
+          						text='Review will open in separate tab...routing to Yelp'
+								  closePopup={this.togglePopup}  
+								  url = {this.state.selectedUrl}
+								
+					/>  
+						: null  
+					} 
 						</div>
 					</div> 
 				) : (

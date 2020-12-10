@@ -12,6 +12,30 @@ body {
   }
 }
 
+/*POPUP COMPONENT*/
+.popup {  
+  position: fixed;  
+  width: 50%;  
+  height: 50%;  
+  top: 0;  
+  left: 0;  
+  right: 0;  
+  bottom: 0;  
+  /* margin: auto;   */
+  background-color: white  
+}  
+.popup\_inner {  
+  position: absolute;  
+  left: 50%;  
+  right: 25%;  
+  top: 25%;  
+  bottom: 25%;  
+  margin: auto;  
+  border-radius: 50px;  
+  background: white;  
+}
+
+
 /* MAP COMPONENT */
 .marker img {
   text-align: center;
