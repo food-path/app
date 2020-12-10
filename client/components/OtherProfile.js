@@ -20,7 +20,11 @@ class OtherProfile extends React.Component {
 
 		return (
 			<div id="container-friend">
-				<img className="img-profile-friend" src={otherUser.imageUrl} width="30px" />
+				<img
+					className="img-profile-friend"
+					src={otherUser.imageUrl}
+					width="30px"
+				/>
 				<h2 className="name-friend">
 					{" "}
 					{otherUser.firstName} {otherUser.lastName}{" "}
@@ -30,18 +34,27 @@ class OtherProfile extends React.Component {
 						Been fooding since:{" "}
 						{new Date(otherUser.registrationDate).toLocaleDateString()}
 					</p>
-					<Button className="btn-friend-already btn-sm" onClick={() => this.props.addFriend()} disabled={isFriend}>
-						{isFriend ? "We're already friends!" : "Add Friend!"}
-					</Button>
+					{otherUser.id !== user.id && (
+						<Button
+							className="btn-friend-already btn-sm"
+							onClick={() => this.props.addFriend()}
+							disabled={isFriend}
+						>
+							{isFriend ? "We're already friends!" : "Add Friend!"}
+						</Button>
+					)}
 				</div>
 				<div className="div-text">
-					<p className="text-separation-friends">{otherUser.firstName}'s Friends</p>
+					<p className="text-separation-friends">
+						{otherUser.firstName}'s Friends
+					</p>
 				</div>
 				<span className="friends">
 					<ul className="list-saved-maps-friends">
 						{friends.map((friend) => (
 							<li className="list-map2-friends" key={friend.id}>
-								<Link className="friends-name-link"
+								<Link
+									className="friends-name-link"
 									to={`/user/${friend.id}`}
 									onClick={() => this.props.fetchOtherUser(friend.id)}
 								>
