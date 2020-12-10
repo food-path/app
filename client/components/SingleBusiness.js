@@ -84,17 +84,17 @@ class SingleBusiness extends Component {
               <ul id="list-hours">
                 <h4 id="list-hours-title">Hours of Operation</h4>{" "}
                 {hoursToDisplay.map((openHrs, id) => (
-                  <li key={id}>{openHrs}</li>
+                  <li id="list-days" key={id}>{openHrs}</li>
                 ))}
               </ul>
-			  <div id="horizontal"></div>
+              <div id="horizontal"></div>
               <div id="separator"></div>
               <h4 id="review-title">Reviews</h4>
               <ul className="link">
                 {singleBusiness.reviews.map((review) => (
                   <li key={review.id}>
                     <hr></hr>
-                    <p>{review.rating} stars</p>
+                    <p className="stars-review">{review.rating} stars</p>
                     <a href={review.url}>
                       <p style={{ fontStyle: "italic" }}>{review.text}</p>
                     </a>
@@ -107,6 +107,11 @@ class SingleBusiness extends Component {
           <img src="https://codyogden.blog/content/images/2018/08/magic-burrito.gif"></img>
         )}
         <div id="backToMap" className="link">
+          <img
+            src="/icons/arrow-left-short.svg"
+            width="30"
+            className="back-icon"
+          />
           {<Link to="/map">Back to My Foodie Map </Link>}
         </div>
       </div>

@@ -6,6 +6,15 @@ body {
 }
 
 @media screen and (max-width: 600px) {
+  body {
+    /* padding-bottom: 78px; */
+    /* overflow: hidden; */
+    min-height: 100vh;
+    font-family: "Roboto", sans-serif;
+  }
+}
+
+@media screen and (max-width: 600px) {
   #app {
     min-height: 100vh;
     font-family: sans-serif;
@@ -40,31 +49,28 @@ body {
 
 /* SINGLE BUSINESS COMPONENT */
 @media screen and (max-width: 600px) {
-
   #bg-image-business {
     background-color: #000000;
   }
 
   #bannerimage {
-    /* display: block; */
-    /* text-align: center; */
-    /* width: 50%; */
-    border-radius: 6px;
+    width: 50%;
+    border-radius: 2px;
+    /* border-radius: 50%; */
     max-height: 200px;
-    /* margin: 0px auto; */
-    /* padding: none; */
-    max-width: 150%;
     height: auto;
-    margin-left: 30%;
+    margin-left: 24%;
   }
 
   #singleBusiness {
-    background-color: rgb(144, 168, 195);
+    background-color: #90A8C3;
+    padding-bottom: 78px;
   }
 
   #text-Name {
     font-size: 25px;
-    font-family: "Roboto", sans-serif;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
     color: #182c3a;
   }
 
@@ -72,7 +78,8 @@ body {
     background-color: rgb(93, 155, 176);
     text-align: center;
     font-size: 5px;
-    font-family: "Roboto", sans-serif;
+    padding-top: 3%;
+    font-family: "Montserrat", sans-serif;
     /* margin-top: -20px; */
   }
 
@@ -87,14 +94,19 @@ body {
   #description-business {
     font-family: "Roboto", sans-serif;
     font-size: 18px;
-    text-align: justify;
+    text-align: center;
     text-justify: auto;
     align-items: center;
   }
 
   #list-hours {
-    text-align: left;
+    text-align: center;
     margin-top: 5%;
+  }
+
+  #list-days {
+    text-align: left;
+    text-justify: left;
   }
 
   #list-hours-title {
@@ -141,6 +153,17 @@ body {
 
   #backToMap {
     text-align: center;
+    color: #182c3a;
+    font-size: 12px;
+  }
+
+  .stars-review {
+    font-size: 14px;
+    color: #182c3a;
+  }
+
+  .star-icon {
+    font-size: 6px;
   }
 
   .link a,
@@ -273,7 +296,7 @@ body {
   }
 
   #navbar {
-    /* overflow: hidden; */
+    overflow: hidden;
     /* 	Keep this commented out so that you can save your maps in the desktop version */
     position: fixed;
     bottom: 0;
