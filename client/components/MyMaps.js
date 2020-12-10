@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { fetchMaps, deleteMap, gotMarkers, addMarkers } from "../store";
 import { Link } from "react-router-dom";
+import Button from "react-bootstrap/Button";
 
 class MyMaps extends React.Component {
 	componentDidMount() {
@@ -15,7 +16,7 @@ class MyMaps extends React.Component {
 			<div>
 				<ul>
 					{myMaps.map((map) => (
-						<li key={map.id}>
+						<li className="elements-saved-maps" key={map.id}>
 							<Link
 								to="/map"
 								onClick={() => {
@@ -26,8 +27,10 @@ class MyMaps extends React.Component {
 								<p>{map.name}</p>
 							</Link>
 
-							<p>{map.businesses.length}</p>
-							<button onClick={() => this.props.deleteMap(map.id)}>X</button>
+							<p className="businessid">{map.businesses.length}</p>
+							<Button className="btn-delete-map" variant="outline-primary" 
+							size="sm"
+							onClick={() => this.props.deleteMap(map.id)}>X</Button>
 						</li>
 					))}
 				</ul>

@@ -63,7 +63,7 @@ body {
   }
 
   #singleBusiness {
-    background-color: #90A8C3;
+    background-color: #90a8c3;
     padding-bottom: 78px;
   }
 
@@ -297,7 +297,6 @@ body {
 
   #navbar {
     overflow: hidden;
-    /* 	Keep this commented out so that you can save your maps in the desktop version */
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -712,5 +711,35 @@ body {
     margin-inline-end: 0px;
     padding-inline-start: 35px;
     text-transform: capitalize;
+  }
+}
+
+/* MYMAPS COMPONENT (deletes a saved map from profile) */
+@media screen and (max-width: 600px) {
+  .elements-saved-maps {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .btn-delete-map {
+    border-radius: 50% !important;
+    font-size: 10px !important;
+    margin-right: -30%;
+    margin-top: -11%;
+    border-color: #90A8C3 !important;
+    color:#90A8C3 !important;
+  }
+
+  .btn-delete-map {
+    border-radius: 50% !important;
+    font-size: 10px !important;
+    margin-right: -30%;
+    margin-top: -11%;
+  }
+
+  .businessid {
+    display: none;
   }
 }
