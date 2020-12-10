@@ -1,0 +1,26 @@
+{
+	"short_name": "FoodPath",
+	"name": "FoodPath",
+	"description": "Finding the way to your heart through your stomach",
+	"icons": [
+		{
+			"src": "/img/pwalogo.png",
+			"type": "image/png",
+			"sizes": "512x512",
+			"purpose": "any maskable"
+		}
+	],
+	"start_url": "/",
+	"background_color": "#565050",
+	"display": "fullscreen",
+	"scope": "/",
+	"theme_color": "#471e4a",
+	"shortcuts": [
+		{
+			"name": "Profile",
+			"short_name": "Profile",
+			"description": "User's Profile",
+			"url": "/profile"
+		}
+	]
+}

@@ -8,6 +8,14 @@ const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const dbStore = new SequelizeStore({ db: db });
 const passport = require("passport");
 
+app.get("*", (req, res, next) => {
+	if (req.protocol === "http") {
+		res.redirect(`https://${req.headers.host}${req.url}`);
+	} else {
+		next()
+	}
+});
+
 if (process.env.NODE_ENV === "development") {
 	require("../secrets"); // this will mutate the process.env object with your secrets.
 }
