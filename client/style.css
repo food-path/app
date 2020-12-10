@@ -273,10 +273,9 @@ body {
   }
 
   .logo-login {
-    position: relative;
     margin-left: 38%;
     margin-top: 67%;
-    position: fixed;
+    position: absolute;
     opacity: 1;
     z-index: 1;
   }
