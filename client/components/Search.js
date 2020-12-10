@@ -46,11 +46,12 @@ class Search extends Component {
     return (
       <div className="container-search">
         <div id="search-bg">
-          <h2 className="welcome-name">
-            {" "}
-            Welcome, {" "}
-            {user.firstName}!
-          </h2>
+          <h2 className="welcome-name"> Welcome, {user.firstName}!</h2>
+
+          <div className="logo-behind">
+          <img src="/img/logo.png" width="120" className="logo-login" />
+          </div>
+
           <Modal
             show={this.state.showNoResultsFound}
             size="lg"
