@@ -1,7 +1,7 @@
 {
 	"short_name": "FoodPath",
-	"name": "FoodPath",
-	"description": "Finding the way to your heart through your stomach",
+	"name": "FoodPath: Become a culinary globetrotter",
+	"description": "Food Path takes the stress out of curating your culinary options for your next trip. Search, Save, and Share your customized Foodie Maps all from the app, and say goodbye to the sea of open tabs and spreadsheets in search of the best food a city has to offer.",
 	"icons": [
 		{
 			"src": "/img/pwalogo.png",

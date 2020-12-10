@@ -7,10 +7,11 @@ import App from "./app";
 import "./style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-//TODO: check out serviceworkies
-// const { generateSW } = require("workbox-build");
+// //TODO: check out serviceworkies
+// // const { generateSW } = require("workbox-build");
 // import { generateSW } from "workbox-build";
-// const swDest = "/sw.js";
+// // const swDest = "/sw.js";
+// import swDest from "./sw.js";
 // generateSW({
 // 	swDest,
 // 	// Other configuration options...
