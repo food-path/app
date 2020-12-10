@@ -4,6 +4,8 @@ import { fetchSingleBusinessDetails } from "../store/singleBusiness";
 import { convertTime } from "../utils";
 import { Link } from "react-router-dom"
 import Popup from "./Popup"
+import Button from 'react-bootstrap/Button'
+import { format } from "morgan";
 
 class SingleBusiness extends Component {
 	constructor(props) {
@@ -88,6 +90,11 @@ class SingleBusiness extends Component {
 							</ul>
 							<div id='separator'></div>
 							<h4>Reviews</h4>
+
+							<form action={singleBusiness.reviews[1].url} target={'_blank'} rel={'noreferrer'}>
+    							<input type="submit" value="See all reviews on Yelp!" />
+							</form>
+
 							<ul className='link'>
 								{singleBusiness.reviews.map((review) => (
 									<li key={review.id}>

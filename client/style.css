@@ -18,7 +18,6 @@ body {
   }
 }
 
-<<<<<<< HEAD
 /*POPUP COMPONENT*/
 .popup {  
   position: fixed;  
@@ -44,9 +43,6 @@ body {
 
 
 /* MAP COMPONENT */
-=======
-/* MAP COMPONENT / BUSINESSES LIST */
->>>>>>> 6791b9d5008c14e6ebcca453af71e3c8cc35c893
 .marker img {
   text-align: center;
 }
