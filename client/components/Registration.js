@@ -33,7 +33,12 @@ class Registration extends React.Component {
       email: "",
       password: "",
     });
-    this.props.history.push("/profile");
+    if (!this.state.firstName || !this.state.lastName || !this.state.email || !this.state.password){
+      alert('please complete all fields')
+    }else{
+      this.props.history.push("/profile");
+    }
+    
   }
 
   render() {
