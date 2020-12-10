@@ -51,6 +51,24 @@ body {
   filter: drop-shadow(0 0 0.5em #2e3842);
 }
 
+.map-overlay button {
+  color: #ffffff;
+  background-color: #d7b9d5;
+  border: #d7b9d5;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+}
+
+.map-overlay button:hover {
+  background-color: #ada7c9;
+  color: #ffffff;
+}
+
+.map-overlay a:hover {
+  text-decoration: none;
+  color: #2e3842;
+}
+
 @media screen and (max-width: 600px) {
   #map-container {
     height: 90vh;
@@ -85,7 +103,7 @@ body {
 }
 
 #single-entry {
-  padding-bottom: 2em;
+  padding-bottom: 1em;
 }
 
 /* Single Business Component */
