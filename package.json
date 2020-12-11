@@ -41,6 +41,7 @@
 		"crypto": "^1.0.1",
 		"enzyme": "^3.11.0",
 		"express": "^4.17.1",
+		"express-http-to-https": "^1.1.4",
 		"express-session": "^1.17.1",
 		"express-sslify": "^1.2.0",
 		"faker": "^5.1.0",
