@@ -749,11 +749,12 @@ body {
 @media screen and (max-width: 600px) {
   .btn-friend-already {
     font-size: 9px !important;
-    margin-left: 35%;
+    margin-left: 30%;
     text-align: center;
     background-color: #5d9bb0 !important;
     border: none !important;
     color: #ffffff !important;
+    margin-top: 1%;
     /* font-weight: bold !important; */
   }
 
@@ -775,16 +776,19 @@ body {
   .name-friend {
     text-transform: Capitalize;
     font-size: 25px;
-    width: 100%;
-    text-align: center;
+    width: 70%;
+    text-align: left;
+    margin-left: 30%;
     z-index: -1;
     margin-top: 10%;
+    margin-bottom: 0%;
   }
 
   .member-friend {
-    margin-top: 2%;
+    /* margin-top: -2%; */
     font-size: 12px;
-    text-align: center;
+    text-align: left;
+    margin-left: 30%;
   }
 
   .friends-name-link {

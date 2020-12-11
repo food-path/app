@@ -31,7 +31,7 @@ class OtherProfile extends React.Component {
 				</h2>
 				<div>
 					<p className="member-friend">
-						Been fooding since:{" "}
+						Been fooding since{" "}
 						{new Date(otherUser.registrationDate).toLocaleDateString()}
 					</p>
 					{otherUser.id !== user.id && (
