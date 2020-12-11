@@ -74,21 +74,20 @@ body {
     text-align: center;
     font-family: "Montserrat", sans-serif;
     color: #182c3a;
-    /* font-weight: bold; */
   }
 
   #BusinessName {
     background-color: rgb(93, 155, 176);
     text-align: center;
     font-size: 5px;
-    padding-top: 3%;
+    padding-top: 2%;
     font-family: "Montserrat", sans-serif;
-    /* margin-top: -20px; */
+    padding-bottom: 1%;
   }
 
   #wrapper {
     margin-top: 20px;
-    margin-left: 14px;
+    margin-left: 10px;
     margin-right: 16px;
     text-align: center;
     text-justify: inter-word;
@@ -421,7 +420,7 @@ body {
     display: flex;
     list-style-type: none;
     margin-inline-end: 0px;
-    padding-inline-start: 35px;
+    padding-inline-start: 30px;
     text-transform: capitalize;
     flex-direction: row;
     margin-inline-start: -35px;
@@ -771,5 +770,11 @@ body {
 
   .businessid {
     display: none;
+  }
+
+  #profile-map-icon {
+    margin-top: -10%;
+    flex-direction: row;
+    color: #90a8c3 !important;
   }
 }
