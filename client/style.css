@@ -516,22 +516,79 @@ body {
 }
 
 /* SEARCH COMPONENT */
-@media screen and (max-width: 600px) {
-  .welcome-name {
-    text-transform: Capitalize;
-    font-size: 18px;
-    text-align: center;
-    margin-top: 20%;
-    color: #182c3a;
+
+.logo-behind {
+  position: fixed;
+  transform: rotate(15deg);
+  z-index: -1;
+  opacity: 0.2;
+  filter: drop-shadow(0 0 0.5em #2e3842);
+}
+
+.welcome-name {
+  text-transform: Capitalize;
+  text-align: center;
+  color: #182c3a;
+  font-family: "Montserrat", sans-serif;
+}
+
+.search-form {
+  display: flex;
+  align-content: center;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 2%;
+  text-align: center;
+}
+
+#city-label,
+#food-label {
+  width: 100% !important;
+  background-color: #948fad !important;
+  color: rgb(225, 224, 224) !important;
+  opacity: 1;
+}
+
+#city-label::placeholder,
+#food-label::placeholder {
+  color: rgb(238, 236, 236) !important;
+  text-align: center;
+  font-size: 14px;
+}
+
+#btn-search {
+  background-color: #614b81;
+  border: none;
+  filter: drop-shadow(0 0 0.25em #2e3842);
+}
+
+#btn-search:hover {
+  background-color: #948fad;
+}
+
+.mb-3 {
+  color: #182c3a;
+}
+
+#slider-min-price,
+#slider-max-price {
+  color: #182c3a;
+}
+
+.input-fields {
+  background-color: none;
+}
+
+@media screen and (min-width: 601px) {
+  .logo-behind {
+    margin-top: -15vh;
+    margin-left: -10%;
   }
 
-  .logo-behind {
-    position: fixed;
-    margin-top: -18%;
-    margin-left: -15%;
-    transform: rotate(15deg);
-    z-index: -1;
-    opacity: 0.2;
+  .welcome-name {
+    font-size: 5vw;
+    margin-top: 5%;
   }
 
   .container-search {
@@ -543,75 +600,49 @@ body {
   }
 
   .search-form {
-    display: flex;
-    align-content: center;
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+    justify-content: center;
+  }
+
+  .price-fields,
+  .diet-fields {
+    margin-top: 2vh;
+  }
+
+  #btn-search {
     margin-top: 5%;
-    border-radius: 2%;
-    text-align: left;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .welcome-name {
+    font-size: 18px;
+    margin-top: 20%;
   }
 
-  #city-label {
-    width: 100% !important;
-    background-color: #948fad !important;
-    color: rgb(225, 224, 224) !important;
+  .logo-behind {
+    margin-top: -18%;
+    margin-left: -15%;
+  }
+
+  .container-search {
+    background-size: cover !important;
+    background-position: center;
+    background-attachment: fixed;
     opacity: 1;
+    overflow: hidden;
   }
 
-  #city-label::placeholder {
-    color: rgb(238, 236, 236) !important;
-    text-align: center;
-    font-size: 14px;
+  .search-form {
+    margin-top: 5%;
   }
 
-  #food-label {
-    width: 100% !important;
-    background-color: #948fad !important;
-    color: white;
-    opacity: 1;
-  }
-
-  #food-label::placeholder {
-    color: rgb(238, 236, 236) !important;
-    text-align: center;
-    font-size: 14px;
-  }
-
-  .mb-3 {
-    color: #182c3a;
-  }
-
-  #slider-min-price {
-    color: #182c3a;
-  }
-
-  #slider-max-price {
-    color: #182c3a;
-  }
-
-  .input-fields {
-    background-color: none;
-  }
-
-  .price-fields {
-    margin-top: 10%;
-  }
-
+  .price-fields,
   .diet-fields {
     margin-top: 10%;
   }
 
   #btn-search {
     margin-top: 10%;
-    margin-left: 23%;
-    background-color: #614b81;
-    border: none;
-  }
-
-  #btn-search:hover {
-    background-color: #948fad;
   }
 }
 

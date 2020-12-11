@@ -111,7 +111,7 @@ class Search extends Component {
 										type="term"
 										name="term"
 										value={this.state.term}
-										placeholder="Enter Key Words"
+										placeholder="Enter key words"
 										onChange={this.onChange}
 									/>
 
