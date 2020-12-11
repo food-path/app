@@ -96,7 +96,7 @@ class SingleBusiness extends Component {
                     <hr></hr>
                     <p className="stars-review">{review.rating} stars</p>
                     <a href={review.url}>
-                      <p style={{ fontStyle: "italic" }}>{review.text}</p>
+                      <p className="text-reviews" style={{ fontStyle: "italic" }}>{review.text}</p>
                     </a>
                   </li>
                 ))}

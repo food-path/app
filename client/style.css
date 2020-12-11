@@ -177,7 +177,8 @@ body {
 
   #list-days {
     text-align: left;
-    text-justify: left;
+    /* margin-left: 23%; */
+    text-align: center;
   }
 
   #list-hours-title {
@@ -186,6 +187,7 @@ body {
     font-size: 20px;
     font-weight: thin;
     color: #182c3a;
+    margin-bottom: 5%;
   }
 
   #business-price-range {
@@ -210,6 +212,14 @@ body {
     font-size: 20px;
     font-family: "Roboto", sans-serif;
     color: #182c3a;
+    margin-right: 10%;
+  }
+
+  .text-reviews {
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    /* margin-left: 10%; */
   }
 
   #separator {
@@ -217,15 +227,16 @@ body {
     background-color: #5d9bb0;
   }
 
-  ul {
+  /* ul {
     margin-left: -35px;
     list-style-type: none;
-  }
+  } */
 
   #backToMap {
     text-align: center;
     color: #182c3a;
     font-size: 12px;
+    margin-right: 20px;
   }
 
   .stars-review {
