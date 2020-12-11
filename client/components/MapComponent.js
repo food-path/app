@@ -132,7 +132,7 @@ class MapComponent extends React.Component {
 								<Button variant="primary" type="submit">
 									SAVE THIS FOODIE MAP
 								</Button>
-								{this.state.mapSaved ?<Link to="/myMaps">Map Saved! Click here to view your saved map</Link>:null}
+								{this.state.mapSaved ?<Link to="/profile">Map Saved! Click here to view your saved map</Link>:null}
 							</Form>
 						</div>
 					</GoogleMapReact>
