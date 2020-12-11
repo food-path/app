@@ -37,7 +37,7 @@ class Login extends React.Component {
 
 		return (
 			<div className="container-login">
-				<img src="/img/logo2.png" width="90" className="logo-login" />
+				<img src="/img/logo2.png" width="70" className="logo-login" />
 
 				<div className="square"></div>
 
