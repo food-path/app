@@ -43,61 +43,66 @@ class Search extends Component {
 		let maxPrice = priceToText(this.state.maxPrice);
 		const user = this.props.user;
 
-		return (
-			<div className="container-search">
-				<div id="search-bg">
-					<h2 className="welcome-name">Welcome, {user.firstName}!</h2>
-					<Modal
-						show={this.state.showNoResultsFound}
-						size="lg"
-						aria-labelledby="contained-modal-title-vcenter"
-						centered
-					>
-						<Modal.Header closeButton>
-							<Modal.Title id="contained-modal-title-vcenter">
-								No results found
-							</Modal.Title>
-						</Modal.Header>
-						<Modal.Body>
-							<h4>Try Again!</h4>
-							<p>
-								We couldn't find {this.state.term} in {this.state.location}
-								<br />
-								Let's try something else!
-							</p>
-						</Modal.Body>
-						<Modal.Footer>
-							<Button
-								onClick={() => this.setState({ showNoResultsFound: false })}
-							>
-								Close
-							</Button>
-						</Modal.Footer>
-					</Modal>
-					<Form
-						className="search-form"
-						onSubmit={async (event) => {
-							event.preventDefault();
-							await this.props.fetchMarkers(this.state);
-							if (this.props.markers.length === 0) {
-								this.setState({ showNoResultsFound: true });
-							} else {
-								await this.props.saveSearch(this.state);
-								this.props.history.push("/map");
-							}
-						}}
-					>
-						<Form.Group>
-							<div className="input-fields">
-								<Form.Label></Form.Label>
-								<Form.Control
-									id="city-label"
-									type="city"
-									name="location"
-									value={this.state.location}
-									placeholder="Enter city or zip code"
-									onChange={this.onChange}
-								/>
+    return (
+      <div className="container-search">
+        <div id="search-bg">
+          <h2 className="welcome-name"> Welcome, {user.firstName}!</h2>
+
+          <div className="logo-behind">
+          <img src="/img/logo2.png" width="350" className="logo-login" />
+          </div>
+
+          <Modal
+            show={this.state.showNoResultsFound}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+          >
+            <Modal.Header closeButton>
+              <Modal.Title id="contained-modal-title-vcenter">
+                No results found
+              </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <h4>Try Again!</h4>
+              <p>
+                We couldn't find {this.state.term} in {this.state.location}
+                <br />
+                Let's try something else!
+              </p>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button
+                onClick={() => this.setState({ showNoResultsFound: false })}
+              >
+                Close
+              </Button>
+            </Modal.Footer>
+          </Modal>
+          <Form
+            className="search-form"
+            onSubmit={async (event) => {
+              event.preventDefault();
+              await this.props.fetchMarkers(this.state);
+              if (this.props.markers.length === 0) {
+                this.setState({ showNoResultsFound: true });
+              } else {
+                await this.props.saveSearch(this.state);
+                this.props.history.push("/map");
+              }
+            }}
+          >
+            <Form.Group>
+              <div className="input-fields">
+                <Form.Label></Form.Label>
+                <Form.Control
+                  id="city-label"
+                  type="city"
+                  name="location"
+                  value={this.state.location}
+                  placeholder="Enter city or zip code"
+                  onChange={this.onChange}
+                />
 
 								<div className="input-fields">
 									<Form.Label></Form.Label>

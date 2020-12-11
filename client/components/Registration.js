@@ -41,7 +41,7 @@ class Registration extends React.Component {
       <>
         <div id="picture-bg">
           <div id="purple-bg">
-            <img src="/img/logo2.png" width="90" className="logo-signup" />
+            <img src="/img/logo2.png" width="80" className="logo-signup" />
 
             <p className="welcome-msg">
               Welcome to Food Path! <br></br>Tell us a little bit about
@@ -88,6 +88,11 @@ class Registration extends React.Component {
 
             <Form method="get" action="/auth/google" id="form-google-btn">
               <Button id="btn-google" type="submit">
+                <img
+                  src="./img/google.png"
+                  width="15"
+                  className="google-icon"
+                />
                 Sign up with Google
               </Button>
 
