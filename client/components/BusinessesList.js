@@ -10,23 +10,22 @@ class BusinessesList extends Component {
 	render() {
 		const markers = this.props.props.markers;
 		return (
-			<div id="businesses-list">
+			<div className="businesses-list">
 				<ul>
 					{markers.map((marker) => {
 						return (
-							<li key={marker.id}>
+							<li key={marker.id} id="single-entry">
 								<ul>
 									<Link to={`/singleBusiness/${marker.id}`}>
 										<h5>{marker.name}</h5>
 									</Link>
+									<li>{`${marker.price} | ${marker.rating} stars`}</li>
 									<Button
 										variant="warning"
 										onClick={() => this.props.props.removeMarker(marker.id)}
 									>
-										Delete from map
+										Delete from Map
 									</Button>
-									<li>{marker.price}</li>
-									<li>{marker.rating}</li>
 								</ul>
 							</li>
 						);
