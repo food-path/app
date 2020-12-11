@@ -91,11 +91,6 @@ class SingleBusiness extends Component {
 							</ul>
 							<div id='separator'></div>
 							<h4>Reviews</h4>
-
-							<Form action={singleBusiness.reviews[1].url} target={'_blank'} rel={'noreferrer'}>
-    							<input type="submit" value="See all reviews on Yelp!" />
-							</Form>
-
 							<ul className='link'>
 								{singleBusiness.reviews.map((review) => (
 									<li key={review.id}>
@@ -106,15 +101,11 @@ class SingleBusiness extends Component {
 									</li>
 								))}
 							</ul>
-					{this.state.showPopup ?  
-					<Popup  
-          						text='Review will open in separate tab...routing to Yelp'
-								  closePopup={this.togglePopup}  
-								  url = {this.state.selectedUrl}
-								
-					/>  
-						: null  
-					} 
+							<Form id='reviews' action={singleBusiness.reviews[1].url} target={'_blank'} rel={'noreferrer'}>
+    							<input type="submit" value="See all reviews on Yelp!" variant="secondary" id="reviewButton"/>
+							</Form>
+							<br></br>
+				
 						</div>
 					</div> 
 				) : (
