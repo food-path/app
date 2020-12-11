@@ -398,6 +398,13 @@ body {
     font-family: "Montserrat", sans-serif !important;
     margin: 0;
   }
+
+  .search-text:hover,
+  .profile-text:hover,
+  .logout-text:hover,
+  .map-text:hover {
+    color: white !important;
+  }
 }
 
 @media screen and (max-width: 600px) {
