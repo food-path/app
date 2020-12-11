@@ -84,7 +84,9 @@ class SingleBusiness extends Component {
               <ul id="list-hours">
                 <h4 id="list-hours-title">Hours of Operation</h4>{" "}
                 {hoursToDisplay.map((openHrs, id) => (
-                  <li id="list-days" key={id}>{openHrs}</li>
+                  <li id="list-days" key={id}>
+                    {openHrs}
+                  </li>
                 ))}
               </ul>
               <div id="horizontal"></div>
@@ -96,7 +98,12 @@ class SingleBusiness extends Component {
                     <hr></hr>
                     <p className="stars-review">{review.rating} stars</p>
                     <a href={review.url}>
-                      <p className="text-reviews" style={{ fontStyle: "italic" }}>{review.text}</p>
+                      <p
+                        className="text-reviews"
+                        style={{ fontStyle: "italic" }}
+                      >
+                        {review.text}
+                      </p>
                     </a>
                   </li>
                 ))}
@@ -104,7 +111,12 @@ class SingleBusiness extends Component {
             </div>
           </div>
         ) : (
-          <img src="https://codyogden.blog/content/images/2018/08/magic-burrito.gif"></img>
+          <div className="loading-screen">
+            <img
+              className="loader"
+              src="https://i.gifer.com/YOQn.gif"
+            ></img>
+          </div>
         )}
         <div id="backToMap" className="link">
           <img

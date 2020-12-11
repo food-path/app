@@ -12,6 +12,17 @@ body {
 }
 
 @media screen and (max-width: 600px) {
+  .loader {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+  }
+}
+
+@media screen and (max-width: 600px) {
   #app {
     min-height: 100vh;
     font-family: sans-serif;
@@ -168,8 +179,7 @@ body {
 
   #list-days {
     text-align: left;
-    /* margin-left: 23%; */
-    text-align: center;
+    /* text-align: center; */
   }
 
   #list-hours-title {
@@ -204,6 +214,7 @@ body {
     font-family: "Roboto", sans-serif;
     color: #182c3a;
     margin-right: 10%;
+    margin-left: 8%;
   }
 
   .text-reviews {
