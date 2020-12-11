@@ -18,7 +18,8 @@ class Search extends Component {
     this.state = {
       location: "",
       term: "",
-      minPrice: 0,
+      price: "$", 
+      minPrice: 0, 
       maxPrice: 100,
       categories: [],
       showNoResultsFound: false,
@@ -43,18 +44,17 @@ class Search extends Component {
 	}
 
   handleChange(price){
-    console.log("inside handleChange")
     this.setState({
-      minPrice: price
+      price: price
     })
-    console.log('this.state.minPrice:', this.state.minPrice)
+   
   }
 
   render() {
     let minPrice = priceToText(this.state.minPrice);
     let maxPrice = priceToText(this.state.maxPrice);
     const user = this.props.user;
- 
+    console.log('this.state.price:', this.state.price)
   
     return (
       <div className="container-search">
@@ -136,7 +136,7 @@ class Search extends Component {
 										onChange={this.onChange}
 									/>
 
-									<div className="price-fields">
+									{/* <div className="price-fields">
 										<Form.Label>Minimum Price: {minPrice}</Form.Label>
 										<Form.Control
 											id="slider-min-price"
@@ -154,21 +154,21 @@ class Search extends Component {
                       value={this.state.maxPrice}
                       onChange={this.onChange}
                     />
-                  </div>
+                  </div> */}
                   
                   <ToggleButtonGroup
                           type="radio"
                           name="options"
-                          // value={this.state.minPrice}
+                          value={this.state.price}
                           onChange={this.handleChange}
                             >
-                                <ToggleButton value={1}>$</ToggleButton>
+                                <ToggleButton value={'$'}>$</ToggleButton>
                                 {"     "}
-                                <ToggleButton value={2}>$$</ToggleButton>
+                                <ToggleButton value={"$$"}>$$</ToggleButton>
                                 {" "}
-                                <ToggleButton value={3}>$$$</ToggleButton>
+                                <ToggleButton value={"$$$"}>$$$</ToggleButton>
                                 {" "}
-                                <ToggleButton value={4}>$$$$</ToggleButton>
+                                <ToggleButton value={"$$$$"}>$$$$</ToggleButton>
                   </ToggleButtonGroup>
 
                  
