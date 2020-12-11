@@ -47,8 +47,7 @@ app.use(express.static(path.join(__dirname, "..", "public")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-if (process.env.NODE_ENV !== "development")
-	app.use(enforce.HTTPS({ trustProtoHeader: true }));
+if (process.env.NODE_ENV !== "development") app.use(enforce.HTTPS());
 
 app.use(
 	session({
