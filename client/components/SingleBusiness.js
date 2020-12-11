@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { fetchSingleBusinessDetails } from "../store/singleBusiness";
 import { convertTime } from "../utils";
 import { Link } from "react-router-dom"
-import Popup from "./Popup"
 import { format } from "morgan";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button"
@@ -11,22 +10,12 @@ import Button from "react-bootstrap/Button"
 class SingleBusiness extends Component {
 	constructor(props) {
 		super();
-		this.state = {
-			showPopup: false
-		}
-		this.togglePopup = this.togglePopup.bind(this)
 	}
 	componentDidMount() {
 		this.props.getSingleBusiness(this.props.match.params.businessId);
 	}
 
-	togglePopup(url) {  
-		this.setState({  
-			 showPopup: !this.state.showPopup,  
-			 selectedUrl: url
-		});  
-	} 
-
+	
 	render() {
 		const { singleBusiness } = this.props;
 		console.log("singleBusiness:", singleBusiness);
