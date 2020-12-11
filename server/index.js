@@ -8,6 +8,15 @@ const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const dbStore = new SequelizeStore({ db: db });
 const passport = require("passport");
 
+//TODO: trying to figure out how to redirect http to https
+// app.use((req, res, next) => {
+// 	if (req.protocol === "http" && !req.headers.host.includes("localhost")) {
+// 		res.redirect(`https://${req.headers.host}${req.url}`);
+// 	} else {
+// 		next();
+// 	}
+// });
+
 if (process.env.NODE_ENV === "development") {
 	require("../secrets"); // this will mutate the process.env object with your secrets.
 }

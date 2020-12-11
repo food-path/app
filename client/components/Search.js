@@ -10,38 +10,38 @@ import { priceToText } from "../utils";
 import Modal from "react-bootstrap/Modal";
 
 class Search extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      location: "",
-      term: "",
-      minPrice: 0,
-      maxPrice: 100,
-      categories: [],
-      showNoResultsFound: false,
-    };
-    this.onChange = this.onChange.bind(this);
-    this.onChangeCheckbox = this.onChangeCheckbox.bind(this);
-  }
+	constructor(props) {
+		super(props);
+		this.state = {
+			location: "",
+			term: "",
+			minPrice: 0,
+			maxPrice: 100,
+			categories: [],
+			showNoResultsFound: false,
+		};
+		this.onChange = this.onChange.bind(this);
+		this.onChangeCheckbox = this.onChangeCheckbox.bind(this);
+	}
 
-  onChange(event) {
-    this.setState({
-      [event.target.name]: event.target.value,
-    });
-  }
+	onChange(event) {
+		this.setState({
+			[event.target.name]: event.target.value,
+		});
+	}
 
-  onChangeCheckbox(event) {
-    this.setState({
-      categories: event.target.checked
-        ? [...this.state.categories, event.target.name]
-        : this.state.categories.filter((cat) => cat !== event.target.name),
-    });
-  }
+	onChangeCheckbox(event) {
+		this.setState({
+			categories: event.target.checked
+				? [...this.state.categories, event.target.name]
+				: this.state.categories.filter((cat) => cat !== event.target.name),
+		});
+	}
 
-  render() {
-    let minPrice = priceToText(this.state.minPrice);
-    let maxPrice = priceToText(this.state.maxPrice);
-    const user = this.props.user;
+	render() {
+		let minPrice = priceToText(this.state.minPrice);
+		let maxPrice = priceToText(this.state.maxPrice);
+		const user = this.props.user;
 
     return (
       <div className="container-search">
@@ -104,79 +104,79 @@ class Search extends Component {
                   onChange={this.onChange}
                 />
 
-                <div className="input-fields">
-                  <Form.Label></Form.Label>
-                  <Form.Control
-                    id="food-label"
-                    type="term"
-                    name="term"
-                    value={this.state.term}
-                    placeholder="Enter Key Words"
-                    onChange={this.onChange}
-                  />
+								<div className="input-fields">
+									<Form.Label></Form.Label>
+									<Form.Control
+										id="food-label"
+										type="term"
+										name="term"
+										value={this.state.term}
+										placeholder="Enter Key Words"
+										onChange={this.onChange}
+									/>
 
-                  <div className="price-fields">
-                    <Form.Label>Minimum Price: {minPrice}</Form.Label>
-                    <Form.Control
-                      id="slider-min-price"
-                      type="range"
-                      name="minPrice"
-                      value={this.state.minPrice}
-                      onChange={this.onChange}
-                    />
+									<div className="price-fields">
+										<Form.Label>Minimum Price: {minPrice}</Form.Label>
+										<Form.Control
+											id="slider-min-price"
+											type="range"
+											name="minPrice"
+											value={this.state.minPrice}
+											onChange={this.onChange}
+										/>
 
-                    <Form.Label>Maximum Price: {maxPrice}</Form.Label>
-                    <Form.Control
-                      id="slider-max-price"
-                      type="range"
-                      name="maxPrice"
-                      value={this.state.maxPrice}
-                      onChange={this.onChange}
-                    />
-                  </div>
+										<Form.Label>Maximum Price: {maxPrice}</Form.Label>
+										<Form.Control
+											id="slider-max-price"
+											type="range"
+											name="maxPrice"
+											value={this.state.maxPrice}
+											onChange={this.onChange}
+										/>
+									</div>
 
-                  <div className="diet-fields">
-                    <div key="inline-checkbox" className="mb-3">
-                      {[
-                        "Vegetarian",
-                        "Vegan",
-                        "Halal",
-                        "Kosher",
-                        "Gluten-Free",
-                      ].map((cat) => (
-                        <Form.Check
-                          inline
-                          name={cat.toLowerCase().replace("-", "_")}
-                          label={cat}
-                          type="checkbox"
-                          onChange={this.onChangeCheckbox}
-                          key={cat}
-                        />
-                      ))}
-                    </div>
-                  </div>
+									<div className="diet-fields">
+										<div key="inline-checkbox" className="mb-3">
+											{[
+												"Vegetarian",
+												"Vegan",
+												"Halal",
+												"Kosher",
+												"Gluten-Free",
+											].map((cat) => (
+												<Form.Check
+													inline
+													name={cat.toLowerCase().replace("-", "_")}
+													label={cat}
+													type="checkbox"
+													onChange={this.onChangeCheckbox}
+													key={cat}
+												/>
+											))}
+										</div>
+									</div>
 
-                  <Button id="btn-search" variant="primary" type="submit">
-                    GET MY FOODIEMAP
-                  </Button>
-                </div>
-              </div>
-            </Form.Group>
-          </Form>
-        </div>
-      </div>
-    );
-  }
+									<Button id="btn-search" variant="primary" type="submit">
+										GET MY FOODIEMAP
+									</Button>
+								</div>
+							</div>
+						</Form.Group>
+					</Form>
+				</div>
+			</div>
+		);
+	}
 }
 
 const mapStateToProps = (state) => ({
-  user: state.user,
-  markers: state.markers,
+	user: state.user,
+	markers: state.markers,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchMarkers: (body) => dispatch(fetchMarkers(body)),
-  saveSearch: (search) => dispatch(saveSearch(search)),
+	fetchMarkers: (body) => dispatch(fetchMarkers(body)),
+	saveSearch: (search) => dispatch(saveSearch(search)),
 });
 
 //withRouter gives us this.props.history
