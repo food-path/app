@@ -451,11 +451,12 @@ body {
   }
 
   .logo-behind {
-    z-index: 2;
     position: fixed;
-    margin-top: -35%;
-    margin-left: -5%;
+    margin-top: -18%;
+    margin-left: -15%;
     transform: rotate(15deg);
+    z-index: -1;
+    opacity: 0.2;
   }
 
   .container-search {
@@ -480,23 +481,27 @@ body {
   #city-label {
     width: 100% !important;
     background-color: #948fad !important;
-    color: white;
+    color: rgb(225, 224, 224) !important;
+    opacity: 1;
   }
 
   #city-label::placeholder {
-    color: #ffffff !important;
+    color: rgb(238, 236, 236) !important;
     text-align: center;
+    font-size: 14px;
   }
 
   #food-label {
     width: 100% !important;
     background-color: #948fad !important;
     color: white;
+    opacity: 1;
   }
 
   #food-label::placeholder {
-    color: #ffffff !important;
+    color: rgb(238, 236, 236) !important;
     text-align: center;
+    font-size: 14px;
   }
 
   .mb-3 {
@@ -512,7 +517,7 @@ body {
   }
 
   .input-fields {
-    background-color: white;
+    background-color: none;
   }
 
   .price-fields {
@@ -525,8 +530,8 @@ body {
 
   #btn-search {
     margin-top: 10%;
-    margin-left: 20%;
-    background-color: #948fad;
+    margin-left: 23%;
+    background-color: #614b81;
     border: none;
   }
 
@@ -546,20 +551,22 @@ body {
     width: 90%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10%;
+    margin-top: 5%;
     border-radius: 2%;
     text-align: center;
   }
 
   .logo-signup {
-    margin-left: 33%;
+    margin-left: 35%;
     margin-top: 2%;
     position: relative;
+    filter: drop-shadow(0 0 0.3em #2E3842)
   }
 
   .welcome-msg {
     font-size: 12px;
     text-align: center;
+    margin-top: 2%;
   }
 
   .firstname {
@@ -594,37 +601,43 @@ body {
   }
 
   #btn-signup {
-    border: none;
-    text-align: left;
-    margin-top: 10%;
-    color: #ffffff;
+    border: none !important;
+    text-align: left !important;
+    margin-top: 10% !important;
+    color: #ffffff !important;
     background-color: #614b81 !important;
+    opacity: 1 !important;
+    z-index: 1 !important;
   }
 
   #btn-google {
-    padding: 1px;
-    font-size: 12px;
-    margin-top: 8%;
-    border-radius: 4%;
-    text-align: center;
-    width: 80%;
-    margin-left: 10%;
-    background-color: #ada7c9;
-    border: none;
-    color: #182c3a;
+    font-size: 10px;
+    padding: 4px !important;
+    margin-left: 17%;
+    opacity: 1;
+    border-width: thin;
+    color: #fefefe;
+    width: 66%;
+    display: inline-block !important;
+    margin-top: 25px;
+    background-color:#90A8C3 !important;
+    border-color: #90A8C3 !important;
+    filter: drop-shadow(0 0 0.5em #2E3842)
   }
 
   #btn-already-account {
-    padding: 1px;
-    font-size: 12px;
+    padding: 4px;
+    font-size: 10px;
     margin-top: 5%;
-    border-radius: 4%;
+    border-radius: 5%;
     text-align: center;
-    width: 80%;
-    margin-left: 10%;
+    width: 66%;
+    margin-left: 17%;
     background-color: #ada7c9;
     border: none;
     color: #182c3a;
+    filter: drop-shadow(0 0 0.3em #2E3842);
+    opacity: 1;
   }
 
   #purple-bg {
@@ -634,8 +647,7 @@ body {
     height: 70%;
     width: 80%;
     background-color: #a49fbf;
-    z-index: 2;
-    border-radius: 3px;
+    border-radius: 4px;
     opacity: 0.9;
   }
 

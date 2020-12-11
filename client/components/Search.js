@@ -49,7 +49,7 @@ class Search extends Component {
           <h2 className="welcome-name"> Welcome, {user.firstName}!</h2>
 
           <div className="logo-behind">
-          <img src="/img/logo.png" width="120" className="logo-login" />
+          <img src="/img/logo2.png" width="350" className="logo-login" />
           </div>
 
           <Modal
