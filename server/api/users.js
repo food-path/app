@@ -36,6 +36,19 @@ router.post("/search", async (req, res, next) => {
 	}
 });
 
+router.post("/findUserByEmail", async (req, res, next) => {
+	try {
+		const user = await User.findOne({
+			where: {
+				email: req.body.email,
+			},
+		});
+		res.send(user);
+	} catch (error) {
+		next(error);
+	}
+});
+
 router.put("/:id", async (req, res, next) => {
 	try {
 		if (!req.user || req.user.id !== +req.params.id) return res.sendStatus(401);
