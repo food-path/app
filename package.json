@@ -46,6 +46,7 @@
 		"express-sslify": "^1.2.0",
 		"faker": "^5.1.0",
 		"google-map-react": "^2.1.9",
+		"heroku-ssl-redirect": "^0.1.1",
 		"history": "^5.0.0",
 		"lodash": "^4.17.20",
 		"mocha": "^8.2.0",
