@@ -11,7 +11,7 @@ class NavigationBar extends React.Component {
     return (
       <Navbar id="navbar" bg="dark" variant="dark" expand="lg">
         <Navbar.Brand as={NavLink} to="/" id="logo-nav">
-          Food Path
+          <img src="/img/food path mixed logo (alt 1).png" width="200" />
         </Navbar.Brand>
         <Navbar id="basic-navbar-nav">
           <Nav id="mr-auto">
