@@ -1,23 +1,14 @@
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-	min-height: 100vh;
-	font-family: "Roboto", sans-serif;
-	/* overflow: hidden; */
-	/* 	Keep this commented out so that you can save your maps in the desktop version */
-}
-
-@media screen and (max-width: 600px) {
-  body {
-    /* padding-bottom: 78px; */
-    /* overflow: hidden; */
-    min-height: 100vh;
-    font-family: "Roboto", sans-serif;
-  }
+  min-height: 100vh;
+  font-family: "Roboto", sans-serif;
+  /* overflow: hidden; */
+  /* 	Keep this commented out so that you can save your maps in the desktop version */
 }
 
 @media screen and (max-width: 600px) {
@@ -29,97 +20,97 @@ body {
 
 /* MAP COMPONENT / BUSINESSES LIST */
 .marker img {
-	text-align: center;
+  text-align: center;
 }
 
 #map {
-	position: absolute;
-	height: 100%;
-	width: 100%;
-	overflow: hidden;
-	top: 0;
-	right: 0;
-	left: 0;
-	bottom: 0;
-	z-index: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 0;
 }
 
 #map-container {
-	height: 100vh;
-	width: 100vw;
-	position: relative;
-	z-index: 0;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  z-index: 0;
 }
 
 .map-overlay {
-	position: fixed;
-	background-color: #90a8c3;
-	padding: 1em;
-	z-index: 10;
-	overflow: auto;
-	border-radius: 5px !important;
-	filter: drop-shadow(0 0 0.5em #2e3842);
+  position: fixed;
+  background-color: #90a8c3;
+  padding: 1em;
+  z-index: 10;
+  overflow: auto;
+  border-radius: 5px !important;
+  filter: drop-shadow(0 0 0.5em #2e3842);
 }
 
 .map-overlay button {
-	color: #ffffff;
-	background-color: #d7b9d5;
-	border: #d7b9d5;
-	margin-top: 0.5em;
-	margin-bottom: 1em;
+  color: #ffffff;
+  background-color: #d7b9d5;
+  border: #d7b9d5;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
 }
 
 .map-overlay button:hover {
-	background-color: #ada7c9;
-	color: #ffffff;
+  background-color: #ada7c9;
+  color: #ffffff;
 }
 
 .map-overlay a:hover {
-	text-decoration: none;
-	color: #2e3842;
+  text-decoration: none;
+  color: #2e3842;
 }
 
 @media screen and (max-width: 600px) {
-	#map-container {
-		height: 90vh;
-		width: 100vw;
-		position: relative;
-		z-index: 0;
-	}
+  #map-container {
+    height: 90vh;
+    width: 100vw;
+    position: relative;
+    z-index: 0;
+  }
 
-	.map-overlay {
-		left: 50%;
-		margin-left: -90vw;
-		bottom: 50%;
-		margin-bottom: -40vh;
-		width: 75vw;
-		height: 25vh;
-	}
+  .map-overlay {
+    left: 50%;
+    margin-left: -90vw;
+    bottom: 50%;
+    margin-bottom: -40vh;
+    width: 75vw;
+    height: 25vh;
+  }
 }
 
 @media screen and (min-width: 601px) {
-	.map-overlay {
-		left: -48%;
-		top: 50%;
-		margin-top: -40vh;
-		width: 25vw;
-		height: 80vh;
-	}
+  .map-overlay {
+    left: -48%;
+    top: 50%;
+    margin-top: -40vh;
+    width: 25vw;
+    height: 80vh;
+  }
 }
 
 .businesses-list li {
-	list-style: none;
-	padding-bottom: 0.5em;
+  list-style: none;
+  padding-bottom: 0.5em;
 }
 
 #single-entry {
-	padding-bottom: 1em;
+  padding-bottom: 1em;
 }
 
 /* SINGLE BUSINESS COMPONENT */
 @media screen and (max-width: 600px) {
   #bg-image-business {
-    background-color: #182C3A;
+    background-color: #182c3a;
   }
 
   #bannerimage {
@@ -268,7 +259,7 @@ body {
     height: 25%;
     border-radius: 3px;
     opacity: 0.85;
-    filter: drop-shadow(0 0 0.5em #2E3842)
+    filter: drop-shadow(0 0 0.5em #2e3842);
   }
 
   #input-email {
@@ -320,7 +311,7 @@ body {
     color: #ffffff;
     border: none;
     opacity: 1 !important;
-    filter: drop-shadow(0 0 0.5em #2E3842)
+    filter: drop-shadow(0 0 0.5em #2e3842);
   }
 
   #btn3 {
@@ -332,14 +323,14 @@ body {
     width: 66%;
     display: inline-block !important;
     margin-top: 25px;
-    background-color:#90A8C3 !important;
-    border-color: #90A8C3 !important;
-    filter: drop-shadow(0 0 0.5em #2E3842)
+    background-color: #90a8c3 !important;
+    border-color: #90a8c3 !important;
+    filter: drop-shadow(0 0 0.5em #2e3842);
   }
 
   .google-icon {
     margin-right: 9px;
-    background-color: #90A8C3;
+    background-color: #90a8c3;
     border-radius: 2px;
   }
 
@@ -365,7 +356,7 @@ body {
     position: absolute;
     opacity: 1;
     z-index: 1;
-    filter: drop-shadow(0 0 0.5em #2E3842)
+    filter: drop-shadow(0 0 0.5em #2e3842);
   }
 
   .copyright {
@@ -377,6 +368,38 @@ body {
 }
 
 /* NAVBAR COMPONENT*/
+#mr-auto {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.home-text {
+  display: none;
+}
+
+#navbar {
+  background-color: #182c3a !important;
+  align-items: center;
+}
+
+@media screen and (min-width: 601px) {
+  .search-icon,
+  .profile-icon,
+  .logout-icon {
+    display: none;
+  }
+
+  .search-text,
+  .profile-text,
+  .logout-text,
+  .map-text {
+    color: #ada7c9 !important;
+    font-family: "Montserrat", sans-serif !important;
+    margin: 0;
+  }
+}
+
 @media screen and (max-width: 600px) {
   #basic-navbar-nav {
     width: 100%;
@@ -389,42 +412,15 @@ body {
     width: 100%;
   }
 
-  #mr-auto {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-  }
-
-  .home-text {
-    display: none;
-  }
-
-  .search-text {
-    display: none;
-  }
-
-  .search-icon {
-    border-color: white;
-    filter: invert(1);
-  }
-
+  .search-text,
+  .profile-text,
+  .logout-text,
   .map-text {
     display: none;
   }
 
-  .profile-text {
-    display: none;
-  }
-
-  .profile-icon {
-    border-color: white;
-    filter: invert(1);
-  }
-
-  .logout-text {
-    display: none;
-  }
-
+  .search-icon,
+  .profile-icon,
   .logout-icon {
     border-color: white;
     filter: invert(1);
@@ -639,7 +635,7 @@ body {
     margin-left: 35%;
     margin-top: 2%;
     position: relative;
-    filter: drop-shadow(0 0 0.3em #2E3842)
+    filter: drop-shadow(0 0 0.3em #2e3842);
   }
 
   .welcome-msg {
@@ -699,9 +695,9 @@ body {
     width: 66%;
     display: inline-block !important;
     margin-top: 25px;
-    background-color:#90A8C3 !important;
-    border-color: #90A8C3 !important;
-    filter: drop-shadow(0 0 0.5em #2E3842)
+    background-color: #90a8c3 !important;
+    border-color: #90a8c3 !important;
+    filter: drop-shadow(0 0 0.5em #2e3842);
   }
 
   #btn-already-account {
@@ -715,7 +711,7 @@ body {
     background-color: #ada7c9;
     border: none;
     color: #182c3a;
-    filter: drop-shadow(0 0 0.3em #2E3842);
+    filter: drop-shadow(0 0 0.3em #2e3842);
     opacity: 1;
   }
 

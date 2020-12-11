@@ -11,7 +11,7 @@ class NavigationBar extends React.Component {
     return (
       <Navbar id="navbar" bg="dark" variant="dark" expand="lg">
         <Navbar.Brand as={NavLink} to="/" id="logo-nav">
-          Food Path
+          <img src="/img/food path mixed logo (alt 1).png" width="200" />
         </Navbar.Brand>
         <Navbar id="basic-navbar-nav">
           <Nav id="mr-auto">
@@ -23,7 +23,7 @@ class NavigationBar extends React.Component {
                     width="30"
                     className="search-icon"
                   />
-                  <p className="search-text">Search</p>
+                  <p className="search-text">SEARCH</p>
                 </Nav.Link>
 
                 <Nav.Link as={NavLink} to="/profile">
@@ -32,7 +32,7 @@ class NavigationBar extends React.Component {
                     width="30"
                     className="profile-icon"
                   />
-                  <p className="profile-text">Profile </p>
+                  <p className="profile-text">PROFILE </p>
                 </Nav.Link>
 
                 <Nav.Link
@@ -46,7 +46,7 @@ class NavigationBar extends React.Component {
                     width="30"
                     className="logout-icon"
                   />
-                  <p className="logout-text">Logout </p>
+                  <p className="logout-text">LOGOUT </p>
                 </Nav.Link>
               </>
             )}
