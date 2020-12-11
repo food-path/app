@@ -9,8 +9,8 @@ const dbStore = new SequelizeStore({ db: db });
 const passport = require("passport");
 // const enforce = require("express-sslify");
 // const redirectToHTTPS = require("express-http-to-https").redirectToHTTPS;
-const sslRedirect = require("heroku-ssl-redirect");
-
+const sslRedirect = require("heroku-ssl-redirect").default;
+// console.log(sslRedirect);
 //TODO: trying to figure out how to redirect http to https
 // app.use((req, res, next) => {
 // 	if (req.protocol === "http" && !req.headers.host.includes("localhost")) {
