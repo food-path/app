@@ -54,7 +54,6 @@ class Search extends Component {
     let minPrice = priceToText(this.state.minPrice);
     let maxPrice = priceToText(this.state.maxPrice);
     const user = this.props.user;
-    console.log('this.state.price:', this.state.price)
   
     return (
       <div className="container-search">
@@ -163,7 +162,7 @@ class Search extends Component {
                           onChange={this.handleChange}
                             >
                                 <ToggleButton value={'$'}>$</ToggleButton>
-                                {"     "}
+                                {" "}
                                 <ToggleButton value={"$$"}>$$</ToggleButton>
                                 {" "}
                                 <ToggleButton value={"$$$"}>$$$</ToggleButton>

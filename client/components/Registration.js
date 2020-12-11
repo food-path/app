@@ -33,6 +33,7 @@ class Registration extends React.Component {
       email: "",
       password: "",
     });
+
     if (!this.state.firstName || !this.state.lastName || !this.state.email || !this.state.password){
       alert('please complete all fields')
     }else{
