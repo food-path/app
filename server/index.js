@@ -7,6 +7,7 @@ const session = require("express-session");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const dbStore = new SequelizeStore({ db: db });
 const passport = require("passport");
+const enforce = require("express-sslify");
 
 //TODO: trying to figure out how to redirect http to https
 // app.use((req, res, next) => {
@@ -45,6 +46,9 @@ app.use(express.static(path.join(__dirname, "..", "public")));
 //better parsing middleware than body-parser
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+if (process.env.NODE_ENV !== "development")
+	app.use(enforce.HTTPS({ trustProtoHeader: true }));
 
 app.use(
 	session({
