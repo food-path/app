@@ -1,23 +1,14 @@
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-	min-height: 100vh;
-	font-family: "Roboto", sans-serif;
-	/* overflow: hidden; */
-	/* 	Keep this commented out so that you can save your maps in the desktop version */
-}
-
-@media screen and (max-width: 600px) {
-  body {
-    /* padding-bottom: 78px; */
-    /* overflow: hidden; */
-    min-height: 100vh;
-    font-family: "Roboto", sans-serif;
-  }
+  min-height: 100vh;
+  font-family: "Roboto", sans-serif;
+  /* overflow: hidden; */
+  /* 	Keep this commented out so that you can save your maps in the desktop version */
 }
 
 @media screen and (max-width: 600px) {
@@ -30,91 +21,91 @@ body {
 
 /* MAP COMPONENT */
 .marker img {
-	text-align: center;
+  text-align: center;
 }
 
 #map {
-	position: absolute;
-	height: 100%;
-	width: 100%;
-	overflow: hidden;
-	top: 0;
-	right: 0;
-	left: 0;
-	bottom: 0;
-	z-index: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 0;
 }
 
 #map-container {
-	height: 100vh;
-	width: 100vw;
-	position: relative;
-	z-index: 0;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  z-index: 0;
 }
 
 .map-overlay {
-	position: fixed;
-	background-color: #90a8c3;
-	padding: 1em;
-	z-index: 10;
-	overflow: auto;
-	border-radius: 5px !important;
-	filter: drop-shadow(0 0 0.5em #2e3842);
+  position: fixed;
+  background-color: #90a8c3;
+  padding: 1em;
+  z-index: 10;
+  overflow: auto;
+  border-radius: 5px !important;
+  filter: drop-shadow(0 0 0.5em #2e3842);
 }
 
 .map-overlay button {
-	color: #ffffff;
-	background-color: #d7b9d5;
-	border: #d7b9d5;
-	margin-top: 0.5em;
-	margin-bottom: 1em;
+  color: #ffffff;
+  background-color: #d7b9d5;
+  border: #d7b9d5;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
 }
 
 .map-overlay button:hover {
-	background-color: #ada7c9;
-	color: #ffffff;
+  background-color: #ada7c9;
+  color: #ffffff;
 }
 
 .map-overlay a:hover {
-	text-decoration: none;
-	color: #2e3842;
+  text-decoration: none;
+  color: #2e3842;
 }
 
 @media screen and (max-width: 600px) {
-	#map-container {
-		height: 90vh;
-		width: 100vw;
-		position: relative;
-		z-index: 0;
-	}
+  #map-container {
+    height: 90vh;
+    width: 100vw;
+    position: relative;
+    z-index: 0;
+  }
 
-	.map-overlay {
-		left: 50%;
-		margin-left: -90vw;
-		bottom: 50%;
-		margin-bottom: -40vh;
-		width: 75vw;
-		height: 25vh;
-	}
+  .map-overlay {
+    left: 50%;
+    margin-left: -90vw;
+    bottom: 50%;
+    margin-bottom: -40vh;
+    width: 75vw;
+    height: 25vh;
+  }
 }
 
 @media screen and (min-width: 601px) {
-	.map-overlay {
-		left: -48%;
-		top: 50%;
-		margin-top: -40vh;
-		width: 25vw;
-		height: 80vh;
-	}
+  .map-overlay {
+    left: -48%;
+    top: 50%;
+    margin-top: -40vh;
+    width: 25vw;
+    height: 80vh;
+  }
 }
 
 .businesses-list li {
-	list-style: none;
-	padding-bottom: 0.5em;
+  list-style: none;
+  padding-bottom: 0.5em;
 }
 
 #single-entry {
-	padding-bottom: 1em;
+  padding-bottom: 1em;
 }
 
 /* SINGLE BUSINESS COMPONENT */
@@ -136,7 +127,7 @@ body {
 }
 @media screen and (max-width: 600px) {
   #bg-image-business {
-    background-color: #182C3A;
+    background-color: #182c3a;
   }
 
   #bannerimage {
@@ -285,7 +276,7 @@ body {
     height: 25%;
     border-radius: 3px;
     opacity: 0.85;
-    filter: drop-shadow(0 0 0.5em #2E3842)
+    filter: drop-shadow(0 0 0.5em #2e3842);
   }
 
   #input-email {
@@ -337,7 +328,7 @@ body {
     color: #ffffff;
     border: none;
     opacity: 1 !important;
-    filter: drop-shadow(0 0 0.5em #2E3842)
+    filter: drop-shadow(0 0 0.5em #2e3842);
   }
 
   #btn3 {
@@ -349,14 +340,14 @@ body {
     width: 66%;
     display: inline-block !important;
     margin-top: 25px;
-    background-color:#90A8C3 !important;
-    border-color: #90A8C3 !important;
-    filter: drop-shadow(0 0 0.5em #2E3842)
+    background-color: #90a8c3 !important;
+    border-color: #90a8c3 !important;
+    filter: drop-shadow(0 0 0.5em #2e3842);
   }
 
   .google-icon {
     margin-right: 9px;
-    background-color: #90A8C3;
+    background-color: #90a8c3;
     border-radius: 2px;
   }
 
@@ -382,7 +373,7 @@ body {
     position: absolute;
     opacity: 1;
     z-index: 1;
-    filter: drop-shadow(0 0 0.5em #2E3842)
+    filter: drop-shadow(0 0 0.5em #2e3842);
   }
 
   .copyright {
@@ -394,6 +385,45 @@ body {
 }
 
 /* NAVBAR COMPONENT*/
+#mr-auto {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.home-text {
+  display: none;
+}
+
+#navbar {
+  background-color: #182c3a !important;
+  align-items: center;
+}
+
+@media screen and (min-width: 601px) {
+  .search-icon,
+  .profile-icon,
+  .logout-icon {
+    display: none;
+  }
+
+  .search-text,
+  .profile-text,
+  .logout-text,
+  .map-text {
+    color: #ada7c9 !important;
+    font-family: "Montserrat", sans-serif !important;
+    margin: 0;
+  }
+
+  .search-text:hover,
+  .profile-text:hover,
+  .logout-text:hover,
+  .map-text:hover {
+    color: white !important;
+  }
+}
+
 @media screen and (max-width: 600px) {
   #basic-navbar-nav {
     width: 100%;
@@ -406,42 +436,15 @@ body {
     width: 100%;
   }
 
-  #mr-auto {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-  }
-
-  .home-text {
-    display: none;
-  }
-
-  .search-text {
-    display: none;
-  }
-
-  .search-icon {
-    border-color: white;
-    filter: invert(1);
-  }
-
+  .search-text,
+  .profile-text,
+  .logout-text,
   .map-text {
     display: none;
   }
 
-  .profile-text {
-    display: none;
-  }
-
-  .profile-icon {
-    border-color: white;
-    filter: invert(1);
-  }
-
-  .logout-text {
-    display: none;
-  }
-
+  .search-icon,
+  .profile-icon,
   .logout-icon {
     border-color: white;
     filter: invert(1);
@@ -537,22 +540,79 @@ body {
 }
 
 /* SEARCH COMPONENT */
-@media screen and (max-width: 600px) {
-  .welcome-name {
-    text-transform: Capitalize;
-    font-size: 18px;
-    text-align: center;
-    margin-top: 20%;
-    color: #182c3a;
+
+.logo-behind {
+  position: fixed;
+  transform: rotate(15deg);
+  z-index: -1;
+  opacity: 0.2;
+  filter: drop-shadow(0 0 0.5em #2e3842);
+}
+
+.welcome-name {
+  text-transform: Capitalize;
+  text-align: center;
+  color: #182c3a;
+  font-family: "Montserrat", sans-serif;
+}
+
+.search-form {
+  display: flex;
+  align-content: center;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 2%;
+  text-align: center;
+}
+
+#city-label,
+#food-label {
+  width: 100% !important;
+  background-color: #948fad !important;
+  color: rgb(225, 224, 224) !important;
+  opacity: 1;
+}
+
+#city-label::placeholder,
+#food-label::placeholder {
+  color: rgb(238, 236, 236) !important;
+  text-align: center;
+  font-size: 14px;
+}
+
+#btn-search {
+  background-color: #614b81;
+  border: none;
+  filter: drop-shadow(0 0 0.25em #2e3842);
+}
+
+#btn-search:hover {
+  background-color: #948fad;
+}
+
+.mb-3 {
+  color: #182c3a;
+}
+
+#slider-min-price,
+#slider-max-price {
+  color: #182c3a;
+}
+
+.input-fields {
+  background-color: none;
+}
+
+@media screen and (min-width: 601px) {
+  .logo-behind {
+    margin-top: -15vh;
+    margin-left: -10%;
   }
 
-  .logo-behind {
-    position: fixed;
-    margin-top: -18%;
-    margin-left: -15%;
-    transform: rotate(15deg);
-    z-index: -1;
-    opacity: 0.2;
+  .welcome-name {
+    font-size: 5vw;
+    margin-top: 5%;
   }
 
   .container-search {
@@ -564,75 +624,49 @@ body {
   }
 
   .search-form {
-    display: flex;
-    align-content: center;
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+    justify-content: center;
+  }
+
+  .price-fields,
+  .diet-fields {
+    margin-top: 2vh;
+  }
+
+  #btn-search {
     margin-top: 5%;
-    border-radius: 2%;
-    text-align: left;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .welcome-name {
+    font-size: 18px;
+    margin-top: 20%;
   }
 
-  #city-label {
-    width: 100% !important;
-    background-color: #948fad !important;
-    color: rgb(225, 224, 224) !important;
+  .logo-behind {
+    margin-top: -18%;
+    margin-left: -15%;
+  }
+
+  .container-search {
+    background-size: cover !important;
+    background-position: center;
+    background-attachment: fixed;
     opacity: 1;
+    overflow: hidden;
   }
 
-  #city-label::placeholder {
-    color: rgb(238, 236, 236) !important;
-    text-align: center;
-    font-size: 14px;
+  .search-form {
+    margin-top: 5%;
   }
 
-  #food-label {
-    width: 100% !important;
-    background-color: #948fad !important;
-    color: white;
-    opacity: 1;
-  }
-
-  #food-label::placeholder {
-    color: rgb(238, 236, 236) !important;
-    text-align: center;
-    font-size: 14px;
-  }
-
-  .mb-3 {
-    color: #182c3a;
-  }
-
-  #slider-min-price {
-    color: #182c3a;
-  }
-
-  #slider-max-price {
-    color: #182c3a;
-  }
-
-  .input-fields {
-    background-color: none;
-  }
-
-  .price-fields {
-    margin-top: 10%;
-  }
-
+  .price-fields,
   .diet-fields {
     margin-top: 10%;
   }
 
   #btn-search {
     margin-top: 10%;
-    margin-left: 23%;
-    background-color: #614b81;
-    border: none;
-  }
-
-  #btn-search:hover {
-    background-color: #948fad;
   }
 }
 
@@ -656,7 +690,7 @@ body {
     margin-left: 35%;
     margin-top: 2%;
     position: relative;
-    filter: drop-shadow(0 0 0.3em #2E3842)
+    filter: drop-shadow(0 0 0.3em #2e3842);
   }
 
   .welcome-msg {
@@ -716,9 +750,9 @@ body {
     width: 66%;
     display: inline-block !important;
     margin-top: 25px;
-    background-color:#90A8C3 !important;
-    border-color: #90A8C3 !important;
-    filter: drop-shadow(0 0 0.5em #2E3842)
+    background-color: #90a8c3 !important;
+    border-color: #90a8c3 !important;
+    filter: drop-shadow(0 0 0.5em #2e3842);
   }
 
   #btn-already-account {
@@ -732,7 +766,7 @@ body {
     background-color: #ada7c9;
     border: none;
     color: #182c3a;
-    filter: drop-shadow(0 0 0.3em #2E3842);
+    filter: drop-shadow(0 0 0.3em #2e3842);
     opacity: 1;
   }
 
