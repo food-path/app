@@ -83,7 +83,8 @@ class Search extends Component {
                Please enter a city or zip code
              </p>) : (
                  <p>
-                 We couldn't find {this.state.term} in {this.state.location}
+                 {/* We couldn't find {this.state.term} in {this.state.location} */}
+                 Oh no! We couldn't find what you're looking for
                  <br />
                  Let's try something else!
                </p>
