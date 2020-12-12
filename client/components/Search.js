@@ -8,9 +8,8 @@ import Button from "react-bootstrap/Button";
 import { withRouter } from "react-router-dom";
 import { priceToText } from "../utils";
 import Modal from "react-bootstrap/Modal";
-import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
+import ToggleButtonGroup from "react-bootstrap/ToggleButtonGroup";
 import { ToggleButton } from "react-bootstrap";
-
 
 class Search extends Component {
   constructor(props) {
@@ -18,50 +17,49 @@ class Search extends Component {
     this.state = {
       location: "",
       term: "",
-      price: "$", 
-      minPrice: 0, 
+      price: "$",
+      minPrice: 0,
       maxPrice: 100,
       categories: [],
       showNoResultsFound: false,
     };
     this.onChange = this.onChange.bind(this);
     this.onChangeCheckbox = this.onChangeCheckbox.bind(this);
-    this.handleChange = this.handleChange.bind(this)
+    this.handleChange = this.handleChange.bind(this);
   }
 
-	onChange(event) {
-		this.setState({
-			[event.target.name]: event.target.value,
-		});
-	}
-
-	onChangeCheckbox(event) {
-		this.setState({
-			categories: event.target.checked
-				? [...this.state.categories, event.target.name]
-				: this.state.categories.filter((cat) => cat !== event.target.name),
-		});
-	}
-
-  handleChange(price){
+  onChange(event) {
     this.setState({
-      price: price
-    })
-   
+      [event.target.name]: event.target.value,
+    });
+  }
+
+  onChangeCheckbox(event) {
+    this.setState({
+      categories: event.target.checked
+        ? [...this.state.categories, event.target.name]
+        : this.state.categories.filter((cat) => cat !== event.target.name),
+    });
+  }
+
+  handleChange(price) {
+    this.setState({
+      price: price,
+    });
   }
 
   render() {
     let minPrice = priceToText(this.state.minPrice);
     let maxPrice = priceToText(this.state.maxPrice);
     const user = this.props.user;
-  
+
     return (
       <div className="container-search">
         <div id="search-bg">
           <h2 className="welcome-name"> Welcome, {user.firstName}!</h2>
 
           <div className="logo-behind">
-          <img src="/img/logo2.png" width="350" className="logo-login" />
+            <img src="/img/logo2.png" width="350" className="logo-login" />
           </div>
 
           <Modal
@@ -77,19 +75,15 @@ class Search extends Component {
             </Modal.Header>
             <Modal.Body>
               <h4>Try Again!</h4>
-              {!this.state.location ? 
-               (<p>
-               Please enter a city or zip code
-             </p>) : (
-                 <p>
-                 We couldn't find {this.state.term} in {this.state.location}
-                 <br />
-                 Let's try something else!
-               </p>
-             )
-            } 
-             
-
+              {!this.state.location ? (
+                <p>Please enter a city or zip code</p>
+              ) : (
+                <p>
+                  We couldn't find {this.state.term} in {this.state.location}
+                  <br />
+                  Let's try something else!
+                </p>
+              )}
             </Modal.Body>
             <Modal.Footer>
               <Button
@@ -124,18 +118,18 @@ class Search extends Component {
                   onChange={this.onChange}
                 />
 
-								<div className="input-fields">
-									<Form.Label></Form.Label>
-									<Form.Control
-										id="food-label"
-										type="term"
-										name="term"
-										value={this.state.term}
-										placeholder="Enter key words"
-										onChange={this.onChange}
-									/>
+                <div className="input-fields">
+                  <Form.Label></Form.Label>
+                  <Form.Control
+                    id="food-label"
+                    type="term"
+                    name="term"
+                    value={this.state.term}
+                    placeholder="Enter key words"
+                    onChange={this.onChange}
+                  />
 
-									{/* <div className="price-fields">
+                  {/* <div className="price-fields">
 										<Form.Label>Minimum Price: {minPrice}</Form.Label>
 										<Form.Control
 											id="slider-min-price"
@@ -154,66 +148,71 @@ class Search extends Component {
                       onChange={this.onChange}
                     />
                   </div> */}
-                  
-                  <ToggleButtonGroup
-                          type="radio"
-                          name="options"
-                          value={this.state.price}
-                          onChange={this.handleChange}
-                            >
-                                <ToggleButton value={'$'}>$</ToggleButton>
-                                {" "}
-                                <ToggleButton value={"$$"}>$$</ToggleButton>
-                                {" "}
-                                <ToggleButton value={"$$$"}>$$$</ToggleButton>
-                                {" "}
-                                <ToggleButton value={"$$$$"}>$$$$</ToggleButton>
-                  </ToggleButtonGroup>
+                  <div id="div-toggle-btn">
+                    <ToggleButtonGroup
+                      id="toggle-btn-group"
+                      type="radio"
+                      name="options"
+                      variant="secondary"
+                      value={this.state.price}
+                      onChange={this.handleChange}
+                    >
+                      <ToggleButton className="toggle-btn-1" value={"$"}>
+                        $
+                      </ToggleButton>{" "}
+                      <ToggleButton className="toggle-btn-2" value={"$$"}>
+                        $$
+                      </ToggleButton>{" "}
+                      <ToggleButton className="toggle-btn-3" value={"$$$"}>
+                        $$$
+                      </ToggleButton>{" "}
+                      <ToggleButton className="toggle-btn-4" value={"$$$$"}>
+                        $$$$
+                      </ToggleButton>
+                    </ToggleButtonGroup>
+                  </div>
+                  <div className="diet-fields">
+                    <div key="inline-checkbox" className="mb-3">
+                      {[
+                        "Vegetarian",
+                        "Vegan",
+                        "Halal",
+                        "Kosher",
+                        "Gluten-Free",
+                      ].map((cat) => (
+                        <Form.Check
+                          inline
+                          name={cat.toLowerCase().replace("-", "_")}
+                          label={cat}
+                          type="checkbox"
+                          onChange={this.onChangeCheckbox}
+                          key={cat}
+                        />
+                      ))}
+                    </div>
+                  </div>
 
-                 
-
-									<div className="diet-fields">
-										<div key="inline-checkbox" className="mb-3">
-											{[
-												"Vegetarian",
-												"Vegan",
-												"Halal",
-												"Kosher",
-												"Gluten-Free",
-											].map((cat) => (
-												<Form.Check
-													inline
-													name={cat.toLowerCase().replace("-", "_")}
-													label={cat}
-													type="checkbox"
-													onChange={this.onChangeCheckbox}
-													key={cat}
-												/>
-											))}
-										</div>
-									</div>
-
-									<Button id="btn-search" variant="primary" type="submit">
-										GET MY FOODIEMAP
-									</Button>
-								</div>
-							</div>
-						</Form.Group>
-					</Form>
-				</div>
-			</div>
-		);
-	}
+                  <Button id="btn-search" variant="primary" type="submit">
+                    GET MY FOODIEMAP
+                  </Button>
+                </div>
+              </div>
+            </Form.Group>
+          </Form>
+        </div>
+      </div>
+    );
+  }
 }
 
 const mapStateToProps = (state) => ({
-	user: state.user,
-	markers: state.markers,
+  user: state.user,
+  markers: state.markers,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-	fetchMarkers: (body) => dispatch(fetchMarkers(body)),
-	saveSearch: (search) => dispatch(saveSearch(search)),
+  fetchMarkers: (body) => dispatch(fetchMarkers(body)),
+  saveSearch: (search) => dispatch(saveSearch(search)),
 });
 
 //withRouter gives us this.props.history
