@@ -179,10 +179,10 @@ body {
   }
 
   #list-days {
-    /* text-align: center; */
-    text-align: left;
+    text-align: justify;
     margin-left: 20%;
     display: block;
+    text-justify: inter-character;
   }
 
   #list-hours-title {
