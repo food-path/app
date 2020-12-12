@@ -54,7 +54,8 @@ class Search extends Component {
     let minPrice = priceToText(this.state.minPrice);
     let maxPrice = priceToText(this.state.maxPrice);
     const user = this.props.user;
-  
+    console.log("this.state.price: ", this.state.price)
+    
     return (
       <div className="container-search">
         <div id="search-bg">
@@ -156,7 +157,7 @@ class Search extends Component {
                   </div> */}
                   
                   <ToggleButtonGroup
-                          type="radio"
+                          type="checkbox"
                           name="options"
                           value={this.state.price}
                           onChange={this.handleChange}
