@@ -12,6 +12,17 @@ body {
 }
 
 @media screen and (max-width: 600px) {
+  .loader {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+  }
+}
+
+@media screen and (max-width: 600px) {
   #app {
     min-height: 100vh;
     font-family: sans-serif;
@@ -179,14 +190,16 @@ body {
   }
 
   #list-hours {
-    text-align: center;
     margin-top: 5%;
+    display: block;
+    text-align: center;
   }
 
   #list-days {
+    /* text-align: center; */
     text-align: left;
-    /* margin-left: 23%; */
-    text-align: center;
+    margin-left: 20%;
+    display: block;
   }
 
   #list-hours-title {
@@ -221,6 +234,7 @@ body {
     font-family: "Roboto", sans-serif;
     color: #182c3a;
     margin-right: 10%;
+    margin-left: 8%;
   }
 
   .text-reviews {
@@ -312,7 +326,7 @@ body {
     opacity: 1;
     background-color: #614b81 !important;
     color: #ffffff;
-    margin-top: 20px;
+    margin-top: 10%;
     border: none;
   }
 
@@ -748,7 +762,7 @@ body {
     color: #fefefe;
     width: 66%;
     display: inline-block !important;
-    margin-top: 25px;
+    margin-top: 15%;
     background-color: #90a8c3 !important;
     border-color: #90a8c3 !important;
     filter: drop-shadow(0 0 0.5em #2e3842);
