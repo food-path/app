@@ -8,21 +8,26 @@ import Button from "react-bootstrap/Button";
 import { withRouter } from "react-router-dom";
 import { priceToText } from "../utils";
 import Modal from "react-bootstrap/Modal";
+import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
+import { ToggleButton } from "react-bootstrap";
+
 
 class Search extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			location: "",
-			term: "",
-			minPrice: 0,
-			maxPrice: 100,
-			categories: [],
-			showNoResultsFound: false,
-		};
-		this.onChange = this.onChange.bind(this);
-		this.onChangeCheckbox = this.onChangeCheckbox.bind(this);
-	}
+  constructor(props) {
+    super(props);
+    this.state = {
+      location: "",
+      term: "",
+      price: "$", 
+      minPrice: 0, 
+      maxPrice: 100,
+      categories: [],
+      showNoResultsFound: false,
+    };
+    this.onChange = this.onChange.bind(this);
+    this.onChangeCheckbox = this.onChangeCheckbox.bind(this);
+    this.handleChange = this.handleChange.bind(this)
+  }
 
 	onChange(event) {
 		this.setState({
@@ -38,11 +43,18 @@ class Search extends Component {
 		});
 	}
 
-	render() {
-		let minPrice = priceToText(this.state.minPrice);
-		let maxPrice = priceToText(this.state.maxPrice);
-		const user = this.props.user;
+  handleChange(price){
+    this.setState({
+      price: price
+    })
+   
+  }
 
+  render() {
+    let minPrice = priceToText(this.state.minPrice);
+    let maxPrice = priceToText(this.state.maxPrice);
+    const user = this.props.user;
+  
     return (
       <div className="container-search">
         <div id="search-bg">
@@ -65,11 +77,19 @@ class Search extends Component {
             </Modal.Header>
             <Modal.Body>
               <h4>Try Again!</h4>
-              <p>
-                We couldn't find {this.state.term} in {this.state.location}
-                <br />
-                Let's try something else!
-              </p>
+              {!this.state.location ? 
+               (<p>
+               Please enter a city or zip code
+             </p>) : (
+                 <p>
+                 We couldn't find {this.state.term} in {this.state.location}
+                 <br />
+                 Let's try something else!
+               </p>
+             )
+            } 
+             
+
             </Modal.Body>
             <Modal.Footer>
               <Button
@@ -115,7 +135,7 @@ class Search extends Component {
 										onChange={this.onChange}
 									/>
 
-									<div className="price-fields">
+									{/* <div className="price-fields">
 										<Form.Label>Minimum Price: {minPrice}</Form.Label>
 										<Form.Control
 											id="slider-min-price"
@@ -125,15 +145,32 @@ class Search extends Component {
 											onChange={this.onChange}
 										/>
 
-										<Form.Label>Maximum Price: {maxPrice}</Form.Label>
-										<Form.Control
-											id="slider-max-price"
-											type="range"
-											name="maxPrice"
-											value={this.state.maxPrice}
-											onChange={this.onChange}
-										/>
-									</div>
+                    <Form.Label>Maximum Price: {maxPrice}</Form.Label>
+                    <Form.Control
+                      id="slider-max-price"
+                      type="range"
+                      name="maxPrice"
+                      value={this.state.maxPrice}
+                      onChange={this.onChange}
+                    />
+                  </div> */}
+                  
+                  <ToggleButtonGroup
+                          type="radio"
+                          name="options"
+                          value={this.state.price}
+                          onChange={this.handleChange}
+                            >
+                                <ToggleButton value={'$'}>$</ToggleButton>
+                                {" "}
+                                <ToggleButton value={"$$"}>$$</ToggleButton>
+                                {" "}
+                                <ToggleButton value={"$$$"}>$$$</ToggleButton>
+                                {" "}
+                                <ToggleButton value={"$$$$"}>$$$$</ToggleButton>
+                  </ToggleButtonGroup>
+
+                 
 
 									<div className="diet-fields">
 										<div key="inline-checkbox" className="mb-3">
