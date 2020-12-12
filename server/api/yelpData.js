@@ -37,27 +37,17 @@ router.get("/search/businesses/:id", async (req, res, next) => {
 	}
 });
 
+
 router.post("/search", async (req, res, next) => {
 	try {
-		let minPrice = priceToNum(req.body.minPrice);
-		let maxPrice = priceToNum(req.body.maxPrice);
-		let priceRange = [];
-
-		if (minPrice > maxPrice) {
-			return res.sendStatus(500);
-		}
-
-		for (let i = minPrice; i <= maxPrice; i++) {
-			priceRange.push(i);
-		}
-
+		let price = req.body.price.length
 		const { data } = await yelpREST("/businesses/search", {
 			params: {
 				location: req.body.location,
 				term: req.body.term,
 				sort_by: "rating",
 				limit: 10,
-				price: priceRange.join(","),
+				price: price,
 				categories: req.body.categories.join(","),
 				// open_now: true,
 			},
@@ -69,5 +59,7 @@ router.post("/search", async (req, res, next) => {
 		next(error);
 	}
 });
+
+
 
 module.exports = router;
