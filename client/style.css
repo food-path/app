@@ -12,13 +12,24 @@ body {
 }
 
 @media screen and (max-width: 600px) {
+  .loader {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+  }
+}
+
+@media screen and (max-width: 600px) {
   #app {
     min-height: 100vh;
     font-family: sans-serif;
   }
 }
 
-/* MAP COMPONENT / BUSINESSES LIST */
+/* MAP COMPONENT */
 .marker img {
   text-align: center;
 }
@@ -108,6 +119,20 @@ body {
 }
 
 /* SINGLE BUSINESS COMPONENT */
+
+#reviewButton {
+  width: 30%;
+  color: black;
+  background-color: rgb(93, 155, 176);
+  border-radius: 5px;
+  filter: drop-shadow(0 0 0.5em #2e3842);
+  padding: 1em;
+}
+
+.resize {
+  width: 50%;
+  height: 30%;
+}
 @media screen and (max-width: 600px) {
   #bg-image-business {
     background-color: #182c3a;
@@ -162,14 +187,16 @@ body {
   }
 
   #list-hours {
-    text-align: center;
     margin-top: 5%;
+    display: block;
+    text-align: center;
   }
 
   #list-days {
-    text-align: left;
-    /* margin-left: 23%; */
-    text-align: center;
+    text-align: justify;
+    margin-left: 20%;
+    display: block;
+    text-justify: inter-character;
   }
 
   #list-hours-title {
@@ -204,6 +231,7 @@ body {
     font-family: "Roboto", sans-serif;
     color: #182c3a;
     margin-right: 10%;
+    margin-left: 8%;
   }
 
   .text-reviews {
@@ -295,7 +323,7 @@ body {
     opacity: 1;
     background-color: #614b81 !important;
     color: #ffffff;
-    margin-top: 20px;
+    margin-top: 10%;
     border: none;
   }
 
@@ -397,6 +425,13 @@ body {
     color: #ada7c9 !important;
     font-family: "Montserrat", sans-serif !important;
     margin: 0;
+  }
+
+  .search-text:hover,
+  .profile-text:hover,
+  .logout-text:hover,
+  .map-text:hover {
+    color: white !important;
   }
 }
 
@@ -516,22 +551,78 @@ body {
 }
 
 /* SEARCH COMPONENT */
-@media screen and (max-width: 600px) {
-  .welcome-name {
-    text-transform: Capitalize;
-    font-size: 18px;
-    text-align: center;
-    margin-top: 20%;
-    color: #182c3a;
+.logo-behind {
+  position: fixed;
+  transform: rotate(15deg);
+  z-index: -1;
+  opacity: 0.2;
+  filter: drop-shadow(0 0 0.5em #2e3842);
+}
+
+.welcome-name {
+  text-transform: Capitalize;
+  text-align: center;
+  color: #182c3a;
+  font-family: "Montserrat", sans-serif;
+}
+
+.search-form {
+  display: flex;
+  align-content: center;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 2%;
+  text-align: center;
+}
+
+#city-label,
+#food-label {
+  width: 100% !important;
+  background-color: #948fad !important;
+  color: rgb(225, 224, 224) !important;
+  opacity: 1;
+}
+
+#city-label::placeholder,
+#food-label::placeholder {
+  color: rgb(238, 236, 236) !important;
+  text-align: center;
+  font-size: 14px;
+}
+
+#btn-search {
+  background-color: #614b81;
+  border: none;
+  filter: drop-shadow(0 0 0.25em #2e3842);
+}
+
+#btn-search:hover {
+  background-color: #948fad;
+}
+
+.mb-3 {
+  color: #182c3a;
+}
+
+#slider-min-price,
+#slider-max-price {
+  color: #182c3a;
+}
+
+.input-fields {
+  background-color: none;
+}
+
+@media screen and (min-width: 601px) {
+  .logo-behind {
+    margin-top: -15vh;
+    margin-left: -10%;
   }
 
-  .logo-behind {
-    position: fixed;
-    margin-top: -18%;
-    margin-left: -15%;
-    transform: rotate(15deg);
-    z-index: -1;
-    opacity: 0.2;
+  .welcome-name {
+    font-size: 5vw;
+    margin-top: 5%;
   }
 
   .container-search {
@@ -543,60 +634,40 @@ body {
   }
 
   .search-form {
-    display: flex;
-    align-content: center;
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+    justify-content: center;
+  }
+
+  /* .price-fields, */
+  .diet-fields {
+    margin-top: 2vh;
+  }
+
+  #btn-search {
     margin-top: 5%;
-    border-radius: 2%;
-    text-align: left;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .welcome-name {
+    font-size: 18px;
+    margin-top: 20%;
   }
 
-  #city-label {
-    width: 100% !important;
-    background-color: #948fad !important;
-    color: rgb(225, 224, 224) !important;
+  .logo-behind {
+    margin-top: -28%;
+    margin-left: -15%;
+  }
+
+  .container-search {
+    background-size: cover !important;
+    background-position: center;
+    background-attachment: fixed;
     opacity: 1;
+    overflow: hidden;
   }
 
-  #city-label::placeholder {
-    color: rgb(238, 236, 236) !important;
-    text-align: center;
-    font-size: 14px;
-  }
-
-  #food-label {
-    width: 100% !important;
-    background-color: #948fad !important;
-    color: white;
-    opacity: 1;
-  }
-
-  #food-label::placeholder {
-    color: rgb(238, 236, 236) !important;
-    text-align: center;
-    font-size: 14px;
-  }
-
-  .mb-3 {
-    color: #182c3a;
-  }
-
-  #slider-min-price {
-    color: #182c3a;
-  }
-
-  #slider-max-price {
-    color: #182c3a;
-  }
-
-  .input-fields {
-    background-color: none;
-  }
-
-  .price-fields {
-    margin-top: 10%;
+  .search-form {
+    margin-top: 5%;
   }
 
   .diet-fields {
@@ -605,13 +676,55 @@ body {
 
   #btn-search {
     margin-top: 10%;
-    margin-left: 23%;
-    background-color: #614b81;
-    border: none;
   }
 
-  #btn-search:hover {
-    background-color: #948fad;
+  #div-toggle-btn {
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-evenly;
+     background-color: none !important;
+  }
+
+  #toggle-btn-group {
+    /* background-color: #948fad !important; */
+    margin-top: 5%;
+    width: 100%;
+  }
+
+  .toggle-btn-1 {
+    background-color: #948fad !important;
+    margin-right: 4% !important;
+    margin-left: 4% !important;
+    border-radius: 10% !important;
+    width: 15% !important;
+    border: none !important;
+  }
+
+  .toggle-btn-2 {
+    background-color: #948fad !important;
+    margin-right: 4% !important;
+    margin-left: 4% !important;
+    border-radius: 10% !important;
+    width: 15% !important;
+    border: none !important;
+  }
+
+  .toggle-btn-3 {
+    background-color: #948fad !important;
+    margin-right: 4% !important;
+    margin-left: 4% !important;
+    border-radius: 10% !important;
+    width: 15% !important;
+    border: none !important;
+  }
+
+  .toggle-btn-4 {
+    background-color: #948fad !important;
+    margin-right: 4% !important;
+    margin-left: 4% !important;
+    border-radius: 10% !important;
+    width: 15% !important;
+    border: none !important;
   }
 }
 
@@ -694,7 +807,7 @@ body {
     color: #fefefe;
     width: 66%;
     display: inline-block !important;
-    margin-top: 25px;
+    margin-top: 15%;
     background-color: #90a8c3 !important;
     border-color: #90a8c3 !important;
     filter: drop-shadow(0 0 0.5em #2e3842);

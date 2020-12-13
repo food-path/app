@@ -24,13 +24,25 @@ class Registration extends React.Component {
 		});
 	}
 
-	async onSubmit(event) {
+	onSubmit(event) {
 		event.preventDefault();
-		try {
-			await this.props.auth(this.state);
+		this.props.auth(this.state);
+		this.setState({
+			firstName: "",
+			lastName: "",
+			email: "",
+			password: "",
+		});
+
+		if (
+			!this.state.firstName ||
+			!this.state.lastName ||
+			!this.state.email ||
+			!this.state.password
+		) {
+			alert("please complete all fields");
+		} else {
 			this.props.history.push("/profile");
-		} catch (error) {
-			alert("Error! Please Try Again!");
 		}
 	}
 
