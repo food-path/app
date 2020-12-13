@@ -75,7 +75,7 @@ class Profile extends React.Component {
 						<p className="text-separation">My Foodie Maps</p>
 					</div>
 					<div className="saved-maps-2">
-						<MyMaps />
+						<MyMaps user={user} />
 					</div>
 				</div>
 			</div>
