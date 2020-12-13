@@ -79,38 +79,49 @@ class SingleBusiness extends Component {
                 {singleBusiness.display_phone} 
                 {"|"} {singleBusiness.location.address1}
               </h6>
-						</div>
-						<div id='horizontal'></div>
-						<div id="wrapper1b">
-							<ul id="list-hours">
-								<h4 id="list-hours-title">Hours of Operation</h4>{" "}
-								{hoursToDisplay.map((openHrs, id) => (
-									<li id="list-days" key={id}>{openHrs}</li>
-								))}
-							</ul>
+
+            </div>
+            <div id="horizontal"></div>
+            <div id="wrapper1b">
+              <ul id="list-hours">
+                <h4 id="list-hours-title">Hours of Operation</h4>{" "}
+                {hoursToDisplay.map((openHrs, id) => (
+                  <li id="list-days" key={id}>
+                    {openHrs}
+                  </li>
+                ))}
+              </ul>
               <div id="horizontal"></div>
-							<div id="separator"></div>
-							<h4 id="review-title">Reviews</h4>
-							<ul className='link'>
-								{singleBusiness.reviews.map((review) => (
-									<li key={review.id}>
-										<hr></hr>
-										<p className="stars-review">{review.rating} stars</p>
-										<p className="text-reviews" style={{ fontStyle: "italic" }}>{review.text}</p>
-									</li>
-								))}
-							</ul>
-							<Form id='reviews' action={singleBusiness.reviews[1].url} target={'_blank'} rel={'noreferrer'}>
-    							<input type="submit" value="See all reviews on Yelp!" variant="secondary" id="reviewButton"/>
-							</Form>
-							<br></br>
-						</div>
-					</div> 
-				) : (
-					<img src="https://codyogden.blog/content/images/2018/08/magic-burrito.gif"></img>
-				)}
-				<div id='backToMap' className='link'>
-        <img
+              <div id="separator"></div>
+              <h4 id="review-title">Reviews</h4>
+              <ul className="link">
+                {singleBusiness.reviews.map((review) => (
+                  <li key={review.id}>
+                    <hr></hr>
+                    <p className="stars-review">{review.rating} stars</p>
+                    <a href={review.url}>
+                      <p
+                        className="text-reviews"
+                        style={{ fontStyle: "italic" }}
+                      >
+                        {review.text}
+                      </p>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ) : (
+          <div className="loading-screen">
+            <img
+              className="loader"
+              src="https://i.gifer.com/YOQn.gif"
+            ></img>
+          </div>
+        )}
+        <div id="backToMap" className="link">
+          <img
             src="/icons/arrow-left-short.svg"
             width="30"
             className="back-icon"
