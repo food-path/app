@@ -1,5 +1,7 @@
 const router = require("express").Router();
 const { User, Foodiemap, Business } = require("../db");
+const nodemailer = require("nodemailer");
+const faker = require("faker");
 
 router.get("/", async (req, res, next) => {
 	try {
@@ -44,6 +46,42 @@ router.post("/findUserByEmail", async (req, res, next) => {
 			},
 		});
 		res.send(user);
+	} catch (error) {
+		next(error);
+	}
+});
+
+router.post("/forgotPassword", async (req, res, next) => {
+	try {
+		const user = await User.findOne({
+			where: {
+				email: req.body.email,
+			},
+		});
+		if (!user) return res.sendStatus(401);
+
+		const newPassword = faker.internet.password();
+		await user.update({ password: newPassword });
+
+		let transporter = nodemailer.createTransport({
+			host: "smtp.gmail.com",
+			port: 465,
+			secure: true, // true for 465, false for other ports
+			auth: {
+				user: process.env.FOODPATH_EMAIL, // generated ethereal user
+				pass: process.env.FOODPATH_PASSWORD, // generated ethereal password
+			},
+		});
+
+		// send mail with defined transport object
+		let info = await transporter.sendMail({
+			from: '"FoodPath" <foodpathapp@gmail.com>', // sender address
+			to: req.body.email, // list of receivers
+			subject: `Hello ${user.firstName}! Reset Password for FoodPath`, // Subject line
+			text: `Here is your password: ${newPassword}`, // plain text body
+			html: `Here is your password: ${newPassword}`, // html body
+		});
+		res.send(info);
 	} catch (error) {
 		next(error);
 	}

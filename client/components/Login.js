@@ -5,6 +5,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
+import axios from "axios";
 
 class Login extends React.Component {
 	constructor() {
@@ -72,6 +73,23 @@ class Login extends React.Component {
 						>
 							Let's Eat!
 						</Button>
+						<a
+							onClick={async (event) => {
+								try {
+									event.preventDefault();
+									await axios.post("/api/users/forgotPassword", {
+										email: this.state.email,
+									});
+									alert("Check Your Email!");
+								} catch (error) {
+									alert(
+										'Error Finding User or enter your email and hit "Forgot Password"'
+									);
+								}
+							}}
+						>
+							Forgot Password?
+						</a>
 
 						<form method="get" action="/auth/google">
 							<Button id="btn3" type="submit" variant="primary">
