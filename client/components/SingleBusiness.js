@@ -85,15 +85,18 @@ class SingleBusiness extends Component {
                 {singleBusiness.display_phone} 
                 {"|"} {singleBusiness.location.address1}
               </h6>
-						</div>
-						<div id='horizontal'></div>
-						<div id="wrapper1b">
-							<ul id="list-hours">
-								<h4 id="list-hours-title">Hours of Operation</h4>{" "}
-								{hoursToDisplay.map((openHrs, id) => (
-									<li id="list-days" key={id}>{openHrs}</li>
-								))}
-							</ul>
+
+            </div>
+            <div id="horizontal"></div>
+            <div id="wrapper1b">
+              <ul id="list-hours">
+                <h4 id="list-hours-title">Hours of Operation</h4>{" "}
+                {hoursToDisplay.map((openHrs, id) => (
+                  <li id="list-days" key={id}>
+                    {openHrs}
+                  </li>
+                ))}
+              </ul>
               <div id="horizontal"></div>
 							<div id="separator"></div>
 							<h4 id="review-title">Reviews</h4>
