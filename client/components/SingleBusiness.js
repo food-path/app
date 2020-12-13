@@ -6,15 +6,15 @@ import { Link } from "react-router-dom"
 import { format } from "morgan";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button"
+import Carousel from "react-bootstrap/Carousel"
 
 class SingleBusiness extends Component {
 	constructor(props) {
-		super();
-	}
+    super();
+  }
 	componentDidMount() {
 		this.props.getSingleBusiness(this.props.match.params.businessId);
 	}
-
 	
 	render() {
 		const { singleBusiness } = this.props;
@@ -57,17 +57,23 @@ class SingleBusiness extends Component {
 
 		return (
 			<div id="singleBusiness">
-        <div id="bg-image-business">
-           <img
-            id="bannerimage"
-            className="resize"
-            src={singleBusiness.image_url}
-          />
-      </div>
-        <div id="BusinessName">
-					    <h1 id="text-Name">{singleBusiness.name}</h1>
-				</div>
 				{singleBusiness.categories ? (
+          <div>
+              <div id="bg-image-business">
+               <Carousel
+                 style={{width: '40rem', padding: '1rem', alignSelf: 'center'}}
+               >
+                 {singleBusiness.photos.map((url, i) => (
+                   <Carousel.Item key={i} interval={2000}>
+                     <img  id="bannerimage" className="resize" src={url} alt={singleBusiness.name} />
+                   </Carousel.Item>
+                 ))}
+               </Carousel>
+             </div>
+               <div id="BusinessName">
+                     <h1 id="text-Name">{singleBusiness.name}</h1>
+               </div>
+
 					<div id='wrapper'>
 						<div id='wrapper1a'>
 							<h4 id="description-business">
@@ -105,7 +111,8 @@ class SingleBusiness extends Component {
 							</Form>
 							<br></br>
 						</div>
-					</div> 
+          </div> 
+          </div>
 				) : (
 					<img src="https://codyogden.blog/content/images/2018/08/magic-burrito.gif"></img>
 				)}
