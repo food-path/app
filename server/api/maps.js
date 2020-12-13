@@ -23,6 +23,7 @@ router.get("/:businessId", (req, res, next) => {
 // mounted on /api/maps
 router.post("/", async (req, res, next) => {
 	try {
+		console.log(req.body);
 		let map = await Foodiemap.create({
 			name: req.body.body.name,
 			searchBody: JSON.stringify(req.body.search),

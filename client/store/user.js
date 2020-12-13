@@ -45,12 +45,8 @@ export const logout = () => async (dispatch) => {
 };
 
 export const register = (body) => async (dispatch) => {
-	try {
-		const { data } = await axios.post("/auth/signup", body);
-		dispatch(getUser(data));
-	} catch (error) {
-		console.error(error);
-	}
+	const { data } = await axios.post("/auth/signup", body);
+	dispatch(getUser(data));
 };
 
 export const editUser = (id, body) => async (dispatch) => {
