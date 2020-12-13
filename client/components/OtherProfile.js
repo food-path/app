@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 import { Link, withRouter } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import { fetchOtherUser, addFriend, gotMarkers, addMarkers } from "../store";
+import { MyMaps } from ".";
 
 class OtherProfile extends React.Component {
 	componentDidMount() {
@@ -68,23 +69,9 @@ class OtherProfile extends React.Component {
 				<div className="div-text">
 					<p className="text-separation">{otherUser.firstName}'s Maps</p>
 				</div>
-				<ul>
-					{maps.map((map) => (
-						<li key={map.id}>
-							<Link
-								to="/map"
-								onClick={() => {
-									this.props.gotMarkers([]);
-									this.props.addMarkers(map.businesses);
-								}}
-							>
-								<p>{map.name}</p>
-							</Link>
-
-							<p>{map.businesses.length}</p>
-						</li>
-					))}
-				</ul>
+				<div className="save-maps-to">
+					<MyMaps user={otherUser} />
+				</div>
 			</div>
 		);
 	}
