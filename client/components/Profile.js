@@ -44,7 +44,11 @@ class Profile extends React.Component {
 							const { data } = await axios.post("/api/users/findUserByEmail", {
 								email: this.state.email,
 							});
-							this.props.history.push(`/user/${data.id}`);
+							if (!data) {
+								alert("User Not Found!");
+							} else {
+								this.props.history.push(`/user/${data.id}`);
+							}
 						}}
 					>
 						<input
