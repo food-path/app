@@ -27,8 +27,8 @@ class EditProfile extends React.Component {
 	render() {
 		let user = this.props.user;
 		return (
-			<div>
-				<Form
+			<div className="edit-profile-container">
+				<Form id="edit-profile-form"
 					onSubmit={(event) => {
 						event.preventDefault();
 						this.props.editUser(user.id, this.state);
@@ -76,11 +76,10 @@ class EditProfile extends React.Component {
 					<Form.Control
 						type="text"
 						name="imageUrl"
-						style={{ color: "gray" }}
 						value={this.state.imageUrl}
 						onChange={this.onChange}
 					/>
-					<Button type="submit">Save Changes</Button>
+					<Button id="edit-profile-save" type="submit">Save Changes</Button>
 				</Form>
 			</div>
 		);
