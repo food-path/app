@@ -485,30 +485,36 @@ body {
     border-color: #d7b9d5;
     border-width: 5px;
     border-style: solid;
-    margin-top: 4%;
-    margin-left: 2%;
+    margin-top: 10%;
+    margin-left: 4%;
+    width: 28vw;
+    height: auto;
   }
 
   .name {
     text-transform: Capitalize;
-    font-size: 25px;
-    width: 100%;
-    text-align: center;
+    font-size: 9vw;
+    width: 65%;
+    text-align: left;
     z-index: -1;
-    margin-top: -16%;
-    margin-left: 5%;
+    margin-top: -25%;
+    margin-left: 35%;
   }
 
   .member {
-    margin-top: 2%;
-    font-size: 12px;
-    text-align: center;
-    margin-left: 10%;
+    /* margin-top: 2%; */
+    font-size: 4vw;
+    text-align: left;
+    width: 65%;
+    margin-left: 36%;
+    margin-top: -2%;
   }
 
   .edit-profile {
-    font-size: 10px;
-    text-align: center;
+    font-size: 3vw;
+    text-align: left;
+    margin-left: 36%;
+    margin-top: -2%;
   }
 
   .div-text {
@@ -682,7 +688,7 @@ body {
     margin-top: 5%;
     display: flex;
     justify-content: space-evenly;
-     background-color: none !important;
+    background-color: none !important;
   }
 
   #toggle-btn-group {

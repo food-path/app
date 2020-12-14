@@ -19,22 +19,21 @@ class Profile extends React.Component {
 		return (
 			<div id="container-profile">
 				<div id="profile-bg">
-					<img className="img-profile" src={user.imageUrl} width="100px" />
-					<h2 className="name">
-						{" "}
-						{user.firstName} {user.lastName}{" "}
-					</h2>
-					<div>
-						<p className="member">
-							Been fooding since:{" "}
-							{new Date(user.registrationDate).toLocaleDateString()}
+						<img className="img-profile" src={user.imageUrl} width="100px" />
+						<h2 className="name">
+							{" "}
+							{user.firstName} {user.lastName}{" "}
+						</h2>
+						<div>
+							<p className="member">
+								Been fooding since{" "}
+								{new Date(user.registrationDate).toLocaleDateString()}
+							</p>
+						</div>
+
+						<p className="edit-profile">
+							<Link to="/editProfile">Edit My Profile</Link>
 						</p>
-					</div>
-
-					<p className="edit-profile">
-						<Link to="/editProfile">Edit My Profile</Link>
-					</p>
-
 					<div className="div-text">
 						<p className="text-separation">My Foodie Friends</p>
 					</div>
