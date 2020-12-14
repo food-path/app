@@ -124,6 +124,13 @@ body {
 
 /* SINGLE BUSINESS COMPONENT */
 @media screen and (max-width: 600px) {
+
+  #img-carousel{
+    width: 100vw;
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+
   #bg-image-business {
     background-color: #182c3a;
   }
@@ -135,7 +142,8 @@ body {
     border-radius: 50%;
     height: 200px;
     /* height: 50%; */
-    margin-left: 24%;
+    margin-left: 25%;
+    margin-right:auto;
     padding-bottom: 10px;
   }
 

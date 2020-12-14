@@ -40,7 +40,7 @@ router.get("/search/businesses/:id", async (req, res, next) => {
 
 router.post("/search", async (req, res, next) => {
 	try {
-		let price = req.body.price.length
+		let price = String(req.body.price.map((str) => str.length))
 		const { data } = await yelpREST("/businesses/search", {
 			params: {
 				location: req.body.location,
