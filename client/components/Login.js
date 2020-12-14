@@ -73,7 +73,7 @@ class Login extends React.Component {
 						>
 							Let's Eat!
 						</Button>
-						<a
+						<a className="forgot-password"
 							onClick={async (event) => {
 								try {
 									event.preventDefault();

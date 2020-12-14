@@ -97,6 +97,10 @@ body {
     width: 75vw;
     height: 25vh;
   }
+
+  .markers-map {
+    border-radius: 50%;
+  }
 }
 
 @media screen and (min-width: 601px) {
@@ -119,20 +123,6 @@ body {
 }
 
 /* SINGLE BUSINESS COMPONENT */
-
-#reviewButton {
-  width: 30%;
-  color: black;
-  background-color: rgb(93, 155, 176);
-  border-radius: 5px;
-  filter: drop-shadow(0 0 0.5em #2e3842);
-  padding: 1em;
-}
-
-.resize {
-  width: 50%;
-  height: 30%;
-}
 @media screen and (max-width: 600px) {
   #bg-image-business {
     background-color: #182c3a;
@@ -274,6 +264,15 @@ body {
     text-decoration: none;
     color: inherit;
   }
+
+  #reviewButton {
+    padding: 2px !important;
+    font-size: 10px !important;
+    color: white !important;
+    box-shadow: none !important;
+    background-color: #5d9bb0 !important;
+    border-radius: 5px !important;
+  }
 }
 
 /* LOGIN COMPONENT/HOME PAGE*/
@@ -323,7 +322,7 @@ body {
     opacity: 1;
     background-color: #614b81 !important;
     color: #ffffff;
-    margin-top: 10%;
+    margin-top: 5%;
     border: none;
   }
 
@@ -343,7 +342,7 @@ body {
   }
 
   #btn3 {
-    font-size: 9px;
+    font-size: 10px;
     margin-left: 17%;
     opacity: 1;
     border-width: thin;
@@ -392,6 +391,12 @@ body {
     font-size: 10px;
     margin-left: 31%;
     margin-top: 23%;
+  }
+
+  .forgot-password {
+    margin-left: 39%;
+    font-size: 10px;
+    color: #ffffff;
   }
 }
 
@@ -667,12 +672,9 @@ body {
     margin-top: 5%;
   }
 
-  .container-search {
-    background-size: cover !important;
-    background-position: center;
-    background-attachment: fixed;
-    opacity: 1;
-    overflow: hidden;
+  #city-label::placeholder {
+    color: #ffffff !important;
+    text-align: center;
   }
 
   .search-form {
@@ -716,7 +718,9 @@ body {
     margin-top: 10%;
   }
 
-  #btn-search {
+  .password {
+    border-radius: 5%;
+    text-align: left;
     margin-top: 10%;
   }
 
