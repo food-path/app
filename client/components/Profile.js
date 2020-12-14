@@ -59,7 +59,7 @@ class Profile extends React.Component {
 						<button id="find-friend-button" type="submit">Find User By Email</button>
 					</form>
 					<span className="friends">
-						<ul>
+						<ul className="foodie-friends">
 							{friends.map((friend) => (
 								<li key={friend.id} className="list-friends2">
 									<Link to={`/user/${friend.id}`}>

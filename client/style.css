@@ -479,6 +479,11 @@ body {
     overflow: hidden;
   }
 
+  #container-profile a {
+    color: rgb(93, 155, 176);
+    font-weight: 550;
+  }
+
   .img-profile {
     position: relative;
     border-radius: 50%;
@@ -502,7 +507,6 @@ body {
   }
 
   .member {
-    /* margin-top: 2%; */
     font-size: 4vw;
     text-align: left;
     width: 65%;
@@ -531,33 +535,10 @@ body {
     text-align: center;
   }
 
-  .saved-maps-2 {
-    text-align: left;
-    font-size: 5vw;
-    display: flex;
-    list-style-type: none;
-    text-transform: capitalize;
-    flex-direction: row;
-    overflow: scroll;
-    padding-bottom: 10vh;
-  }
-
-  .list-friends2 {
-    text-align: left;
-    font-size: 12px;
-    list-style-position: outside;
-    display: block;
-    list-style-type: none;
-    margin-inline-start: -30px;
-    margin-inline-end: 0px;
-    padding-inline-start: 35px;
-    text-transform: capitalize;
-  }
-
   #find-friend-form {
     display: flex;
     justify-content: center;
-    margin-top: 1em;
+    margin-top: 2em;
     margin-bottom: 1em;
   }
 
@@ -575,6 +556,40 @@ body {
     border: none;
     background-color: #614b81;
     color: white;
+  }
+
+  .foodie-friends {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 1em;
+    margin-right: 1em;
+    overflow-y: scroll;
+  }
+
+  .list-friends2 {
+    text-align: center;
+    font-size: 5vw;
+    list-style-position: outside;
+    display: inline;
+    list-style-type: none;
+    text-transform: capitalize;
+    padding: 0.75em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    background-color: #d7b9d5;
+    border-radius: 5px;
+    border: none;
+  }
+
+  .saved-maps-2 {
+    text-align: left;
+    font-size: 5vw;
+    display: flex;
+    list-style-type: none;
+    text-transform: capitalize;
+    flex-direction: row;
+    overflow: scroll;
+    padding-bottom: 10vh;
   }
 }
 
@@ -975,7 +990,7 @@ body {
   .btn-delete-map {
     border-radius: 50% !important;
     font-size: 10px !important;
-    margin-right: -30%;
+    margin-right: -25%;
     margin-top: -11%;
     border-color: #90a8c3 !important;
     color: #90a8c3 !important;
