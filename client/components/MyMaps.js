@@ -24,7 +24,7 @@ class MyMaps extends React.Component {
 									this.props.addMarkers(map.businesses);
 								}}
 							>
-								<img src="/icons/geo.svg" width="20" id="profile-map-icon" />
+								<img src="/icons/map marker.svg" width="20" id="profile-map-icon" />
 								<p>{map.name}</p>
 							</Link>
 
