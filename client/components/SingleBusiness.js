@@ -107,14 +107,14 @@ class SingleBusiness extends Component {
 								))}
 							</ul>
 							<Form id='reviews' action={singleBusiness.reviews[1].url} target={'_blank'} rel={'noreferrer'}>
-    							<input type="submit" value="See all reviews on Yelp!" variant="secondary" id="reviewButton"/>
+    							<input type="submit" value="See all reviews on Yelp" variant="secondary" id="reviewButton"/>
 							</Form>
 							<br></br>
 						</div>
           </div> 
           </div>
 				) : (
-					<img src="https://codyogden.blog/content/images/2018/08/magic-burrito.gif"></img>
+					<img src="https://cutewallpaper.org/21/loading-gif-transparent-background/CBP-Portal.gif"></img>
 				)}
 				<div id='backToMap' className='link'>
         <img
