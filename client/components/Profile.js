@@ -19,26 +19,25 @@ class Profile extends React.Component {
 		return (
 			<div id="container-profile">
 				<div id="profile-bg">
-					<img className="img-profile" src={user.imageUrl} width="100px" />
-					<h2 className="name">
-						{" "}
-						{user.firstName} {user.lastName}{" "}
-					</h2>
-					<div>
-						<p className="member">
-							Been fooding since:{" "}
-							{new Date(user.registrationDate).toLocaleDateString()}
+						<img className="img-profile" src={user.imageUrl} width="100px" />
+						<h2 className="name">
+							{" "}
+							{user.firstName} {user.lastName}{" "}
+						</h2>
+						<div>
+							<p className="member">
+								Been fooding since{" "}
+								{new Date(user.registrationDate).toLocaleDateString()}
+							</p>
+						</div>
+
+						<p className="edit-profile">
+							<Link to="/editProfile">Edit My Profile</Link>
 						</p>
-					</div>
-
-					<p className="edit-profile">
-						<Link to="/editProfile">Edit My Profile</Link>
-					</p>
-
 					<div className="div-text">
 						<p className="text-separation">My Foodie Friends</p>
 					</div>
-					<form
+					<form id="find-friend-form"
 						onSubmit={async (event) => {
 							event.preventDefault();
 							const { data } = await axios.post("/api/users/findUserByEmail", {
@@ -51,16 +50,16 @@ class Profile extends React.Component {
 							}
 						}}
 					>
-						<input
+						<input id="find-friend-input"
 							type="text"
 							name="email"
 							value={this.state.email}
 							onChange={(event) => this.setState({ email: event.target.value })}
 						/>
-						<button type="submit">Find User By Email</button>
+						<button id="find-friend-button" type="submit">Find User By Email</button>
 					</form>
 					<span className="friends">
-						<ul>
+						<ul className="foodie-friends">
 							{friends.map((friend) => (
 								<li key={friend.id} className="list-friends2">
 									<Link to={`/user/${friend.id}`}>
