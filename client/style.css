@@ -1050,3 +1050,36 @@ body {
     margin-left: 0.5em;
   }
 }
+
+/* EDIT PROFILE COMPONENT */
+@media screen and (max-width: 600px) {
+  #edit-profile-form {
+    padding-top: 15vh;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    color: rgb(93, 155, 176) !important;
+    text-align: center !important;
+  }
+
+  #edit-profile-form label.form-label {
+    padding-top: 1em;
+  }
+
+  #edit-profile-form input.form-control {
+    width: 100% !important;
+    background-color: #948fad !important;
+    color: rgb(225, 224, 224) !important;
+    opacity: 1;
+  }
+
+  #edit-profile-form input.form-control::placeholder {
+    color: rgb(225, 224, 224) !important;
+  }
+
+  #edit-profile-save {
+    background-color: #614b81;
+    border: none;
+    filter: drop-shadow(0 0 0.25em #2e3842);
+    margin-top: 1.5em;
+  }
+}
