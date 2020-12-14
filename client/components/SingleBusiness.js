@@ -60,8 +60,8 @@ class SingleBusiness extends Component {
 				{singleBusiness.categories ? (
           <div>
               <div id="bg-image-business">
-               <Carousel
-                 style={{width: '40rem', padding: '1rem', alignSelf: 'center'}}
+               <Carousel id='img-carousel'
+                //  style={{width: '40rem', padding: '1rem', alignSelf: 'center'}}
                >
                  {singleBusiness.photos.map((url, i) => (
                    <Carousel.Item key={i} interval={2000}>
