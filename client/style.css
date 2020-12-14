@@ -323,7 +323,7 @@ body {
     opacity: 1;
     background-color: #614b81 !important;
     color: #ffffff;
-    margin-top: 10%;
+    margin-top: 5%;
     border: none;
   }
 
@@ -343,7 +343,7 @@ body {
   }
 
   #btn3 {
-    font-size: 9px;
+    font-size: 10px;
     margin-left: 17%;
     opacity: 1;
     border-width: thin;
@@ -392,6 +392,12 @@ body {
     font-size: 10px;
     margin-left: 31%;
     margin-top: 23%;
+  }
+
+  .forgot-password {
+    margin-left: 39%;
+    font-size: 10px;
+    color: #ffffff;
   }
 }
 
