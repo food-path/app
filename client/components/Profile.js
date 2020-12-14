@@ -37,7 +37,7 @@ class Profile extends React.Component {
 					<div className="div-text">
 						<p className="text-separation">My Foodie Friends</p>
 					</div>
-					<form
+					<form id="find-friend-form"
 						onSubmit={async (event) => {
 							event.preventDefault();
 							const { data } = await axios.post("/api/users/findUserByEmail", {
@@ -50,13 +50,13 @@ class Profile extends React.Component {
 							}
 						}}
 					>
-						<input
+						<input id="find-friend-input"
 							type="text"
 							name="email"
 							value={this.state.email}
 							onChange={(event) => this.setState({ email: event.target.value })}
 						/>
-						<button type="submit">Find User By Email</button>
+						<button id="find-friend-button" type="submit">Find User By Email</button>
 					</form>
 					<span className="friends">
 						<ul>
