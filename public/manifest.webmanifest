@@ -4,14 +4,14 @@
 	"description": "Food Path takes the stress out of curating your culinary options for your next trip. Search, Save, and Share your customized Foodie Maps all from the app, and say goodbye to the sea of open tabs and spreadsheets in search of the best food a city has to offer.",
 	"icons": [
 		{
-			"src": "/img/pwalogo.png",
+			"src": "/img/food_path_icon_logo512x.png",
 			"type": "image/png",
 			"sizes": "512x512",
 			"purpose": "any maskable"
 		}
 	],
 	"start_url": "/",
-	"background_color": "#565050",
+	"background_color": "#182c3b",
 	"display": "fullscreen",
 	"scope": "/",
 	"theme_color": "#471e4a",
