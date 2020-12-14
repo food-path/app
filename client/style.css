@@ -97,6 +97,10 @@ body {
     width: 75vw;
     height: 25vh;
   }
+
+  .markers-map {
+    border-radius: 50%;
+  }
 }
 
 @media screen and (min-width: 601px) {

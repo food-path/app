@@ -107,7 +107,7 @@ class SingleBusiness extends Component {
 						</div>
 					</div> 
 				) : (
-					<img src="https://codyogden.blog/content/images/2018/08/magic-burrito.gif"></img>
+					<img src="https://i.gifer.com/YOQn.gif"></img>
 				)}
 				<div id='backToMap' className='link'>
         <img
