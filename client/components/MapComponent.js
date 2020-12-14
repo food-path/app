@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 import SingleBusiness from "./SingleBusiness";
 import BusinessesList from "./BusinessesList";
 
-
 const Marker = ({ text, imageUrl, id }) => (
 	<div
 		className="marker"
@@ -22,6 +21,63 @@ const Marker = ({ text, imageUrl, id }) => (
 	</div>
 );
 
+class MapOverlay extends React.Component {
+	render() {
+		const markers = this.props.markers || [];
+		const maps = this.props.maps || [];
+		return (
+			<div className="map-overlay">
+				<BusinessesList props={this.props} />
+				<Form
+					onSubmit={(event) => {
+						event.preventDefault();
+						const mapToAdd = this.props.maps.find(
+							(m) => m.id === +this.props.state.mapToAddId
+						);
+						this.props.addMarkers(mapToAdd.businesses);
+					}}
+				>
+					{/* <Form.Label>Map To Add</Form.Label> */}
+					<Form.Control
+						as="select"
+						name="mapToAddId"
+						onChange={this.props.onChange}
+						value={this.props.state.mapToAddId}
+					>
+						<option value="default">Pick a previous map to include</option>
+						{maps.map((m) => (
+							<option value={m.id} key={m.id}>
+								{m.name} by {m.user ? m.user.firstName : "Anonymous"}
+							</option>
+						))}
+					</Form.Control>
+					<Button variant="primary" type="submit">
+						PULL RESTAURANTS TO CURRENT MAP
+					</Button>
+				</Form>
+				<Form onSubmit={this.props.onSubmit}>
+					{/* <Form.Label>Map Name</Form.Label> */}
+					<Form.Control
+						type="text"
+						name="name"
+						value={this.props.state.name}
+						placeholder="Name your Foodie Map"
+						onChange={this.props.onChange}
+					/>
+					<Button variant="primary" type="submit">
+						SAVE THIS FOODIE MAP
+					</Button>
+					{this.props.state.mapSaved ? (
+						<Link to="/profile">
+							Map Saved! Click here to view your saved map
+						</Link>
+					) : null}
+				</Form>
+			</div>
+		);
+	}
+}
+
 class MapComponent extends React.Component {
 	constructor(props) {
 		super(props);
@@ -29,7 +85,7 @@ class MapComponent extends React.Component {
 			center: { lat: 40.74, lng: -73.98 },
 			name: "",
 			mapToAddId: "default",
-			mapSaved:false
+			mapSaved: false,
 		};
 		this.onChange = this.onChange.bind(this);
 		this.onSubmit = this.onSubmit.bind(this);
@@ -62,9 +118,8 @@ class MapComponent extends React.Component {
 		this.props.createMap(this.props.search, this.props.markers, {
 			name: this.state.name,
 		});
-		this.state.mapSaved = true
+		this.state.mapSaved = true;
 	}
-
 
 	render() {
 		const markers = this.props.markers || [];
@@ -72,71 +127,33 @@ class MapComponent extends React.Component {
 
 		return (
 			<div id="map-container">
-					<GoogleMapReact
-						id="map"
-						bootstrapURLKeys={{
-							key: "AIzaSyAy7Z9PHW6OU2vwcjwZTHxgRh9uHm1F9CM",
-						}}
-						defaultCenter={{ lat: 40.74, lng: -73.98 }}
-						defaultZoom={13}
-						center={this.state.center}
-					>
-						{markers.map((marker) => (
-							<Marker
-								key={marker.id}
-								lat={marker.coordinates.latitude}
-								lng={marker.coordinates.longitude}
-								text={marker.name}
-								imageUrl={marker.image_url}
-								id={marker.id}
-							/>
-						))}
-						<div className="map-overlay">
-							<BusinessesList props={this.props} />
-							<Form
-								onSubmit={(event) => {
-									event.preventDefault();
-									const mapToAdd = this.props.maps.find(
-										(m) => m.id === +this.state.mapToAddId
-									);
-									this.props.addMarkers(mapToAdd.businesses);
-								}}
-							>
-								{/* <Form.Label>Map To Add</Form.Label> */}
-								<Form.Control
-									as="select"
-									name="mapToAddId"
-									onChange={this.onChange}
-									value={this.state.mapToAddId}
-								>
-									<option value="default">Pick a previous map to include</option>
-									{maps.map((m) => (
-										<option value={m.id} key={m.id}>
-											{m.name} by {m.user ? m.user.firstName : "Anonymous"}
-										</option>
-									))}
-								</Form.Control>
-								<Button variant="primary" type="submit">
-									PULL RESTAURANTS TO CURRENT MAP
-								</Button>
-							</Form>
-							<Form onSubmit={this.onSubmit}>
-								{/* <Form.Label>Map Name</Form.Label> */}
-								<Form.Control
-									type="text"
-									name="name"
-									value={this.state.name}
-									placeholder="Name your Foodie Map"
-									onChange={this.onChange}
-								/>
-								<Button variant="primary" type="submit">
-									SAVE THIS FOODIE MAP
-								</Button>
-							</Form>
-						</div>
-					</GoogleMapReact>
+				<GoogleMapReact
+					id="map"
+					bootstrapURLKeys={{
+						key: "AIzaSyAy7Z9PHW6OU2vwcjwZTHxgRh9uHm1F9CM",
+					}}
+					defaultCenter={{ lat: 40.74, lng: -73.98 }}
+					defaultZoom={13}
+					center={this.state.center}
+				>
+					{markers.map((marker) => (
+						<Marker
+							key={marker.id}
+							lat={marker.coordinates.latitude}
+							lng={marker.coordinates.longitude}
+							text={marker.name}
+							imageUrl={marker.image_url}
+							id={marker.id}
+						/>
+					))}
+					<MapOverlay
+						{...this.props}
+						state={this.state}
+						onChange={this.onChange}
+						onSubmit={this.onSubmit}
+					/>
+				</GoogleMapReact>
 			</div>
-
 		);
 	}
 }

@@ -11,78 +11,76 @@ const Business = db.define("business", {
 	},
 	name: {
 		type: Sequelize.STRING,
-		allowNull: false, 
+		allowNull: false,
 		validate: {
-			notEmpty: true
-		}
+			notEmpty: true,
+		},
 	},
 	country: {
 		type: Sequelize.STRING,
-		allowNull: false, 
+		allowNull: false,
 		validate: {
-			notEmpty: true
-		}
+			notEmpty: true,
+		},
 	},
 	city: {
 		type: Sequelize.STRING,
-		allowNull: false, 
+		allowNull: false,
 		validate: {
-			notEmpty: true
-		}
+			notEmpty: true,
+		},
 	},
 	streetAddress: {
 		type: Sequelize.STRING,
-		allowNull: false, 
-		validate: {
-			notEmpty: true
-		}
+		allowNull: false,
 	},
 	latitude: {
 		type: Sequelize.DECIMAL,
-		allowNull: false, 
+		allowNull: false,
 		validate: {
-			notEmpty: true
-		}
+			notEmpty: true,
+		},
 	},
 	longitude: {
 		type: Sequelize.DECIMAL,
-		allowNull: false, 
+		allowNull: false,
 		validate: {
-			notEmpty: true
-		}
+			notEmpty: true,
+		},
 	},
 	imageUrl: {
 		type: Sequelize.STRING,
-		defaultValue: 'https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
+		defaultValue:
+			"https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 	},
 	categories: {
 		type: Sequelize.ARRAY(Sequelize.STRING),
-		allowNull: false, 
+		allowNull: false,
 		validate: {
-			notEmpty: true
-		}
+			notEmpty: true,
+		},
 	},
 	reviewCount: {
 		type: Sequelize.INTEGER,
 		allowNull: false,
 		validate: {
-		notEmpty: true,
-		min: 0
-		}
+			notEmpty: true,
+			min: 0,
+		},
 	},
 	rating: {
 		type: Sequelize.INTEGER,
 		validate: {
 			notEmpty: true,
-			min: 4
-		  }
+			min: 4,
+		},
 	},
 	price: {
 		type: Sequelize.STRING,
 		allowNull: false,
 		validate: {
-		notEmpty: true,
-		}
+			notEmpty: true,
+		},
 	},
 });
 
