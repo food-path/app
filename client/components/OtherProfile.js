@@ -37,7 +37,7 @@ class OtherProfile extends React.Component {
 					</p>
 					{otherUser.id !== user.id && (
 						<Button
-							className="btn-friend-already btn-sm"
+							className="btn-friend-already-btn-sm"
 							onClick={() => this.props.addFriend()}
 							disabled={isFriend}
 						>
@@ -67,7 +67,7 @@ class OtherProfile extends React.Component {
 				</span>
 
 				<div className="div-text">
-					<p className="text-separation">{otherUser.firstName}'s Maps</p>
+					<p className="text-separation-friends">{otherUser.firstName}'s Foodie Maps</p>
 				</div>
 				<div className="save-maps-to">
 					<MyMaps user={otherUser} />
