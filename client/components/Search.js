@@ -22,6 +22,12 @@ class Search extends Component {
       maxPrice: 100,
       categories: [],
       showNoResultsFound: false,
+      className:'toggle-btn',
+      selectedBtn: [], 
+      btn1:'toggle-btn-clicked', 
+      btn2:'toggle-btn',
+      btn3:'toggle-btn',
+      btn4:'toggle-btn',
     };
     this.onChange = this.onChange.bind(this);
     this.onChangeCheckbox = this.onChangeCheckbox.bind(this);
@@ -43,9 +49,79 @@ class Search extends Component {
   }
 
   handleChange(price) {
-    this.setState({
-      price: price,
-    });
+
+    console.log('price:', price)
+    if (price.includes('$')){
+      this.setState({
+        price, 
+        btn1:'toggle-btn-clicked'
+      })
+    }
+    if (price.includes('$$')){
+      this.setState({
+        price, 
+        btn2:'toggle-btn-clicked'
+      })
+    }
+    if (price.includes('$$$')){
+      this.setState({
+        price, 
+        btn3:'toggle-btn-clicked'
+      })
+    }
+    if (price.includes('$$$$')){
+      this.setState({
+        price, 
+        btn4:'toggle-btn-clicked'
+      })
+    }
+    //reset state on buttons
+    if (!price.includes('$')){
+      this.setState({
+        price, 
+        btn1:'toggle-btn'
+      })
+    }
+    if (!price.includes('$$')){
+      this.setState({
+        price, 
+        btn2:'toggle-btn'
+      })
+    }
+    if (!price.includes('$$$')){
+      this.setState({
+        price, 
+        btn3:'toggle-btn'
+      })
+    }
+    if (!price.includes('$$$$')){
+      this.setState({
+        price, 
+        btn4:'toggle-btn'
+      })
+    }
+
+
+
+    // this.setState({
+    //       price: price,
+    //       selectedBtn: [...selectedBtn,price] //['$','$$']
+    //     });
+
+
+    // if (this.state.className === 'toggle-btn'){
+    //   this.setState({
+    //     price: price,
+    //     className: 'toggle-btn-1'
+    //   });
+    // }else{
+    //   this.setState({
+    //     price: price,
+    //     className: 'toggle-btn'
+    //   });
+    // }
+    
+    // console.log("inside handleChange")
   }
 
   render() {
@@ -53,6 +129,8 @@ class Search extends Component {
     let maxPrice = priceToText(this.state.maxPrice);
     const user = this.props.user;
     console.log("this.state.price: ", this.state.price)
+    console.log("this.state.btn1: ", this.state.btn1)
+    console.log("this.state.btn2: ", this.state.btn2)
     
     return (
       <div className="container-search">
@@ -163,13 +241,13 @@ class Search extends Component {
                           value={this.state.price}
                           onChange={this.handleChange}
                             >
-                                <ToggleButton className="toggle-btn-1" value={'$'}>$</ToggleButton>
+                                <ToggleButton className={this.state.btn1} value={'$'}>$</ToggleButton>
                                 {" "}
-                                <ToggleButton className="toggle-btn-2" value={"$$"}>$$</ToggleButton>
+                                <ToggleButton className={this.state.btn2} value={"$$"}>$$</ToggleButton>
                                 {" "}
-                                <ToggleButton className="toggle-btn-3" value={"$$$"}>$$$</ToggleButton>
+                                <ToggleButton className={this.state.btn3}  value={"$$$"}>$$$</ToggleButton>
                                 {" "}
-                                <ToggleButton className="toggle-btn-4" value={"$$$$"}>$$$$</ToggleButton>
+                                <ToggleButton className={this.state.btn4}  value={"$$$$"}>$$$$</ToggleButton>
                   </ToggleButtonGroup>
                 </div>
 									<div className="diet-fields">
