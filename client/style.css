@@ -125,6 +125,11 @@ body {
 /* SINGLE BUSINESS COMPONENT */
 @media screen and (max-width: 600px) {
 
+  #loader{
+    width:100vw;
+    margin-top:25%;
+  }
+
   #img-carousel{
     width: 100vw;
     padding-top: 1em;
@@ -405,6 +410,7 @@ body {
     margin-left: 39%;
     font-size: 10px;
     color: #ffffff;
+    
   }
 }
 
@@ -745,8 +751,8 @@ body {
     width: 100%;
   }
 
-  .toggle-btn-1 {
-    background-color: #948fad !important;
+  .toggle-btn {
+    background-color: #ad8fa8 !important;
     margin-right: 4% !important;
     margin-left: 4% !important;
     border-radius: 10% !important;
@@ -754,7 +760,16 @@ body {
     border: none !important;
   }
 
-  .toggle-btn-2 {
+  .toggle-btn-clicked {
+    background-color: #D7B9D5 !important;
+    margin-right: 4% !important;
+    margin-left: 4% !important;
+    border-radius: 10% !important;
+    width: 15% !important;
+    border: none !important;
+  }
+
+  /* .toggle-btn-2 {
     background-color: #948fad !important;
     margin-right: 4% !important;
     margin-left: 4% !important;
@@ -779,7 +794,7 @@ body {
     border-radius: 10% !important;
     width: 15% !important;
     border: none !important;
-  }
+  } */
 }
 
 /* SIGN UP/REGISTRATION COMPONENT */
