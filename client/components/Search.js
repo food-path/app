@@ -17,7 +17,7 @@ class Search extends Component {
     this.state = {
       location: "",
       term: "",
-      price: "$",
+      price: ["$"],
       minPrice: 0,
       maxPrice: 100,
       categories: [],
