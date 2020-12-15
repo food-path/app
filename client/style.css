@@ -125,6 +125,11 @@ body {
 /* SINGLE BUSINESS COMPONENT */
 @media screen and (max-width: 600px) {
 
+  #loader{
+    width:100vw;
+    margin-top:25%;
+  }
+
   #img-carousel{
     width: 100vw;
     padding-top: 1em;

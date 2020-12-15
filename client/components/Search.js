@@ -21,9 +21,7 @@ class Search extends Component {
       minPrice: 0,
       maxPrice: 100,
       categories: [],
-      showNoResultsFound: false,
-      className:'toggle-btn',
-      selectedBtn: [], 
+      showNoResultsFound: false, 
       btn1:'toggle-btn-clicked', 
       btn2:'toggle-btn',
       btn3:'toggle-btn',
@@ -100,28 +98,6 @@ class Search extends Component {
         btn4:'toggle-btn'
       })
     }
-
-
-
-    // this.setState({
-    //       price: price,
-    //       selectedBtn: [...selectedBtn,price] //['$','$$']
-    //     });
-
-
-    // if (this.state.className === 'toggle-btn'){
-    //   this.setState({
-    //     price: price,
-    //     className: 'toggle-btn-1'
-    //   });
-    // }else{
-    //   this.setState({
-    //     price: price,
-    //     className: 'toggle-btn'
-    //   });
-    // }
-    
-    // console.log("inside handleChange")
   }
 
   render() {
