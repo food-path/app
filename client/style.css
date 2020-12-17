@@ -824,114 +824,159 @@ body {
 }
 
 /* SIGN UP/REGISTRATION COMPONENT */
-@media screen and (max-width: 600px) {
-  .content-signup {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 5%;
-    border-radius: 2%;
-    text-align: center;
-  }
 
-  .logo-signup {
-    margin-left: 35%;
-    margin-top: 2%;
-    position: relative;
-    filter: drop-shadow(0 0 0.3em #2e3842);
+.content-signup {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 2%;
+  text-align: center;
+}
+
+.logo-signup {
+  margin-left: 35%;
+  margin-top: 2%;
+  position: relative;
+  filter: drop-shadow(0 0 0.3em #2e3842);
+}
+
+.welcome-msg {
+  text-align: center;
+  margin-top: 2%;
+}
+
+.firstname {
+  border-radius: 5%;
+  border-color: #ffffff !important;
+  text-align: left;
+  background-color: #ffffff !important;
+}
+
+.lastname {
+  border-radius: 5%;
+  text-align: left;
+  margin-top: 10%;
+  background-color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+.email {
+  border-radius: 5%;
+  text-align: left;
+  margin-top: 10%;
+  background-color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+.password {
+  border-radius: 5%;
+  text-align: left;
+  margin-top: 10%;
+  background-color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+#btn-signup {
+  border: none !important;
+  text-align: left !important;
+  margin-top: 10% !important;
+  color: #ffffff !important;
+  background-color: #614b81 !important;
+  opacity: 1 !important;
+  z-index: 1 !important;
+}
+
+#btn-google {
+  font-size: 10px;
+  padding: 4px !important;
+  margin-left: 17%;
+  opacity: 1;
+  border-width: thin;
+  color: #fefefe;
+  width: 66%;
+  display: inline-block !important;
+  background-color: #90a8c3 !important;
+  border-color: #90a8c3 !important;
+  filter: drop-shadow(0 0 0.5em #2e3842);
+}
+
+#btn-already-account {
+  padding: 4px;
+  font-size: 10px;
+  margin-top: 5%;
+  border-radius: 5%;
+  text-align: center;
+  width: 66%;
+  margin-left: 17%;
+  background-color: #ada7c9;
+  border: none;
+  color: #182c3a;
+  filter: drop-shadow(0 0 0.3em #2e3842);
+  opacity: 1;
+}
+
+#purple-bg {
+  position: absolute;
+  background-color: #a49fbf;
+  border-radius: 4px;
+  opacity: 0.9;
+}
+
+@media screen and (min-width: 601px) {
+  .content-signup {
+    width: 85%;
   }
 
   .welcome-msg {
-    font-size: 12px;
-    text-align: center;
-    margin-top: 2%;
-  }
-
-  .firstname {
-    border-radius: 5%;
-    border-color: #ffffff !important;
-    text-align: left;
-    background-color: #ffffff !important;
-  }
-
-  .lastname {
-    border-radius: 5%;
-    text-align: left;
-    margin-top: 10%;
-    background-color: #ffffff !important;
-    border-color: #ffffff !important;
-  }
-
-  .email {
-    border-radius: 5%;
-    text-align: left;
-    margin-top: 10%;
-    background-color: #ffffff !important;
-    border-color: #ffffff !important;
-  }
-
-  .password {
-    border-radius: 5%;
-    text-align: left;
-    margin-top: 10%;
-    background-color: #ffffff !important;
-    border-color: #ffffff !important;
-  }
-
-  #btn-signup {
-    border: none !important;
-    text-align: left !important;
-    margin-top: 10% !important;
-    color: #ffffff !important;
-    background-color: #614b81 !important;
-    opacity: 1 !important;
-    z-index: 1 !important;
+    font-size: 1.2vw;
   }
 
   #btn-google {
-    font-size: 10px;
-    padding: 4px !important;
-    margin-left: 17%;
-    opacity: 1;
-    border-width: thin;
-    color: #fefefe;
-    width: 66%;
-    display: inline-block !important;
-    margin-top: 15%;
-    background-color: #90a8c3 !important;
-    border-color: #90a8c3 !important;
-    filter: drop-shadow(0 0 0.5em #2e3842);
-  }
-
-  #btn-already-account {
-    padding: 4px;
-    font-size: 10px;
-    margin-top: 5%;
-    border-radius: 5%;
-    text-align: center;
-    width: 66%;
-    margin-left: 17%;
-    background-color: #ada7c9;
-    border: none;
-    color: #182c3a;
-    filter: drop-shadow(0 0 0.3em #2e3842);
-    opacity: 1;
+    margin-top: 10%;
   }
 
   #purple-bg {
-    position: absolute;
+    margin-top: 2.5%;
+    margin-left: 35%;
+    height: 78%;
+    width: 30%;
+  }
+
+  #picture-bg {
+    background: url("https://images.unsplash.com/photo-1580421383318-f87fc861a696?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80")
+      no-repeat;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 0.8;
+    overflow: hidden;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .content-signup {
+    width: 90%;
+    margin-top: 5%;
+  }
+
+  .welcome-msg {
+    font-size: 2.4vw;
+  }
+
+  #btn-google {
+    margin-top: 15%;
+  }
+
+  #purple-bg {
     margin-top: 18%;
     margin-left: 38px;
     height: 70%;
     width: 80%;
-    background-color: #a49fbf;
-    border-radius: 4px;
-    opacity: 0.9;
   }
 
   #picture-bg {
