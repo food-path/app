@@ -15,7 +15,7 @@ class SingleBusiness extends Component {
 	componentDidMount() {
 		this.props.getSingleBusiness(this.props.match.params.businessId);
 	}
-	
+
 	render() {
 		const { singleBusiness } = this.props;
 		console.log("singleBusiness:", singleBusiness);
@@ -77,13 +77,13 @@ class SingleBusiness extends Component {
 					<div id='wrapper'>
 						<div id='wrapper1a'>
 							<h4 id="description-business">
-								{singleBusiness.categories.map((obj) => obj.title).join("|")}
+								{singleBusiness.categories.map((obj) => obj.title).join(" | ")}
 							</h4>
-							<h4 id="business-price-range">{singleBusiness.price} {"|"} {singleBusiness.rating} {"stars"} </h4>
-							<h6> 
+							<h4 id="business-price-range">{singleBusiness.price} {" | "} {singleBusiness.rating} {"stars"} </h4>
+							<h6>
                 {" "}
-                {singleBusiness.display_phone} 
-                {"|"} {singleBusiness.location.address1}
+                {singleBusiness.display_phone}
+                {" | "} {singleBusiness.location.address1}
               </h6>
 						</div>
 						<div id='horizontal'></div>
@@ -111,7 +111,7 @@ class SingleBusiness extends Component {
 							</Form>
 							<br></br>
 						</div>
-          </div> 
+          </div>
           </div>
 				) : (
 					<img id='loader' src="https://cutewallpaper.org/21/loading-gif-transparent-background/CBP-Portal.gif"></img>
