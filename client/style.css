@@ -1231,46 +1231,49 @@ body {
 }
 
 /* MYMAPS COMPONENT (deletes a saved map from profile) */
-@media screen and (max-width: 600px) {
-  .elements-saved-maps {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
-    padding-left: 0.7em;
-    padding-top: 1em;
-    justify-content: space-between;
-  }
+.elements-saved-maps {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  padding-left: 0.7em;
+  padding-top: 1em;
+  justify-content: space-between;
+}
 
+.btn-delete-map {
+  border-radius: 50% !important;
+  font-size: 10px !important;
+  margin-right: -25%;
+  margin-top: -11%;
+  border-color: #90a8c3 !important;
+  color: #90a8c3 !important;
+}
+
+.btn-delete-map {
+  border-radius: 50% !important;
+  font-size: 10px !important;
+  margin-top: 0.5em;
+}
+
+.businessid {
+  display: none;
+}
+
+#profile-map-icon {
+  /* flex-direction: row; */
+  color: #90a8c3 !important;
+}
+
+#map-name {
+  justify-self: auto;
+  display: inline;
+  margin-left: 0.5em;
+}
+
+@media screen and (min-width: 601px) {
   .btn-delete-map {
-    border-radius: 50% !important;
-    font-size: 10px !important;
-    margin-right: -25%;
-    margin-top: -11%;
-    border-color: #90a8c3 !important;
-    color: #90a8c3 !important;
-  }
-
-  .btn-delete-map {
-    border-radius: 50% !important;
-    font-size: 10px !important;
-    margin-top: 0.5em;
-    /* margin-right: 0.25em; */
-  }
-
-  .businessid {
-    display: none;
-  }
-
-  #profile-map-icon {
-    /* flex-direction: row; */
-    color: #90a8c3 !important;
-  }
-
-  #map-name {
-    justify-self: auto;
-    display: inline;
-    margin-left: 0.5em;
+    margin-right: 1em;
   }
 }
 
