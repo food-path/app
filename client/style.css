@@ -123,54 +123,186 @@ body {
 }
 
 /* SINGLE BUSINESS COMPONENT */
-@media screen and (max-width: 600px) {
+#loader {
+  width: 100vw;
+}
 
-  #loader{
-    width:100vw;
-    margin-top:25%;
-  }
+#bg-image-business {
+  background-color: #182c3a;
+}
 
-  #img-carousel{
-    width: 100vw;
-    padding-top: 1em;
-    padding-bottom: 1em;
-  }
+#img-carousel {
+  width: 100vw;
+}
 
-  #bg-image-business {
-    background-color: #182c3a;
+#bannerimage {
+  width: 100vw;
+  object-fit: cover;
+}
+
+#singleBusiness {
+  background-color: white;
+  padding-bottom: 78px;
+}
+
+#text-Name {
+  font-size: 25px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  color: #182c3a;
+}
+
+#BusinessName {
+  background-color: rgb(93, 155, 176);
+  text-align: center;
+  font-size: 5px;
+  padding-top: 2%;
+  font-family: "Montserrat", sans-serif;
+  padding-bottom: 1%;
+  width: 100vw;
+}
+
+#reviewButton {
+  color: white !important;
+  background-color: #5d9bb0 !important;
+  border-radius: 5px !important;
+  border: none !important;
+  filter: drop-shadow(0 0 0.5em #2e3842);
+}
+
+@media screen and (min-width: 601px) {
+  #img-carousel {
+    height: 40vh;
   }
 
   #bannerimage {
-    padding-top: 10px;
-    width: 200px;
-    /* border-radius: 2px; */
-    border-radius: 50%;
-    height: 200px;
-    /* height: 50%; */
-    margin-left: 25%;
-    margin-right:auto;
-    padding-bottom: 10px;
+    height: 40vh;
   }
 
-  #singleBusiness {
-    background-color: white;
-    padding-bottom: 78px;
+  #singleBusiness div:first-child {
+    width: 100vw;
   }
 
-  #text-Name {
-    font-size: 25px;
+  #wrapper {
+    /* display: flex; */
+    width: 100vw;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 16px;
     text-align: center;
-    font-family: "Montserrat", sans-serif;
+    text-justify: inter-word;
+  }
+
+  #description-business {
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    text-align: center;
+    text-justify: auto;
+    align-items: center;
+  }
+
+  #list-hours {
+    margin-top: 5%;
+    display: block;
+    text-align: center;
+  }
+
+  #list-days {
+    text-align: justify;
+    margin-left: 35%;
+    display: block;
+    text-justify: inter-character;
+  }
+
+  #list-hours-title {
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    font-weight: thin;
+    color: #182c3a;
+    margin-bottom: 5%;
+  }
+
+  #business-price-range {
+    font-size: 16px;
+    font-family: "Roboto", sans-serif;
     color: #182c3a;
   }
 
-  #BusinessName {
-    background-color: rgb(93, 155, 176);
+  #horizontal {
+    display: flex;
+    width: 80vw;
+    height: 3px;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-items: center;
+    background-color: #5d9bb0;
+  }
+
+  #review-title {
+    font-size: 20px;
+    font-family: "Roboto", sans-serif;
+    color: #182c3a;
+  }
+
+  .text-reviews {
     text-align: center;
-    font-size: 5px;
-    padding-top: 2%;
-    font-family: "Montserrat", sans-serif;
-    padding-bottom: 1%;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  #separator {
+    margin-top: 38px;
+    background-color: #5d9bb0;
+  }
+
+  #backToMap {
+    width: 100vw;
+    text-align: center;
+    color: #182c3a;
+    font-size: 12px;
+  }
+
+  .stars-review {
+    font-size: 14px;
+    color: #182c3a;
+  }
+
+  .star-icon {
+    font-size: 6px;
+  }
+
+  .link a,
+  a:hover,
+  a:focus,
+  a:active {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  #reviewButton {
+    margin-top: 1em;
+    padding: 1em !important;
+    font-size: 1vw !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #loader {
+    margin-top: 25%;
+  }
+
+  #img-carousel {
+    height: 25vh;
+  }
+
+  #bannerimage {
+    height: 25vh;
   }
 
   #wrapper {
@@ -220,7 +352,6 @@ body {
   #horizontal {
     width: 80%;
     height: 3px;
-    background-color: black;
     margin-left: 30px;
     margin-right: 30px;
     margin-top: 25px;
@@ -249,11 +380,6 @@ body {
     background-color: #5d9bb0;
   }
 
-  /* ul {
-    margin-left: -35px;
-    list-style-type: none;
-  } */
-
   #backToMap {
     text-align: center;
     color: #182c3a;
@@ -279,16 +405,152 @@ body {
   }
 
   #reviewButton {
-    padding: 2px !important;
-    font-size: 10px !important;
-    color: white !important;
-    box-shadow: none !important;
-    background-color: #5d9bb0 !important;
-    border-radius: 5px !important;
+    margin-top: 0.5em;
+    padding: 1em !important;
+    font-size: 2vw !important;
   }
 }
 
 /* LOGIN COMPONENT/HOME PAGE*/
+
+.logo-login {
+  position: absolute;
+  opacity: 1;
+  z-index: 1;
+  filter: drop-shadow(0 0 0.5em #2e3842);
+}
+
+#input-email {
+  text-align: center;
+  width: 55%;
+  font-size: 12px;
+  margin-left: 22%;
+  margin-top: 100%;
+  opacity: 1;
+  border-width: medium;
+  border: none;
+  opacity: 0.9;
+  background-color: #ffffff;
+}
+
+#input-password {
+  text-align: center;
+  width: 55%;
+  font-size: 12px;
+  margin-left: 22%;
+  opacity: 0.9;
+  margin-top: 5px;
+  border: none;
+  opacity: 1;
+  background-color: #ffffff;
+}
+
+#btn1 {
+  text-align: center;
+  width: 35%;
+  font-size: 12px;
+  margin-left: 32%;
+  opacity: 1;
+  background-color: #614b81 !important;
+  color: #ffffff;
+  margin-top: 5%;
+  border: none;
+}
+
+#btn2 {
+  text-align: center;
+  width: 66%;
+  font-size: 10px;
+  margin-left: 17%;
+  margin-top: 5%;
+  opacity: 1;
+  font-style: italic;
+  background-color: #958db9 !important;
+  color: #ffffff;
+  border: none;
+  opacity: 1 !important;
+  filter: drop-shadow(0 0 0.5em #2e3842);
+}
+
+#btn3 {
+  font-size: 10px;
+  margin-left: 17%;
+  opacity: 1;
+  border-width: thin;
+  color: #fefefe;
+  width: 66%;
+  display: inline-block !important;
+  margin-top: 25px;
+  background-color: #90a8c3 !important;
+  border-color: #90a8c3 !important;
+  filter: drop-shadow(0 0 0.5em #2e3842);
+}
+
+.google-icon {
+  margin-right: 9px;
+  background-color: #90a8c3;
+  border-radius: 2px;
+}
+
+.forgot-password,
+.copyright {
+  display: flex;
+  justify-content: center;
+  padding-top: 1vh;
+  color: #ffffff;
+}
+
+@media screen and (min-width: 601px) {
+  .square {
+    background-color: #a49fbf;
+    position: absolute;
+    margin-top: 27%;
+    margin-left: 38.25%;
+    width: 23%;
+    height: 30%;
+    border-radius: 8px;
+    opacity: 0.85;
+    filter: drop-shadow(0 0 0.5em #2e3842);
+  }
+
+  .container-login {
+    background: url("https://images.unsplash.com/photo-1580421383318-f87fc861a696?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80")
+      no-repeat;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 0.8;
+    overflow: hidden;
+  }
+
+  .form-container {
+    display: flex;
+    max-height: 40%;
+    align-content: center;
+    justify-content: center;
+  }
+
+  #login-form {
+    justify-items: center;
+    align-items: center;
+  }
+
+  .logo-login {
+    margin-left: 46%;
+    margin-top: 19%;
+  }
+
+  .copyright {
+    font-size: 1vw;
+    padding-top: 9vh;
+  }
+
+  .forgot-password {
+    font-size: 1vw;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .square {
     background-color: #a49fbf;
@@ -300,78 +562,6 @@ body {
     border-radius: 3px;
     opacity: 0.85;
     filter: drop-shadow(0 0 0.5em #2e3842);
-  }
-
-  #input-email {
-    text-align: center;
-    width: 55%;
-    font-size: 12px;
-    margin-left: 22%;
-    margin-top: 100%;
-    opacity: 1;
-    border-width: medium;
-    border: none;
-    opacity: 0.9;
-    background-color: #ffffff;
-  }
-
-  #input-password {
-    text-align: center;
-    width: 55%;
-    font-size: 12px;
-    margin-left: 22%;
-    opacity: 0.9;
-    margin-top: 5px;
-    border: none;
-    opacity: 1;
-    background-color: #ffffff;
-  }
-
-  #btn1 {
-    text-align: center;
-    width: 35%;
-    font-size: 12px;
-    margin-left: 32%;
-    opacity: 1;
-    background-color: #614b81 !important;
-    color: #ffffff;
-    margin-top: 5%;
-    border: none;
-  }
-
-  #btn2 {
-    text-align: center;
-    width: 66%;
-    font-size: 10px;
-    margin-left: 17%;
-    margin-top: 5%;
-    opacity: 1;
-    font-style: italic;
-    background-color: #958db9 !important;
-    color: #ffffff;
-    border: none;
-    opacity: 1 !important;
-    filter: drop-shadow(0 0 0.5em #2e3842);
-  }
-
-  #btn3 {
-    font-size: 10px;
-    margin-left: 17%;
-    opacity: 1;
-    border-width: thin;
-    color: #fefefe;
-    width: 66%;
-    display: inline-block !important;
-    margin-top: 25px;
-    background-color: #90a8c3 !important;
-    border-color: #90a8c3 !important;
-    filter: drop-shadow(0 0 0.5em #2e3842);
-  }
-
-  .google-icon {
-    margin-right: 9px;
-    background-color: #90a8c3;
-    border-radius: 2px;
   }
 
   .container-login {
@@ -393,24 +583,15 @@ body {
   .logo-login {
     margin-left: 40%;
     margin-top: 67%;
-    position: absolute;
-    opacity: 1;
-    z-index: 1;
-    filter: drop-shadow(0 0 0.5em #2e3842);
   }
 
   .copyright {
-    color: white;
-    font-size: 10px;
-    margin-left: 31%;
-    margin-top: 23%;
+    font-size: 2vw;
+    padding-top: 10vh;
   }
 
   .forgot-password {
-    margin-left: 39%;
-    font-size: 10px;
-    color: #ffffff;
-    
+    font-size: 2vw;
   }
 }
 
@@ -492,65 +673,91 @@ body {
 }
 
 /* PROFILE COMPONENT */
-@media screen and (max-width: 600px) {
-  #container-profile {
-    min-height: 100vh;
-    overflow: hidden;
-  }
 
-  #container-profile a {
-    color: rgb(93, 155, 176);
-  }
+#container-profile {
+  min-height: 100vh;
+  overflow: hidden;
+}
 
+#container-profile a {
+  color: rgb(93, 155, 176);
+}
+
+.img-profile {
+  position: relative;
+  border-radius: 50%;
+  border-color: #d7b9d5;
+  border-width: 5px;
+  border-style: solid;
+}
+
+.name {
+  text-transform: Capitalize;
+  width: 65%;
+  text-align: left;
+  z-index: -1;
+}
+
+.member {
+  text-align: left;
+  width: 65%;
+}
+
+.edit-profile {
+  text-align: left;
+}
+
+.div-text {
+  background-color: #ada7c9;
+  min-width: 100%;
+}
+
+.text-separation {
+  margin-top: 10%;
+  min-width: 100%;
+  padding: 0.5em;
+  color: white;
+  text-align: center;
+}
+
+#find-friend-input {
+  background-color: #ada7c9;
+  border-radius: 5px;
+  border: none;
+}
+
+@media screen and (min-width: 601px) {
   .img-profile {
-    position: relative;
-    border-radius: 50%;
-    border-color: #d7b9d5;
-    border-width: 5px;
-    border-style: solid;
-    margin-top: 10%;
-    margin-left: 4%;
-    width: 28vw;
+    margin-top: 5%;
+    margin-left: 5%;
+    width: 20vw;
     height: auto;
   }
 
   .name {
-    text-transform: Capitalize;
-    font-size: 9vw;
-    width: 65%;
-    text-align: left;
-    z-index: -1;
-    margin-top: -25%;
-    margin-left: 35%;
+    font-size: 5vw;
+    margin-top: -16%;
+    margin-left: 28%;
   }
 
   .member {
-    font-size: 4vw;
-    text-align: left;
-    width: 65%;
-    margin-left: 36%;
-    margin-top: -2%;
+    font-size: 2.5vw;
+    margin-left: 28.5%;
+    margin-top: -1%;
   }
 
   .edit-profile {
-    font-size: 3vw;
-    text-align: left;
-    margin-left: 36%;
+    font-size: 1.5vw;
+    margin-left: 28.5%;
     margin-top: -2%;
   }
 
-  .div-text {
-    background-color: #ada7c9;
-    min-width: 100%;
+  .text-separation {
+    font-size: 3vw;
   }
 
-  .text-separation {
-    margin-top: 10%;
-    min-width: 100%;
-    padding: 0.5em;
-    font-size: 5vw;
-    color: white;
-    text-align: center;
+  #my-foodie-maps {
+    margin-top: 5%;
   }
 
   #find-friend-form {
@@ -561,9 +768,89 @@ body {
   }
 
   #find-friend-input {
-    background-color: #ada7c9;
+    width: 40vw;
+  }
+
+  #find-friend-button {
+    padding: 0.5em;
+    border-radius: 5px;
+    margin-left: 0.25em;
+    font-size: 2vw;
+    border: none;
+    background-color: #614b81;
+    color: white;
+  }
+
+  .foodie-friends {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 1em;
+    margin-right: 1em;
+    overflow-y: scroll;
+  }
+
+  .list-friends2 {
+    text-align: center;
+    font-size: 3vw;
+    list-style-position: outside;
+    display: inline;
+    list-style-type: none;
+    text-transform: capitalize;
+    padding: 0.75em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    background-color: #d7b9d5;
     border-radius: 5px;
     border: none;
+  }
+
+  .saved-maps-2 {
+    text-align: left;
+    font-size: 5vw;
+    display: flex;
+    list-style-type: none;
+    text-transform: capitalize;
+    flex-direction: row;
+    overflow: scroll;
+    padding-bottom: 10vh;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .img-profile {
+    margin-top: 10%;
+    margin-left: 4%;
+    width: 28vw;
+    height: auto;
+  }
+
+  .name {
+    font-size: 9vw;
+    margin-top: -25%;
+    margin-left: 35%;
+  }
+
+  .member {
+    font-size: 4vw;
+    margin-left: 36%;
+    margin-top: -2%;
+  }
+
+  .edit-profile {
+    font-size: 3vw;
+    margin-left: 36%;
+    margin-top: -2%;
+  }
+
+  .text-separation {
+    font-size: 5vw;
+  }
+
+  #find-friend-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+    margin-bottom: 1em;
   }
 
   #find-friend-button {
@@ -666,13 +953,37 @@ body {
   color: #182c3a;
 }
 
-#slider-min-price,
-#slider-max-price {
-  color: #182c3a;
-}
-
 .input-fields {
   background-color: none;
+}
+
+#div-toggle-btn {
+  margin-top: 5%;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: none !important;
+}
+
+.toggle-btn {
+  background-color: #ad8fa8 !important;
+  margin-right: 4% !important;
+  margin-left: 4% !important;
+  border-radius: 10% !important;
+  width: 15% !important;
+  border: none !important;
+}
+
+.toggle-btn-clicked {
+  background-color: #d7b9d5 !important;
+  margin-right: 4% !important;
+  margin-left: 4% !important;
+  border-radius: 10% !important;
+  width: 15% !important;
+  border: none !important;
+}
+
+#toggle-btn-group {
+  width: 100%;
 }
 
 @media screen and (min-width: 601px) {
@@ -695,13 +1006,17 @@ body {
     justify-content: center;
   }
 
-  /* .price-fields, */
   .diet-fields {
     margin-top: 2vh;
   }
 
   #btn-search {
     margin-top: 5%;
+  }
+
+  #toggle-btn-group {
+    margin-top: 1.5%;
+    margin-bottom: 2.5%;
   }
 }
 
@@ -738,174 +1053,165 @@ body {
     margin-top: 10%;
   }
 
-  #div-toggle-btn {
-    margin-top: 5%;
-    display: flex;
-    justify-content: space-evenly;
-    background-color: none !important;
-  }
-
   #toggle-btn-group {
-    /* background-color: #948fad !important; */
     margin-top: 5%;
-    width: 100%;
   }
-
-  .toggle-btn {
-    background-color: #ad8fa8 !important;
-    margin-right: 4% !important;
-    margin-left: 4% !important;
-    border-radius: 10% !important;
-    width: 15% !important;
-    border: none !important;
-  }
-
-  .toggle-btn-clicked {
-    background-color: #D7B9D5 !important;
-    margin-right: 4% !important;
-    margin-left: 4% !important;
-    border-radius: 10% !important;
-    width: 15% !important;
-    border: none !important;
-  }
-
-  /* .toggle-btn-2 {
-    background-color: #948fad !important;
-    margin-right: 4% !important;
-    margin-left: 4% !important;
-    border-radius: 10% !important;
-    width: 15% !important;
-    border: none !important;
-  }
-
-  .toggle-btn-3 {
-    background-color: #948fad !important;
-    margin-right: 4% !important;
-    margin-left: 4% !important;
-    border-radius: 10% !important;
-    width: 15% !important;
-    border: none !important;
-  }
-
-  .toggle-btn-4 {
-    background-color: #948fad !important;
-    margin-right: 4% !important;
-    margin-left: 4% !important;
-    border-radius: 10% !important;
-    width: 15% !important;
-    border: none !important;
-  } */
 }
 
 /* SIGN UP/REGISTRATION COMPONENT */
-@media screen and (max-width: 600px) {
-  .content-signup {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 5%;
-    border-radius: 2%;
-    text-align: center;
-  }
 
-  .logo-signup {
-    margin-left: 35%;
-    margin-top: 2%;
-    position: relative;
-    filter: drop-shadow(0 0 0.3em #2e3842);
+.content-signup {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 2%;
+  text-align: center;
+}
+
+.logo-signup {
+  margin-left: 35%;
+  margin-top: 2%;
+  position: relative;
+  filter: drop-shadow(0 0 0.3em #2e3842);
+}
+
+.welcome-msg {
+  text-align: center;
+  margin-top: 2%;
+}
+
+.firstname {
+  border-radius: 5%;
+  border-color: #ffffff !important;
+  text-align: left;
+  background-color: #ffffff !important;
+}
+
+.lastname {
+  border-radius: 5%;
+  text-align: left;
+  margin-top: 10%;
+  background-color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+.email {
+  border-radius: 5%;
+  text-align: left;
+  margin-top: 10%;
+  background-color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+.password {
+  border-radius: 5%;
+  text-align: left;
+  margin-top: 10%;
+  background-color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+#btn-signup {
+  border: none !important;
+  text-align: left !important;
+  margin-top: 10% !important;
+  color: #ffffff !important;
+  background-color: #614b81 !important;
+  opacity: 1 !important;
+  z-index: 1 !important;
+}
+
+#btn-google {
+  font-size: 10px;
+  padding: 4px !important;
+  margin-left: 17%;
+  opacity: 1;
+  border-width: thin;
+  color: #fefefe;
+  width: 66%;
+  display: inline-block !important;
+  background-color: #90a8c3 !important;
+  border-color: #90a8c3 !important;
+  filter: drop-shadow(0 0 0.5em #2e3842);
+}
+
+#btn-already-account {
+  padding: 4px;
+  font-size: 10px;
+  margin-top: 5%;
+  border-radius: 5%;
+  text-align: center;
+  width: 66%;
+  margin-left: 17%;
+  background-color: #ada7c9;
+  border: none;
+  color: #182c3a;
+  filter: drop-shadow(0 0 0.3em #2e3842);
+  opacity: 1;
+}
+
+#purple-bg {
+  position: absolute;
+  background-color: #a49fbf;
+  border-radius: 4px;
+  opacity: 0.9;
+}
+
+@media screen and (min-width: 601px) {
+  .content-signup {
+    width: 85%;
   }
 
   .welcome-msg {
-    font-size: 12px;
-    text-align: center;
-    margin-top: 2%;
-  }
-
-  .firstname {
-    border-radius: 5%;
-    border-color: #ffffff !important;
-    text-align: left;
-    background-color: #ffffff !important;
-  }
-
-  .lastname {
-    border-radius: 5%;
-    text-align: left;
-    margin-top: 10%;
-    background-color: #ffffff !important;
-    border-color: #ffffff !important;
-  }
-
-  .email {
-    border-radius: 5%;
-    text-align: left;
-    margin-top: 10%;
-    background-color: #ffffff !important;
-    border-color: #ffffff !important;
-  }
-
-  .password {
-    border-radius: 5%;
-    text-align: left;
-    margin-top: 10%;
-    background-color: #ffffff !important;
-    border-color: #ffffff !important;
-  }
-
-  #btn-signup {
-    border: none !important;
-    text-align: left !important;
-    margin-top: 10% !important;
-    color: #ffffff !important;
-    background-color: #614b81 !important;
-    opacity: 1 !important;
-    z-index: 1 !important;
+    font-size: 1.2vw;
   }
 
   #btn-google {
-    font-size: 10px;
-    padding: 4px !important;
-    margin-left: 17%;
-    opacity: 1;
-    border-width: thin;
-    color: #fefefe;
-    width: 66%;
-    display: inline-block !important;
-    margin-top: 15%;
-    background-color: #90a8c3 !important;
-    border-color: #90a8c3 !important;
-    filter: drop-shadow(0 0 0.5em #2e3842);
-  }
-
-  #btn-already-account {
-    padding: 4px;
-    font-size: 10px;
-    margin-top: 5%;
-    border-radius: 5%;
-    text-align: center;
-    width: 66%;
-    margin-left: 17%;
-    background-color: #ada7c9;
-    border: none;
-    color: #182c3a;
-    filter: drop-shadow(0 0 0.3em #2e3842);
-    opacity: 1;
+    margin-top: 10%;
   }
 
   #purple-bg {
-    position: absolute;
+    margin-top: 2.5%;
+    margin-left: 35%;
+    height: 78%;
+    width: 30%;
+  }
+
+  #picture-bg {
+    background: url("https://images.unsplash.com/photo-1580421383318-f87fc861a696?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80")
+      no-repeat;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 0.8;
+    overflow: hidden;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .content-signup {
+    width: 90%;
+    margin-top: 5%;
+  }
+
+  .welcome-msg {
+    font-size: 2.4vw;
+  }
+
+  #btn-google {
+    margin-top: 15%;
+  }
+
+  #purple-bg {
     margin-top: 18%;
     margin-left: 38px;
     height: 70%;
     width: 80%;
-    background-color: #a49fbf;
-    border-radius: 4px;
-    opacity: 0.9;
   }
 
   #picture-bg {
@@ -928,6 +1234,112 @@ body {
 }
 
 /* OTHER PROFILE COMPONENT (FRIENDS)*/
+
+#container-friend {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+#container-friend a {
+  color: rgb(93, 155, 176);
+}
+
+@media screen and (min-width: 601px) {
+  .btn-friend-already {
+    font-size: 1.5vw !important;
+    margin-left: 30%;
+    text-align: center;
+    background-color: #5d9bb0 !important;
+    border: none !important;
+    color: #ffffff !important;
+    margin-top: -1%;
+  }
+
+  .img-profile-friend {
+    position: relative;
+    border-radius: 50%;
+    border-color: #d7b9d5;
+    border-width: 5px;
+    border-style: solid;
+    margin-top: 5%;
+    margin-left: 5%;
+    width: 20vw;
+    height: auto;
+  }
+
+  .name-friend {
+    text-transform: Capitalize;
+    font-size: 5vw;
+    width: 65%;
+    text-align: left;
+    z-index: -1;
+    margin-top: -16%;
+    margin-left: 28%;
+  }
+
+  .member-friend {
+    font-size: 2.5vw;
+    text-align: left;
+    width: 65%;
+    margin-left: 28.5%;
+    margin-top: -1%;
+  }
+
+  .btn-friend-already-btn-sm {
+    font-size: 1.5vw !important;
+    margin-left: 28.5%;
+    margin-top: -1%;
+  }
+
+  .text-separation-friends {
+    margin-top: 10%;
+    min-width: 100%;
+    padding: 0.5em;
+    font-size: 3vw;
+    color: white;
+    text-align: center;
+  }
+
+  #friend-foodie-maps {
+    margin-top: 5%;
+  }
+
+  .list-saved-maps-friends {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 1em;
+    margin-right: 1em;
+    overflow-y: scroll;
+    margin-top: 3em;
+  }
+
+  .list-map2-friends {
+    text-align: center;
+    font-size: 3vw;
+    list-style-position: outside;
+    display: inline;
+    list-style-type: none;
+    text-transform: capitalize;
+    padding: 0.75em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    background-color: #d7b9d5;
+    border-radius: 5px;
+    border: none;
+  }
+
+  .save-maps-to {
+    text-align: left;
+    font-size: 5vw;
+    display: flex;
+    list-style-type: none;
+    text-transform: capitalize;
+    flex-direction: row;
+    overflow: scroll;
+    padding-bottom: 10vh;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .btn-friend-already {
     font-size: 9px !important;
@@ -938,15 +1350,6 @@ body {
     color: #ffffff !important;
     margin-top: 1%;
     /* font-weight: bold !important; */
-  }
-
-  #container-friend {
-    min-height: 100vh;
-    overflow: hidden;
-  }
-
-  #container-friend a {
-    color: rgb(93, 155, 176);
   }
 
   .img-profile-friend {
@@ -1031,78 +1434,96 @@ body {
 }
 
 /* MYMAPS COMPONENT (deletes a saved map from profile) */
-@media screen and (max-width: 600px) {
-  .elements-saved-maps {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
-    padding-left: 0.7em;
-    padding-top: 1em;
-    justify-content: space-between;
-  }
+.elements-saved-maps {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  padding-left: 0.7em;
+  padding-top: 1em;
+  justify-content: space-between;
+}
 
+.btn-delete-map {
+  border-radius: 50% !important;
+  font-size: 10px !important;
+  margin-right: -25%;
+  margin-top: -11%;
+  border-color: #90a8c3 !important;
+  color: #90a8c3 !important;
+}
+
+.btn-delete-map {
+  border-radius: 50% !important;
+  font-size: 10px !important;
+  margin-top: 0.5em;
+}
+
+.businessid {
+  display: none;
+}
+
+#profile-map-icon {
+  /* flex-direction: row; */
+  color: #90a8c3 !important;
+}
+
+#map-name {
+  justify-self: auto;
+  display: inline;
+  margin-left: 0.5em;
+}
+
+@media screen and (min-width: 601px) {
   .btn-delete-map {
-    border-radius: 50% !important;
-    font-size: 10px !important;
-    margin-right: -25%;
-    margin-top: -11%;
-    border-color: #90a8c3 !important;
-    color: #90a8c3 !important;
-  }
-
-  .btn-delete-map {
-    border-radius: 50% !important;
-    font-size: 10px !important;
-    margin-top: 0.5em;
-    /* margin-right: 0.25em; */
-  }
-
-  .businessid {
-    display: none;
-  }
-
-  #profile-map-icon {
-    /* flex-direction: row; */
-    color: #90a8c3 !important;
+    margin-left: 1em;
   }
 
   #map-name {
-    justify-self: auto;
-    display: inline;
-    margin-left: 0.5em;
+    font-size: 4vw;
   }
 }
 
 /* EDIT PROFILE COMPONENT */
+#edit-profile-form {
+  color: rgb(93, 155, 176) !important;
+  text-align: center !important;
+}
+
+#edit-profile-form label.form-label {
+  padding-top: 1em;
+}
+
+#edit-profile-form input.form-control {
+  width: 100% !important;
+  background-color: #948fad !important;
+  color: rgb(225, 224, 224) !important;
+  opacity: 1;
+}
+
+#edit-profile-form input.form-control::placeholder {
+  color: rgb(225, 224, 224) !important;
+}
+
+#edit-profile-save {
+  background-color: #614b81;
+  border: none;
+  filter: drop-shadow(0 0 0.25em #2e3842);
+  margin-top: 1.5em;
+}
+
+@media screen and (min-width: 601px) {
+  #edit-profile-form {
+    padding-top: 7vh;
+    padding-left: 7em;
+    padding-right: 7em;
+  }
+}
+
 @media screen and (max-width: 600px) {
   #edit-profile-form {
     padding-top: 15vh;
     padding-left: 1.5em;
     padding-right: 1.5em;
-    color: rgb(93, 155, 176) !important;
-    text-align: center !important;
-  }
-
-  #edit-profile-form label.form-label {
-    padding-top: 1em;
-  }
-
-  #edit-profile-form input.form-control {
-    width: 100% !important;
-    background-color: #948fad !important;
-    color: rgb(225, 224, 224) !important;
-    opacity: 1;
-  }
-
-  #edit-profile-form input.form-control::placeholder {
-    color: rgb(225, 224, 224) !important;
-  }
-
-  #edit-profile-save {
-    background-color: #614b81;
-    border: none;
-    filter: drop-shadow(0 0 0.25em #2e3842);
-    margin-top: 1.5em;
   }
 }

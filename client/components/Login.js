@@ -43,7 +43,7 @@ class Login extends React.Component {
 				<div className="square"></div>
 
 				<div className="form-container">
-					<div className="col-md-4 col-sm-4 col-xs-12">
+					<div className="col-md-4 col-sm-4 col-xs-12" id="login-form">
 						<Form.Control
 							id="input-email"
 							name="email"
@@ -115,7 +115,7 @@ class Login extends React.Component {
 								New here? Get on a Food Path!
 							</Button>
 
-							<p className="copyright">Copyright &copy; Food Path 2020. </p>
+							<p className="copyright">Copyright &copy; Food Path 2020 </p>
 						</div>
 					</div>
 				</div>

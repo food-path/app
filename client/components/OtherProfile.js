@@ -67,7 +67,7 @@ class OtherProfile extends React.Component {
 				</span>
 
 				<div className="div-text">
-					<p className="text-separation-friends">{otherUser.firstName}'s Foodie Maps</p>
+					<p className="text-separation-friends" id="friend-foodie-maps">{otherUser.firstName}'s Foodie Maps</p>
 				</div>
 				<div className="save-maps-to">
 					<MyMaps user={otherUser} />

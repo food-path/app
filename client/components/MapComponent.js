@@ -16,7 +16,7 @@ const Marker = ({ text, imageUrl, id }) => (
     <p>{text}</p>
     <img src={imageUrl} width="60px" />
     <Link to={`/singleBusiness/${id}`}>
-      <img src="/img/marker.png" height="30px" />
+      <img src="/icons/map marker.svg" height="30px" />
     </Link>
   </div>
 );
