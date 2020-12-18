@@ -131,40 +131,61 @@ body {
   background-color: #182c3a;
 }
 
+#img-carousel {
+  width: 100vw;
+}
+
+#bannerimage {
+  width: 100vw;
+  object-fit: cover;
+}
+
+#singleBusiness {
+  background-color: white;
+  padding-bottom: 78px;
+}
+
+#text-Name {
+  font-size: 25px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  color: #182c3a;
+}
+
+#BusinessName {
+  background-color: rgb(93, 155, 176);
+  text-align: center;
+  font-size: 5px;
+  padding-top: 2%;
+  font-family: "Montserrat", sans-serif;
+  padding-bottom: 1%;
+  width: 100vw;
+}
+
+#reviewButton {
+  color: white !important;
+  background-color: #5d9bb0 !important;
+  border-radius: 5px !important;
+  border: none !important;
+  filter: drop-shadow(0 0 0.5em #2e3842);
+}
+
 @media screen and (min-width: 601px) {
   #img-carousel {
-    width: 100vw;
     height: 40vh;
   }
 
   #bannerimage {
-    width: 100vw;
     height: 40vh;
-    object-fit: cover;
   }
 
-  #singleBusiness {
-    background-color: white;
-    padding-bottom: 78px;
-  }
-
-  #text-Name {
-    font-size: 25px;
-    text-align: center;
-    font-family: "Montserrat", sans-serif;
-    color: #182c3a;
-  }
-
-  #BusinessName {
-    background-color: rgb(93, 155, 176);
-    text-align: center;
-    font-size: 5px;
-    padding-top: 2%;
-    font-family: "Montserrat", sans-serif;
-    padding-bottom: 1%;
+  #singleBusiness div:first-child {
+    width: 100vw;
   }
 
   #wrapper {
+    /* display: flex; */
+    width: 100vw;
     margin-top: 20px;
     margin-left: 10px;
     margin-right: 16px;
@@ -188,7 +209,7 @@ body {
 
   #list-days {
     text-align: justify;
-    margin-left: 20%;
+    margin-left: 35%;
     display: block;
     text-justify: inter-character;
   }
@@ -209,14 +230,15 @@ body {
   }
 
   #horizontal {
-    width: 80%;
+    display: flex;
+    width: 80vw;
     height: 3px;
-    background-color: black;
-    margin-left: 30px;
-    margin-right: 30px;
+    margin-left: 10vw;
+    margin-right: 10vw;
     margin-top: 25px;
     margin-bottom: 20px;
-    align-content: center;
+    align-items: center;
+    justify-items: center;
     background-color: #5d9bb0;
   }
 
@@ -224,15 +246,14 @@ body {
     font-size: 20px;
     font-family: "Roboto", sans-serif;
     color: #182c3a;
-    margin-right: 10%;
-    margin-left: 8%;
   }
 
   .text-reviews {
     text-align: center;
     font-family: "Roboto", sans-serif;
     font-size: 14px;
-    /* margin-left: 10%; */
+    padding-left: 10%;
+    padding-right: 10%;
   }
 
   #separator {
@@ -241,10 +262,10 @@ body {
   }
 
   #backToMap {
+    width: 100vw;
     text-align: center;
     color: #182c3a;
     font-size: 12px;
-    margin-right: 20px;
   }
 
   .stars-review {
@@ -265,12 +286,9 @@ body {
   }
 
   #reviewButton {
-    padding: 2px !important;
-    font-size: 10px !important;
-    color: white !important;
-    box-shadow: none !important;
-    background-color: #5d9bb0 !important;
-    border-radius: 5px !important;
+    margin-top: 1em;
+    padding: 1em !important;
+    font-size: 1vw !important;
   }
 }
 
@@ -280,48 +298,11 @@ body {
   }
 
   #img-carousel {
-    width: 100vw;
     height: 25vh;
-    /* padding-top: 1em;
-    padding-bottom: 1em; */
-  }
-
-  #bg-image-business {
-    background-color: #182c3a;
   }
 
   #bannerimage {
-    width: 100vw;
     height: 25vh;
-    object-fit: cover;
-    /* padding-top: 10px;
-    width: 200px;
-    border-radius: 50%;
-    height: 200px;
-    margin-left: 25%;
-    margin-right: auto;
-    padding-bottom: 10px; */
-  }
-
-  #singleBusiness {
-    background-color: white;
-    padding-bottom: 78px;
-  }
-
-  #text-Name {
-    font-size: 25px;
-    text-align: center;
-    font-family: "Montserrat", sans-serif;
-    color: #182c3a;
-  }
-
-  #BusinessName {
-    background-color: rgb(93, 155, 176);
-    text-align: center;
-    font-size: 5px;
-    padding-top: 2%;
-    font-family: "Montserrat", sans-serif;
-    padding-bottom: 1%;
   }
 
   #wrapper {
@@ -371,7 +352,6 @@ body {
   #horizontal {
     width: 80%;
     height: 3px;
-    background-color: black;
     margin-left: 30px;
     margin-right: 30px;
     margin-top: 25px;
@@ -425,12 +405,9 @@ body {
   }
 
   #reviewButton {
-    padding: 2px !important;
-    font-size: 10px !important;
-    color: white !important;
-    box-shadow: none !important;
-    background-color: #5d9bb0 !important;
-    border-radius: 5px !important;
+    margin-top: 0.5em;
+    padding: 1em !important;
+    font-size: 2vw !important;
   }
 }
 
