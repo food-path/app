@@ -756,7 +756,7 @@ body {
     font-size: 3vw;
   }
 
-  .text-separation:last-of-type {
+  #my-foodie-maps {
     margin-top: 5%;
   }
 
@@ -1234,6 +1234,112 @@ body {
 }
 
 /* OTHER PROFILE COMPONENT (FRIENDS)*/
+
+#container-friend {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+#container-friend a {
+  color: rgb(93, 155, 176);
+}
+
+@media screen and (min-width: 601px) {
+  .btn-friend-already {
+    font-size: 1.5vw !important;
+    margin-left: 30%;
+    text-align: center;
+    background-color: #5d9bb0 !important;
+    border: none !important;
+    color: #ffffff !important;
+    margin-top: -1%;
+  }
+
+  .img-profile-friend {
+    position: relative;
+    border-radius: 50%;
+    border-color: #d7b9d5;
+    border-width: 5px;
+    border-style: solid;
+    margin-top: 5%;
+    margin-left: 5%;
+    width: 20vw;
+    height: auto;
+  }
+
+  .name-friend {
+    text-transform: Capitalize;
+    font-size: 5vw;
+    width: 65%;
+    text-align: left;
+    z-index: -1;
+    margin-top: -16%;
+    margin-left: 28%;
+  }
+
+  .member-friend {
+    font-size: 2.5vw;
+    text-align: left;
+    width: 65%;
+    margin-left: 28.5%;
+    margin-top: -1%;
+  }
+
+  .btn-friend-already-btn-sm {
+    font-size: 1.5vw !important;
+    margin-left: 28.5%;
+    margin-top: -1%;
+  }
+
+  .text-separation-friends {
+    margin-top: 10%;
+    min-width: 100%;
+    padding: 0.5em;
+    font-size: 3vw;
+    color: white;
+    text-align: center;
+  }
+
+  #friend-foodie-maps {
+    margin-top: 5%;
+  }
+
+  .list-saved-maps-friends {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 1em;
+    margin-right: 1em;
+    overflow-y: scroll;
+    margin-top: 3em;
+  }
+
+  .list-map2-friends {
+    text-align: center;
+    font-size: 3vw;
+    list-style-position: outside;
+    display: inline;
+    list-style-type: none;
+    text-transform: capitalize;
+    padding: 0.75em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    background-color: #d7b9d5;
+    border-radius: 5px;
+    border: none;
+  }
+
+  .save-maps-to {
+    text-align: left;
+    font-size: 5vw;
+    display: flex;
+    list-style-type: none;
+    text-transform: capitalize;
+    flex-direction: row;
+    overflow: scroll;
+    padding-bottom: 10vh;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .btn-friend-already {
     font-size: 9px !important;
@@ -1244,15 +1350,6 @@ body {
     color: #ffffff !important;
     margin-top: 1%;
     /* font-weight: bold !important; */
-  }
-
-  #container-friend {
-    min-height: 100vh;
-    overflow: hidden;
-  }
-
-  #container-friend a {
-    color: rgb(93, 155, 176);
   }
 
   .img-profile-friend {
