@@ -673,65 +673,91 @@ body {
 }
 
 /* PROFILE COMPONENT */
-@media screen and (max-width: 600px) {
-  #container-profile {
-    min-height: 100vh;
-    overflow: hidden;
-  }
 
-  #container-profile a {
-    color: rgb(93, 155, 176);
-  }
+#container-profile {
+  min-height: 100vh;
+  overflow: hidden;
+}
 
+#container-profile a {
+  color: rgb(93, 155, 176);
+}
+
+.img-profile {
+  position: relative;
+  border-radius: 50%;
+  border-color: #d7b9d5;
+  border-width: 5px;
+  border-style: solid;
+}
+
+.name {
+  text-transform: Capitalize;
+  width: 65%;
+  text-align: left;
+  z-index: -1;
+}
+
+.member {
+  text-align: left;
+  width: 65%;
+}
+
+.edit-profile {
+  text-align: left;
+}
+
+.div-text {
+  background-color: #ada7c9;
+  min-width: 100%;
+}
+
+.text-separation {
+  margin-top: 10%;
+  min-width: 100%;
+  padding: 0.5em;
+  color: white;
+  text-align: center;
+}
+
+#find-friend-input {
+  background-color: #ada7c9;
+  border-radius: 5px;
+  border: none;
+}
+
+@media screen and (min-width: 601px) {
   .img-profile {
-    position: relative;
-    border-radius: 50%;
-    border-color: #d7b9d5;
-    border-width: 5px;
-    border-style: solid;
-    margin-top: 10%;
-    margin-left: 4%;
-    width: 28vw;
+    margin-top: 5%;
+    margin-left: 5%;
+    width: 20vw;
     height: auto;
   }
 
   .name {
-    text-transform: Capitalize;
-    font-size: 9vw;
-    width: 65%;
-    text-align: left;
-    z-index: -1;
-    margin-top: -25%;
-    margin-left: 35%;
+    font-size: 5vw;
+    margin-top: -16%;
+    margin-left: 28%;
   }
 
   .member {
-    font-size: 4vw;
-    text-align: left;
-    width: 65%;
-    margin-left: 36%;
-    margin-top: -2%;
+    font-size: 2.5vw;
+    margin-left: 28.5%;
+    margin-top: -1%;
   }
 
   .edit-profile {
-    font-size: 3vw;
-    text-align: left;
-    margin-left: 36%;
+    font-size: 1.5vw;
+    margin-left: 28.5%;
     margin-top: -2%;
   }
 
-  .div-text {
-    background-color: #ada7c9;
-    min-width: 100%;
+  .text-separation {
+    font-size: 3vw;
   }
 
-  .text-separation {
-    margin-top: 10%;
-    min-width: 100%;
-    padding: 0.5em;
-    font-size: 5vw;
-    color: white;
-    text-align: center;
+  .text-separation:last-of-type {
+    margin-top: 5%;
   }
 
   #find-friend-form {
@@ -742,9 +768,89 @@ body {
   }
 
   #find-friend-input {
-    background-color: #ada7c9;
+    width: 40vw;
+  }
+
+  #find-friend-button {
+    padding: 0.5em;
+    border-radius: 5px;
+    margin-left: 0.25em;
+    font-size: 2vw;
+    border: none;
+    background-color: #614b81;
+    color: white;
+  }
+
+  .foodie-friends {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 1em;
+    margin-right: 1em;
+    overflow-y: scroll;
+  }
+
+  .list-friends2 {
+    text-align: center;
+    font-size: 3vw;
+    list-style-position: outside;
+    display: inline;
+    list-style-type: none;
+    text-transform: capitalize;
+    padding: 0.75em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    background-color: #d7b9d5;
     border-radius: 5px;
     border: none;
+  }
+
+  .saved-maps-2 {
+    text-align: left;
+    font-size: 5vw;
+    display: flex;
+    list-style-type: none;
+    text-transform: capitalize;
+    flex-direction: row;
+    overflow: scroll;
+    padding-bottom: 10vh;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .img-profile {
+    margin-top: 10%;
+    margin-left: 4%;
+    width: 28vw;
+    height: auto;
+  }
+
+  .name {
+    font-size: 9vw;
+    margin-top: -25%;
+    margin-left: 35%;
+  }
+
+  .member {
+    font-size: 4vw;
+    margin-left: 36%;
+    margin-top: -2%;
+  }
+
+  .edit-profile {
+    font-size: 3vw;
+    margin-left: 36%;
+    margin-top: -2%;
+  }
+
+  .text-separation {
+    font-size: 5vw;
+  }
+
+  #find-friend-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+    margin-bottom: 1em;
   }
 
   #find-friend-button {
@@ -1273,7 +1379,11 @@ body {
 
 @media screen and (min-width: 601px) {
   .btn-delete-map {
-    margin-right: 1em;
+    margin-left: 1em;
+  }
+
+  #map-name {
+    font-size: 4vw;
   }
 }
 
