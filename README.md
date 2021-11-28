@@ -60,11 +60,12 @@ PWA REQUIREMENTS (link: https://developer.mozilla.org/en-US/docs/Web/Progressive
 1. Necessary Features
 In order to call a Web App a PWA, technically speaking it should have the following features: Secure contexts (HTTPS), one or more Service Workers, and a manifest file. 
 
-[ ] Secure contexts (HTTPS) - link: https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts
+- [x] Secure contexts (HTTPS) - link: https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts
 The web application must be served over a secure network. Being a secure site is not only a best practice, but it also establishes your web application as a trusted site especially if users need to make secure transactions. Most of the features related to a PWA such as geolocation and even service workers are available only once the app has been loaded using HTTPS.
 
-[ ] Service workers - Link: https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API
+- [x] Manifest file - Link: https://developer.mozilla.org/en-US/docs/Web/Manifest
+A JSON file that controls how your app appears to the user and ensures that progressive web apps are discoverable. It describes the name of the app, the start URL, icons, and all of the other details necessary to transform the website into an app-like format.
+
+- [ ] Service workers - Link: https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API
 A service worker is a script that allows intercepting and control of how a web browser handles its network requests and asset caching. With service workers, web developers can create reliably fast web pages and offline experiences.
 
-[ ] Manifest file - Link: https://developer.mozilla.org/en-US/docs/Web/Manifest
-A JSON file that controls how your app appears to the user and ensures that progressive web apps are discoverable. It describes the name of the app, the start URL, icons, and all of the other details necessary to transform the website into an app-like format.
