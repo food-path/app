@@ -1,5 +1,11 @@
 # Food Path App
 
+View the app reel here:
+https://www.youtube.com/watch?v=824MzSNIiAw
+
+Experience the app here:
+http://foodpath.herokuapp.com/
+
 ## Overview
 
 Implement an application for planning a food-centric trip as a PWA (progressive web app) that allows users to filter their desired food experience based on budget, location, and dietary considerations. The main focus will be an interactive app showing an itinerary of eateries that the user can save.
