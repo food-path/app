@@ -30,6 +30,10 @@ The PWA should support logged in users. Users should be able to fill out a form 
 - [X] two views only available to user who is not a member
 - [X] if nothing added to the search or typo, show an error pop up with specific message
 - [X] when content slow to load, a "loading burrito" can be seen
+- [X] users can save their foodie maps
+- [X] users can superimpose two maps and save them as one map. i.e, the best icecream shops in SF map is superimposed with best burgers map in SF
+- [X] find friends by their email
+- [X] share their itinerary with their friends
 
 
 ## Stretch Goals
@@ -42,7 +46,6 @@ Ensure our app is widely accessible to a broad demographic of users:
 
 Incorporate extra features into a user's profile such as:
 
-- share their itinerary
 - favorite or rate saved itineraries
 - favorite or rate single restaurants from an itinerary
 
@@ -57,7 +60,7 @@ Incorporate extra features into the initial itinerary creation & view such as:
 - Mobile development
 - Filtering the suggested list of restaurants based on ratings
 - Building a database of restaurants with all desired information (especially dietary considerations)
-- Connecting with external APIs (Yelp, Google, Instagram)
+- Connecting with external APIs (Yelp, Google, Instagram, Foursquare)
 
 
 ---------------------------------------
