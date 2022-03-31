@@ -12,10 +12,12 @@ Implement an application for planning a food-centric trip as a PWA (progressive 
 
 ## To Run This App On Your Local Machine:
 
+```
 npm install
 createdb foodpath(requires having postgres installed)
 npm run seed
 npm run start-dev
+```
 
 ## MVP
 
