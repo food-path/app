@@ -10,6 +10,13 @@ http://foodpath.herokuapp.com/
 
 Implement an application for planning a food-centric trip as a PWA (progressive web app) that allows users to filter their desired food experience based on budget, location, and dietary considerations. The main focus will be an interactive app showing an itinerary of eateries that the user can save.
 
+## To Run This App On Your Local Machine:
+
+npm install
+createdb foodpath(requires having postgres installed)
+npm run seed
+npm run start-dev
+
 ## MVP
 
 The PWA should support logged in users. Users should be able to fill out a form with their itinerary preferences and be able to interact with a provided map and list of the selected restaurants. Users should also be able to click on a specific restaurant and be taken to a detail page for that restaurant. Users will be able to save their itinerary and view any saved itineraries offline.
@@ -36,7 +43,7 @@ The PWA should support logged in users. Users should be able to fill out a form 
 - [X] share their itinerary with their friends
 
 
-## Stretch Goals
+## What's Next?
 
 Ensure our app is widely accessible to a broad demographic of users:
 
