@@ -75,7 +75,7 @@ Incorporate extra features into the initial itinerary creation & view such as:
 ---------------------------------------
 PWA REQUIREMENTS (link: https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)
 
-1. Necessary Features
+- Necessary Features
 In order to call a Web App a PWA, technically speaking it should have the following features: Secure contexts (HTTPS), one or more Service Workers, and a manifest file. 
 
 - [x] Secure contexts (HTTPS) - link: https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts
