@@ -10,11 +10,11 @@ http://foodpath.herokuapp.com/
 
 Implement an application for planning a food-centric trip as a PWA (progressive web app) that allows users to filter their desired food experience based on budget, location, and dietary considerations. The main focus will be an interactive app showing an itinerary of eateries that the user can save.
 
-## To Run This App On Your Local Machine:
+## To Run This App On Your Local Machine (requires PostgreSQL):
 
 ```
 npm install
-createdb foodpath(requires having postgres installed)
+createdb foodpath
 npm run seed
 npm run start-dev
 ```
